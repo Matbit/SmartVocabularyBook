@@ -1,6 +1,6 @@
 ﻿namespace SmartVocabularyBook
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 357);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(544, 292);
+            this.Name = "Main";
             this.Text = "Arbeitstitel \"VC\"";
             this.ResumeLayout(false);
 

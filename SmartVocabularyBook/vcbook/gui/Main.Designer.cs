@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 292);
             this.Name = "Main";
-            this.Text = "Arbeitstitel \"VC\"";
+            this.Text = "Smart VC ";
             this.ResumeLayout(false);
 
         }

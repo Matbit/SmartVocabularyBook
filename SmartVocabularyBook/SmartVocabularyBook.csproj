@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SVB\gui\Main.cs">
+    <Compile Include="vcbook\gui\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SVB\gui\Main.Designer.cs">
+    <Compile Include="vcbook\gui\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SVB\gui\Main.resx">
+    <EmbeddedResource Include="vcbook\gui\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,10 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SVB\controller\" />
-    <Folder Include="SVB\data\" />
-    <Folder Include="SVB\model\" />
-    <Folder Include="SVB\service\" />
+    <Folder Include="vcbook\controller\" />
+    <Folder Include="vcbook\data\" />
+    <Folder Include="vcbook\model\" />
+    <Folder Include="vcbook\service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

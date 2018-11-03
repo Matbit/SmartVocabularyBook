@@ -33,6 +33,7 @@
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnOpenMain = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,17 +75,28 @@
             this.panelMain.Size = new System.Drawing.Size(900, 500);
             this.panelMain.TabIndex = 5;
             // 
+            // btnOpenMain
+            // 
+            this.btnOpenMain.Location = new System.Drawing.Point(779, 555);
+            this.btnOpenMain.Name = "btnOpenMain";
+            this.btnOpenMain.Size = new System.Drawing.Size(103, 46);
+            this.btnOpenMain.TabIndex = 6;
+            this.btnOpenMain.Text = "Hauptmenü";
+            this.btnOpenMain.UseVisualStyleBackColor = true;
+            this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 625);
+            this.Controls.Add(this.btnOpenMain);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hauptmenü";
+            this.Text = "Vokabeltrainer - Dein smartes Vokabelheft";
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -99,6 +111,7 @@
         private System.Windows.Forms.ToolStripMenuItem optionenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Button btnOpenMain;
     }
 }
 

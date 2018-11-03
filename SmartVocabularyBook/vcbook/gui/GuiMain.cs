@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartVocabularyBook.vcbook.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,10 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class GuiMain : Form
     {
         private Main frmMain;
+        private MenuControl menuControl;
+
+
+
         public GuiMain(Main main)
         {
             InitializeComponent();
@@ -37,7 +42,8 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            menuControl = new MenuControl();
+            menuControl.endApplication();
         }
     }
 }

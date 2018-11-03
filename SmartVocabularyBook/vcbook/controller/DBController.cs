@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
+using SmartVocabularyBook.vcbook.model;
 
 namespace SmartVocabularyBook.vcbook.controller
 {
@@ -59,6 +60,26 @@ namespace SmartVocabularyBook.vcbook.controller
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public bool insertNewVocabulary(Vocabulary vc, String date, int archived)
+        {
+            try
+            {
+                SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+                con.Open();
+                string sql = "INSERT INTO vocabulary(wordLang1, wordLang2, memo, dateOfCreation, archived) VALUES ('" + vc.getWordLang1() + "', '" + vc.getWordLang2() +
+                            "', '" + vc.getMemo() + "', '" + date + "', '" + archived+ "')";
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
         }
 
 

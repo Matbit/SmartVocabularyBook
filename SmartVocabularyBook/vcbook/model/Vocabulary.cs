@@ -14,7 +14,7 @@ namespace SmartVocabularyBook.vcbook.model
         private String memo;
         private DateTime dateOfCreation;
         private DateTime lastCall;
-        private bool isArchived;
+        private bool archived;
 
 
         public Vocabulary(String wordLang1, String wordLang2) : this(wordLang1, wordLang2, null) { }
@@ -26,7 +26,71 @@ namespace SmartVocabularyBook.vcbook.model
             this.wordLang2 = wordLang2;
             this.memo = memo;
             this.dateOfCreation = DateTime.Today;
-            this.isArchived = false;
+            this.archived = false;
+        }
+
+        //getter and setter
+        public int getId()
+        {
+            return id;
+        }
+
+        public String getWordLang1()
+        {
+            return wordLang1;
+        }
+
+        public void setWordLang1(String word)
+        {
+            if(!string.IsNullOrEmpty(word))
+            wordLang1 = word;
+        }
+
+        public String getWordLang2()
+        {
+            return wordLang2;
+        }
+
+        public void setWordLang2(String word)
+        {
+            if (!string.IsNullOrEmpty(word))
+                wordLang2 = word;
+        }
+
+        public String getMemo()
+        {
+            return memo;
+        }
+
+        public void setMemo(String memo)
+        {
+            if (!string.IsNullOrEmpty(memo))
+                this.memo = memo;
+        }
+
+        public DateTime getDateOfCreation()
+        {
+            return dateOfCreation;
+        }
+
+        public DateTime getLastCall()
+        {
+            return lastCall;
+        }
+
+        public void setLastCall(DateTime lastCall)
+        {
+            this.lastCall = lastCall;
+        }
+
+        public bool isArchived()
+        {
+            return archived;
+        }
+
+        public void setArchived(bool archived)
+        {
+            this.archived = archived;
         }
     }
 }

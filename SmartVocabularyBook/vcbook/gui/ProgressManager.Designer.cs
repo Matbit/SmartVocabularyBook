@@ -211,6 +211,7 @@
             this.btnAddVocabulary.TabIndex = 4;
             this.btnAddVocabulary.Text = "Vokabeln hinzufügen";
             this.btnAddVocabulary.UseVisualStyleBackColor = true;
+            this.btnAddVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
             // 
             // btnClearEntries
             // 

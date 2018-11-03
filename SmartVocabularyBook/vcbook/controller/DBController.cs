@@ -21,10 +21,8 @@ namespace SmartVocabularyBook.vcbook.controller
                 SQLiteConnection.CreateFile(dbFile);
 
             createTableVocabulary();
-            createTabelUser();
-            createTableTest();
-            
-            
+            createTableUser();
+            createTableTest();            
         }
 
         private bool doesDBExists()
@@ -43,7 +41,7 @@ namespace SmartVocabularyBook.vcbook.controller
 
         }
 
-        private void createTabelUser()
+        private void createTableUser()
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();

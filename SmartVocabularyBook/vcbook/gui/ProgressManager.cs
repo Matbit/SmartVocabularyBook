@@ -31,5 +31,12 @@ namespace SmartVocabularyBook.vcbook.gui
             frmMain.Show();
             this.Close();
         }
+
+        private void btnClearEntries_Click(object sender, EventArgs e)
+        {
+            tbxMainLang.Clear();
+            tbxNote.Clear();
+            tbxSecondLang.Clear();
+        }
     }
 }

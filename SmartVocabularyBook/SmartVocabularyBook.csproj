@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="vcbook\controller\DBController.cs" />
     <Compile Include="vcbook\controller\MenuControl.cs" />
+    <Compile Include="vcbook\controller\ProgressController.cs" />
     <Compile Include="vcbook\gui\GuiMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +92,7 @@
     <Compile Include="vcbook\gui\ProgressManager.Designer.cs">
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="vcbook\model\Vocabulary.cs" />
     <EmbeddedResource Include="vcbook\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,7 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="vcbook\data\" />
-    <Folder Include="vcbook\model\" />
     <Folder Include="vcbook\service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

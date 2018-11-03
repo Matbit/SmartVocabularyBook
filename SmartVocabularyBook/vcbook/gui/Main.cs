@@ -14,10 +14,14 @@ namespace SmartVocabularyBook
 {
     public partial class Main : Form
     {
+
+        private MenuControl menu;
+
         public Main()
         {
             InitializeComponent();
             openPanelMain();
+            menu = new MenuControl();
             DBController db = new DBController();
             db.initDB();            
         }
@@ -85,6 +89,11 @@ namespace SmartVocabularyBook
         private void btnOpenMain_Click(object sender, EventArgs e)
         {
             openPanelMain();
+        }
+
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menu.endApplication();
         }
     }
 }

@@ -15,13 +15,13 @@ namespace SmartVocabularyBook
     public partial class Main : Form
     {
 
-        private MenuControl menu;
+        private MenuController menu;
 
         public Main()
         {
             InitializeComponent();
             openPanelMain();
-            menu = new MenuControl();
+            menu = new MenuController();
             DBController db = new DBController();
             db.initDB();            
         }

@@ -7,14 +7,13 @@ using System.Windows.Forms;
 
 namespace SmartVocabularyBook.vcbook.controller
 {
-    public class MenuControl
+     class MenuController
     {
         public void endApplication()
         {
             Application.Exit();
         }
-
-        
+              
 
 
     }

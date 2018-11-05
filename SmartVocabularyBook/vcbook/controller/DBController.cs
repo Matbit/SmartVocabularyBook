@@ -83,6 +83,38 @@ namespace SmartVocabularyBook.vcbook.controller
         }
 
 
+        public List<Vocabulary> getAllVocabularies()
+        {
+
+            try
+            {
+                SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+                con.Open();
+                string sql = "SELECT * FROM vocabulary;";
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                List<Vocabulary> myVocs = new List<Vocabulary>();
+               
+                while (reader.Read())
+                {
+                    myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString()));
+                }
+                con.Close();
+
+                return myVocs;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                List<Vocabulary> myVocs = new List<Vocabulary>();
+                return myVocs;
+            }
+        }
+
+
 
     }
 }

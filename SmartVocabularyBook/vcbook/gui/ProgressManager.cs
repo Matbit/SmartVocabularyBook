@@ -1,5 +1,7 @@
 ﻿using SmartVocabularyBook.vcbook.controller;
+using SmartVocabularyBook.vcbook.model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,12 +18,42 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private Main frmMain;
         private ProgressController progressController;
+        private List<Vocabulary> myVocs;
+        private DBController dbController = new DBController();
 
         public ProgressManager(Main aMain)
         {
             InitializeComponent();
             frmMain = aMain;
+            addVocToListView();
         }
+
+        public void addVocToListView()
+        {
+            myVocs = dbController.getAllVocabularies();
+
+            //ListViewItem item = new ListViewItem();
+
+            
+
+            foreach (Vocabulary aVoc in myVocs)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = aVoc.getWordLang1();
+                item.SubItems.Add(aVoc.getWordLang2());
+                item.SubItems.Add(aVoc.getMemo());
+
+                listViewAllVocab.Items.Add(item);
+
+            }
+
+            
+
+
+
+        }
+
+        
 
         private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -44,6 +76,7 @@ namespace SmartVocabularyBook.vcbook.gui
             progressController = new ProgressController();
             progressController.validateNewVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text);
             clearAllTextboxes();
+            addVocToListView();
 
         }
 
@@ -52,6 +85,21 @@ namespace SmartVocabularyBook.vcbook.gui
             tbxMainLang.Clear();
             tbxNote.Clear();
             tbxSecondLang.Clear();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
+        {
+
         }
     }
 }

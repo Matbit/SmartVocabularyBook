@@ -16,7 +16,7 @@ namespace SmartVocabularyBook.vcbook.model
         private DateTime lastCall;
         private bool archived;
 
-
+        public Vocabulary() : this(null, null) { }
         public Vocabulary(String wordLang1, String wordLang2) : this(wordLang1, wordLang2, null) { }
         
 
@@ -71,6 +71,11 @@ namespace SmartVocabularyBook.vcbook.model
         public DateTime getDateOfCreation()
         {
             return dateOfCreation;
+        }
+
+        public void setDateOfCreation(DateTime date)
+        {
+            this.dateOfCreation = date;
         }
 
         public DateTime getLastCall()

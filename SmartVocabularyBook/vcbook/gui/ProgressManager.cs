@@ -1,5 +1,6 @@
 ﻿using SmartVocabularyBook.vcbook.controller;
 using SmartVocabularyBook.vcbook.model;
+using SmartVocabularyBook.vcbook.service;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace SmartVocabularyBook.vcbook.gui
     {
 
         private Main frmMain;
-        private ProgressController progressController;
+        private ProgressController progressController = new ProgressController();
         private List<Vocabulary> myVocs;
         private DBController dbController = new DBController();
+        private static VocabularyService service = new VocabularyService();
+
 
         public ProgressManager(Main aMain)
         {
@@ -48,9 +51,6 @@ namespace SmartVocabularyBook.vcbook.gui
             }
 
             
-
-
-
         }
 
         
@@ -98,6 +98,55 @@ namespace SmartVocabularyBook.vcbook.gui
         }
 
         private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
+        {
+
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSearchWord_Click(object sender, EventArgs e)
+        {
+            lbxDBResult.Items.Clear();
+            if (string.IsNullOrEmpty(tbxSearch.Text))
+            {
+                return;
+            }
+
+
+            try
+            {
+                List<Vocabulary> vocabularies = service.findAllBySearchTerm(tbxSearch.Text);
+
+                foreach(Vocabulary vocabulary in vocabularies)
+                {
+                    lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+
+            //List<Vocabulary> myVocabulary = new List<Vocabulary>();
+            Vocabulary vc = new Vocabulary();
+            //myVocabulary = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
+            //vc = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
+
+            //try
+            //{
+            //    lbxDBResult.Items.Add(vc.getWordLang1());
+            //}
+            //catch
+            //{
+            //    return;
+            //}
+               
+            
+        }
+
+        private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -8,7 +8,7 @@ namespace SmartVocabularyBook.vcbook.model
 {
    public class Vocabulary
     {
-        private int id;
+        private long id;
         private String wordLang1;
         private String wordLang2;
         private String memo;
@@ -17,11 +17,14 @@ namespace SmartVocabularyBook.vcbook.model
         private bool archived;
 
         public Vocabulary() : this(null, null) { }
-        public Vocabulary(String wordLang1, String wordLang2) : this(wordLang1, wordLang2, null) { }
-        
 
-        public Vocabulary(String wordLang1, String wordLang2, String memo)
+        public Vocabulary(String wordLang1, String wordLang2) : this(wordLang1, wordLang2, null, -1) { }
+
+        public Vocabulary(String wordLang1, String wordLang2, String memo) : this(wordLang1, wordLang2, memo, -1) { }
+
+        public Vocabulary(String wordLang1, String wordLang2, String memo, long id)
         {
+            this.id = id;
             this.wordLang1 = wordLang1;
             this.wordLang2 = wordLang2;
             this.memo = memo;
@@ -30,9 +33,14 @@ namespace SmartVocabularyBook.vcbook.model
         }
 
         //getter and setter
-        public int getId()
+        public long getId()
         {
             return id;
+        }
+
+        public void setId(long id)
+        {
+            this.id = id;
         }
 
         public String getWordLang1()

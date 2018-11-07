@@ -72,6 +72,7 @@
     <Compile Include="vcbook\controller\DBController.cs" />
     <Compile Include="vcbook\controller\MenuController.cs" />
     <Compile Include="vcbook\controller\ProgressController.cs" />
+    <Compile Include="vcbook\repository\VocabularyRepository.cs" />
     <Compile Include="vcbook\gui\GuiMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +94,7 @@
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </Compile>
     <Compile Include="vcbook\model\Vocabulary.cs" />
+    <Compile Include="vcbook\service\VocabularyService.cs" />
     <EmbeddedResource Include="vcbook\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,10 +127,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="vcbook\data\" />
-    <Folder Include="vcbook\service\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net451\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

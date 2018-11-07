@@ -114,6 +114,46 @@ namespace SmartVocabularyBook.vcbook.controller
             }
         }
 
+        public Vocabulary getOneVocabulary(String word)
+        {
+            try
+            {
+                SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+                con.Open();
+                string sql = "SELECT * FROM vocabulary WHERE wordLang1 LIKE '"+word+"%';";
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                                               
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                List<Vocabulary> myVocs = new List<Vocabulary>();
+                Vocabulary vc = new Vocabulary();
+
+                while (reader.Read())
+                {
+                    //myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), (int)reader["id"]));
+
+                    string idAsString = reader["id"].ToString();
+                    long idAsLong = 0L;
+                    long.TryParse(idAsString, out idAsLong);
+                  
+
+                    vc = new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong);
+                }
+                con.Close();
+
+                return vc;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"ERROR", MessageBoxButtons.OK);
+                //List<Vocabulary> myVocs = new List<Vocabulary>();
+                Vocabulary vc = new Vocabulary();
+                return vc;
+            }
+        
+
+        }
+
 
 
     }

@@ -1,4 +1,6 @@
 ﻿using SmartVocabularyBook.vcbook.model;
+using SmartVocabularyBook.vcbook.repository;
+using SmartVocabularyBook.vcbook.service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace SmartVocabularyBook.vcbook.controller
     {
 
         private DBController dbc = new DBController();
-
+        private static VocabularyService service = new VocabularyService();
 
         public void validateNewVocabulary(String word1, String word2, String memo)
         {
@@ -49,5 +51,30 @@ namespace SmartVocabularyBook.vcbook.controller
             if (ok)
                 MessageBox.Show("Neue Vokabel wurde erfolgreich hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        //validate user input in tab 2 "Vokabeln bearbeiten"
+        public Vocabulary validateSearchInFormProgressManager(String word)
+        {
+            List<Vocabulary> myVocs = new List<Vocabulary>();
+            Vocabulary vc = new Vocabulary();
+            if (!string.IsNullOrEmpty(word))
+            {
+                
+                try {
+                 //   return service.findAllBySearchTerm(word);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
+            }
+
+            // return dbc.getOneVocabulary(word);  
+            return dbc.getOneVocabulary(word);          
+        }
+
+
+
     }
 }

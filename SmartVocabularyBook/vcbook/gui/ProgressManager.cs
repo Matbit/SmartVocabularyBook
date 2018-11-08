@@ -33,9 +33,11 @@ namespace SmartVocabularyBook.vcbook.gui
 
         public void addVocToListView()
         {
-            myVocs = service.findAll();  
+            listViewAllVocab.Items.Clear();
+            List<Vocabulary> resultList = new List<Vocabulary>();
+            resultList = service.findAll();  
 
-            foreach (Vocabulary aVoc in myVocs)
+            foreach (Vocabulary aVoc in resultList)
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = aVoc.getWordLang1();
@@ -43,6 +45,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 item.SubItems.Add(aVoc.getMemo());
 
                 listViewAllVocab.Items.Add(item);
+                
 
             }
 
@@ -100,7 +103,40 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
-            
+            lbxDBResult.Items.Clear();
+            if (string.IsNullOrEmpty(tbxSearch.Text))
+            {
+                return;
+            }
+
+
+            try
+            {
+                List<Vocabulary> vocabularies = service.findAllBySearchTerm(tbxSearch.Text);
+
+                foreach (Vocabulary vocabulary in vocabularies)
+                {
+                    lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            //List<Vocabulary> myVocabulary = new List<Vocabulary>();
+            Vocabulary vc = new Vocabulary();
+            //myVocabulary = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
+            //vc = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
+
+            //try
+            //{
+            //    lbxDBResult.Items.Add(vc.getWordLang1());
+            //}
+            //catch
+            //{
+            //    return;
+            //}
         }
 
         private void btnSearchWord_Click(object sender, EventArgs e)

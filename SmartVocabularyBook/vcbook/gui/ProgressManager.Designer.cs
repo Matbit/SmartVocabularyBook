@@ -101,6 +101,7 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listViewAllVocab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAllVocab.Location = new System.Drawing.Point(7, 6);
             this.listViewAllVocab.Name = "listViewAllVocab";
             this.listViewAllVocab.Size = new System.Drawing.Size(772, 397);
@@ -112,7 +113,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Sprache 1";
-            this.columnHeader1.Width = 166;
+            this.columnHeader1.Width = 290;
             // 
             // columnHeader2
             // 

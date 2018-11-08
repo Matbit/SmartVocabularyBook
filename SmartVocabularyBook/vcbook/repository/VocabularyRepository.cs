@@ -13,7 +13,8 @@ namespace SmartVocabularyBook.vcbook.repository
 
         private const String dbFile = "svb.db";
 
-        public List<Vocabulary> getAll()
+        //finds all vocabularies in database
+        public List<Vocabulary> findAll()
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
@@ -32,6 +33,7 @@ namespace SmartVocabularyBook.vcbook.repository
             return myVocs;
         }
 
+        //finds all vocabularies by parameter
         public List<Vocabulary> findAllBySearchTerm(String word)
         {
 
@@ -46,8 +48,6 @@ namespace SmartVocabularyBook.vcbook.repository
 
             while (reader.Read())
             {
-                //myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), (int)reader["id"]));
-
                 string idAsString = reader["id"].ToString();
                 long idAsLong = 0L;
                 long.TryParse(idAsString, out idAsLong);
@@ -58,6 +58,20 @@ namespace SmartVocabularyBook.vcbook.repository
 
             return myVocs;
         }
+
+        //method to write new data (vocabulary) in db
+        public bool insertVocabulary(Vocabulary vc, String date, int archived)
+        {
+                SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+                con.Open();
+                string sql = "INSERT INTO vocabulary(wordLang1, wordLang2, memo, dateOfCreation, archived) VALUES ('" + vc.getWordLang1() + "', '" + vc.getWordLang2() +
+                            "', '" + vc.getMemo() + "', '" + date + "', '" + archived + "')";
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+         }      
+       
 
     }
 }

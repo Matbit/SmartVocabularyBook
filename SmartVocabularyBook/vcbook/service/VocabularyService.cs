@@ -14,10 +14,11 @@ namespace SmartVocabularyBook.vcbook.service
         private static VocabularyRepository repository = new VocabularyRepository();
 
         public List<Vocabulary> findAll() {
-            return repository.getAll();
+            return repository.findAll();
         }
 
 
+        
         public List<Vocabulary> findAllBySearchTerm(String word)
         {
             if (!string.IsNullOrEmpty(word))
@@ -25,6 +26,16 @@ namespace SmartVocabularyBook.vcbook.service
                 return repository.findAllBySearchTerm(word);
             }
             return new List<Vocabulary>();
+        }
+
+        public bool insertVocabulary(Vocabulary vc, String date, int archived)
+        {
+            if(vc != null && date != null)
+            {
+               return repository.insertVocabulary(vc, date, archived);
+               
+            }
+            return false;
         }
     }
 }

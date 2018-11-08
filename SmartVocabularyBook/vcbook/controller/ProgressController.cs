@@ -45,7 +45,7 @@ namespace SmartVocabularyBook.vcbook.controller
                 archived = 0;
             else archived = 1;
 
-            bool ok = dbc.insertNewVocabulary(vc, date, archived);
+            bool ok = service.insertVocabulary(vc, date, archived);
             if (!ok)
                 MessageBox.Show("Eingabe war leider nicht erfolgreich. Überprüfen Sie Ihre Angaben.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Error);
             if (ok)
@@ -53,7 +53,7 @@ namespace SmartVocabularyBook.vcbook.controller
         }
 
         //validate user input in tab 2 "Vokabeln bearbeiten"
-        public Vocabulary validateSearchInFormProgressManager(String word)
+        public List<Vocabulary> validateSearchInFormProgressManager(String word)
         {
             List<Vocabulary> myVocs = new List<Vocabulary>();
             Vocabulary vc = new Vocabulary();
@@ -71,7 +71,7 @@ namespace SmartVocabularyBook.vcbook.controller
             }
 
             // return dbc.getOneVocabulary(word);  
-            return dbc.getOneVocabulary(word);          
+            return service.findAllBySearchTerm(word);          
         }
 
 

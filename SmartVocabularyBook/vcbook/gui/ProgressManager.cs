@@ -19,7 +19,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private Main frmMain;
         private ProgressController progressController = new ProgressController();
-        private List<Vocabulary> myVocs;
+        private List<Vocabulary> myVocs = new List<Vocabulary>();
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
 
@@ -33,11 +33,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         public void addVocToListView()
         {
-            myVocs = dbController.getAllVocabularies();
-
-            //ListViewItem item = new ListViewItem();
-
-            
+            myVocs = service.findAll();  
 
             foreach (Vocabulary aVoc in myVocs)
             {
@@ -147,6 +143,11 @@ namespace SmartVocabularyBook.vcbook.gui
         }
 
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewAllVocab_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

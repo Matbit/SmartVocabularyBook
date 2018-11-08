@@ -107,6 +107,7 @@
             this.listViewAllVocab.TabIndex = 3;
             this.listViewAllVocab.UseCompatibleStateImageBehavior = false;
             this.listViewAllVocab.View = System.Windows.Forms.View.Details;
+            this.listViewAllVocab.SelectedIndexChanged += new System.EventHandler(this.listViewAllVocab_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

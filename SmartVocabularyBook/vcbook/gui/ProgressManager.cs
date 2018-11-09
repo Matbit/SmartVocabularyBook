@@ -117,6 +117,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 foreach (Vocabulary vocabulary in vocabularies)
                 {
                     lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                    
                 }
             }
             catch (Exception ex)

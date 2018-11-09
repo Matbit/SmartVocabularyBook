@@ -95,5 +95,10 @@ namespace SmartVocabularyBook
         {
             menu.endApplication();
         }
+
+        private void hauptmenüToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelMain();
+        }
     }
 }

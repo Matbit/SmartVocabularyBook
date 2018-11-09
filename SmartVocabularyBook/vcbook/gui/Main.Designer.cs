@@ -30,11 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnOpenMain = new System.Windows.Forms.Button();
-            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hauptmenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,10 +55,18 @@
             // dateiToolStripMenuItem
             // 
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hauptmenüToolStripMenuItem,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
+            // 
+            // beendenToolStripMenuItem
+            // 
+            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Text = "Beenden";
+            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // optionenToolStripMenuItem
             // 
@@ -88,12 +97,12 @@
             this.btnOpenMain.UseVisualStyleBackColor = true;
             this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
             // 
-            // beendenToolStripMenuItem
+            // hauptmenüToolStripMenuItem
             // 
-            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.beendenToolStripMenuItem.Text = "Beenden";
-            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
+            this.hauptmenüToolStripMenuItem.Name = "hauptmenüToolStripMenuItem";
+            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hauptmenüToolStripMenuItem.Text = "Hauptmenü";
+            this.hauptmenüToolStripMenuItem.Click += new System.EventHandler(this.hauptmenüToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -123,6 +132,7 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btnOpenMain;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hauptmenüToolStripMenuItem;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgressManager));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewAllVocab = new System.Windows.Forms.ListView();
@@ -62,6 +63,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -69,6 +72,7 @@
             this.grbxSerachVocabulry.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -197,6 +201,7 @@
             // 
             // grbxSerachVocabulry
             // 
+            this.grbxSerachVocabulry.Controls.Add(this.label9);
             this.grbxSerachVocabulry.Controls.Add(this.btnArchived);
             this.grbxSerachVocabulry.Controls.Add(this.btnDelete);
             this.grbxSerachVocabulry.Controls.Add(this.btnSearchWord);
@@ -231,7 +236,7 @@
             // 
             // btnSearchWord
             // 
-            this.btnSearchWord.Location = new System.Drawing.Point(205, 87);
+            this.btnSearchWord.Location = new System.Drawing.Point(199, 105);
             this.btnSearchWord.Name = "btnSearchWord";
             this.btnSearchWord.Size = new System.Drawing.Size(106, 23);
             this.btnSearchWord.TabIndex = 5;
@@ -250,7 +255,7 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(6, 90);
+            this.tbxSearch.Location = new System.Drawing.Point(6, 107);
             this.tbxSearch.MaxLength = 50;
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(162, 20);
@@ -393,6 +398,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -404,11 +410,32 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(339, 173);
+            this.label4.Location = new System.Drawing.Point(207, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(385, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 91);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Suche:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(246, 108);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(302, 283);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // ProgressManager
             // 
@@ -432,6 +459,7 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -471,5 +499,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

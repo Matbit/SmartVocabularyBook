@@ -18,18 +18,18 @@ namespace SmartVocabularyBook.vcbook.model
 
         public Vocabulary() : this(null, null) { }
 
-        public Vocabulary(String wordLang1, String wordLang2) : this(wordLang1, wordLang2, null, -1) { }
+        public Vocabulary(String wordLang1, String wordLang2) : this(wordLang1, wordLang2, null, -1, false) { }
 
-        public Vocabulary(String wordLang1, String wordLang2, String memo) : this(wordLang1, wordLang2, memo, -1) { }
+        public Vocabulary(String wordLang1, String wordLang2, String memo) : this(wordLang1, wordLang2, memo, -1, false) { }
 
-        public Vocabulary(String wordLang1, String wordLang2, String memo, long id)
+        public Vocabulary(String wordLang1, String wordLang2, String memo, long id, bool archived) 
         {
             this.id = id;
             this.wordLang1 = wordLang1;
             this.wordLang2 = wordLang2;
             this.memo = memo;
             this.dateOfCreation = DateTime.Today;
-            this.archived = false;
+            this.archived = archived;
         }
 
         //getter and setter

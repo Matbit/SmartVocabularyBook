@@ -254,6 +254,7 @@
             this.btnArchived.TabIndex = 7;
             this.btnArchived.Text = "Eintrag archivieren";
             this.btnArchived.UseVisualStyleBackColor = true;
+            this.btnArchived.Click += new System.EventHandler(this.btnArchived_Click);
             // 
             // btnDelete
             // 

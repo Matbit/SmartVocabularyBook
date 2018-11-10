@@ -35,7 +35,7 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             listViewAllVocab.Items.Clear();
             List<Vocabulary> resultList;
-            resultList = service.findAll();  
+            resultList = service.findAllActivated();  
 
             foreach (Vocabulary aVoc in resultList)
             {
@@ -74,8 +74,27 @@ namespace SmartVocabularyBook.vcbook.gui
             //when user input is alright, then add word to database
             if(validateNewVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text))
             {
-                addVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text);
-                addVocToListView();
+                //does voc already exists?
+                if (!doesVocabularyExits(staticVocabulary))
+                {   
+                    addVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text);
+                    addVocToListView();
+                }
+                else
+                {
+                    if (isVocabularyArchived(staticVocabulary))
+                    {   
+                        //set archived status false if voc exists -> so, user could see voc in list
+                        Vocabulary vc = service.findVocabularyByWord(staticVocabulary.getWordLang1());
+                        service.updateArchivedStatusById(vc, 0);
+                        addVocToListView();
+                        MessageBox.Show("Vokabel wurde aus dem Archiv zu Ihren aktiven Vokabeln hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else MessageBox.Show("Vokabel ist bereits vorhanden.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+
             }            
             clearAllTextboxes();
             
@@ -113,6 +132,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             lbxDBResult.Items.Clear();
+            clearAllTextboxes();
 
             
                 if (!string.IsNullOrEmpty(tbxSearch.Text))
@@ -196,6 +216,7 @@ namespace SmartVocabularyBook.vcbook.gui
                       
         }
 
+        //add vocabulary to database
         private void addVocabulary(String word1, String word2, String memo)
         {
             word1 = word1.Trim();
@@ -207,14 +228,51 @@ namespace SmartVocabularyBook.vcbook.gui
             String date = vc.getDateOfCreation().ToString();
             int archived;
             if (vc.isArchived())
-                archived = 0;
-            else archived = 1;
+                archived = 1;
+            else archived = 0;
 
-            bool ok = service.insertVocabulary(vc, date, archived);
-            if (!ok)
-                MessageBox.Show("Eingabe war leider nicht erfolgreich. Überprüfen Sie Ihre Angaben.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (ok)
+
+            try
+            {
+                service.insertVocabulary(vc, date, archived);
                 MessageBox.Show("Neue Vokabel wurde erfolgreich hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show(ex.Message + " \nEingabe war leider nicht erfolgreich. Überprüfen Sie Ihre Angaben.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            
+        }
+
+        //validate if vocabulary still exists
+        private bool doesVocabularyExits(Vocabulary newVocabulary)
+        {   
+            //returns an empty object if there are no result
+            Vocabulary vc = service.findVocabularyByWord(newVocabulary.getWordLang1());
+            if (!string.IsNullOrEmpty(vc.getWordLang1()))
+            {
+                if (vc.getWordLang2().Equals(newVocabulary.getWordLang2()))
+                    return true;   
+            }
+            return false;
+            
+        }
+
+        //validate if vocabulary is archived
+        private bool isVocabularyArchived(Vocabulary newVocabulary)
+        {
+            Vocabulary vc = service.findVocabularyByWord(newVocabulary.getWordLang1());
+            if (!string.IsNullOrEmpty(vc.getWordLang1()))
+            {
+                if (vc.isArchived())
+                {
+                    return true;
+                }
+                    
+            }
+            return false;
+
         }
 
 
@@ -243,6 +301,7 @@ namespace SmartVocabularyBook.vcbook.gui
             
         }
 
+        //delete vocabulary from database
         private void btnDelete_Click(object sender, EventArgs e)
         {
             String word = lbxDBResult.SelectedItem.ToString();
@@ -261,8 +320,13 @@ namespace SmartVocabularyBook.vcbook.gui
                         addVocToListView();
                         clearAllTextboxes();
                         tbxSearch.Text = "";
-                        MessageBox.Show("Vokabelsatz \"" + staticVocabulary.getWordLang1() + "\" wurde erfolgreich gelöscht");                        
+                        MessageBox.Show("Vokabelsatz \"" + staticVocabulary.getWordLang1() + "\" wurde erfolgreich gelöscht.");                        
                     }
+                    
+                }
+                else
+                {                       
+                    clearAllTextboxes();
                 }
             }
             catch (Exception exception)
@@ -271,6 +335,41 @@ namespace SmartVocabularyBook.vcbook.gui
             }
 
             
+        }
+
+        //archived vocabulary
+        private void btnArchived_Click(object sender, EventArgs e)
+        {
+            String word = lbxDBResult.SelectedItem.ToString();
+
+            try
+            {
+                staticVocabulary = service.findVocabularyByWord(word);
+
+                DialogResult dr = MessageBox.Show("Möchten Sie diesen Vokabelsatz wirklich archivieren?\n" + staticVocabulary.getWordLang1() + " - " +
+                         staticVocabulary.getWordLang2(), "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
+                {   
+                    //set 1 because vocabulary should be archived
+                    if (service.updateArchivedStatusById(staticVocabulary, 1))
+                    {
+                        addVocToListView();
+                        clearAllTextboxes();
+                        tbxSearch.Text = "";
+                        MessageBox.Show("Vokabelsatz \"" + staticVocabulary.getWordLang1() + "\" wurde erfolgreich archiviert.");
+                    }
+
+                }
+                else
+                {
+                    clearAllTextboxes();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

@@ -65,5 +65,24 @@ namespace SmartVocabularyBook.vcbook.service
             }
             return false;
         }
+
+        public bool updateArchivedStatusById(Vocabulary vc, int archived)
+        {
+            if(vc != null)
+            {
+                return repository.updateArchivedStatusById(vc, archived);
+            }
+            return false;
+        }
+
+        public List<Vocabulary> findAllArchived()
+        {
+            return repository.findAllArchived();
+        }
+
+        public List<Vocabulary> findAllActivated()
+        {
+            return repository.findAllActivated();
+        }
     }
 }

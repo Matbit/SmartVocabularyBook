@@ -159,7 +159,6 @@ namespace SmartVocabularyBook.vcbook.repository
             SQLiteDataReader reader = cmd.ExecuteReader();
 
             Vocabulary vc;
-            Vocabulary vocabulary = new Vocabulary();
             List<Vocabulary> myVocs = new List<Vocabulary>();
 
             while (reader.Read())

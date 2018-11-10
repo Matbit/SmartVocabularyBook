@@ -134,25 +134,31 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             lbxDBResult.Items.Clear();
             clearAllTextboxes();
+            staticVocabularyList.Clear();
 
             
                 if (!string.IsNullOrEmpty(tbxSearch.Text))
                 {
                     try
                     {
-                        List<Vocabulary> vocabularies;
+                        
                         if (rbtnMainLang.Checked)
                         {
-                            vocabularies = service.findAllBySearchTerm(tbxSearch.Text, true);
+                            staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, true);
                         }
-                        else  vocabularies = service.findAllBySearchTerm(tbxSearch.Text, false);
+                        else  staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, false);
 
 
-                    foreach (Vocabulary vocabulary in vocabularies)
-                        {   
-                            if(rbtnMainLang.Checked)
-                                lbxDBResult.Items.Add(vocabulary.getWordLang1());
-                                else lbxDBResult.Items.Add(vocabulary.getWordLang2());
+                    foreach (Vocabulary vocabulary in staticVocabularyList)
+                        {
+                        if (rbtnMainLang.Checked)
+                        {
+                            lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                        }
+                        else
+                        {
+                            lbxDBResult.Items.Add(vocabulary.getWordLang2());
+                        }
 
                         }
                     }
@@ -175,16 +181,19 @@ namespace SmartVocabularyBook.vcbook.gui
         {
 
             String word = lbxDBResult.SelectedItem.ToString();
+            
             try
             {
-                staticVocabularyList = service.findVocabularyByWordList(word);
+                // bool mainLanguage = rbtnMainLang.Checked;
+                //staticVocabulary = service.findVocabularyByWordList(word);
+                int index = lbxDBResult.SelectedIndex;
+                Vocabulary result = new Vocabulary();
+                result = staticVocabularyList[index];
 
-                foreach (Vocabulary vocabulary in staticVocabularyList)
-                {
-                    tbxDataMainLang.Text = vocabulary.getWordLang1();
-                    tbxDataSecondLang.Text = vocabulary.getWordLang2();
-                    tbxDataMemo.Text = vocabulary.getMemo();
-                }
+                tbxDataMainLang.Text = result.getWordLang1();
+                    tbxDataSecondLang.Text = result.getWordLang2();
+                    tbxDataMemo.Text = result.getMemo();
+               
                 
             }
             catch (Exception exception)

@@ -19,11 +19,11 @@ namespace SmartVocabularyBook.vcbook.service
 
 
         
-        public List<Vocabulary> findAllBySearchTerm(String word)
+        public List<Vocabulary> findAllBySearchTerm(String word, bool isMainLanguage)
         {
             if (!string.IsNullOrEmpty(word))
             {
-                return repository.findAllBySearchTerm(word);
+                return repository.findAllBySearchTerm(word, isMainLanguage); 
             }
             return new List<Vocabulary>();
         }

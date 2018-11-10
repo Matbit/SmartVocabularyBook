@@ -65,6 +65,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbxDataMemo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -144,6 +146,8 @@
             // 
             // grbxChangeVocabulary
             // 
+            this.grbxChangeVocabulary.Controls.Add(this.label10);
+            this.grbxChangeVocabulary.Controls.Add(this.tbxDataMemo);
             this.grbxChangeVocabulary.Controls.Add(this.label1);
             this.grbxChangeVocabulary.Controls.Add(this.btnSaveWord);
             this.grbxChangeVocabulary.Controls.Add(this.tbxDataMainLang);
@@ -167,12 +171,13 @@
             // 
             // btnSaveWord
             // 
-            this.btnSaveWord.Location = new System.Drawing.Point(196, 108);
+            this.btnSaveWord.Location = new System.Drawing.Point(216, 197);
             this.btnSaveWord.Name = "btnSaveWord";
             this.btnSaveWord.Size = new System.Drawing.Size(162, 51);
             this.btnSaveWord.TabIndex = 12;
             this.btnSaveWord.Text = "Änderungen Speichern";
             this.btnSaveWord.UseVisualStyleBackColor = true;
+            this.btnSaveWord.Click += new System.EventHandler(this.btnSaveWord_Click);
             // 
             // tbxDataMainLang
             // 
@@ -381,18 +386,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(38, 136);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Übersetzung";
+            this.label6.Text = "Übersetzung*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(31, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Hauptsprache";
+            this.label5.Text = "Hauptsprache*";
             // 
             // label3
             // 
@@ -437,6 +442,22 @@
             this.label4.Size = new System.Drawing.Size(385, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
+            // 
+            // tbxDataMemo
+            // 
+            this.tbxDataMemo.Location = new System.Drawing.Point(9, 124);
+            this.tbxDataMemo.Name = "tbxDataMemo";
+            this.tbxDataMemo.Size = new System.Drawing.Size(349, 20);
+            this.tbxDataMemo.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 99);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Notiz";
             // 
             // ProgressManager
             // 
@@ -502,5 +523,7 @@
         private System.Windows.Forms.TextBox tbxDataSecondLang;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbxDataMemo;
     }
 }

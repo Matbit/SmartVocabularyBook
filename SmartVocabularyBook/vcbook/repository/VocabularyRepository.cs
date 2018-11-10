@@ -34,12 +34,22 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds all vocabularies by parameter
-        public List<Vocabulary> findAllBySearchTerm(String word)
+        public List<Vocabulary> findAllBySearchTerm(String word, bool isMainLanguage)
         {
+            string sql = "";
+
+            if (isMainLanguage)
+            {
+                sql = "SELECT * FROM vocabulary WHERE (wordLang1 LIKE '" + word + "%');";
+            }
+            else if (!isMainLanguage)
+            {
+                sql = "SELECT * FROM vocabulary WHERE (wordLang2 LIKE '" + word + "%');";
+            }
 
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE (wordLang1 LIKE '" + word + "%') OR (wordLang2 LIKE '" + word + "%');";
+            
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             SQLiteDataReader reader = cmd.ExecuteReader();

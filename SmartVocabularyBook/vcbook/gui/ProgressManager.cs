@@ -18,7 +18,6 @@ namespace SmartVocabularyBook.vcbook.gui
     {
 
         private Main frmMain;
-        private ProgressController progressController = new ProgressController();
         private List<Vocabulary> myVocs = new List<Vocabulary>();
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
@@ -35,7 +34,7 @@ namespace SmartVocabularyBook.vcbook.gui
         public void addVocToListView()
         {
             listViewAllVocab.Items.Clear();
-            List<Vocabulary> resultList = new List<Vocabulary>();
+            List<Vocabulary> resultList;
             resultList = service.findAll();  
 
             foreach (Vocabulary aVoc in resultList)
@@ -45,8 +44,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 item.SubItems.Add(aVoc.getWordLang2());
                 item.SubItems.Add(aVoc.getMemo());
 
-                listViewAllVocab.Items.Add(item);
-                
+                listViewAllVocab.Items.Add(item);               
 
             }
 
@@ -73,10 +71,14 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnAddVocabulary_Click(object sender, EventArgs e)
         {
-            progressController = new ProgressController();
-            progressController.validateNewVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text);
+            //when user input is alright, then add word to database
+            if(validateNewVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text))
+            {
+                addVocabulary(tbxMainLang.Text, tbxSecondLang.Text, tbxNote.Text);
+                addVocToListView();
+            }            
             clearAllTextboxes();
-            addVocToListView();
+            
 
         }
 
@@ -102,6 +104,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         }
 
+        //search by user
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             lbxDBResult.Items.Clear();
@@ -111,63 +114,33 @@ namespace SmartVocabularyBook.vcbook.gui
                 {
                     try
                     {
-                        List<Vocabulary> vocabularies = service.findAllBySearchTerm(tbxSearch.Text);
+                        List<Vocabulary> vocabularies;
+                        if (rbtnMainLang.Checked)
+                        {
+                            vocabularies = service.findAllBySearchTerm(tbxSearch.Text, true);
+                        }
+                        else  vocabularies = service.findAllBySearchTerm(tbxSearch.Text, false);
 
-                        foreach (Vocabulary vocabulary in vocabularies)
+
+                    foreach (Vocabulary vocabulary in vocabularies)
                         {   
                             if(rbtnMainLang.Checked)
-                            lbxDBResult.Items.Add(vocabulary.getWordLang1());
-                            else lbxDBResult.Items.Add(vocabulary.getWordLang2());
+                                lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                                else lbxDBResult.Items.Add(vocabulary.getWordLang2());
 
-                    }
+                        }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    
-
-           
-
             }
             
         }
 
         private void btnSearchWord_Click(object sender, EventArgs e)
         {
-            lbxDBResult.Items.Clear();
-            if (string.IsNullOrEmpty(tbxSearch.Text))
-            {
-                return;
-            }
-
-
-            try
-            {
-                List<Vocabulary> vocabularies = service.findAllBySearchTerm(tbxSearch.Text);
-
-                foreach(Vocabulary vocabulary in vocabularies)
-                {
-                    lbxDBResult.Items.Add(vocabulary.getWordLang1());
-                }
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-
-            //List<Vocabulary> myVocabulary = new List<Vocabulary>();
-            Vocabulary vc = new Vocabulary();
-            //myVocabulary = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
-            //vc = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
-
-            //try
-            //{
-            //    lbxDBResult.Items.Add(vc.getWordLang1());
-            //}
-            //catch
-            //{
-            //    return;
-            //}
+            //button is currently unused
                
             
         }
@@ -181,6 +154,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 staticVocabulary = service.findVocabularyByWord(word);
                 tbxDataMainLang.Text = staticVocabulary.getWordLang1();
                 tbxDataSecondLang.Text = staticVocabulary.getWordLang2();
+                tbxDataMemo.Text = staticVocabulary.getMemo();
             }
             catch (Exception exception)
             {
@@ -188,9 +162,63 @@ namespace SmartVocabularyBook.vcbook.gui
             }
         }
 
+        private bool validateNewVocabulary(String word1, String word2, String memo)
+        {
+            word1 = word1.Trim();
+            word2 = word2.Trim();
+            memo = memo.Trim();
+
+            if (string.IsNullOrEmpty(word1))
+            {
+                MessageBox.Show("Hauptsprache muss ausgefüllt werden", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrEmpty(word2))
+            {
+                MessageBox.Show("Übersetzung muss ausgefüllt werden", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (string.IsNullOrEmpty(memo))
+            {
+                memo = "";                
+            }
+
+            return true;
+                      
+        }
+
+        private void addVocabulary(String word1, String word2, String memo)
+        {
+            word1 = word1.Trim();
+            word2 = word2.Trim();
+            memo = memo.Trim();
+
+            Vocabulary vc = new Vocabulary(word1, word2, memo);
+
+            String date = vc.getDateOfCreation().ToString();
+            int archived;
+            if (vc.isArchived())
+                archived = 0;
+            else archived = 1;
+
+            bool ok = service.insertVocabulary(vc, date, archived);
+            if (!ok)
+                MessageBox.Show("Eingabe war leider nicht erfolgreich. Überprüfen Sie Ihre Angaben.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (ok)
+                MessageBox.Show("Neue Vokabel wurde erfolgreich hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+
         private void listViewAllVocab_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveWord_Click(object sender, EventArgs e)
+        {
+            validateNewVocabulary(tbxDataMainLang.Text, tbxDataSecondLang.Text, tbxDataMemo.Text);
+            MessageBox.Show(staticVocabulary.getId().ToString());
         }
     }
 }

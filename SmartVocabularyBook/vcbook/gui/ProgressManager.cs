@@ -391,7 +391,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void llOpenBrowser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            String url = "https://www.dict.cc";
+            const String url = "https://www.dict.cc";
 
             try
             {

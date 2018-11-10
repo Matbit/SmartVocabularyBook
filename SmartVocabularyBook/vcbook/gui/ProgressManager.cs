@@ -22,6 +22,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static Vocabulary staticVocabulary = new Vocabulary();
+        private static List<Vocabulary> staticVocabularyList = new List<Vocabulary>();
 
 
         public ProgressManager(Main aMain)
@@ -35,7 +36,8 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             listViewAllVocab.Items.Clear();
             List<Vocabulary> resultList;
-            resultList = service.findAllActivated();  
+            resultList = service.findAllActivated();
+            
 
             foreach (Vocabulary aVoc in resultList)
             {
@@ -44,8 +46,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 item.SubItems.Add(aVoc.getWordLang2());
                 item.SubItems.Add(aVoc.getMemo());
 
-                listViewAllVocab.Items.Add(item);               
-
+                listViewAllVocab.Items.Add(item);
             }
 
             
@@ -172,20 +173,27 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String word = lbxDBResult.SelectedItem.ToString();
 
+            String word = lbxDBResult.SelectedItem.ToString();
             try
             {
-                staticVocabulary = service.findVocabularyByWord(word);
-                tbxDataMainLang.Text = staticVocabulary.getWordLang1();
-                tbxDataSecondLang.Text = staticVocabulary.getWordLang2();
-                tbxDataMemo.Text = staticVocabulary.getMemo();
+                staticVocabularyList = service.findVocabularyByWordList(word);
+
+                foreach (Vocabulary vocabulary in staticVocabularyList)
+                {
+                    tbxDataMainLang.Text = vocabulary.getWordLang1();
+                    tbxDataSecondLang.Text = vocabulary.getWordLang2();
+                    tbxDataMemo.Text = vocabulary.getMemo();
+                }
+                
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
         }
+
+       
 
         private bool validateNewVocabulary(String word1, String word2, String memo)
         {

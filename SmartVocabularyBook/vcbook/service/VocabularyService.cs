@@ -48,6 +48,15 @@ namespace SmartVocabularyBook.vcbook.service
             return new Vocabulary();
         }
 
+        public List<Vocabulary> findVocabularyByWordList(String word)
+        {
+            if (!string.IsNullOrEmpty(word))
+            {
+                return repository.findVocabularyByWordList(word);
+            }
+            return new List<Vocabulary>();
+        }
+
         public bool updateVocabularyById(Vocabulary vc)
         {
             if(vc != null)

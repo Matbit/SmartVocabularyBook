@@ -149,6 +149,43 @@ namespace SmartVocabularyBook.vcbook.repository
             return vocabulary;
         }
 
+        public List<Vocabulary> findVocabularyByWordList(String word)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM vocabulary WHERE wordLang1 = '" + word + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            Vocabulary vc;
+            Vocabulary vocabulary = new Vocabulary();
+            List<Vocabulary> myVocs = new List<Vocabulary>();
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                bool archivedAsBool = false;
+                string archivedAsString = reader["archived"].ToString();
+                if (archivedAsString.Equals("1"))
+                {
+                    archivedAsBool = true;
+                }
+                //bool.TryParse(archivedAsString, out archivedAsBool);
+
+                vc = new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong, archivedAsBool);
+                myVocs.Add(vc);
+            }
+            con.Close();
+
+            return myVocs;
+        }
+
+
+
         //method to write new data (vocabulary) in db
         public bool insertVocabulary(Vocabulary vc, String date, int archived)
         {

@@ -55,6 +55,7 @@
             this.rbtnSecondLang = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.llClose = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.browser = new System.Windows.Forms.WebBrowser();
             this.btnClearEntries = new System.Windows.Forms.Button();
@@ -68,7 +69,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.llClose = new System.Windows.Forms.LinkLabel();
+            this.btnShowActiveVocabularies = new System.Windows.Forms.Button();
+            this.btnShowArchivedVocabularies = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -94,6 +96,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.tabPage1.Controls.Add(this.btnShowArchivedVocabularies);
+            this.tabPage1.Controls.Add(this.btnShowActiveVocabularies);
             this.tabPage1.Controls.Add(this.listViewAllVocab);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -351,6 +355,18 @@
             this.tabPage3.Text = "Neue Vokabeln hinzufügen";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // llClose
+            // 
+            this.llClose.AutoSize = true;
+            this.llClose.Location = new System.Drawing.Point(183, 452);
+            this.llClose.Name = "llClose";
+            this.llClose.Size = new System.Drawing.Size(68, 13);
+            this.llClose.TabIndex = 7;
+            this.llClose.TabStop = true;
+            this.llClose.Text = "ausblenden..";
+            this.llClose.Visible = false;
+            this.llClose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llClose_LinkClicked);
+            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -364,9 +380,7 @@
             // 
             // browser
             // 
-            this.browser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.browser.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.browser.Location = new System.Drawing.Point(257, 12);
             this.browser.MinimumSize = new System.Drawing.Size(20, 20);
             this.browser.Name = "browser";
@@ -479,17 +493,25 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
             // 
-            // llClose
+            // btnShowActiveVocabularies
             // 
-            this.llClose.AutoSize = true;
-            this.llClose.Location = new System.Drawing.Point(183, 452);
-            this.llClose.Name = "llClose";
-            this.llClose.Size = new System.Drawing.Size(68, 13);
-            this.llClose.TabIndex = 7;
-            this.llClose.TabStop = true;
-            this.llClose.Text = "ausblenden..";
-            this.llClose.Visible = false;
-            this.llClose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llClose_LinkClicked);
+            this.btnShowActiveVocabularies.Location = new System.Drawing.Point(17, 409);
+            this.btnShowActiveVocabularies.Name = "btnShowActiveVocabularies";
+            this.btnShowActiveVocabularies.Size = new System.Drawing.Size(113, 56);
+            this.btnShowActiveVocabularies.TabIndex = 4;
+            this.btnShowActiveVocabularies.Text = "Aktive Vokabeln";
+            this.btnShowActiveVocabularies.UseVisualStyleBackColor = true;
+            this.btnShowActiveVocabularies.Click += new System.EventHandler(this.btnShowActiveVocabularies_Click);
+            // 
+            // btnShowArchivedVocabularies
+            // 
+            this.btnShowArchivedVocabularies.Location = new System.Drawing.Point(172, 409);
+            this.btnShowArchivedVocabularies.Name = "btnShowArchivedVocabularies";
+            this.btnShowArchivedVocabularies.Size = new System.Drawing.Size(113, 56);
+            this.btnShowArchivedVocabularies.TabIndex = 5;
+            this.btnShowArchivedVocabularies.Text = "Archivierte Vokabeln";
+            this.btnShowArchivedVocabularies.UseVisualStyleBackColor = true;
+            this.btnShowArchivedVocabularies.Click += new System.EventHandler(this.btnShowArchivedVocabularies_Click);
             // 
             // ProgressManager
             // 
@@ -559,5 +581,7 @@
         private System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel llClose;
+        private System.Windows.Forms.Button btnShowArchivedVocabularies;
+        private System.Windows.Forms.Button btnShowActiveVocabularies;
     }
 }

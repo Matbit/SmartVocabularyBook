@@ -48,11 +48,37 @@ namespace SmartVocabularyBook.vcbook.gui
 
                 listViewAllVocab.Items.Add(item);
             }
-
-            
         }
 
-        
+        public void addArchivedVocToListView()
+        {
+            listViewAllVocab.Items.Clear();
+            List<Vocabulary> resultList;
+            resultList = service.findAllArchived();
+
+
+            foreach (Vocabulary aVoc in resultList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = aVoc.getWordLang1();
+                item.SubItems.Add(aVoc.getWordLang2());
+                item.SubItems.Add(aVoc.getMemo());
+
+                listViewAllVocab.Items.Add(item);
+            }
+        }
+
+        private void btnShowActiveVocabularies_Click(object sender, EventArgs e)
+        {
+            addVocToListView();
+        }
+
+        private void btnShowArchivedVocabularies_Click(object sender, EventArgs e)
+        {
+            addArchivedVocToListView();
+        }
+
+
 
         private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -149,17 +175,16 @@ namespace SmartVocabularyBook.vcbook.gui
                         else  staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, false);
 
 
-                    foreach (Vocabulary vocabulary in staticVocabularyList)
+                        foreach (Vocabulary vocabulary in staticVocabularyList)
                         {
-                        if (rbtnMainLang.Checked)
-                        {
-                            lbxDBResult.Items.Add(vocabulary.getWordLang1());
-                        }
-                        else
-                        {
-                            lbxDBResult.Items.Add(vocabulary.getWordLang2());
-                        }
-
+                            if (rbtnMainLang.Checked)
+                            {
+                                lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                            }
+                            else
+                            {
+                                lbxDBResult.Items.Add(vocabulary.getWordLang2());
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -173,8 +198,6 @@ namespace SmartVocabularyBook.vcbook.gui
         private void btnSearchWord_Click(object sender, EventArgs e)
         {
             //button is currently unused
-               
-            
         }
 
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,16 +216,12 @@ namespace SmartVocabularyBook.vcbook.gui
                 tbxDataMainLang.Text = result.getWordLang1();
                     tbxDataSecondLang.Text = result.getWordLang2();
                     tbxDataMemo.Text = result.getMemo();
-               
-                
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
         }
-
-       
 
         private bool validateNewVocabulary(String word1, String word2, String memo)
         {
@@ -229,8 +248,7 @@ namespace SmartVocabularyBook.vcbook.gui
             staticVocabulary.setWordLang2(word2);
             staticVocabulary.setMemo(memo);
 
-            return true;
-                      
+            return true;                      
         }
 
         //add vocabulary to database
@@ -258,8 +276,6 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                  MessageBox.Show(ex.Message + " \nEingabe war leider nicht erfolgreich. Überprüfen Sie Ihre Angaben.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
         }
 
         //validate if vocabulary still exists
@@ -272,8 +288,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 if (vc.getWordLang2().Equals(newVocabulary.getWordLang2()))
                     return true;   
             }
-            return false;
-            
+            return false;            
         }
 
         //validate if vocabulary is archived
@@ -285,14 +300,10 @@ namespace SmartVocabularyBook.vcbook.gui
                 if (vc.isArchived())
                 {
                     return true;
-                }
-                    
+                }                    
             }
             return false;
-
         }
-
-
 
         private void listViewAllVocab_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -338,8 +349,7 @@ namespace SmartVocabularyBook.vcbook.gui
                         clearAllTextboxes();
                         tbxSearch.Text = "";
                         MessageBox.Show("Vokabelsatz \"" + staticVocabulary.getWordLang1() + "\" wurde erfolgreich gelöscht.");                        
-                    }
-                    
+                    }                    
                 }
                 else
                 {                       
@@ -349,9 +359,7 @@ namespace SmartVocabularyBook.vcbook.gui
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
-            }
-
-            
+            }            
         }
 
         //archived vocabulary
@@ -376,7 +384,6 @@ namespace SmartVocabularyBook.vcbook.gui
                         tbxSearch.Text = "";
                         MessageBox.Show("Vokabelsatz \"" + staticVocabulary.getWordLang1() + "\" wurde erfolgreich archiviert.");
                     }
-
                 }
                 else
                 {
@@ -404,8 +411,6 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 MessageBox.Show(ex.Message);
             }
-            
-
         }
 
         private void llClose_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -419,5 +424,7 @@ namespace SmartVocabularyBook.vcbook.gui
             browser.Visible = false;
             llClose.Visible = false;
         }
+
+        
     }
 }

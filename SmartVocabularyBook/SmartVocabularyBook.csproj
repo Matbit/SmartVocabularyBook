@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="vcbook\controller\DBController.cs" />
-    <Compile Include="vcbook\controller\MenuController.cs" />
     <Compile Include="vcbook\repository\VocabularyRepository.cs" />
     <Compile Include="vcbook\gui\GuiMain.cs">
       <SubType>Form</SubType>

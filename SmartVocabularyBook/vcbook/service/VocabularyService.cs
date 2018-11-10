@@ -37,5 +37,15 @@ namespace SmartVocabularyBook.vcbook.service
             }
             return false;
         }
+
+        public Vocabulary findVocabularyByWord(String word)
+        {
+            if (!string.IsNullOrEmpty(word))
+            {
+                return repository.findVocabularyByWord(word);
+            }
+
+            return new Vocabulary();
+        }
     }
 }

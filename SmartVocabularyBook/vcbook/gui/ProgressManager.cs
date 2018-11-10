@@ -22,6 +22,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private List<Vocabulary> myVocs = new List<Vocabulary>();
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
+        private static Vocabulary staticVocabulary = new Vocabulary();
 
 
         public ProgressManager(Main aMain)
@@ -104,40 +105,32 @@ namespace SmartVocabularyBook.vcbook.gui
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             lbxDBResult.Items.Clear();
-            if (string.IsNullOrEmpty(tbxSearch.Text))
-            {
-                return;
-            }
 
-
-            try
-            {
-                List<Vocabulary> vocabularies = service.findAllBySearchTerm(tbxSearch.Text);
-
-                foreach (Vocabulary vocabulary in vocabularies)
+            
+                if (!string.IsNullOrEmpty(tbxSearch.Text))
                 {
-                    lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                    try
+                    {
+                        List<Vocabulary> vocabularies = service.findAllBySearchTerm(tbxSearch.Text);
+
+                        foreach (Vocabulary vocabulary in vocabularies)
+                        {   
+                            if(rbtnMainLang.Checked)
+                            lbxDBResult.Items.Add(vocabulary.getWordLang1());
+                            else lbxDBResult.Items.Add(vocabulary.getWordLang2());
+
+                    }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
-            //List<Vocabulary> myVocabulary = new List<Vocabulary>();
-            Vocabulary vc = new Vocabulary();
-            //myVocabulary = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
-            //vc = progressController.validateSearchInFormProgressManager(tbxSearch.Text);
+           
 
-            //try
-            //{
-            //    lbxDBResult.Items.Add(vc.getWordLang1());
-            //}
-            //catch
-            //{
-            //    return;
-            //}
+            }
+            
         }
 
         private void btnSearchWord_Click(object sender, EventArgs e)
@@ -181,7 +174,18 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
         {
+            String word = lbxDBResult.SelectedItem.ToString();
 
+            try
+            {
+                staticVocabulary = service.findVocabularyByWord(word);
+                tbxDataMainLang.Text = staticVocabulary.getWordLang1();
+                tbxDataSecondLang.Text = staticVocabulary.getWordLang2();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void listViewAllVocab_SelectedIndexChanged(object sender, EventArgs e)

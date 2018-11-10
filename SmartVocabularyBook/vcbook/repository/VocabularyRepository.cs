@@ -39,7 +39,7 @@ namespace SmartVocabularyBook.vcbook.repository
 
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE wordLang1 LIKE '" + word + "%';";
+            string sql = "SELECT * FROM vocabulary WHERE (wordLang1 LIKE '" + word + "%') OR (wordLang2 LIKE '" + word + "%');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             SQLiteDataReader reader = cmd.ExecuteReader();
@@ -70,7 +70,34 @@ namespace SmartVocabularyBook.vcbook.repository
                 cmd.ExecuteNonQuery();
                 con.Close();
                 return true;
-         }      
+         }
+        
+        //method to find one vocabulary
+        public Vocabulary findVocabularyByWord(String word)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM vocabulary WHERE wordLang1 = '" + word + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            Vocabulary vc;
+            Vocabulary vocabulary = new Vocabulary();             
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                vc = new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong);
+                vocabulary = vc;
+            }
+            con.Close();
+
+            return vocabulary;
+        }    
        
 
     }

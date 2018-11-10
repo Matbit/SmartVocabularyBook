@@ -39,10 +39,11 @@
             this.grbxChangeVocabulary = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveWord = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbxDataMainLang = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbxDataSecondLang = new System.Windows.Forms.TextBox();
             this.grbxSerachVocabulry = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnArchived = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearchWord = new System.Windows.Forms.Button();
@@ -62,9 +63,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -146,10 +146,10 @@
             // 
             this.grbxChangeVocabulary.Controls.Add(this.label1);
             this.grbxChangeVocabulary.Controls.Add(this.btnSaveWord);
-            this.grbxChangeVocabulary.Controls.Add(this.textBox3);
+            this.grbxChangeVocabulary.Controls.Add(this.tbxDataMainLang);
             this.grbxChangeVocabulary.Controls.Add(this.label8);
-            this.grbxChangeVocabulary.Controls.Add(this.textBox2);
-            this.grbxChangeVocabulary.Location = new System.Drawing.Point(362, 182);
+            this.grbxChangeVocabulary.Controls.Add(this.tbxDataSecondLang);
+            this.grbxChangeVocabulary.Location = new System.Drawing.Point(471, 58);
             this.grbxChangeVocabulary.Name = "grbxChangeVocabulary";
             this.grbxChangeVocabulary.Size = new System.Drawing.Size(384, 254);
             this.grbxChangeVocabulary.TabIndex = 13;
@@ -174,13 +174,13 @@
             this.btnSaveWord.Text = "Änderungen Speichern";
             this.btnSaveWord.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tbxDataMainLang
             // 
-            this.textBox3.Location = new System.Drawing.Point(9, 67);
-            this.textBox3.MaxLength = 50;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 20);
-            this.textBox3.TabIndex = 11;
+            this.tbxDataMainLang.Location = new System.Drawing.Point(9, 67);
+            this.tbxDataMainLang.MaxLength = 50;
+            this.tbxDataMainLang.Name = "tbxDataMainLang";
+            this.tbxDataMainLang.Size = new System.Drawing.Size(162, 20);
+            this.tbxDataMainLang.TabIndex = 11;
             // 
             // label8
             // 
@@ -191,13 +191,13 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Übersetzung";
             // 
-            // textBox2
+            // tbxDataSecondLang
             // 
-            this.textBox2.Location = new System.Drawing.Point(196, 67);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 10;
+            this.tbxDataSecondLang.Location = new System.Drawing.Point(196, 67);
+            this.tbxDataSecondLang.MaxLength = 50;
+            this.tbxDataSecondLang.Name = "tbxDataSecondLang";
+            this.tbxDataSecondLang.Size = new System.Drawing.Size(162, 20);
+            this.tbxDataSecondLang.TabIndex = 10;
             // 
             // grbxSerachVocabulry
             // 
@@ -215,6 +215,15 @@
             this.grbxSerachVocabulry.TabIndex = 3;
             this.grbxSerachVocabulry.TabStop = false;
             this.grbxSerachVocabulry.Text = "Suche Vokabel nach";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 91);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Suche:";
             // 
             // btnArchived
             // 
@@ -242,6 +251,7 @@
             this.btnSearchWord.TabIndex = 5;
             this.btnSearchWord.Text = "Suchen!";
             this.btnSearchWord.UseVisualStyleBackColor = true;
+            this.btnSearchWord.Visible = false;
             this.btnSearchWord.Click += new System.EventHandler(this.btnSearchWord_Click);
             // 
             // lbxDBResult
@@ -406,25 +416,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Test/ Übung";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(207, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(385, 24);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 91);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Suche:";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
@@ -436,6 +427,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(302, 283);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(207, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(385, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
             // 
             // ProgressManager
             // 
@@ -496,9 +497,9 @@
         private System.Windows.Forms.GroupBox grbxChangeVocabulary;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSaveWord;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbxDataMainLang;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxDataSecondLang;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

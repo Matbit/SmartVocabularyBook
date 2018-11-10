@@ -109,6 +109,7 @@ namespace SmartVocabularyBook.vcbook.repository
                 return true;
          }
         
+        //changes vocabulary details by id
         public bool updateVocabularyById(Vocabulary vc)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
@@ -120,8 +121,19 @@ namespace SmartVocabularyBook.vcbook.repository
                 cmd.ExecuteNonQuery();
                 con.Close();
             return true;
+        }
 
+        //delete vocabulary by id
+        public bool deleteVocabularyById(Vocabulary vc)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "DELETE FROM vocabulary WHERE id = '" + vc.getId().ToString() + "';";
 
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
         }
        
 

@@ -18,7 +18,7 @@ namespace SmartVocabularyBook.vcbook.gui
     {
 
         private Main frmMain;
-        private List<Vocabulary> myVocs = new List<Vocabulary>();
+        //private List<Vocabulary> myVocs = new List<Vocabulary>();
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static Vocabulary staticVocabulary = new Vocabulary();
@@ -87,7 +87,12 @@ namespace SmartVocabularyBook.vcbook.gui
             tbxMainLang.Clear();
             tbxNote.Clear();
             tbxSecondLang.Clear();
+            tbxDataMemo.Clear();
+            tbxDataMainLang.Clear();
+            tbxDataSecondLang.Clear();
         }
+
+        
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -226,6 +231,8 @@ namespace SmartVocabularyBook.vcbook.gui
             try
             {
                 service.updateVocabularyById(staticVocabulary);
+                addVocToListView();
+                clearAllTextboxes();
                 MessageBox.Show("Vokabel wurde erfolgreich geändert");
             }
 
@@ -233,6 +240,36 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 MessageBox.Show(ex.Message);
             }
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            String word = lbxDBResult.SelectedItem.ToString();
+
+            try
+            {
+                staticVocabulary = service.findVocabularyByWord(word);
+
+                DialogResult dr = MessageBox.Show("Möchten Sie diesen Vokabelsatz wirklich löschen?\n" + staticVocabulary.getWordLang1() + " - " +
+                         staticVocabulary.getWordLang2(), "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
+                {
+                    if (service.deleteVocabularyById(staticVocabulary))
+                    {
+                        addVocToListView();
+                        clearAllTextboxes();
+                        tbxSearch.Text = "";
+                        MessageBox.Show("Vokabelsatz \"" + staticVocabulary.getWordLang1() + "\" wurde erfolgreich gelöscht");                        
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
             
         }
     }

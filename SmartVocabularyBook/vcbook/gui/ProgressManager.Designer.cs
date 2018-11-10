@@ -37,6 +37,8 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.grbxChangeVocabulary = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbxDataMemo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveWord = new System.Windows.Forms.Button();
             this.tbxDataMainLang = new System.Windows.Forms.TextBox();
@@ -65,8 +67,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbxDataMemo = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -160,6 +160,22 @@
             this.grbxChangeVocabulary.TabStop = false;
             this.grbxChangeVocabulary.Text = "Änderungen vornehmen";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 99);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Notiz";
+            // 
+            // tbxDataMemo
+            // 
+            this.tbxDataMemo.Location = new System.Drawing.Point(9, 124);
+            this.tbxDataMemo.Name = "tbxDataMemo";
+            this.tbxDataMemo.Size = new System.Drawing.Size(349, 20);
+            this.tbxDataMemo.TabIndex = 13;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -247,6 +263,7 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Eintrag Löschen";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearchWord
             // 
@@ -442,22 +459,6 @@
             this.label4.Size = new System.Drawing.Size(385, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
-            // 
-            // tbxDataMemo
-            // 
-            this.tbxDataMemo.Location = new System.Drawing.Point(9, 124);
-            this.tbxDataMemo.Name = "tbxDataMemo";
-            this.tbxDataMemo.Size = new System.Drawing.Size(349, 20);
-            this.tbxDataMemo.TabIndex = 13;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 99);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Notiz";
             // 
             // ProgressManager
             // 

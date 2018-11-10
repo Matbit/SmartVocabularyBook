@@ -56,5 +56,14 @@ namespace SmartVocabularyBook.vcbook.service
             }
             return false;
         }
+
+        public bool deleteVocabularyById(Vocabulary vc)
+        {
+            if(vc != null)
+            {
+                return repository.deleteVocabularyById(vc);                
+            }
+            return false;
+        }
     }
 }

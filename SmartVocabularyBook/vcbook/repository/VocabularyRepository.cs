@@ -69,19 +69,6 @@ namespace SmartVocabularyBook.vcbook.repository
             return myVocs;
         }
 
-        //method to write new data (vocabulary) in db
-        public bool insertVocabulary(Vocabulary vc, String date, int archived)
-        {
-                SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
-                con.Open();
-                string sql = "INSERT INTO vocabulary(wordLang1, wordLang2, memo, dateOfCreation, archived) VALUES ('" + vc.getWordLang1() + "', '" + vc.getWordLang2() +
-                            "', '" + vc.getMemo() + "', '" + date + "', '" + archived + "')";
-                SQLiteCommand cmd = new SQLiteCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                return true;
-         }
-        
         //method to find one vocabulary
         public Vocabulary findVocabularyByWord(String word)
         {
@@ -93,7 +80,7 @@ namespace SmartVocabularyBook.vcbook.repository
             SQLiteDataReader reader = cmd.ExecuteReader();
 
             Vocabulary vc;
-            Vocabulary vocabulary = new Vocabulary();             
+            Vocabulary vocabulary = new Vocabulary();
 
             while (reader.Read())
             {
@@ -107,7 +94,35 @@ namespace SmartVocabularyBook.vcbook.repository
             con.Close();
 
             return vocabulary;
-        }    
+        }
+
+        //method to write new data (vocabulary) in db
+        public bool insertVocabulary(Vocabulary vc, String date, int archived)
+        {
+                SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+                con.Open();
+                string sql = "INSERT INTO vocabulary(wordLang1, wordLang2, memo, dateOfCreation, archived) VALUES ('" + vc.getWordLang1() + "', '" + vc.getWordLang2() +
+                            "', '" + vc.getMemo() + "', '" + date + "', '" + archived + "')";
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+         }
+        
+        public bool updateVocabularyById(Vocabulary vc)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+                con.Open();
+                string sql = "UPDATE vocabulary SET wordLang1 = '" + vc.getWordLang1() + "' , wordLang2 = '" + vc.getWordLang2() + "' , memo = '" + vc.getMemo() +
+                         "' WHERE id = '" + vc.getId().ToString() + "';";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            return true;
+
+
+        }
        
 
     }

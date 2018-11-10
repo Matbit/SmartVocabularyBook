@@ -180,8 +180,12 @@ namespace SmartVocabularyBook.vcbook.gui
             }
             if (string.IsNullOrEmpty(memo))
             {
-                memo = "";                
+                memo = " ";                
             }
+
+            staticVocabulary.setWordLang1(word1);
+            staticVocabulary.setWordLang2(word2);
+            staticVocabulary.setMemo(memo);
 
             return true;
                       
@@ -218,7 +222,18 @@ namespace SmartVocabularyBook.vcbook.gui
         private void btnSaveWord_Click(object sender, EventArgs e)
         {
             validateNewVocabulary(tbxDataMainLang.Text, tbxDataSecondLang.Text, tbxDataMemo.Text);
-            MessageBox.Show(staticVocabulary.getId().ToString());
+            
+            try
+            {
+                service.updateVocabularyById(staticVocabulary);
+                MessageBox.Show("Vokabel wurde erfolgreich geändert");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

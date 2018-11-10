@@ -47,5 +47,14 @@ namespace SmartVocabularyBook.vcbook.service
 
             return new Vocabulary();
         }
+
+        public bool updateVocabularyById(Vocabulary vc)
+        {
+            if(vc != null)
+            {
+                return repository.updateVocabularyById(vc);
+            }
+            return false;
+        }
     }
 }

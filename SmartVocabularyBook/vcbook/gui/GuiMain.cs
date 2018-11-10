@@ -14,9 +14,7 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class GuiMain : Form
     {
         private Main frmMain;
-        private MenuController menuControl;
-
-
+        
 
         public GuiMain(Main main)
         {
@@ -41,9 +39,10 @@ namespace SmartVocabularyBook.vcbook.gui
         }
 
         private void btnEnd_Click(object sender, EventArgs e)
-        {
-            menuControl = new MenuController();
-            menuControl.endApplication();
+        {   
+            
+            Application.Exit();
+
         }
     }
 }

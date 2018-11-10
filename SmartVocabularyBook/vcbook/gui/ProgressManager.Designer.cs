@@ -55,6 +55,8 @@
             this.rbtnSecondLang = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.browser = new System.Windows.Forms.WebBrowser();
             this.btnClearEntries = new System.Windows.Forms.Button();
             this.btnAddVocabulary = new System.Windows.Forms.Button();
             this.tbxNote = new System.Windows.Forms.TextBox();
@@ -63,10 +65,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.llClose = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -172,6 +174,7 @@
             // tbxDataMemo
             // 
             this.tbxDataMemo.Location = new System.Drawing.Point(9, 124);
+            this.tbxDataMemo.MaxLength = 120;
             this.tbxDataMemo.Name = "tbxDataMemo";
             this.tbxDataMemo.Size = new System.Drawing.Size(349, 20);
             this.tbxDataMemo.TabIndex = 13;
@@ -330,6 +333,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.llClose);
+            this.tabPage3.Controls.Add(this.linkLabel1);
+            this.tabPage3.Controls.Add(this.browser);
             this.tabPage3.Controls.Add(this.btnClearEntries);
             this.tabPage3.Controls.Add(this.btnAddVocabulary);
             this.tabPage3.Controls.Add(this.tbxNote);
@@ -338,7 +344,6 @@
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(890, 473);
@@ -346,11 +351,32 @@
             this.tabPage3.Text = "Neue Vokabeln hinzufügen";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(161, 12);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(87, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "im Web suchen..";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llOpenBrowser_LinkClicked);
+            // 
+            // browser
+            // 
+            this.browser.Location = new System.Drawing.Point(257, 12);
+            this.browser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.browser.Name = "browser";
+            this.browser.ScriptErrorsSuppressed = true;
+            this.browser.Size = new System.Drawing.Size(630, 453);
+            this.browser.TabIndex = 0;
+            this.browser.WebBrowserShortcutsEnabled = false;
+            // 
             // btnClearEntries
             // 
-            this.btnClearEntries.Location = new System.Drawing.Point(52, 200);
+            this.btnClearEntries.Location = new System.Drawing.Point(57, 141);
             this.btnClearEntries.Name = "btnClearEntries";
-            this.btnClearEntries.Size = new System.Drawing.Size(99, 38);
+            this.btnClearEntries.Size = new System.Drawing.Size(81, 38);
             this.btnClearEntries.TabIndex = 5;
             this.btnClearEntries.Text = "Eingabe verwerfen";
             this.btnClearEntries.UseVisualStyleBackColor = true;
@@ -358,9 +384,9 @@
             // 
             // btnAddVocabulary
             // 
-            this.btnAddVocabulary.Location = new System.Drawing.Point(181, 200);
+            this.btnAddVocabulary.Location = new System.Drawing.Point(167, 141);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
-            this.btnAddVocabulary.Size = new System.Drawing.Size(99, 38);
+            this.btnAddVocabulary.Size = new System.Drawing.Size(81, 38);
             this.btnAddVocabulary.TabIndex = 4;
             this.btnAddVocabulary.Text = "Vokabeln hinzufügen";
             this.btnAddVocabulary.UseVisualStyleBackColor = true;
@@ -368,7 +394,7 @@
             // 
             // tbxNote
             // 
-            this.tbxNote.Location = new System.Drawing.Point(123, 164);
+            this.tbxNote.Location = new System.Drawing.Point(91, 104);
             this.tbxNote.MaxLength = 100;
             this.tbxNote.Name = "tbxNote";
             this.tbxNote.Size = new System.Drawing.Size(157, 20);
@@ -376,7 +402,7 @@
             // 
             // tbxSecondLang
             // 
-            this.tbxSecondLang.Location = new System.Drawing.Point(123, 133);
+            this.tbxSecondLang.Location = new System.Drawing.Point(91, 70);
             this.tbxSecondLang.MaxLength = 50;
             this.tbxSecondLang.Name = "tbxSecondLang";
             this.tbxSecondLang.Size = new System.Drawing.Size(157, 20);
@@ -384,7 +410,7 @@
             // 
             // tbxMainLang
             // 
-            this.tbxMainLang.Location = new System.Drawing.Point(123, 97);
+            this.tbxMainLang.Location = new System.Drawing.Point(91, 38);
             this.tbxMainLang.MaxLength = 50;
             this.tbxMainLang.Name = "tbxMainLang";
             this.tbxMainLang.Size = new System.Drawing.Size(157, 20);
@@ -393,7 +419,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(74, 167);
+            this.label7.Location = new System.Drawing.Point(54, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 3;
@@ -402,7 +428,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 136);
+            this.label6.Location = new System.Drawing.Point(14, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 2;
@@ -411,22 +437,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 100);
+            this.label5.Location = new System.Drawing.Point(7, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Hauptsprache*";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(186, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(448, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "HIER WERDEN NEUE VOKABELN HINZUGEFÜGT";
             // 
             // tabPage4
             // 
@@ -460,6 +475,18 @@
             this.label4.Size = new System.Drawing.Size(385, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "HIER KANN MAN SEINE VOKABELN ÜBEN";
+            // 
+            // llClose
+            // 
+            this.llClose.AutoSize = true;
+            this.llClose.Location = new System.Drawing.Point(183, 452);
+            this.llClose.Name = "llClose";
+            this.llClose.Size = new System.Drawing.Size(68, 13);
+            this.llClose.TabIndex = 7;
+            this.llClose.TabStop = true;
+            this.llClose.Text = "ausblenden..";
+            this.llClose.Visible = false;
+            this.llClose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llClose_LinkClicked);
             // 
             // ProgressManager
             // 
@@ -495,7 +522,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnClearEntries;
         private System.Windows.Forms.Button btnAddVocabulary;
@@ -527,5 +553,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbxDataMemo;
+        private System.Windows.Forms.WebBrowser browser;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel llClose;
     }
 }

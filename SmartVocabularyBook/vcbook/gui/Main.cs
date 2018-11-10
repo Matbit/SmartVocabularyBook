@@ -93,12 +93,17 @@ namespace SmartVocabularyBook
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            menu.endApplication();
+            endApplication();
         }
 
         private void hauptmenüToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openPanelMain();
+        }
+
+        private void endApplication()
+        {
+            Application.Exit();
         }
     }
 }

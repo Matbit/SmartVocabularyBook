@@ -388,5 +388,36 @@ namespace SmartVocabularyBook.vcbook.gui
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void llOpenBrowser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            String url = "https://www.dict.cc";
+
+            try
+            {
+                browser.Visible = true;
+                browser.Navigate(url);
+                llClose.Visible = true;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+        }
+
+        private void llClose_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            stopBrowser();
+        }
+
+        public void stopBrowser()
+        {
+            browser.Stop();
+            browser.Visible = false;
+            llClose.Visible = false;
+        }
     }
 }

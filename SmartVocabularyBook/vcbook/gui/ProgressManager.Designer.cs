@@ -90,6 +90,7 @@
             this.btnStartTest = new System.Windows.Forms.Button();
             this.btnStartTraining = new System.Windows.Forms.Button();
             this.chbxSaveSettings = new System.Windows.Forms.CheckBox();
+            this.rbtnTestRandomLang = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -520,6 +521,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.rbtnTestRandomLang);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.rbtnTestSecondLang);
@@ -534,10 +536,10 @@
             // rbtnTestSecondLang
             // 
             this.rbtnTestSecondLang.AutoSize = true;
-            this.rbtnTestSecondLang.Location = new System.Drawing.Point(9, 85);
+            this.rbtnTestSecondLang.Location = new System.Drawing.Point(9, 82);
             this.rbtnTestSecondLang.Name = "rbtnTestSecondLang";
             this.rbtnTestSecondLang.Size = new System.Drawing.Size(85, 17);
-            this.rbtnTestSecondLang.TabIndex = 5;
+            this.rbtnTestSecondLang.TabIndex = 8;
             this.rbtnTestSecondLang.Text = "Übersetzung";
             this.rbtnTestSecondLang.UseVisualStyleBackColor = true;
             // 
@@ -548,7 +550,7 @@
             this.rbtnTestMainLang.Location = new System.Drawing.Point(9, 59);
             this.rbtnTestMainLang.Name = "rbtnTestMainLang";
             this.rbtnTestMainLang.Size = new System.Drawing.Size(92, 17);
-            this.rbtnTestMainLang.TabIndex = 5;
+            this.rbtnTestMainLang.TabIndex = 7;
             this.rbtnTestMainLang.TabStop = true;
             this.rbtnTestMainLang.Text = "Hauptsprache";
             this.rbtnTestMainLang.UseVisualStyleBackColor = true;
@@ -584,7 +586,7 @@
             this.tbxSetValueOfAskedVocabulary.Name = "tbxSetValueOfAskedVocabulary";
             this.tbxSetValueOfAskedVocabulary.ReadOnly = true;
             this.tbxSetValueOfAskedVocabulary.Size = new System.Drawing.Size(44, 22);
-            this.tbxSetValueOfAskedVocabulary.TabIndex = 4;
+            this.tbxSetValueOfAskedVocabulary.TabIndex = 5;
             this.tbxSetValueOfAskedVocabulary.Text = "10";
             // 
             // label13
@@ -620,7 +622,7 @@
             this.trbCountVocabulary.Maximum = 100;
             this.trbCountVocabulary.Name = "trbCountVocabulary";
             this.trbCountVocabulary.Size = new System.Drawing.Size(251, 45);
-            this.trbCountVocabulary.TabIndex = 4;
+            this.trbCountVocabulary.TabIndex = 6;
             this.trbCountVocabulary.TickFrequency = 10;
             this.trbCountVocabulary.Value = 10;
             this.trbCountVocabulary.Scroll += new System.EventHandler(this.trbCountVocabulary_Scroll);
@@ -652,7 +654,7 @@
             this.rbtnLongTermNotAskedVocabulary.Location = new System.Drawing.Point(3, 85);
             this.rbtnLongTermNotAskedVocabulary.Name = "rbtnLongTermNotAskedVocabulary";
             this.rbtnLongTermNotAskedVocabulary.Size = new System.Drawing.Size(262, 17);
-            this.rbtnLongTermNotAskedVocabulary.TabIndex = 3;
+            this.rbtnLongTermNotAskedVocabulary.TabIndex = 4;
             this.rbtnLongTermNotAskedVocabulary.Text = "Vokabeln welche lange nicht mehr gefragt wurden";
             this.rbtnLongTermNotAskedVocabulary.UseVisualStyleBackColor = true;
             // 
@@ -662,7 +664,7 @@
             this.rbtnRandomVocabulary.Location = new System.Drawing.Point(3, 62);
             this.rbtnRandomVocabulary.Name = "rbtnRandomVocabulary";
             this.rbtnRandomVocabulary.Size = new System.Drawing.Size(146, 17);
-            this.rbtnRandomVocabulary.TabIndex = 2;
+            this.rbtnRandomVocabulary.TabIndex = 3;
             this.rbtnRandomVocabulary.Text = "Zufällige Vokabeln fragen";
             this.rbtnRandomVocabulary.UseVisualStyleBackColor = true;
             // 
@@ -672,7 +674,7 @@
             this.rbtnOldestVocabulary.Location = new System.Drawing.Point(3, 39);
             this.rbtnOldestVocabulary.Name = "rbtnOldestVocabulary";
             this.rbtnOldestVocabulary.Size = new System.Drawing.Size(137, 17);
-            this.rbtnOldestVocabulary.TabIndex = 1;
+            this.rbtnOldestVocabulary.TabIndex = 2;
             this.rbtnOldestVocabulary.Text = "älteste Vokabeln fragen";
             this.rbtnOldestVocabulary.UseVisualStyleBackColor = true;
             // 
@@ -683,7 +685,7 @@
             this.rbtnNewestVocabulary.Location = new System.Drawing.Point(3, 16);
             this.rbtnNewestVocabulary.Name = "rbtnNewestVocabulary";
             this.rbtnNewestVocabulary.Size = new System.Drawing.Size(146, 17);
-            this.rbtnNewestVocabulary.TabIndex = 0;
+            this.rbtnNewestVocabulary.TabIndex = 1;
             this.rbtnNewestVocabulary.TabStop = true;
             this.rbtnNewestVocabulary.Text = "Neueste Vokabeln fragen";
             this.rbtnNewestVocabulary.UseVisualStyleBackColor = true;
@@ -701,10 +703,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 126);
+            this.checkBox1.Location = new System.Drawing.Point(10, 141);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(205, 17);
-            this.checkBox1.TabIndex = 6;
+            this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Groß- und Kleinschreibung beachten?";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -715,7 +717,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(228, 48);
-            this.textBox1.TabIndex = 7;
+            this.textBox1.TabIndex = 11;
             this.textBox1.Text = "Sie können nun die Übung oder einen Test starten. Die Unterschiede werden unter  " +
     "        >> Hilfe >> Übung erklärt.";
             // 
@@ -724,7 +726,7 @@
             this.btnStartTest.Location = new System.Drawing.Point(745, 393);
             this.btnStartTest.Name = "btnStartTest";
             this.btnStartTest.Size = new System.Drawing.Size(94, 31);
-            this.btnStartTest.TabIndex = 5;
+            this.btnStartTest.TabIndex = 14;
             this.btnStartTest.Text = "Test starten";
             this.btnStartTest.UseVisualStyleBackColor = true;
             // 
@@ -733,7 +735,7 @@
             this.btnStartTraining.Location = new System.Drawing.Point(612, 393);
             this.btnStartTraining.Name = "btnStartTraining";
             this.btnStartTraining.Size = new System.Drawing.Size(94, 31);
-            this.btnStartTraining.TabIndex = 5;
+            this.btnStartTraining.TabIndex = 13;
             this.btnStartTraining.Text = "Übung starten";
             this.btnStartTraining.UseVisualStyleBackColor = true;
             // 
@@ -745,9 +747,20 @@
             this.chbxSaveSettings.Location = new System.Drawing.Point(612, 356);
             this.chbxSaveSettings.Name = "chbxSaveSettings";
             this.chbxSaveSettings.Size = new System.Drawing.Size(144, 17);
-            this.chbxSaveSettings.TabIndex = 6;
+            this.chbxSaveSettings.TabIndex = 12;
             this.chbxSaveSettings.Text = "Einstellungen speichern?";
             this.chbxSaveSettings.UseVisualStyleBackColor = true;
+            // 
+            // rbtnTestRandomLang
+            // 
+            this.rbtnTestRandomLang.AutoSize = true;
+            this.rbtnTestRandomLang.Location = new System.Drawing.Point(9, 105);
+            this.rbtnTestRandomLang.Name = "rbtnTestRandomLang";
+            this.rbtnTestRandomLang.Size = new System.Drawing.Size(69, 17);
+            this.rbtnTestRandomLang.TabIndex = 9;
+            this.rbtnTestRandomLang.TabStop = true;
+            this.rbtnTestRandomLang.Text = "Gemischt";
+            this.rbtnTestRandomLang.UseVisualStyleBackColor = true;
             // 
             // ProgressManager
             // 
@@ -845,5 +858,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chbxSaveSettings;
+        private System.Windows.Forms.RadioButton rbtnTestRandomLang;
     }
 }

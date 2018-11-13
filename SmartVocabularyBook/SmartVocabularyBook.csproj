@@ -70,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="vcbook\controller\DBController.cs" />
+    <Compile Include="vcbook\gui\GuiTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vcbook\gui\GuiTest.Designer.cs">
+      <DependentUpon>GuiTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="vcbook\repository\VocabularyRepository.cs" />
     <Compile Include="vcbook\gui\GuiMain.cs">
       <SubType>Form</SubType>
@@ -95,6 +101,9 @@
     <Compile Include="vcbook\service\VocabularyService.cs" />
     <EmbeddedResource Include="vcbook\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vcbook\gui\GuiTest.resx">
+      <DependentUpon>GuiTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vcbook\gui\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

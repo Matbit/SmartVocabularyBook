@@ -23,6 +23,8 @@ namespace SmartVocabularyBook.vcbook.gui
         private static VocabularyService service = new VocabularyService();
         private static Vocabulary staticVocabulary = new Vocabulary();
         private static List<Vocabulary> staticVocabularyList = new List<Vocabulary>();
+        private static List<Vocabulary> listVocabularyActiveView = new List<Vocabulary>();
+        private static List<Vocabulary> listVocabularyArchivedView = new List<Vocabulary>();
 
 
         public ProgressManager(Main aMain)

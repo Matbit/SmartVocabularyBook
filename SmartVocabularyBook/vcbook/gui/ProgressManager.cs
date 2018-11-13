@@ -425,6 +425,14 @@ namespace SmartVocabularyBook.vcbook.gui
             llClose.Visible = false;
         }
 
-        
+        private void trbCountVocabulary_Scroll(object sender, EventArgs e)
+        {
+            tbxSetValueOfAskedVocabulary.Text = trbCountVocabulary.Value.ToString();
+        }
+
+        private void mtbxSetValueOfAskedVocabulary_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            trbCountVocabulary.Value = Int32.Parse(tbxSetValueOfAskedVocabulary.Text);
+        }
     }
 }

@@ -30,12 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hauptmenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnOpenMain = new System.Windows.Forms.Button();
-            this.hauptmenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,10 +61,17 @@
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
+            // hauptmenüToolStripMenuItem
+            // 
+            this.hauptmenüToolStripMenuItem.Name = "hauptmenüToolStripMenuItem";
+            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.hauptmenüToolStripMenuItem.Text = "Hauptmenü";
+            this.hauptmenüToolStripMenuItem.Click += new System.EventHandler(this.hauptmenüToolStripMenuItem_Click);
+            // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -96,13 +103,6 @@
             this.btnOpenMain.Text = "Hauptmenü";
             this.btnOpenMain.UseVisualStyleBackColor = true;
             this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
-            // 
-            // hauptmenüToolStripMenuItem
-            // 
-            this.hauptmenüToolStripMenuItem.Name = "hauptmenüToolStripMenuItem";
-            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.hauptmenüToolStripMenuItem.Text = "Hauptmenü";
-            this.hauptmenüToolStripMenuItem.Click += new System.EventHandler(this.hauptmenüToolStripMenuItem_Click);
             // 
             // Main
             // 

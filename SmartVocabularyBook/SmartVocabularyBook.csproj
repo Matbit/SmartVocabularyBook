@@ -69,43 +69,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="vcbook\controller\DBController.cs" />
-    <Compile Include="vcbook\gui\GuiTest.cs">
+    <Compile Include="src\controller\DBController.cs" />
+    <Compile Include="src\gui\GuiTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vcbook\gui\GuiTest.Designer.cs">
+    <Compile Include="src\gui\GuiTest.Designer.cs">
       <DependentUpon>GuiTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="vcbook\repository\VocabularyRepository.cs" />
-    <Compile Include="vcbook\gui\GuiMain.cs">
+    <Compile Include="src\repository\VocabularyRepository.cs" />
+    <Compile Include="src\gui\GuiMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vcbook\gui\GuiMain.Designer.cs">
+    <Compile Include="src\gui\GuiMain.Designer.cs">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="vcbook\gui\Main.cs">
+    <Compile Include="src\gui\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vcbook\gui\Main.Designer.cs">
+    <Compile Include="src\gui\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vcbook\gui\ProgressManager.cs">
+    <Compile Include="src\gui\ProgressManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vcbook\gui\ProgressManager.Designer.cs">
+    <Compile Include="src\gui\ProgressManager.Designer.cs">
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="vcbook\model\Vocabulary.cs" />
-    <Compile Include="vcbook\service\VocabularyService.cs" />
-    <EmbeddedResource Include="vcbook\gui\GuiMain.resx">
+    <Compile Include="src\model\Vocabulary.cs" />
+    <Compile Include="src\service\VocabularyService.cs" />
+    <EmbeddedResource Include="src\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vcbook\gui\GuiTest.resx">
+    <EmbeddedResource Include="src\gui\GuiTest.resx">
       <DependentUpon>GuiTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vcbook\gui\Main.resx">
+    <EmbeddedResource Include="src\gui\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,7 +118,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="vcbook\gui\ProgressManager.resx">
+    <EmbeddedResource Include="src\gui\ProgressManager.resx">
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

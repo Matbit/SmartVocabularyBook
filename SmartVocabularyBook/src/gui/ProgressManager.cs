@@ -458,7 +458,14 @@ namespace SmartVocabularyBook.vcbook.gui
         {
 
             int index = listViewAllVocab.FocusedItem.Index;
-            MessageBox.Show(index.ToString());
+            Vocabulary vc = new Vocabulary();
+            vc = listVocabularyArchivedView[index];
+            service.updateArchivedStatusById(vc, 0);
+
+            addArchivedVocToListView();
+
+
+            //MessageBox.Show(index.ToString());
 
            
 

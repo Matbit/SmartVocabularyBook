@@ -556,6 +556,7 @@
             this.btnStartTest.TabIndex = 14;
             this.btnStartTest.Text = "Test starten";
             this.btnStartTest.UseVisualStyleBackColor = true;
+            this.btnStartTest.Click += new System.EventHandler(this.btnStartTest_Click);
             // 
             // btnStartTraining
             // 
@@ -565,6 +566,7 @@
             this.btnStartTraining.TabIndex = 13;
             this.btnStartTraining.Text = "Übung starten";
             this.btnStartTraining.UseVisualStyleBackColor = true;
+            this.btnStartTraining.Click += new System.EventHandler(this.btnStartTraining_Click);
             // 
             // groupBox3
             // 

@@ -12,9 +12,16 @@ namespace SmartVocabularyBook.vcbook.gui
 {
     public partial class GuiTest : Form
     {
-        public GuiTest()
+        Main frmMain;
+        public GuiTest(Main main)
         {
             InitializeComponent();
+            frmMain = main;
+        }
+
+        private void GuiTest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

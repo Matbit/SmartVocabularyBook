@@ -48,6 +48,17 @@ namespace SmartVocabularyBook
             setMenuButton(true);
         }
 
+        public void openPanelTest()
+        {
+            this.panelMain.Controls.Clear();
+            GuiTest test = new GuiTest(this);
+            test.TopLevel = false;
+            test.AutoScroll = true;
+            this.panelMain.Controls.Add(test);
+            test.Show();
+            setMenuButton(false);
+        }
+
         //set menu button
         private void setMenuButton(bool isVisible)
         {

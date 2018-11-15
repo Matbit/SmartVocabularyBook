@@ -16,9 +16,7 @@ namespace SmartVocabularyBook.vcbook.gui
 {
     public partial class ProgressManager : Form
     {
-
         private Main frmMain;
-        //private List<Vocabulary> myVocs = new List<Vocabulary>();
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static Vocabulary staticVocabulary = new Vocabulary();
@@ -42,8 +40,7 @@ namespace SmartVocabularyBook.vcbook.gui
             listVocabularyActiveView.Clear();
             List<Vocabulary> resultList;
             resultList = service.findAllActivated();
-            listVocabularyActiveView = resultList;
-            
+            listVocabularyActiveView = resultList;            
             
 
             foreach (Vocabulary aVoc in resultList)
@@ -101,8 +98,6 @@ namespace SmartVocabularyBook.vcbook.gui
             setBtnArchived(false);
         }
 
-
-
         private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -139,16 +134,11 @@ namespace SmartVocabularyBook.vcbook.gui
                         service.updateArchivedStatusById(vc, 0);
                         addVocToListView();
                         MessageBox.Show("Vokabel wurde aus dem Archiv zu Ihren aktiven Vokabeln hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     }
                     else MessageBox.Show("Vokabel ist bereits vorhanden.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
-
+                }               
             }            
-            clearAllTextboxes();
-            
-
+            clearAllTextboxes();     
         }
 
         private void clearAllTextboxes()
@@ -159,9 +149,7 @@ namespace SmartVocabularyBook.vcbook.gui
             tbxDataMemo.Clear();
             tbxDataMainLang.Clear();
             tbxDataSecondLang.Clear();
-        }
-
-        
+        }        
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -196,7 +184,6 @@ namespace SmartVocabularyBook.vcbook.gui
                             staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, true);
                         }
                         else  staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, false);
-
 
                         foreach (Vocabulary vocabulary in staticVocabularyList)
                         {
@@ -289,7 +276,6 @@ namespace SmartVocabularyBook.vcbook.gui
                 archived = 1;
             else archived = 0;
 
-
             try
             {
                 service.insertVocabulary(vc, date, archived);
@@ -348,8 +334,7 @@ namespace SmartVocabularyBook.vcbook.gui
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            
+            }            
         }
 
         //delete vocabulary from database
@@ -463,7 +448,6 @@ namespace SmartVocabularyBook.vcbook.gui
             activateSelectedArchivedVocabulary();
         }
 
-
         private void activateSelectedArchivedVocabulary()
         {
             if (listViewAllVocab.SelectedItems.Count > 0)
@@ -475,19 +459,14 @@ namespace SmartVocabularyBook.vcbook.gui
                 addArchivedVocToListView();
                 MessageBox.Show("Vokabel erfolgreich aktiviert.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            else MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);            
         }
-
 
         private void btnSetVocabularyArchived_Click(object sender, EventArgs e)
         {
 
             if (listViewAllVocab.SelectedItems.Count > 0)
             {
-
                 int index = listViewAllVocab.FocusedItem.Index;
                 Vocabulary vc = new Vocabulary();
                 vc = listVocabularyActiveView[index];
@@ -496,10 +475,28 @@ namespace SmartVocabularyBook.vcbook.gui
                 addVocToListView();
                 MessageBox.Show("Vokabel erfolgreich achiviert.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            else MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnStartTraining_Click(object sender, EventArgs e)
+        {
+            startTraining();
+        }
+
+        private void startTraining()
+        {
+            frmMain.openPanelTest();
+
+        }
+
+        private void btnStartTest_Click(object sender, EventArgs e)
+        {
+            startTest();
+        }
+
+        private void startTest()
+        {
+            frmMain.openPanelTest();
         }
     }
 }

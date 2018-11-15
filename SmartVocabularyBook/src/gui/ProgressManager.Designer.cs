@@ -172,6 +172,7 @@
             this.columnHeader3});
             this.listViewAllVocab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAllVocab.Location = new System.Drawing.Point(7, 6);
+            this.listViewAllVocab.MultiSelect = false;
             this.listViewAllVocab.Name = "listViewAllVocab";
             this.listViewAllVocab.Size = new System.Drawing.Size(772, 397);
             this.listViewAllVocab.TabIndex = 3;

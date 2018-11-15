@@ -24,9 +24,7 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             InitializeComponent();
             frmMain = main;
-
-            //just for testing
-            
+                        
         }
 
         private void GuiTest_Load(object sender, EventArgs e)
@@ -49,6 +47,10 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.Columns[0].ReadOnly = true;
             dataGridTest.Columns[0].HeaderText = "Gesuchtes Wort";
             dataGridTest.Columns[1].HeaderText = "Lösung";
+            dataGridTest.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridTest.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridTest.BackgroundColor = Color.Khaki;
+            //dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             //dataGridTest.Columns.
 
             

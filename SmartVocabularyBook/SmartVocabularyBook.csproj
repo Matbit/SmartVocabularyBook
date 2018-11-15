@@ -76,6 +76,7 @@
     <Compile Include="src\gui\GuiTest.Designer.cs">
       <DependentUpon>GuiTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\model\TestVocabularyModel.cs" />
     <Compile Include="src\repository\VocabularyRepository.cs" />
     <Compile Include="src\gui\GuiMain.cs">
       <SubType>Form</SubType>

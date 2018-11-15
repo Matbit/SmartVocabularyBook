@@ -28,35 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridTest = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTest)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridTest
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(784, 346);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridTest.AllowUserToOrderColumns = true;
+            this.dataGridTest.BackgroundColor = System.Drawing.Color.Peru;
+            this.dataGridTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTest.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridTest.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridTest.Location = new System.Drawing.Point(31, 42);
+            this.dataGridTest.Name = "dataGridTest";
+            this.dataGridTest.Size = new System.Drawing.Size(761, 317);
+            this.dataGridTest.TabIndex = 0;
+            this.dataGridTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTest_CellContentClick);
             // 
             // GuiTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridTest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiTest";
             this.Text = "GuiTest";
             this.Load += new System.EventHandler(this.GuiTest_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTest)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridTest;
     }
 }

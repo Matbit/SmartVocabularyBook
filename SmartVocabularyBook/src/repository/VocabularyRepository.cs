@@ -74,7 +74,15 @@ namespace SmartVocabularyBook.vcbook.repository
 
             while (reader.Read())
             {
-                myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString()));
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                string archivedAsString = reader["archived"].ToString();
+                bool archivedAsBool = false;
+                bool.TryParse(archivedAsString, out archivedAsBool);
+
+                myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong, archivedAsBool));
             }
             con.Close();
 

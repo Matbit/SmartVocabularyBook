@@ -93,6 +93,7 @@
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSetVocabularyActive = new System.Windows.Forms.Button();
+            this.btnSetVocabularyArchived = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -121,6 +122,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.tabPage1.Controls.Add(this.btnSetVocabularyArchived);
             this.tabPage1.Controls.Add(this.btnSetVocabularyActive);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.btnShowArchivedVocabularies);
@@ -787,6 +789,16 @@
             this.btnSetVocabularyActive.UseVisualStyleBackColor = true;
             this.btnSetVocabularyActive.Click += new System.EventHandler(this.btnSetVocabularyActive_Click);
             // 
+            // btnSetVocabularyArchived
+            // 
+            this.btnSetVocabularyArchived.Location = new System.Drawing.Point(7, 418);
+            this.btnSetVocabularyArchived.Name = "btnSetVocabularyArchived";
+            this.btnSetVocabularyArchived.Size = new System.Drawing.Size(185, 38);
+            this.btnSetVocabularyArchived.TabIndex = 8;
+            this.btnSetVocabularyArchived.Text = "Archivieren";
+            this.btnSetVocabularyArchived.UseVisualStyleBackColor = true;
+            this.btnSetVocabularyArchived.Click += new System.EventHandler(this.btnSetVocabularyArchived_Click);
+            // 
             // ProgressManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,5 +899,6 @@
         private System.Windows.Forms.RadioButton rbtnTestRandomLang;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnSetVocabularyActive;
+        private System.Windows.Forms.Button btnSetVocabularyArchived;
     }
 }

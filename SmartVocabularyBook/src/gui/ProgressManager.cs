@@ -33,13 +33,16 @@ namespace SmartVocabularyBook.vcbook.gui
             frmMain = aMain;
             addVocToListView();
             setBtnActive(false);
+            setBtnArchived(true);
         }
 
         public void addVocToListView()
         {
             listViewAllVocab.Items.Clear();
+            listVocabularyActiveView.Clear();
             List<Vocabulary> resultList;
             resultList = service.findAllActivated();
+            listVocabularyActiveView = resultList;
             
             
 
@@ -79,16 +82,23 @@ namespace SmartVocabularyBook.vcbook.gui
             btnSetVocabularyActive.Visible = isActive;
         }
 
+        private void setBtnArchived(bool isArchived)
+        {
+            btnSetVocabularyArchived.Visible = isArchived;
+        }
+
         private void btnShowActiveVocabularies_Click(object sender, EventArgs e)
         {
             addVocToListView();
             setBtnActive(false);
+            setBtnArchived(true);
         }
 
         private void btnShowArchivedVocabularies_Click(object sender, EventArgs e)
         {
             addArchivedVocToListView();
             setBtnActive(true);
+            setBtnArchived(false);
         }
 
 
@@ -456,19 +466,40 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void activateSelectedArchivedVocabulary()
         {
+            if (listViewAllVocab.SelectedItems.Count > 0)
+            {
+                int index = listViewAllVocab.FocusedItem.Index;
+                Vocabulary vc = new Vocabulary();
+                vc = listVocabularyArchivedView[index];
+                service.updateArchivedStatusById(vc, 0);
+                addArchivedVocToListView();
+                MessageBox.Show("Vokabel erfolgreich aktiviert.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
-            int index = listViewAllVocab.FocusedItem.Index;
-            Vocabulary vc = new Vocabulary();
-            vc = listVocabularyArchivedView[index];
-            service.updateArchivedStatusById(vc, 0);
 
-            addArchivedVocToListView();
+        private void btnSetVocabularyArchived_Click(object sender, EventArgs e)
+        {
 
+            if (listViewAllVocab.SelectedItems.Count > 0)
+            {
 
-            //MessageBox.Show(index.ToString());
-
-           
-
+                int index = listViewAllVocab.FocusedItem.Index;
+                Vocabulary vc = new Vocabulary();
+                vc = listVocabularyActiveView[index];
+                service.updateArchivedStatusById(vc, 1);
+                addArchivedVocToListView();
+                addVocToListView();
+                MessageBox.Show("Vokabel erfolgreich achiviert.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

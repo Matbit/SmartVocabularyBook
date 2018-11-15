@@ -32,6 +32,7 @@ namespace SmartVocabularyBook.vcbook.gui
             InitializeComponent();
             frmMain = aMain;
             addVocToListView();
+            setBtnActive(false);
         }
 
         public void addVocToListView()
@@ -39,6 +40,7 @@ namespace SmartVocabularyBook.vcbook.gui
             listViewAllVocab.Items.Clear();
             List<Vocabulary> resultList;
             resultList = service.findAllActivated();
+            
             
 
             foreach (Vocabulary aVoc in resultList)
@@ -55,8 +57,10 @@ namespace SmartVocabularyBook.vcbook.gui
         public void addArchivedVocToListView()
         {
             listViewAllVocab.Items.Clear();
+            listVocabularyArchivedView.Clear();
             List<Vocabulary> resultList;
             resultList = service.findAllArchived();
+            listVocabularyArchivedView = resultList;
 
 
             foreach (Vocabulary aVoc in resultList)
@@ -70,14 +74,21 @@ namespace SmartVocabularyBook.vcbook.gui
             }
         }
 
+        private void setBtnActive(bool isActive)
+        {
+            btnSetVocabularyActive.Visible = isActive;
+        }
+
         private void btnShowActiveVocabularies_Click(object sender, EventArgs e)
         {
             addVocToListView();
+            setBtnActive(false);
         }
 
         private void btnShowArchivedVocabularies_Click(object sender, EventArgs e)
         {
             addArchivedVocToListView();
+            setBtnActive(true);
         }
 
 
@@ -435,6 +446,22 @@ namespace SmartVocabularyBook.vcbook.gui
         private void mtbxSetValueOfAskedVocabulary_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             trbCountVocabulary.Value = Int32.Parse(tbxSetValueOfAskedVocabulary.Text);
+        }
+
+        private void btnSetVocabularyActive_Click(object sender, EventArgs e)
+        {
+            activateSelectedArchivedVocabulary();
+        }
+
+
+        private void activateSelectedArchivedVocabulary()
+        {
+
+            int index = listViewAllVocab.FocusedItem.Index;
+            MessageBox.Show(index.ToString());
+
+           
+
         }
     }
 }

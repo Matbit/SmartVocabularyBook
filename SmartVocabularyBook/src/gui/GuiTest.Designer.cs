@@ -35,7 +35,10 @@
             // 
             // dataGridTest
             // 
-            this.dataGridTest.AllowUserToOrderColumns = true;
+            this.dataGridTest.AllowUserToAddRows = false;
+            this.dataGridTest.AllowUserToDeleteRows = false;
+            this.dataGridTest.AllowUserToResizeColumns = false;
+            this.dataGridTest.AllowUserToResizeRows = false;
             this.dataGridTest.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
@@ -49,7 +52,8 @@
             this.dataGridTest.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridTest.Location = new System.Drawing.Point(12, 12);
             this.dataGridTest.Name = "dataGridTest";
-            this.dataGridTest.Size = new System.Drawing.Size(860, 317);
+            this.dataGridTest.RowHeadersVisible = false;
+            this.dataGridTest.Size = new System.Drawing.Size(860, 337);
             this.dataGridTest.TabIndex = 0;
             this.dataGridTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTest_CellContentClick);
             // 

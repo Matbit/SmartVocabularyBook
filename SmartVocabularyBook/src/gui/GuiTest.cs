@@ -29,6 +29,8 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void GuiTest_Load(object sender, EventArgs e)
         {
+            listSolution.Clear();
+            testList.Clear();
             listSolution = vocabularyService.findAllActivated();
             TestVocabularyModel tm = new TestVocabularyModel();
 
@@ -44,17 +46,16 @@ namespace SmartVocabularyBook.vcbook.gui
             //dataGridTest.Dock = DockStyle.Fill;
             
             dataGridTest.DataSource = testList;
+            dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTest.Columns[0].ReadOnly = true;
             dataGridTest.Columns[0].HeaderText = "Gesuchtes Wort";
             dataGridTest.Columns[1].HeaderText = "Lösung";
             dataGridTest.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridTest.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridTest.BackgroundColor = Color.Khaki;
-            //dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            //dataGridTest.Columns.
-
-            
-            
+            dataGridTest.DefaultCellStyle.ForeColor = Color.DarkGreen;
+            dataGridTest.DefaultCellStyle.BackColor = Color.Beige;
+            dataGridTest.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);            
         }
 
         private void dataGridTest_CellContentClick(object sender, DataGridViewCellEventArgs e)

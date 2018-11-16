@@ -38,7 +38,7 @@ namespace SmartVocabularyBook.vcbook.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 1;";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 1 ORDER BY wordLang1 asc;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -66,7 +66,7 @@ namespace SmartVocabularyBook.vcbook.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 0;";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0 ORDER BY wordLang1 asc;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 

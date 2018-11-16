@@ -33,6 +33,7 @@ namespace SmartVocabularyBook.vcbook.gui
             addVocToListView();
             setBtnActive(false);
             setBtnArchived(true);
+            lNameView.Text = "Meine Vokabeln";
         }
 
         public void addVocToListView()
@@ -87,6 +88,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnShowActiveVocabularies_Click(object sender, EventArgs e)
         {
+            lNameView.Text = "Meine Vokabeln";
             addVocToListView();
             setBtnActive(false);
             setBtnArchived(true);
@@ -94,9 +96,10 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnShowArchivedVocabularies_Click(object sender, EventArgs e)
         {
+            lNameView.Text = "Archivierte Vokabeln";
             addArchivedVocToListView();
             setBtnActive(true);
-            setBtnArchived(false);
+            setBtnArchived(false);            
         }
 
         private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -293,26 +296,37 @@ namespace SmartVocabularyBook.vcbook.gui
         private bool doesVocabularyExits(Vocabulary newVocabulary)
         {   
             //returns an empty object if there are no result
-            Vocabulary vc = service.findVocabularyByWord(newVocabulary.getWordLang1());
-            if (!string.IsNullOrEmpty(vc.getWordLang1()))
+            staticVocabularyList = service.findVocabularyByWordList(newVocabulary.getWordLang1());
+
+            foreach(var vocabularies in staticVocabularyList)
             {
-                if (vc.getWordLang2().Equals(newVocabulary.getWordLang2()))
-                    return true;   
+                if (!string.IsNullOrEmpty(vocabularies.getWordLang1()))
+                {
+                    if (vocabularies.getWordLang2().Equals(newVocabulary.getWordLang2()))
+                        return true;
+                }
             }
+            
             return false;            
         }
 
         //validate if vocabulary is archived
         private bool isVocabularyArchived(Vocabulary newVocabulary)
         {
-            Vocabulary vc = service.findVocabularyByWord(newVocabulary.getWordLang1());
-            if (!string.IsNullOrEmpty(vc.getWordLang1()))
+            staticVocabularyList.Clear();
+            staticVocabularyList = service.findVocabularyByWordList(newVocabulary.getWordLang1());
+
+            foreach(var vocabularies in staticVocabularyList)
             {
-                if (vc.isArchived())
+                if (!string.IsNullOrEmpty(vocabularies.getWordLang1()))
                 {
-                    return true;
-                }                    
+                    if (vocabularies.isArchived())
+                    {
+                        return true;
+                    }
+                }
             }
+            
             return false;
         }
 

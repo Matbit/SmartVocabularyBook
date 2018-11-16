@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSetVocabularyArchived = new System.Windows.Forms.Button();
+            this.btnSetVocabularyActive = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btnShowArchivedVocabularies = new System.Windows.Forms.Button();
             this.btnShowActiveVocabularies = new System.Windows.Forms.Button();
@@ -92,8 +94,7 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSetVocabularyActive = new System.Windows.Forms.Button();
-            this.btnSetVocabularyArchived = new System.Windows.Forms.Button();
+            this.lNameView = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -122,6 +123,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.tabPage1.Controls.Add(this.lNameView);
             this.tabPage1.Controls.Add(this.btnSetVocabularyArchived);
             this.tabPage1.Controls.Add(this.btnSetVocabularyActive);
             this.tabPage1.Controls.Add(this.label15);
@@ -135,6 +137,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Übersicht";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnSetVocabularyArchived
+            // 
+            this.btnSetVocabularyArchived.Location = new System.Drawing.Point(7, 427);
+            this.btnSetVocabularyArchived.Name = "btnSetVocabularyArchived";
+            this.btnSetVocabularyArchived.Size = new System.Drawing.Size(185, 38);
+            this.btnSetVocabularyArchived.TabIndex = 8;
+            this.btnSetVocabularyArchived.Text = "Archivieren";
+            this.btnSetVocabularyArchived.UseVisualStyleBackColor = true;
+            this.btnSetVocabularyArchived.Click += new System.EventHandler(this.btnSetVocabularyArchived_Click);
+            // 
+            // btnSetVocabularyActive
+            // 
+            this.btnSetVocabularyActive.Location = new System.Drawing.Point(7, 427);
+            this.btnSetVocabularyActive.Name = "btnSetVocabularyActive";
+            this.btnSetVocabularyActive.Size = new System.Drawing.Size(185, 38);
+            this.btnSetVocabularyActive.TabIndex = 7;
+            this.btnSetVocabularyActive.Text = "Wieder aktivieren";
+            this.btnSetVocabularyActive.UseVisualStyleBackColor = true;
+            this.btnSetVocabularyActive.Click += new System.EventHandler(this.btnSetVocabularyActive_Click);
             // 
             // label15
             // 
@@ -173,10 +195,10 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listViewAllVocab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewAllVocab.Location = new System.Drawing.Point(7, 6);
+            this.listViewAllVocab.Location = new System.Drawing.Point(6, 38);
             this.listViewAllVocab.MultiSelect = false;
             this.listViewAllVocab.Name = "listViewAllVocab";
-            this.listViewAllVocab.Size = new System.Drawing.Size(772, 397);
+            this.listViewAllVocab.Size = new System.Drawing.Size(772, 383);
             this.listViewAllVocab.TabIndex = 3;
             this.listViewAllVocab.UseCompatibleStateImageBehavior = false;
             this.listViewAllVocab.View = System.Windows.Forms.View.Details;
@@ -781,25 +803,15 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
             // 
-            // btnSetVocabularyActive
+            // lNameView
             // 
-            this.btnSetVocabularyActive.Location = new System.Drawing.Point(7, 418);
-            this.btnSetVocabularyActive.Name = "btnSetVocabularyActive";
-            this.btnSetVocabularyActive.Size = new System.Drawing.Size(185, 38);
-            this.btnSetVocabularyActive.TabIndex = 7;
-            this.btnSetVocabularyActive.Text = "Wieder aktivieren";
-            this.btnSetVocabularyActive.UseVisualStyleBackColor = true;
-            this.btnSetVocabularyActive.Click += new System.EventHandler(this.btnSetVocabularyActive_Click);
-            // 
-            // btnSetVocabularyArchived
-            // 
-            this.btnSetVocabularyArchived.Location = new System.Drawing.Point(7, 418);
-            this.btnSetVocabularyArchived.Name = "btnSetVocabularyArchived";
-            this.btnSetVocabularyArchived.Size = new System.Drawing.Size(185, 38);
-            this.btnSetVocabularyArchived.TabIndex = 8;
-            this.btnSetVocabularyArchived.Text = "Archivieren";
-            this.btnSetVocabularyArchived.UseVisualStyleBackColor = true;
-            this.btnSetVocabularyArchived.Click += new System.EventHandler(this.btnSetVocabularyArchived_Click);
+            this.lNameView.AutoSize = true;
+            this.lNameView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameView.Location = new System.Drawing.Point(7, 11);
+            this.lNameView.Name = "lNameView";
+            this.lNameView.Size = new System.Drawing.Size(88, 20);
+            this.lNameView.TabIndex = 9;
+            this.lNameView.Text = "lNameView";
             // 
             // ProgressManager
             // 
@@ -902,5 +914,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnSetVocabularyActive;
         private System.Windows.Forms.Button btnSetVocabularyArchived;
+        private System.Windows.Forms.Label lNameView;
     }
 }

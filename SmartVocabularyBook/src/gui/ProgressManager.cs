@@ -20,6 +20,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static Vocabulary staticVocabulary = new Vocabulary();
+        private static Vocabulary selectedVocabulary = new Vocabulary();
         private static List<Vocabulary> staticVocabularyList = new List<Vocabulary>();
         private static List<Vocabulary> listVocabularyActiveView = new List<Vocabulary>();
         private static List<Vocabulary> listVocabularyArchivedView = new List<Vocabulary>();
@@ -38,7 +39,7 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             listViewAllVocab.Items.Clear();
             listVocabularyActiveView.Clear();
-            List<Vocabulary> resultList;
+            List<Vocabulary> resultList = null;
             resultList = service.findAllActivated();
             listVocabularyActiveView = resultList;            
             
@@ -222,6 +223,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 int index = lbxDBResult.SelectedIndex;
                 Vocabulary result = new Vocabulary();
                 result = staticVocabularyList[index];
+                selectedVocabulary = result;
 
                 tbxDataMainLang.Text = result.getWordLang1();
                     tbxDataSecondLang.Text = result.getWordLang2();
@@ -321,19 +323,23 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnSaveWord_Click(object sender, EventArgs e)
         {
-            validateNewVocabulary(tbxDataMainLang.Text, tbxDataSecondLang.Text, tbxDataMemo.Text);
-            
-            try
+            if (validateNewVocabulary(tbxDataMainLang.Text, tbxDataSecondLang.Text, tbxDataMemo.Text))
             {
-                service.updateVocabularyById(staticVocabulary);
-                addVocToListView();
-                clearAllTextboxes();
-                MessageBox.Show("Vokabel wurde erfolgreich geändert");
-            }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    staticVocabulary.setId(selectedVocabulary.getId());
+                    service.updateVocabularyById(staticVocabulary);
+                    addArchivedVocToListView();
+                    addVocToListView();
+                    clearAllTextboxes();
+                    MessageBox.Show("Vokabel wurde erfolgreich geändert");
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }            
         }
 

@@ -1,4 +1,6 @@
-﻿using SmartVocabularyBook.vcbook.controller;
+﻿using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.service;
+using SmartVocabularyBook.vcbook.controller;
 using SmartVocabularyBook.vcbook.model;
 using SmartVocabularyBook.vcbook.service;
 using System;
@@ -17,8 +19,13 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class ProgressManager : Form
     {
         private Main frmMain;
+        //controller and services
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
+        private static TestSettingsService testSettingsService = new TestSettingsService();
+        private static TestSetup ts = new TestSetup(-1L, "newest", 10, "first", true);
+
+
         private static Vocabulary staticVocabulary = new Vocabulary();
         private static Vocabulary selectedVocabulary = new Vocabulary();
         private static List<Vocabulary> staticVocabularyList = new List<Vocabulary>();
@@ -34,6 +41,8 @@ namespace SmartVocabularyBook.vcbook.gui
             setBtnActive(false);
             setBtnArchived(true);
             lNameView.Text = "Meine Vokabeln";
+            testSettingsService.insertTestSettings(ts, 1);
+
         }
 
         public void addVocToListView()

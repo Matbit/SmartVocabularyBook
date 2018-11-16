@@ -13,12 +13,12 @@ namespace SmartVocabularyBook.src.repository
         private const String dbFile = "svb.db";
 
 
-        //creates a test table
+        //creates table test
         public bool createTableTest()
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS test(id INTEGER PRIMARY KEY AUTOINCREMENT, testDate TEXT NOT NULL, testTime TEXT, score INTEGER NOT NULL);";
+            string sql = "CREATE TABLE IF NOT EXISTS test(id INTEGER PRIMARY KEY AUTOINCREMENT, testDate TEXT NOT NULL, testTime TEXT, score INTEGER NOT NULL, memo TEXT);";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();

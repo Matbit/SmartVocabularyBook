@@ -76,8 +76,10 @@
     <Compile Include="src\gui\GuiTest.Designer.cs">
       <DependentUpon>GuiTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\model\TestSetup.cs" />
     <Compile Include="src\model\TestVocabularyModel.cs" />
     <Compile Include="src\repository\TestRepository.cs" />
+    <Compile Include="src\repository\TestSettingsRepository.cs" />
     <Compile Include="src\repository\VocabularyRepository.cs" />
     <Compile Include="src\gui\GuiMain.cs">
       <SubType>Form</SubType>
@@ -101,6 +103,7 @@
     </Compile>
     <Compile Include="src\model\Vocabulary.cs" />
     <Compile Include="src\service\TestService.cs" />
+    <Compile Include="src\service\TestSettingsService.cs" />
     <Compile Include="src\service\VocabularyService.cs" />
     <EmbeddedResource Include="src\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>

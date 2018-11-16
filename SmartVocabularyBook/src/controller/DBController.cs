@@ -30,6 +30,9 @@ namespace SmartVocabularyBook.vcbook.controller
             serviceVocabulary.createTableVocabulary();
             TestService serviceTest = new TestService();
             serviceTest.createTableTest();
+            TestSettingsService serviceTestSettings = new TestSettingsService();
+            serviceTestSettings.createTableTestSettings();
+            
             createTableUser();
                         
         }

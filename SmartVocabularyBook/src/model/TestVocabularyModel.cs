@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SmartVocabularyBook.src.model
 {
    public class TestVocabularyModel
-    {
+    {   
        public String word1 { get; set; }
        public String word2 { get; set; }
 

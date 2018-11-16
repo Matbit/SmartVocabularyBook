@@ -64,8 +64,8 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.BackgroundColor = Color.Khaki;
             dataGridTest.DefaultCellStyle.ForeColor = Color.DarkGreen;
             dataGridTest.DefaultCellStyle.BackColor = Color.Beige;
-            dataGridTest.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
-            dataGridTest.Font = new Font("Microsoft Sans Serif", 12);
+            dataGridTest.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            dataGridTest.Font = new Font("Microsoft Sans Serif", 13);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -16,10 +16,13 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class GuiTest : Form
     {
         Main frmMain;
-
+        //contains the solution of the test
         private static List<Vocabulary> listSolution = new List<Vocabulary>();
+        //contains all vocabularies which should be answered by the user
         private static List<TestVocabularyModel> testList = new List<TestVocabularyModel>();
         private static VocabularyService vocabularyService = new VocabularyService();
+        
+
         public GuiTest(Main main)
         {
             InitializeComponent();

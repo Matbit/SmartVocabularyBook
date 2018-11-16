@@ -13,6 +13,21 @@ namespace SmartVocabularyBook.vcbook.repository
 
         private const String dbFile = "svb.db";
 
+
+        //creates a vocabulary table
+        public bool createTableVocabulary()
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "CREATE TABLE IF NOT EXISTS vocabulary(id INTEGER PRIMARY KEY AUTOINCREMENT, wordLang1 TEXT NOT NULL, wordLang2 TEXT NOT NULL, memo TEXT, dateOfCreation TEXT NOT NULL, lastCall TEXT, archived INTEGER NOT NULL)";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+
+        }
+
+
         //finds all vocabularies in database
         public List<Vocabulary> findAll()
         {

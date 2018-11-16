@@ -13,6 +13,18 @@ namespace SmartVocabularyBook.vcbook.service
     {
         private static VocabularyRepository repository = new VocabularyRepository();
 
+
+        public bool createTableVocabulary()
+        {
+            if (repository.createTableVocabulary())
+            {
+                return true;
+            }
+            else return false;
+        }
+
+
+
         public List<Vocabulary> findAll() {
             return repository.findAll();
         }

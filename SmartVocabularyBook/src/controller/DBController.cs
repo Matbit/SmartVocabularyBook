@@ -9,6 +9,8 @@ using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
 using SmartVocabularyBook.vcbook.model;
+using SmartVocabularyBook.vcbook.service;
+using SmartVocabularyBook.src.service;
 
 namespace SmartVocabularyBook.vcbook.controller
 {
@@ -23,9 +25,13 @@ namespace SmartVocabularyBook.vcbook.controller
             if (!doesDBExists())
                 SQLiteConnection.CreateFile(dbFile);
 
-            createTableVocabulary();
+            //create all tables
+            VocabularyService serviceVocabulary = new VocabularyService();
+            serviceVocabulary.createTableVocabulary();
+            TestService serviceTest = new TestService();
+            serviceTest.createTableTest();
             createTableUser();
-            createTableTest();            
+                        
         }
 
         //returns a boolean whether a file exists
@@ -34,18 +40,7 @@ namespace SmartVocabularyBook.vcbook.controller
            return File.Exists(dbFile);
         }
 
-        //creates a vocabulary table. Just called by constructor
-        private void createTableVocabulary()
-        {
-            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile+";");
-            con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS vocabulary(id INTEGER PRIMARY KEY AUTOINCREMENT, wordLang1 TEXT NOT NULL, wordLang2 TEXT NOT NULL, memo TEXT, dateOfCreation TEXT NOT NULL, lastCall TEXT, archived INTEGER NOT NULL)";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-        }
-
+        
         //creates an user table. Just called by constructor
         private void createTableUser()
         {
@@ -56,17 +51,7 @@ namespace SmartVocabularyBook.vcbook.controller
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
-        //creates a test table. Just called by constructor
-        private void createTableTest()
-        {
-            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
-            con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS test(id INTEGER PRIMARY KEY AUTOINCREMENT, dateTest TEXT NOT NULL, score INTEGER NOT NULL);";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
+             
 
         
 

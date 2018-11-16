@@ -95,6 +95,7 @@
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.lNameView = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -669,6 +670,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.tbxSetValueOfAskedVocabulary);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
@@ -723,6 +725,7 @@
             // 
             this.trbCountVocabulary.Location = new System.Drawing.Point(9, 107);
             this.trbCountVocabulary.Maximum = 100;
+            this.trbCountVocabulary.Minimum = 1;
             this.trbCountVocabulary.Name = "trbCountVocabulary";
             this.trbCountVocabulary.Size = new System.Drawing.Size(251, 45);
             this.trbCountVocabulary.TabIndex = 6;
@@ -812,6 +815,16 @@
             this.lNameView.Size = new System.Drawing.Size(88, 20);
             this.lNameView.TabIndex = 9;
             this.lNameView.Text = "lNameView";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 12);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "(mindestens 5)";
             // 
             // ProgressManager
             // 
@@ -915,5 +928,6 @@
         private System.Windows.Forms.Button btnSetVocabularyActive;
         private System.Windows.Forms.Button btnSetVocabularyArchived;
         private System.Windows.Forms.Label lNameView;
+        private System.Windows.Forms.Label label16;
     }
 }

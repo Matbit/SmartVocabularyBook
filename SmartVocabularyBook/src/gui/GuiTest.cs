@@ -24,10 +24,21 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             InitializeComponent();
             frmMain = main;
+            setDataGrid();
                         
         }
 
         private void GuiTest_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void setDataGrid()
         {
             listSolution.Clear();
             testList.Clear();
@@ -38,13 +49,8 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 tm = new TestVocabularyModel(vc.getWordLang1(), " ");
                 testList.Add(tm);
-
-                               
-                //listView1.Items.Add(tm.word1);
             }
 
-            //dataGridTest.Dock = DockStyle.Fill;
-            
             dataGridTest.DataSource = testList;
             dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTest.Columns[0].ReadOnly = true;
@@ -55,12 +61,14 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.BackgroundColor = Color.Khaki;
             dataGridTest.DefaultCellStyle.ForeColor = Color.DarkGreen;
             dataGridTest.DefaultCellStyle.BackColor = Color.Beige;
-            dataGridTest.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);            
+            dataGridTest.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            dataGridTest.Font = new Font("Microsoft Sans Serif", 12);
         }
 
-        private void dataGridTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            frmMain.openPanelProgressManager();
+            MessageBox.Show("Der Test wurde abgebrochen.");
         }
     }
 }

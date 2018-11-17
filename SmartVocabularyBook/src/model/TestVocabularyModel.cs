@@ -8,8 +8,9 @@ namespace SmartVocabularyBook.src.model
 {
    public class TestVocabularyModel
     {   
-       public String word1 { get; set; }
-       public String word2 { get; set; }
+       public String word1 { get; set;}
+       public String word2 { get; set;}
+       public String userWord { get; set;}
 
         public TestVocabularyModel()
         {
@@ -20,6 +21,13 @@ namespace SmartVocabularyBook.src.model
         {
             this.word1 = word1;
             this.word2 = word2;
+        }
+
+        public TestVocabularyModel(String word1, String word2, String userWord)
+        {
+            this.word1 = word1;
+            this.word2 = word2;
+            this.userWord = userWord;
         }
 
         public void setWord1(String word1)
@@ -38,6 +46,16 @@ namespace SmartVocabularyBook.src.model
         public String getWord2()
         {
             return word2;
+        }
+
+        public void setUserWord(String userWord)
+        {
+            this.userWord = userWord;
+        }
+
+        public String getUserWord()
+        {
+            return userWord;
         }
     }
 }

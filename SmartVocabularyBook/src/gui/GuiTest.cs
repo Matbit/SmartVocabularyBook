@@ -22,6 +22,12 @@ namespace SmartVocabularyBook.vcbook.gui
         
         //contains all vocabularies which should be answered by the user
         private static List<TestVocabularyModel> testList = new List<TestVocabularyModel>();
+
+        //contains all vocabularies which the user has answered
+        private static List<TestVocabularyModel> userInput = new List<TestVocabularyModel>();
+
+        //result list contains given word, solution and user input
+        private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
         
         //services
         private static VocabularyService vocabularyService = new VocabularyService();
@@ -54,6 +60,7 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.Columns[1].HeaderText = "Lösung";
             dataGridTest.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridTest.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridTest.Columns[2].Visible = false;
             dataGridTest.BackgroundColor = Color.Khaki;
             dataGridTest.DefaultCellStyle.ForeColor = Color.DarkGreen;
             dataGridTest.DefaultCellStyle.BackColor = Color.Beige;
@@ -166,8 +173,30 @@ namespace SmartVocabularyBook.vcbook.gui
 
             if(result == DialogResult.Yes)
             {
+                setTestLists();
                 frmMain.openPanelTestAnalysis();
             }
+        }
+
+        private void setTestLists()
+        {
+
+           for(int i = 0; i<dataGridTest.Rows.Count; i++)
+            {
+                userInput.Add(new TestVocabularyModel(dataGridTest[1, i].Value.ToString() , " "));
+            }
+
+           for(int i = 0; i < testList.Count; i++)
+            {
+                resultList.Add(new TestVocabularyModel(testList[i].getWord1(), listSolution[i].getWordLang2(), userInput[i].getWord1()));
+            }
+
+           foreach(var c in resultList)
+            {
+                MessageBox.Show(c.getWord1() + " " + c.getWord2() + " " + c.getUserWord());
+            }
+
+
         }
     }
 }

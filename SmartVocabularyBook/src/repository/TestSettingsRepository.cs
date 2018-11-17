@@ -58,7 +58,13 @@ namespace SmartVocabularyBook.src.repository
 
                 string saved = reader["saved"].ToString();
                 bool savedAsBool = false;
-                bool.TryParse(saved, out savedAsBool);
+                int isSaved = -1;
+                int.TryParse(saved, out isSaved);
+
+                if(isSaved == 1)
+                {
+                    savedAsBool = true;
+                }   
 
                 string searchMode = reader["searchmode"].ToString();
                 int searchModeAsInt = 0;

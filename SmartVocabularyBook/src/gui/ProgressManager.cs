@@ -23,7 +23,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
-        private static TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
+        //private static TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
 
 
         private static Vocabulary staticVocabulary = new Vocabulary();
@@ -41,9 +41,45 @@ namespace SmartVocabularyBook.vcbook.gui
             setBtnActive(false);
             setBtnArchived(true);
             lNameView.Text = "Meine Vokabeln";
-            testSettingsService.updateTestSettings(ts, 1);
+            //testSettingsService.updateTestSettings(ts, 1);
+            loadTestSettings();
 
         }
+
+        private void loadTestSettings()
+        {
+            TestSetup ts = testSettingsService.getTestSettingsById(1);
+            int searchMode = ts.getSearchMode();
+            int count = ts.getCount();
+            int givenLang = ts.getGivenLang();
+
+            if (searchMode == 1)
+            {
+                rbtnNewestVocabulary.Checked = true;
+            }
+            else if (searchMode == 2)
+            {
+                rbtnOldestVocabulary.Checked = true;
+            }
+            else if (searchMode == 3)
+            {
+                rbtnRandomVocabulary.Checked = true;
+            }
+            else rbtnLongTermNotAskedVocabulary.Checked = true;
+
+            trbCountVocabulary.Value = count;
+
+            if (givenLang == 1)
+            {
+                rbtnTestMainLang.Checked = true;
+            }
+            else if (givenLang == 2)
+            {
+                rbtnTestSecondLang.Checked = true;
+            }
+            else rbtnTestRandomLang.Checked = true;
+        }
+
 
         public void addVocToListView()
         {
@@ -526,7 +562,7 @@ namespace SmartVocabularyBook.vcbook.gui
             TestSetup test = new TestSetup();
             test = testSettingsService.getTestSettingsById(1);
             //just for tests
-            MessageBox.Show(test.getId() + " " + test.getSearchMode() + " " + test.getCount() + " " + test.getGivenLang() + " " + test.getSave());
+            //MessageBox.Show(test.getId() + " " + test.getSearchMode() + " " + test.getCount() + " " + test.getGivenLang() + " " + test.getSave());
         }
 
         private void startTest()
@@ -575,9 +611,18 @@ namespace SmartVocabularyBook.vcbook.gui
                 isSaved = 1;
             }            
 
-            TestSetup tsNew = new TestSetup(-1L, searchMode, trbCountVocabulary.Value, givenLanguage, chbxSaveSettings.Checked);
+            TestSetup tsNew = new TestSetup(1L, searchMode, trbCountVocabulary.Value, givenLanguage, chbxSaveSettings.Checked);
 
-            testSettingsService.updateTestSettings(tsNew, isSaved);
-        }        
+            if (chbxSaveSettings.Checked)
+                testSettingsService.updateTestSettings(tsNew, isSaved);
+
+
+
+        }
+
+        private void trbCountVocabulary_ValueChanged(object sender, EventArgs e)
+        {
+            tbxSetValueOfAskedVocabulary.Text = trbCountVocabulary.Value.ToString();
+        }
     }
 }

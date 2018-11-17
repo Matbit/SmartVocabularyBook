@@ -78,7 +78,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbtnTestRandomLang = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.rbtnTestSecondLang = new System.Windows.Forms.RadioButton();
             this.rbtnTestMainLang = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
@@ -605,7 +604,6 @@
             // 
             this.groupBox3.Controls.Add(this.rbtnTestRandomLang);
             this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.rbtnTestSecondLang);
             this.groupBox3.Controls.Add(this.rbtnTestMainLang);
             this.groupBox3.Controls.Add(this.label14);
@@ -636,17 +634,6 @@
             this.textBox1.TabIndex = 11;
             this.textBox1.Text = "Sie können nun die Übung oder einen Test starten. Die Unterschiede werden unter  " +
     "        >> Hilfe >> Übung erklärt.";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 141);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(205, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Groß- und Kleinschreibung beachten?";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
             // 
             // rbtnTestSecondLang
             // 
@@ -753,6 +740,7 @@
             this.trbCountVocabulary.TickFrequency = 10;
             this.trbCountVocabulary.Value = 10;
             this.trbCountVocabulary.Scroll += new System.EventHandler(this.trbCountVocabulary_Scroll);
+            this.trbCountVocabulary.ValueChanged += new System.EventHandler(this.trbCountVocabulary_ValueChanged);
             // 
             // label3
             // 
@@ -922,7 +910,6 @@
         private System.Windows.Forms.Button btnStartTraining;
         private System.Windows.Forms.Button btnStartTest;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chbxSaveSettings;
         private System.Windows.Forms.RadioButton rbtnTestRandomLang;
         private System.Windows.Forms.Label label15;

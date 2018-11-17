@@ -14,8 +14,11 @@ namespace SmartVocabularyBook.src.service
 
         public bool createTableTestSettings()
         {
+            TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
+
             if (repository.createTableTestSettings())
             {
+                
                 return true;
             }
             else return false;

@@ -41,11 +41,6 @@ namespace SmartVocabularyBook.vcbook.gui
             
         }
 
-        private void dataGridTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void setDataGrid()
         {
             //listSolution.Clear();
@@ -165,9 +160,14 @@ namespace SmartVocabularyBook.vcbook.gui
             }            
         }
 
-        private void GuiTest_Load_1(object sender, EventArgs e)
+        private void btnFinish_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Möchtest Du den Test wirklich beenden?", "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
+            if(result == DialogResult.Yes)
+            {
+                frmMain.openPanelTestAnalysis();
+            }
         }
     }
 }

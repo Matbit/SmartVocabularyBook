@@ -58,6 +58,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +76,12 @@
     </Compile>
     <Compile Include="src\gui\GuiTest.Designer.cs">
       <DependentUpon>GuiTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\gui\GuiTestAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\gui\GuiTestAnalysis.Designer.cs">
+      <DependentUpon>GuiTestAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="src\model\TestSetup.cs" />
     <Compile Include="src\model\TestVocabularyModel.cs" />
@@ -110,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\gui\GuiTest.resx">
       <DependentUpon>GuiTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\gui\GuiTestAnalysis.resx">
+      <DependentUpon>GuiTestAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\gui\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

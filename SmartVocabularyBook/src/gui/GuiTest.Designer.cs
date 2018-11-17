@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridTest = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
-            this.progressBarTest = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,21 +43,20 @@
             this.dataGridTest.AllowUserToResizeRows = false;
             this.dataGridTest.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridTest.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTest.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridTest.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridTest.Location = new System.Drawing.Point(12, 12);
             this.dataGridTest.Name = "dataGridTest";
             this.dataGridTest.RowHeadersVisible = false;
             this.dataGridTest.Size = new System.Drawing.Size(860, 337);
             this.dataGridTest.TabIndex = 0;
-            this.dataGridTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTest_CellContentClick);
             // 
             // btnCancel
             // 
@@ -78,13 +76,7 @@
             this.btnFinish.TabIndex = 2;
             this.btnFinish.Text = "Auswerten";
             this.btnFinish.UseVisualStyleBackColor = true;
-            // 
-            // progressBarTest
-            // 
-            this.progressBarTest.Location = new System.Drawing.Point(295, 390);
-            this.progressBarTest.Name = "progressBarTest";
-            this.progressBarTest.Size = new System.Drawing.Size(244, 46);
-            this.progressBarTest.TabIndex = 3;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // GuiTest
             // 
@@ -92,14 +84,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.progressBarTest);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dataGridTest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiTest";
             this.Text = "GuiTest";
-            this.Load += new System.EventHandler(this.GuiTest_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTest)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,6 +100,5 @@
         private System.Windows.Forms.DataGridView dataGridTest;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFinish;
-        private System.Windows.Forms.ProgressBar progressBarTest;
     }
 }

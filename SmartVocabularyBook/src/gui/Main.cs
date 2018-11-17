@@ -1,4 +1,5 @@
-﻿using SmartVocabularyBook.vcbook.controller;
+﻿using SmartVocabularyBook.src.gui;
+using SmartVocabularyBook.vcbook.controller;
 using SmartVocabularyBook.vcbook.gui;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,17 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(test);
             test.Show();
             setMenuButton(false);
+        }
+
+        public void openPanelTestAnalysis()
+        {
+            this.panelMain.Controls.Clear();
+            GuiTestAnalysis gta = new GuiTestAnalysis(this);
+            gta.TopLevel = false;
+            gta.AutoScroll = false;
+            this.panelMain.Controls.Add(gta);
+            gta.Show();
+            setMenuButton(true);
         }
 
         //set menu button

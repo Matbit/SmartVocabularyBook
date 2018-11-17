@@ -23,7 +23,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
-        private static TestSetup ts = new TestSetup(-1L, "newest", 10, "first", true);
+        private static TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
 
 
         private static Vocabulary staticVocabulary = new Vocabulary();
@@ -41,7 +41,7 @@ namespace SmartVocabularyBook.vcbook.gui
             setBtnActive(false);
             setBtnArchived(true);
             lNameView.Text = "Meine Vokabeln";
-            testSettingsService.insertTestSettings(ts, 1);
+            testSettingsService.updateTestSettings(ts, 1);
 
         }
 
@@ -520,12 +520,64 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnStartTest_Click(object sender, EventArgs e)
         {
+            setTestSettings();
             startTest();
+
+            TestSetup test = new TestSetup();
+            test = testSettingsService.getTestSettingsById(1);
+            //just for tests
+            MessageBox.Show(test.getId() + " " + test.getSearchMode() + " " + test.getCount() + " " + test.getGivenLang() + " " + test.getSave());
         }
 
         private void startTest()
         {
             frmMain.openPanelTest();
+        }
+
+        private void setTestSettings()
+        {
+            int searchMode = 0;
+            int givenLanguage = 0;
+            int isSaved = 0;
+            
+            if (rbtnNewestVocabulary.Checked)
+            {
+                searchMode = 1;
+            }
+            else if (rbtnOldestVocabulary.Checked)
+            {
+                searchMode = 2;
+            }
+            else if (rbtnRandomVocabulary.Checked)
+            {
+                searchMode = 3;
+            }
+            else if (rbtnLongTermNotAskedVocabulary.Checked)
+            {
+                searchMode = 4;
+            }
+
+            if (rbtnTestMainLang.Checked)
+            {
+                givenLanguage = 1;
+            }
+            else if (rbtnTestSecondLang.Checked)
+            {
+                givenLanguage = 2;
+            }
+            else if (rbtnTestRandomLang.Checked)
+            {
+                givenLanguage = 3;
+            }
+
+            if (chbxSaveSettings.Checked)
+            {
+                isSaved = 1;
+            }            
+
+            TestSetup tsNew = new TestSetup(-1L, searchMode, trbCountVocabulary.Value, givenLanguage, chbxSaveSettings.Checked);
+
+            testSettingsService.updateTestSettings(tsNew, isSaved);
         }
     }
 }

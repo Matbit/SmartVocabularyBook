@@ -21,13 +21,18 @@ namespace SmartVocabularyBook.src.service
             else return false;
         }
         
-        public bool insertTestSettings(TestSetup ts, int isSaved)
+        public bool updateTestSettings(TestSetup ts, int isSaved)
         {
-            if (repository.insertTestSettings(ts, isSaved))
+            if (repository.updateTestSettings(ts, isSaved))
             {
                 return true;
             }
             else return false;
+        }
+        
+        public TestSetup getTestSettingsById(int id)
+        {
+            return repository.getTestSettingsById(id);
         }                
     }
 }

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lNameView = new System.Windows.Forms.Label();
             this.btnSetVocabularyArchived = new System.Windows.Forms.Button();
             this.btnSetVocabularyActive = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             this.rbtnTestMainLang = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.tbxSetValueOfAskedVocabulary = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -94,8 +96,6 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.lNameView = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -138,6 +138,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Übersicht";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // lNameView
+            // 
+            this.lNameView.AutoSize = true;
+            this.lNameView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameView.Location = new System.Drawing.Point(7, 11);
+            this.lNameView.Name = "lNameView";
+            this.lNameView.Size = new System.Drawing.Size(88, 20);
+            this.lNameView.TabIndex = 9;
+            this.lNameView.Text = "lNameView";
             // 
             // btnSetVocabularyArchived
             // 
@@ -636,6 +646,7 @@
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Groß- und Kleinschreibung beachten?";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // rbtnTestSecondLang
             // 
@@ -682,6 +693,16 @@
             this.groupBox2.Size = new System.Drawing.Size(266, 158);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 12);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "(mindestens 5)";
             // 
             // tbxSetValueOfAskedVocabulary
             // 
@@ -805,26 +826,6 @@
             this.label4.Size = new System.Drawing.Size(125, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
-            // 
-            // lNameView
-            // 
-            this.lNameView.AutoSize = true;
-            this.lNameView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNameView.Location = new System.Drawing.Point(7, 11);
-            this.lNameView.Name = "lNameView";
-            this.lNameView.Size = new System.Drawing.Size(88, 20);
-            this.lNameView.TabIndex = 9;
-            this.lNameView.Text = "lNameView";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 39);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 12);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "(mindestens 5)";
             // 
             // ProgressManager
             // 

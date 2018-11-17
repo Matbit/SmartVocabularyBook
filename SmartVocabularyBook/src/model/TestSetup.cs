@@ -9,9 +9,9 @@ namespace SmartVocabularyBook.src.model
     class TestSetup
     {
         private long id;
-        private String searchMode;
+        private int searchMode;
         private int count;
-        private String givenLang;
+        private int givenLang;
         private bool isSaved;
 
         public TestSetup()
@@ -19,7 +19,7 @@ namespace SmartVocabularyBook.src.model
 
         }
 
-        public TestSetup(long id, String searchMode, int count, String givenLang, bool save)
+        public TestSetup(long id, int searchMode, int count, int givenLang, bool save)
         {
             this.id = id;
             this.searchMode = searchMode;
@@ -38,12 +38,12 @@ namespace SmartVocabularyBook.src.model
             this.id = id;
         }
 
-        public String getSearchMode()
+        public int getSearchMode()
         {
             return searchMode;
         }
 
-        public void setSearchMode(String searchMode)
+        public void setSearchMode(int searchMode)
         {
             this.searchMode = searchMode;
         }
@@ -58,12 +58,12 @@ namespace SmartVocabularyBook.src.model
             this.count = count;
         }
 
-        public String getGivenLang()
+        public int getGivenLang()
         {
             return givenLang;
         }
 
-        public void setGivenLang(String givenLang)
+        public void setGivenLang(int givenLang)
         {
             this.givenLang = givenLang;
         }

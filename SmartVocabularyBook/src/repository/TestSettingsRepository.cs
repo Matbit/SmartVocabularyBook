@@ -38,6 +38,41 @@ namespace SmartVocabularyBook.src.repository
             return true;
         }
 
+        //update save option
+        public bool updateSaveOption(int isSaved)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "UPDATE testSettings SET saved = '" + isSaved + "' WHERE id = 1;";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+        }
+
+        //get saved
+        public int getisSavedById(int id)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+
+            string sql = "SELECT saved FROM testSettings WHERE id = " + id + ";";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            TestSetup ts = new TestSetup();
+
+            int isSaved = -1;
+            while (reader.Read())
+            {
+                string isSavedAsString = reader["saved"].ToString();
+                int.TryParse(isSavedAsString, out isSaved);
+            }
+            return isSaved;
+        }
+
+
+
         //get test settings
         public TestSetup getTestSettingsById(int id)
         {

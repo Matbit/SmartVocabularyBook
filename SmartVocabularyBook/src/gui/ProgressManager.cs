@@ -52,6 +52,7 @@ namespace SmartVocabularyBook.vcbook.gui
             int searchMode = ts.getSearchMode();
             int count = ts.getCount();
             int givenLang = ts.getGivenLang();
+            bool isSaved = ts.getSave();
 
             if (searchMode == 1)
             {
@@ -78,6 +79,11 @@ namespace SmartVocabularyBook.vcbook.gui
                 rbtnTestSecondLang.Checked = true;
             }
             else rbtnTestRandomLang.Checked = true;
+
+            if (!isSaved)
+            {
+                chbxSaveSettings.Checked = false;
+            }
         }
 
 
@@ -614,7 +620,13 @@ namespace SmartVocabularyBook.vcbook.gui
             TestSetup tsNew = new TestSetup(1L, searchMode, trbCountVocabulary.Value, givenLanguage, chbxSaveSettings.Checked);
 
             if (chbxSaveSettings.Checked)
+            {
                 testSettingsService.updateTestSettings(tsNew, isSaved);
+            }
+            else
+            {
+                testSettingsService.updateSaveOption(0);
+            }
 
 
 

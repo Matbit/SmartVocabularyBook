@@ -36,6 +36,16 @@ namespace SmartVocabularyBook.src.service
         public TestSetup getTestSettingsById(int id)
         {
             return repository.getTestSettingsById(id);
-        }                
+        }
+
+        public bool updateSaveOption(int isSaved)
+        {
+            return repository.updateSaveOption(isSaved);
+        }
+
+        public int getisSavedById(int id)
+        {
+            return repository.getisSavedById(id);
+        }
     }
 }

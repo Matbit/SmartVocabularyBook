@@ -110,5 +110,29 @@ namespace SmartVocabularyBook.vcbook.service
         {
             return repository.findAllNewestActiveVocabularies(limit);
         }
+
+        public List<Vocabulary> findOldestActiveVocabularies(int limit)
+        {
+            return repository.findOldestActiveVocabularies(limit);
+        }
+
+        public List<Vocabulary> findRandomActiveVocabularies(int limit)
+        {
+            return repository.findRandomActiveVocabularies(limit);
+        }
+
+        public bool updateLastCallById(Vocabulary vc)
+        {
+            if (repository.updateLastCallById(vc))
+            {
+                return true;
+            }
+            else return false;
+        }
+        
+        public List<Vocabulary> findLastCallASCVocabularies(int limit)
+        {
+            return repository.findLastCallASCVocabularies(limit);
+        }
     }
 }

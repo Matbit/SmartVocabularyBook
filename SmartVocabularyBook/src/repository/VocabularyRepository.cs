@@ -242,6 +242,90 @@ namespace SmartVocabularyBook.vcbook.repository
             return myVocs;
         }
 
+        //finds all oldest active vocabularies 
+        public List<Vocabulary> findOldestActiveVocabularies(int limit)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY dateOfCreation ASC LIMIT " + limit + ";";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            List<Vocabulary> myVocs = new List<Vocabulary>();
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                string archivedAsString = reader["archived"].ToString();
+                bool archivedAsBool = false;
+                bool.TryParse(archivedAsString, out archivedAsBool);
+
+                myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong, archivedAsBool));
+            }
+            con.Close();
+
+            return myVocs;
+        }
+
+        //finds random active vocabularies 
+        public List<Vocabulary> findRandomActiveVocabularies(int limit)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY RANDOM() LIMIT " + limit + ";";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            List<Vocabulary> myVocs = new List<Vocabulary>();
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                string archivedAsString = reader["archived"].ToString();
+                bool archivedAsBool = false;
+                bool.TryParse(archivedAsString, out archivedAsBool);
+
+                myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong, archivedAsBool));
+            }
+            con.Close();
+
+            return myVocs;
+        }
+
+        //finds active vocabularies which were long time not asked for 
+        public List<Vocabulary> findLastCallASCVocabularies(int limit)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY lastCall ASC LIMIT " + limit + ";";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            List<Vocabulary> myVocs = new List<Vocabulary>();
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                string archivedAsString = reader["archived"].ToString();
+                bool archivedAsBool = false;
+                bool.TryParse(archivedAsString, out archivedAsBool);
+
+                myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong, archivedAsBool));
+            }
+            con.Close();
+
+            return myVocs;
+        }
+
         //method to write new data (vocabulary) in db
         public bool insertVocabulary(Vocabulary vc, String date, int archived)
         {
@@ -293,7 +377,19 @@ namespace SmartVocabularyBook.vcbook.repository
             con.Close();
             return true;
         }
-       
+
+        //update vocabulary last call
+        public bool updateLastCallById(Vocabulary vc)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "UPDATE vocabulary SET lastCall = '" + vc.getLastCall() + "' WHERE id = '" + vc.getId().ToString() + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+        }
+
 
     }
 }

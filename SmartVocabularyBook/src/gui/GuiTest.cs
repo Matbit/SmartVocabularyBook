@@ -78,17 +78,35 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             testList.Clear();
             listSolution.Clear();
-            TestSetup ts = testSettingsService.getTestSettingsById(1);
-            
-            
+            TestSetup ts = testSettingsService.getTestSettingsById(1);          
 
             int searchMode = ts.getSearchMode();
 
             if (searchMode == 1)
             {
                 listSolution = vocabularyService.findAllNewestActiveVocabularies(ts.getCount());
+                updateLastCall(listSolution);
                 setLanguageMode(ts);               
             }
+            else if(searchMode == 2)
+            {
+                listSolution = vocabularyService.findOldestActiveVocabularies(ts.getCount());
+                updateLastCall(listSolution);
+                setLanguageMode(ts);
+            }
+            else if(searchMode == 3)
+            {
+                listSolution = vocabularyService.findRandomActiveVocabularies(ts.getCount());
+                updateLastCall(listSolution);
+                setLanguageMode(ts);
+            }
+            else if(searchMode == 4)
+            {
+                listSolution = vocabularyService.findLastCallASCVocabularies(ts.getCount());
+                updateLastCall(listSolution);
+                setLanguageMode(ts);
+            }
+
         }
 
         private void setLanguageMode(TestSetup ts)
@@ -135,8 +153,17 @@ namespace SmartVocabularyBook.vcbook.gui
             }
         }
 
-
-
+        private void updateLastCall(List<Vocabulary> myList)
+        {
+            DateTime today = DateTime.Today;
+            string dateAsString = today.Year + "" + today.Month + "" + today.Day + "";
+            int lastCall = Int32.Parse(dateAsString);
+            foreach (var vc in myList)
+            {
+                vc.setLastCall(lastCall);
+                vocabularyService.updateLastCallById(vc);
+            }            
+        }
 
         private void GuiTest_Load_1(object sender, EventArgs e)
         {

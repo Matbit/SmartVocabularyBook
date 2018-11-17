@@ -214,7 +214,33 @@ namespace SmartVocabularyBook.vcbook.repository
             return myVocs;
         }
 
+        //finds all newest active vocabularies 
+        public List<Vocabulary> findAllNewestActiveVocabularies(int limit)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY dateOfCreation DESC LIMIT "+limit+";";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
 
+            List<Vocabulary> myVocs = new List<Vocabulary>();
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                string archivedAsString = reader["archived"].ToString();
+                bool archivedAsBool = false;
+                bool.TryParse(archivedAsString, out archivedAsBool);
+
+                myVocs.Add(new Vocabulary(reader["wordLang1"].ToString(), reader["wordLang2"].ToString(), reader["memo"].ToString(), idAsLong, archivedAsBool));
+            }
+            con.Close();
+
+            return myVocs;
+        }
 
         //method to write new data (vocabulary) in db
         public bool insertVocabulary(Vocabulary vc, String date, int archived)

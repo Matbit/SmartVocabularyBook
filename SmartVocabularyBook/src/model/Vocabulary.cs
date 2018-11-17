@@ -12,8 +12,8 @@ namespace SmartVocabularyBook.vcbook.model
         private String wordLang1;
         private String wordLang2;
         private String memo;
-        private DateTime dateOfCreation;
-        private DateTime lastCall;
+        private int dateOfCreation;
+        private int lastCall;
         private bool archived;
 
         public Vocabulary() : this(null, null) { }
@@ -28,8 +28,11 @@ namespace SmartVocabularyBook.vcbook.model
             this.wordLang1 = wordLang1;
             this.wordLang2 = wordLang2;
             this.memo = memo;
-            this.dateOfCreation = DateTime.Today;
             this.archived = archived;
+
+            DateTime today = DateTime.Today;
+            string dateAsString = today.Year + ""+today.Month+"" + today.Day + "";
+            this.dateOfCreation = Int32.Parse(dateAsString);
         }
 
         //getter and setter
@@ -76,22 +79,22 @@ namespace SmartVocabularyBook.vcbook.model
                 this.memo = memo;
         }
 
-        public DateTime getDateOfCreation()
+        public int getDateOfCreation()
         {
             return dateOfCreation;
         }
 
-        public void setDateOfCreation(DateTime date)
+        public void setDateOfCreation(int date)
         {
             this.dateOfCreation = date;
         }
 
-        public DateTime getLastCall()
+        public int getLastCall()
         {
             return lastCall;
         }
 
-        public void setLastCall(DateTime lastCall)
+        public void setLastCall(int lastCall)
         {
             this.lastCall = lastCall;
         }

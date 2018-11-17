@@ -1,4 +1,5 @@
 ﻿using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.service;
 using SmartVocabularyBook.vcbook.model;
 using SmartVocabularyBook.vcbook.service;
 using System;
@@ -18,17 +19,21 @@ namespace SmartVocabularyBook.vcbook.gui
         Main frmMain;
         //contains the solution of the test
         private static List<Vocabulary> listSolution = new List<Vocabulary>();
+        
         //contains all vocabularies which should be answered by the user
         private static List<TestVocabularyModel> testList = new List<TestVocabularyModel>();
-        private static VocabularyService vocabularyService = new VocabularyService();
         
+        //services
+        private static VocabularyService vocabularyService = new VocabularyService();
+        private static TestSettingsService testSettingsService = new TestSettingsService();
 
         public GuiTest(Main main)
         {
             InitializeComponent();
             frmMain = main;
+            createTestList();
             setDataGrid();
-                        
+                                    
         }
 
         private void GuiTest_Load(object sender, EventArgs e)
@@ -70,8 +75,35 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmMain.openPanelProgressManager();
             MessageBox.Show("Der Test wurde abgebrochen.");
+            frmMain.openPanelProgressManager();
+        }
+
+        private void createTestList()
+        {
+            TestSetup ts = testSettingsService.getTestSettingsById(1);
+            
+            int searchMode = ts.getSearchMode();
+            int givenLang = ts.getGivenLang();
+            int count = ts.getCount();
+
+            if(searchMode == 1)
+            {
+                if(givenLang == 1)
+                {
+                    listSolution = vocabularyService.findAllNewestActiveVocabularies(count);
+                    
+                }
+            }
+        }
+
+
+
+
+
+        private void GuiTest_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

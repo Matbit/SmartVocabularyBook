@@ -578,6 +578,6 @@ namespace SmartVocabularyBook.vcbook.gui
             TestSetup tsNew = new TestSetup(-1L, searchMode, trbCountVocabulary.Value, givenLanguage, chbxSaveSettings.Checked);
 
             testSettingsService.updateTestSettings(tsNew, isSaved);
-        }
+        }        
     }
 }

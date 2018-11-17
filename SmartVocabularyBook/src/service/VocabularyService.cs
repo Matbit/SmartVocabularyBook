@@ -105,5 +105,10 @@ namespace SmartVocabularyBook.vcbook.service
         {
             return repository.findAllActivated();
         }
+
+        public List<Vocabulary> findAllNewestActiveVocabularies(int limit)
+        {
+            return repository.findAllNewestActiveVocabularies(limit);
+        }
     }
 }

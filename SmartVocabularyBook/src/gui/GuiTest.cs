@@ -63,7 +63,7 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.DefaultCellStyle.ForeColor = Color.DarkGreen;
             dataGridTest.DefaultCellStyle.BackColor = Color.Beige;
             dataGridTest.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
-            dataGridTest.Font = new Font("Microsoft Sans Serif", 13);
+            dataGridTest.Font = new Font("Microsoft Sans Serif", 13);            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -72,59 +72,68 @@ namespace SmartVocabularyBook.vcbook.gui
             frmMain.openPanelProgressManager();
         }
 
+
+        //creates a new list in data grid
         private void createTestList()
         {
+            testList.Clear();
             listSolution.Clear();
             TestSetup ts = testSettingsService.getTestSettingsById(1);
-            TestVocabularyModel tm = new TestVocabularyModel();
+            
+            
 
             int searchMode = ts.getSearchMode();
-            int givenLang = ts.getGivenLang();
-            int count = ts.getCount();
 
-            if(searchMode == 1)
+            if (searchMode == 1)
             {
-                listSolution = vocabularyService.findAllNewestActiveVocabularies(count);
-
-                if (givenLang == 1)
-                {
-                    foreach (var vc in listSolution)
-                    {
-                        tm = new TestVocabularyModel(vc.getWordLang1(), " ");
-                        testList.Add(tm);
-                    }
-                }
-                else if(givenLang == 2)
-                {
-                    foreach (var vc in listSolution)
-                    {
-                        tm = new TestVocabularyModel(vc.getWordLang2(), " ");
-                        testList.Add(tm);
-                    }
-                }
-                else if(givenLang == 3)
-                {
-                    Random rd = new Random();
-
-                    for(int i = 0; i < count; i++)
-                    {
-                        int random = rd.Next(0, 100);
-                        
-                            if (random > 49)
-                            {
-                                tm = new TestVocabularyModel(listSolution[i].getWordLang1()," ");
-                                testList.Add(tm);
-                            }
-                            else
-                            {
-                                tm = new TestVocabularyModel(listSolution[i].getWordLang2(), " ");
-                                testList.Add(tm);
-                            }                         
-                    }                   
-                }
+                listSolution = vocabularyService.findAllNewestActiveVocabularies(ts.getCount());
+                setLanguageMode(ts);               
             }
         }
 
+        private void setLanguageMode(TestSetup ts)
+        {
+            int givenLang = ts.getGivenLang();
+            int count = ts.getCount();
+            TestVocabularyModel tm = new TestVocabularyModel();
+
+            if (givenLang == 1)
+            {
+                foreach (var vc in listSolution)
+                {
+                    tm = new TestVocabularyModel(vc.getWordLang1(), " ");
+                    testList.Add(tm);
+                }
+            }
+            else if (givenLang == 2)
+            {
+                foreach (var vc in listSolution)
+                {
+                    tm = new TestVocabularyModel(vc.getWordLang2(), " ");
+                    testList.Add(tm);
+                }
+            }
+            else if (givenLang == 3)
+            {
+                Random rd = new Random();
+
+                for (int i = 0; i < count; i++)
+                {
+                    int random = rd.Next(0, 100);
+
+                    if (random > 49)
+                    {
+                        tm = new TestVocabularyModel(listSolution[i].getWordLang1(), " ");
+                        testList.Add(tm);
+                    }
+                    else
+                    {
+                        tm = new TestVocabularyModel(listSolution[i].getWordLang2(), " ");
+                        testList.Add(tm);
+                    }
+                }
+            }
+        }
 
 
 

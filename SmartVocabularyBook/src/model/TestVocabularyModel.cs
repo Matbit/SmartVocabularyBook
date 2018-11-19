@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace SmartVocabularyBook.src.model
 {
    public class TestVocabularyModel
-    {   
-       public String word1 { get; set;}
-       public String word2 { get; set;}
-       public String userWord { get; set;}
+    {
+        public String word1 { get; set; }
+        public String word2 { get; set; }
+        public String userWord { get; set; }
+        public int score { get; set; }
 
         public TestVocabularyModel()
         {
@@ -39,7 +40,7 @@ namespace SmartVocabularyBook.src.model
             return word1;
         }
 
-        public void setWord2(String word1)
+        public void setWord2(String word2)
         {
             this.word2 = word2;
         }
@@ -56,6 +57,14 @@ namespace SmartVocabularyBook.src.model
         public String getUserWord()
         {
             return userWord;
+        }
+        public int getScore()
+        {
+            return score;
+        }
+        public void setScore(int score)
+        {
+            this.score = score;
         }
     }
 }

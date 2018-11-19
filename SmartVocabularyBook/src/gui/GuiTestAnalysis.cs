@@ -16,6 +16,7 @@ namespace SmartVocabularyBook.src.gui
         Main frmMain;
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
         private static List<TestResult> trList = new List<TestResult>();
+        private static int points = 0;
 
         public GuiTestAnalysis(Main main, List<TestVocabularyModel> list)
         {   
@@ -62,27 +63,16 @@ namespace SmartVocabularyBook.src.gui
 
         private void calcPoints()
         {
-            
             for (int i = 0; i < resultList.Count; i++)
             {
-                TestResult tr = new TestResult();
-
                 if (resultList[i].getWord2().Equals(resultList[i].getUserWord()))
                 {
-                    tr.setScores(1);
+                    resultList[i].setScore(1);
+                    points++;
                 }
-                else tr.set
-
-                
+                else resultList[i].setScore(0);
             }
-
-
-
-
         }
-
-
-
 
         private void GuiTestAnalysis_Load(object sender, EventArgs e)
         {

@@ -43,6 +43,7 @@ namespace SmartVocabularyBook.vcbook.gui
             lNameView.Text = "Meine Vokabeln";
             //testSettingsService.updateTestSettings(ts, 1);
             loadTestSettings();
+            lLSearchWordInWeb.Visible = false;
 
         }
 
@@ -204,6 +205,7 @@ namespace SmartVocabularyBook.vcbook.gui
             tbxDataMemo.Clear();
             tbxDataMainLang.Clear();
             tbxDataSecondLang.Clear();
+            lLSearchWordInWeb.Visible = false;
         }        
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -635,6 +637,33 @@ namespace SmartVocabularyBook.vcbook.gui
         private void trbCountVocabulary_ValueChanged(object sender, EventArgs e)
         {
             tbxSetValueOfAskedVocabulary.Text = trbCountVocabulary.Value.ToString();
+        }
+
+        private void lLSearchWordInWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string stringUrl = "https://www.dict.cc?s=" + tbxMainLang.Text;
+            String url = stringUrl;
+
+            try
+            {
+                browser.Visible = true;
+                browser.Navigate(url);
+                llClose.Visible = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tbxMainLang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tbxMainLang.TextLength > 2)
+            {
+                lLSearchWordInWeb.Visible = true;
+            }
+            else lLSearchWordInWeb.Visible = false;
         }
     }
 }

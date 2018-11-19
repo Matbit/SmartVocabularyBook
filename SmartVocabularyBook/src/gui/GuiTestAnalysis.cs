@@ -18,6 +18,7 @@ namespace SmartVocabularyBook.src.gui
         private static TestService testservice = new TestService();
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
         private static List<TestResult> trList = new List<TestResult>();
+        private static TestResult trStatic = new TestResult();
         private static int points = 0;
 
         public GuiTestAnalysis(Main main, List<TestVocabularyModel> list)
@@ -78,62 +79,77 @@ namespace SmartVocabularyBook.src.gui
         {
             if(procent > 95)
             {
+                trStatic.setGrade(1);
                 return "1+";
             }
             else if(procent > 89)
             {
+                trStatic.setGrade(1);
                 return "1";
             }
             else if(procent > 84)
             {
+                trStatic.setGrade(2);
                 return "2+";
             }
             else if(procent > 79)
             {
+                trStatic.setGrade(2);
                 return "2";
             }
             else if(procent > 74)
             {
+                trStatic.setGrade(2);
                 return "2-";
             }
             else if(procent > 69)
             {
+                trStatic.setGrade(3);
                 return "3+";
             }
             else if(procent > 64)
             {
+                trStatic.setGrade(3);
                 return "3";
             }
             else if(procent > 59)
             {
+                trStatic.setGrade(3);
                 return "3-";
             }
             else if(procent > 54)
             {
+                trStatic.setGrade(4);
                 return "4+";
             }
             else if(procent > 49)
             {
+                trStatic.setGrade(4);
                 return "4";
             }
             else if(procent > 46)
             {
+                trStatic.setGrade(4);
                 return "4-";
             }
             else if(procent > 44)
             {
+                trStatic.setGrade(5);
                 return "5+";
             }
             else if(procent > 39)
             {
+                trStatic.setGrade(5);
                 return "5";
             }
             else if(procent > 33)
             {
+                trStatic.setGrade(5);
                 return "5-";
             }
             else
             {
+                trStatic.setGrade(6);
                 return "6";
             }
                         

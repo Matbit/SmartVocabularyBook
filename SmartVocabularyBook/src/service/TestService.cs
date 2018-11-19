@@ -1,4 +1,5 @@
-﻿using SmartVocabularyBook.src.repository;
+﻿using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,15 @@ namespace SmartVocabularyBook.src.service
         public bool createTableTest()
         {
             if (repository.createTableTest())
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public bool insertTest(TestResult tr)
+        {
+            if (repository.insertTest(tr))
             {
                 return true;
             }

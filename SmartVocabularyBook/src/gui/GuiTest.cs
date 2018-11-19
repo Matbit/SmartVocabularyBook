@@ -189,12 +189,7 @@ namespace SmartVocabularyBook.vcbook.gui
            for(int i = 0; i < testList.Count; i++)
             {
                 resultList.Add(new TestVocabularyModel(testList[i].getWord1(), listSolution[i].getWordLang2(), userInput[i].getWord1()));
-            }
-
-           foreach(var c in resultList)
-            {
-                //MessageBox.Show(c.getWord1() + " " + c.getWord2() + " " + c.getUserWord());
-            }
+            }           
         }
 
         private void calcPoints()

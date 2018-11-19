@@ -83,6 +83,7 @@
     <Compile Include="src\gui\GuiTestAnalysis.Designer.cs">
       <DependentUpon>GuiTestAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\model\TestResult.cs" />
     <Compile Include="src\model\TestSetup.cs" />
     <Compile Include="src\model\TestVocabularyModel.cs" />
     <Compile Include="src\repository\TestRepository.cs" />

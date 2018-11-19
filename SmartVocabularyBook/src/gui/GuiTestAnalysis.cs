@@ -15,6 +15,7 @@ namespace SmartVocabularyBook.src.gui
     {
         Main frmMain;
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
+        private static List<TestResult> trList = new List<TestResult>();
 
         public GuiTestAnalysis(Main main, List<TestVocabularyModel> list)
         {   
@@ -26,6 +27,7 @@ namespace SmartVocabularyBook.src.gui
 
         private void setDataGrid()
         {
+            convertResultListToTestResult();
             dataGridResult.DataSource = resultList;
 
             //specific columns settings
@@ -39,11 +41,10 @@ namespace SmartVocabularyBook.src.gui
             dataGridResult.Columns[2].ReadOnly = true;
             dataGridResult.Columns[2].HeaderText = "Meine Eingabe";
             dataGridResult.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dataGridResult.Columns[3].ReadOnly = true;
-            //dataGridResult.Columns[3].HeaderText = "Punkte";
-            //dataGridResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridResult.Columns[3].ReadOnly = true;
+            dataGridResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            //datagrid style setup
+            //datagrid style
             dataGridResult.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
             dataGridResult.Font = new Font("Microsoft Sans Serif", 12);
 
@@ -52,6 +53,36 @@ namespace SmartVocabularyBook.src.gui
             dataGridResult.DefaultCellStyle.BackColor = Color.Beige;
             
         }
+
+        private void convertResultListToTestResult()
+        {
+            //result list contains given word, solution and user input
+
+        }
+
+        private void calcPoints()
+        {
+            
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                TestResult tr = new TestResult();
+
+                if (resultList[i].getWord2().Equals(resultList[i].getUserWord()))
+                {
+                    tr.setScores(1);
+                }
+                else tr.set
+
+                
+            }
+
+
+
+
+        }
+
+
+
 
         private void GuiTestAnalysis_Load(object sender, EventArgs e)
         {

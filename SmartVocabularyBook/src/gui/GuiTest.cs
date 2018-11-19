@@ -174,7 +174,7 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 setTestLists();
                 calcPoints();
-                frmMain.openPanelTestAnalysis();
+                frmMain.openPanelTestAnalysis(resultList);
             }
         }
 

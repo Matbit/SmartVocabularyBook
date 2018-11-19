@@ -1,4 +1,5 @@
 ﻿using SmartVocabularyBook.src.gui;
+using SmartVocabularyBook.src.model;
 using SmartVocabularyBook.vcbook.controller;
 using SmartVocabularyBook.vcbook.gui;
 using System;
@@ -60,10 +61,10 @@ namespace SmartVocabularyBook
             setMenuButton(false);
         }
 
-        public void openPanelTestAnalysis()
+        public void openPanelTestAnalysis(List<TestVocabularyModel> tvm)
         {
             this.panelMain.Controls.Clear();
-            GuiTestAnalysis gta = new GuiTestAnalysis(this);
+            GuiTestAnalysis gta = new GuiTestAnalysis(this, tvm);
             gta.TopLevel = false;
             gta.AutoScroll = false;
             this.panelMain.Controls.Add(gta);

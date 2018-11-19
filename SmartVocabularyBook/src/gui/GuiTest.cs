@@ -28,6 +28,9 @@ namespace SmartVocabularyBook.vcbook.gui
 
         //result list contains given word, solution and user input
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
+
+        //scored points for every each word
+        private static List<int> score = new List<int>();
         
         //services
         private static VocabularyService vocabularyService = new VocabularyService();
@@ -49,10 +52,6 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void setDataGrid()
         {
-            //listSolution.Clear();
-            //testList.Clear();
-            //listSolution = vocabularyService.findAllActivated();                 
-
             dataGridTest.DataSource = testList;
             dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTest.Columns[0].ReadOnly = true;
@@ -174,6 +173,7 @@ namespace SmartVocabularyBook.vcbook.gui
             if(result == DialogResult.Yes)
             {
                 setTestLists();
+                calcPoints();
                 frmMain.openPanelTestAnalysis();
             }
         }
@@ -193,9 +193,26 @@ namespace SmartVocabularyBook.vcbook.gui
 
            foreach(var c in resultList)
             {
-                MessageBox.Show(c.getWord1() + " " + c.getWord2() + " " + c.getUserWord());
+                //MessageBox.Show(c.getWord1() + " " + c.getWord2() + " " + c.getUserWord());
             }
+        }
 
+        private void calcPoints()
+        {
+            score.Clear();
+            for(int i = 0; i < listSolution.Count; i++)
+            {
+                if (resultList[i].getWord2().Equals(resultList[i].getUserWord()))
+                {
+                    score.Add(1);
+                }
+                else score.Add(0);
+
+                MessageBox.Show(listSolution[i].getWordLang1() + " " + resultList[i].getUserWord() + " " + score[i]);
+            }
+            
+                
+            
 
         }
     }

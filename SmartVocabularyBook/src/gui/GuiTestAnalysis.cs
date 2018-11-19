@@ -1,4 +1,5 @@
 ﻿using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace SmartVocabularyBook.src.gui
     public partial class GuiTestAnalysis : Form
     {
         Main frmMain;
+        private static TestService testservice = new TestService();
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
         private static List<TestResult> trList = new List<TestResult>();
         private static int points = 0;
@@ -25,6 +27,8 @@ namespace SmartVocabularyBook.src.gui
             resultList = list;
             calcPoints();
             setDataGrid();
+            saveTestResultInDB();
+            setGrade();
             lTestResult.Text = points + " (von " + resultList.Count + ") Punkten erreicht! "+ (resultList.Count - points)+" Fehler ";
 
             //clear list when all datas are saved in db
@@ -58,6 +62,89 @@ namespace SmartVocabularyBook.src.gui
             dataGridResult.DefaultCellStyle.ForeColor = Color.Black;
             dataGridResult.DefaultCellStyle.BackColor = Color.Beige;
             
+        }
+
+        private void saveTestResultInDB()
+        {
+            //TestResult tr = new()
+        }
+
+        private double calcGradeInProcent()
+        {
+            return testservice.calcGradeInProcent(resultList.Count, points);
+        }
+
+        private String getGradeAsString(double procent)
+        {
+            if(procent > 95)
+            {
+                return "1+";
+            }
+            else if(procent > 89)
+            {
+                return "1";
+            }
+            else if(procent > 84)
+            {
+                return "2+";
+            }
+            else if(procent > 79)
+            {
+                return "2";
+            }
+            else if(procent > 74)
+            {
+                return "2-";
+            }
+            else if(procent > 69)
+            {
+                return "3+";
+            }
+            else if(procent > 64)
+            {
+                return "3";
+            }
+            else if(procent > 59)
+            {
+                return "3-";
+            }
+            else if(procent > 54)
+            {
+                return "4+";
+            }
+            else if(procent > 49)
+            {
+                return "4";
+            }
+            else if(procent > 46)
+            {
+                return "4-";
+            }
+            else if(procent > 44)
+            {
+                return "5+";
+            }
+            else if(procent > 39)
+            {
+                return "5";
+            }
+            else if(procent > 33)
+            {
+                return "5-";
+            }
+            else
+            {
+                return "6";
+            }
+                        
+        }
+
+        private void setGrade()
+        {
+            double grade = calcGradeInProcent();
+            String gradeAsString = getGradeAsString(grade);
+            lGrade.Text = gradeAsString;
+
         }
 
         private void convertResultListToTestResult()

@@ -31,6 +31,7 @@
             this.dataGridResult = new System.Windows.Forms.DataGridView();
             this.btnGoOn = new System.Windows.Forms.Button();
             this.lTestResult = new System.Windows.Forms.Label();
+            this.lGrade = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,12 +67,23 @@
             this.lTestResult.TabIndex = 4;
             this.lTestResult.Text = "label1";
             // 
+            // lGrade
+            // 
+            this.lGrade.AutoSize = true;
+            this.lGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lGrade.Location = new System.Drawing.Point(441, 366);
+            this.lGrade.Name = "lGrade";
+            this.lGrade.Size = new System.Drawing.Size(85, 29);
+            this.lGrade.TabIndex = 5;
+            this.lGrade.Text = "label1";
+            // 
             // GuiTestAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.lGrade);
             this.Controls.Add(this.lTestResult);
             this.Controls.Add(this.btnGoOn);
             this.Controls.Add(this.dataGridResult);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.DataGridView dataGridResult;
         private System.Windows.Forms.Button btnGoOn;
         private System.Windows.Forms.Label lTestResult;
+        private System.Windows.Forms.Label lGrade;
     }
 }

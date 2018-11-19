@@ -29,5 +29,10 @@ namespace SmartVocabularyBook.src.service
             }
             else return false;
         }
+
+        public double calcGradeInProcent(int length, int points)
+        {
+            return ((points * 100)/ length);
+        }
     }
 }

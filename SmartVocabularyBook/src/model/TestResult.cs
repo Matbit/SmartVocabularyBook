@@ -18,10 +18,25 @@ namespace SmartVocabularyBook.src.model
 
         public TestResult()
         {
-
+            DateTime today = DateTime.Now;
+            string dateAsString = today.Year + "" + today.Month + "" + today.Day;
+            this.testDate = Int32.Parse(dateAsString);
         }
 
         public TestResult(long id, int testDate, int scores, int wrongAnswers, int grade)
+        {
+            this.id = id;
+
+            DateTime today = DateTime.Now;
+            string dateAsString = today.Year + "" + today.Month + "" + today.Day;
+            this.testDate = Int32.Parse(dateAsString);
+
+            this.scores = scores;
+            this.wrongAnswers = wrongAnswers;
+            this.grade = grade;
+        }
+
+        public TestResult(int testDate, int scores, int wrongAnswers, int grade)
         {
             this.id = id;
 

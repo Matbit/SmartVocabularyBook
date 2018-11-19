@@ -67,7 +67,19 @@ namespace SmartVocabularyBook.src.gui
 
         private void saveTestResultInDB()
         {
-            //TestResult tr = new()
+            trStatic.setId(-1L);
+            trStatic.setScores(points);
+            trStatic.setWrongAnswers(resultList.Count - points);
+            trStatic.setMemo(" ");
+
+            try
+            {
+                testservice.insertTest(trStatic);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private double calcGradeInProcent()

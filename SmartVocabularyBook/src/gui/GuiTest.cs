@@ -54,12 +54,13 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             dataGridTest.DataSource = testList;
             dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            //dataGridTest.Columns[0].ReadOnly = true;
-            //dataGridTest.Columns[0].HeaderText = "Gesuchtes Wort";
-            //dataGridTest.Columns[1].HeaderText = "Lösung";
+            dataGridTest.Columns[0].ReadOnly = true;
+            dataGridTest.Columns[0].HeaderText = "Gesuchtes Wort";
+            dataGridTest.Columns[1].HeaderText = "Lösung";
             dataGridTest.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridTest.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dataGridTest.Columns[2].Visible = false;
+            dataGridTest.Columns[2].Visible = false;
+            dataGridTest.Columns[3].Visible = false;
             dataGridTest.BackgroundColor = Color.Khaki;
             dataGridTest.DefaultCellStyle.ForeColor = Color.DarkGreen;
             dataGridTest.DefaultCellStyle.BackColor = Color.Beige;

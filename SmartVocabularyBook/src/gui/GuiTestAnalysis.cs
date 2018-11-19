@@ -23,7 +23,9 @@ namespace SmartVocabularyBook.src.gui
             InitializeComponent();
             frmMain = main;
             resultList = list;
+            calcPoints();
             setDataGrid();
+            lTestResult.Text = points + " von " + resultList.Count + " Punkten erreicht. Fehler: " + (resultList.Count - points);
         }
 
         private void setDataGrid()
@@ -35,7 +37,7 @@ namespace SmartVocabularyBook.src.gui
             dataGridResult.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridResult.Columns[0].ReadOnly = true;
             dataGridResult.Columns[0].HeaderText = "Gesuchtes Wort";
-            dataGridResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridResult.Columns[1].ReadOnly = true;
             dataGridResult.Columns[1].HeaderText = "Lösung";            
             dataGridResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -43,12 +45,13 @@ namespace SmartVocabularyBook.src.gui
             dataGridResult.Columns[2].HeaderText = "Meine Eingabe";
             dataGridResult.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridResult.Columns[3].ReadOnly = true;
+            dataGridResult.Columns[3].HeaderText = "Punkte";
             dataGridResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             //datagrid style
             dataGridResult.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
             dataGridResult.Font = new Font("Microsoft Sans Serif", 12);
-
+            dataGridResult.RowHeadersVisible = false;
             dataGridResult.BackgroundColor = Color.Khaki;
             dataGridResult.DefaultCellStyle.ForeColor = Color.Black;
             dataGridResult.DefaultCellStyle.BackColor = Color.Beige;
@@ -63,6 +66,7 @@ namespace SmartVocabularyBook.src.gui
 
         private void calcPoints()
         {
+            points = 0;
             for (int i = 0; i < resultList.Count; i++)
             {
                 if (resultList[i].getWord2().Equals(resultList[i].getUserWord()))

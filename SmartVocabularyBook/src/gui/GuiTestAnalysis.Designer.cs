@@ -29,26 +29,41 @@
         private void InitializeComponent()
         {
             this.dataGridResult = new System.Windows.Forms.DataGridView();
-            this.panelDataView = new System.Windows.Forms.Panel();
+            this.btnGoOn = new System.Windows.Forms.Button();
+            this.lTestResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).BeginInit();
-            this.panelDataView.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridResult
             // 
+            this.dataGridResult.AllowUserToAddRows = false;
+            this.dataGridResult.AllowUserToDeleteRows = false;
+            this.dataGridResult.AllowUserToResizeColumns = false;
+            this.dataGridResult.AllowUserToResizeRows = false;
             this.dataGridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridResult.Location = new System.Drawing.Point(3, 3);
+            this.dataGridResult.Location = new System.Drawing.Point(2, 2);
             this.dataGridResult.Name = "dataGridResult";
-            this.dataGridResult.Size = new System.Drawing.Size(852, 323);
+            this.dataGridResult.Size = new System.Drawing.Size(869, 282);
             this.dataGridResult.TabIndex = 2;
             // 
-            // panelDataView
+            // btnGoOn
             // 
-            this.panelDataView.Controls.Add(this.dataGridResult);
-            this.panelDataView.Location = new System.Drawing.Point(2, 1);
-            this.panelDataView.Name = "panelDataView";
-            this.panelDataView.Size = new System.Drawing.Size(897, 347);
-            this.panelDataView.TabIndex = 5;
+            this.btnGoOn.Location = new System.Drawing.Point(777, 442);
+            this.btnGoOn.Name = "btnGoOn";
+            this.btnGoOn.Size = new System.Drawing.Size(111, 46);
+            this.btnGoOn.TabIndex = 3;
+            this.btnGoOn.Text = "Weiter";
+            this.btnGoOn.UseVisualStyleBackColor = true;
+            // 
+            // lTestResult
+            // 
+            this.lTestResult.AutoSize = true;
+            this.lTestResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTestResult.Location = new System.Drawing.Point(12, 317);
+            this.lTestResult.Name = "lTestResult";
+            this.lTestResult.Size = new System.Drawing.Size(60, 24);
+            this.lTestResult.TabIndex = 4;
+            this.lTestResult.Text = "label1";
             // 
             // GuiTestAnalysis
             // 
@@ -56,19 +71,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(900, 500);
-            this.Controls.Add(this.panelDataView);
+            this.Controls.Add(this.lTestResult);
+            this.Controls.Add(this.btnGoOn);
+            this.Controls.Add(this.dataGridResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiTestAnalysis";
             this.Text = "GuiTestAnalysis";
             this.Load += new System.EventHandler(this.GuiTestAnalysis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResult)).EndInit();
-            this.panelDataView.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridResult;
-        private System.Windows.Forms.Panel panelDataView;
+        private System.Windows.Forms.Button btnGoOn;
+        private System.Windows.Forms.Label lTestResult;
     }
 }

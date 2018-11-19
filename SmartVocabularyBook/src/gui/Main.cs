@@ -69,7 +69,7 @@ namespace SmartVocabularyBook
             gta.AutoScroll = false;
             this.panelMain.Controls.Add(gta);
             gta.Show();
-            setMenuButton(true);
+            setMenuButton(false);
         }
 
         //set menu button

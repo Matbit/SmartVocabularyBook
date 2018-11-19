@@ -32,7 +32,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "INSERT INTO tests(id, testDate, scores, wrongAnswers, grade, memo) VALUES ('" + tr.getId() + "', '" + tr.getTestDate() +
+            string sql = "INSERT INTO tests(testDate, scores, wrongAnswers, grade, memo) VALUES ('" + tr.getTestDate() +
                         "', '" + tr.getScores() + "', '" + tr.getWrongAnswers() + "', '" + tr.getGrade() + "', '" + tr.getMemo() + "');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();

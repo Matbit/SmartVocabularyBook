@@ -17,7 +17,7 @@ namespace SmartVocabularyBook.src.gui
         Main frmMain;
         private static TestService testservice = new TestService();
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
-        private static List<TestResult> trList = new List<TestResult>();
+        //private static List<TestResult> trList = new List<TestResult>();
         private static TestResult trStatic = new TestResult();
         private static int points = 0;
 
@@ -28,16 +28,13 @@ namespace SmartVocabularyBook.src.gui
             resultList = list;
             calcPoints();
             setDataGrid();
-            saveTestResultInDB();
             setGrade();
+            saveTestResultInDB();
             lTestResult.Text = points + " (von " + resultList.Count + ") Punkten erreicht! "+ (resultList.Count - points)+" Fehler ";
-
-            //clear list when all datas are saved in db
         }
 
         private void setDataGrid()
         {
-            convertResultListToTestResult();
             dataGridResult.DataSource = resultList;
 
             //specific columns settings
@@ -67,7 +64,7 @@ namespace SmartVocabularyBook.src.gui
 
         private void saveTestResultInDB()
         {
-            trStatic.setId(-1L);
+            trStatic.setId(-1);
             trStatic.setScores(points);
             trStatic.setWrongAnswers(resultList.Count - points);
             trStatic.setMemo(" ");
@@ -175,12 +172,7 @@ namespace SmartVocabularyBook.src.gui
 
         }
 
-        private void convertResultListToTestResult()
-        {
-            //result list contains given word, solution and user input
-
-        }
-
+        
         private void calcPoints()
         {
             points = 0;
@@ -202,6 +194,10 @@ namespace SmartVocabularyBook.src.gui
 
         private void btnGoOn_Click(object sender, EventArgs e)
         {
+            //clear list when all datas are saved in db
+            resultList.Clear();
+            points = 0;
+            //open new form
             frmMain.openPanelProgressManager();
         }
     }

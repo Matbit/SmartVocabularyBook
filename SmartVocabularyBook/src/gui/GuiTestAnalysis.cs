@@ -25,7 +25,9 @@ namespace SmartVocabularyBook.src.gui
             resultList = list;
             calcPoints();
             setDataGrid();
-            lTestResult.Text = points + " von " + resultList.Count + " Punkten erreicht. Fehler: " + (resultList.Count - points);
+            lTestResult.Text = points + " (von " + resultList.Count + ") Punkten erreicht! "+ (resultList.Count - points)+" Fehler ";
+
+            //clear list when all datas are saved in db
         }
 
         private void setDataGrid()
@@ -81,6 +83,11 @@ namespace SmartVocabularyBook.src.gui
         private void GuiTestAnalysis_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGoOn_Click(object sender, EventArgs e)
+        {
+            frmMain.openPanelProgressManager();
         }
     }
 }

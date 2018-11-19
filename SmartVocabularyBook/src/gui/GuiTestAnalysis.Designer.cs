@@ -54,12 +54,13 @@
             this.btnGoOn.TabIndex = 3;
             this.btnGoOn.Text = "Weiter";
             this.btnGoOn.UseVisualStyleBackColor = true;
+            this.btnGoOn.Click += new System.EventHandler(this.btnGoOn_Click);
             // 
             // lTestResult
             // 
             this.lTestResult.AutoSize = true;
             this.lTestResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTestResult.Location = new System.Drawing.Point(12, 317);
+            this.lTestResult.Location = new System.Drawing.Point(89, 313);
             this.lTestResult.Name = "lTestResult";
             this.lTestResult.Size = new System.Drawing.Size(60, 24);
             this.lTestResult.TabIndex = 4;

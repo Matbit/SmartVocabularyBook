@@ -41,8 +41,7 @@ namespace SmartVocabularyBook.vcbook.gui
             InitializeComponent();
             frmMain = main;
             createTestList();
-            setDataGrid();
-            
+            setDataGrid();            
         }
 
         private void GuiTest_Load(object sender, EventArgs e)
@@ -56,8 +55,8 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTest.Columns[0].ReadOnly = true;
             dataGridTest.Columns[0].HeaderText = "Gesuchtes Wort";
-            dataGridTest.Columns[1].HeaderText = "Lösung";
             dataGridTest.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridTest.Columns[1].HeaderText = "Lösung";
             dataGridTest.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridTest.Columns[2].Visible = false;
             dataGridTest.Columns[3].Visible = false;
@@ -202,14 +201,8 @@ namespace SmartVocabularyBook.vcbook.gui
                 {
                     score.Add(1);
                 }
-                else score.Add(0);
-
-                MessageBox.Show(listSolution[i].getWordLang1() + " " + resultList[i].getUserWord() + " " + score[i]);
-            }
-            
-                
-            
-
+                else score.Add(0);                
+            }  
         }
     }
 }

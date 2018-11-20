@@ -8,13 +8,13 @@ namespace SmartVocabularyBook.src.model
 {
     class TestResult
     {
-        private long id;
-        private int testDate;
-        private int scores;
-        private int wrongAnswers;
-        private int grade;
-        private String memo;
-        private long userId;
+        public long id { get; set;}
+        public int testDate { get; set;}
+        public int scores { get; set; }
+        public int wrongAnswers { get; set;}
+        public int grade { get; set;}
+        public String memo { get; set;}
+        public long userId { get; set;}
 
         public TestResult()
         {

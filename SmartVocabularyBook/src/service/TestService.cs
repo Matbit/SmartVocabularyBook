@@ -34,5 +34,10 @@ namespace SmartVocabularyBook.src.service
         {
             return ((points * 100)/ length);
         }
+
+        public List<TestResult> findAllTests()
+        {
+            return repository.findAllTests();
+        }
     }
 }

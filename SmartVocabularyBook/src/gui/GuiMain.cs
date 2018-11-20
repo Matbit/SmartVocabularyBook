@@ -44,5 +44,10 @@ namespace SmartVocabularyBook.vcbook.gui
             Application.Exit();
 
         }
+
+        private void btnOpenAllTestsView_Click(object sender, EventArgs e)
+        {
+            frmMain.openPanelAllTestsView();
+        }
     }
 }

@@ -72,6 +72,17 @@ namespace SmartVocabularyBook
             setMenuButton(false);
         }
 
+        public void openPanelAllTestsView()
+        {
+            this.panelMain.Controls.Clear();
+            AnalysisGui gui = new AnalysisGui(this);
+            gui.TopLevel = false;
+            gui.AutoScroll = true;
+            this.panelMain.Controls.Add(gui);
+            gui.Show();
+            setMenuButton(true);
+        }
+
         //set menu button
         private void setMenuButton(bool isVisible)
         {

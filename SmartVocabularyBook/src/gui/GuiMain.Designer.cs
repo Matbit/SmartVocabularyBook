@@ -30,11 +30,12 @@
         {
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnLearningProgress = new System.Windows.Forms.Button();
+            this.btnOpenAllTestsView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnd
             // 
-            this.btnEnd.Location = new System.Drawing.Point(53, 270);
+            this.btnEnd.Location = new System.Drawing.Point(53, 374);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(138, 76);
             this.btnEnd.TabIndex = 0;
@@ -52,11 +53,22 @@
             this.btnLearningProgress.UseVisualStyleBackColor = true;
             this.btnLearningProgress.Click += new System.EventHandler(this.btnLearningProgress_Click);
             // 
+            // btnOpenAllTestsView
+            // 
+            this.btnOpenAllTestsView.Location = new System.Drawing.Point(53, 142);
+            this.btnOpenAllTestsView.Name = "btnOpenAllTestsView";
+            this.btnOpenAllTestsView.Size = new System.Drawing.Size(138, 76);
+            this.btnOpenAllTestsView.TabIndex = 2;
+            this.btnOpenAllTestsView.Text = "Testanalyse";
+            this.btnOpenAllTestsView.UseVisualStyleBackColor = true;
+            this.btnOpenAllTestsView.Click += new System.EventHandler(this.btnOpenAllTestsView_Click);
+            // 
             // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnOpenAllTestsView);
             this.Controls.Add(this.btnLearningProgress);
             this.Controls.Add(this.btnEnd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Button btnLearningProgress;
+        private System.Windows.Forms.Button btnOpenAllTestsView;
     }
 }

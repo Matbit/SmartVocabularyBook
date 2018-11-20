@@ -39,5 +39,38 @@ namespace SmartVocabularyBook.src.repository
             con.Close();
             return true;
         }
+
+        //get all tests
+        public List<TestResult> findAllTests()
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM tests ORDER BY testDate ASC";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            List<TestResult> myTests = new List<TestResult>();
+
+            while (reader.Read())
+            {
+
+                string dateAsString = reader["testDate"].ToString();
+                int date = Int32.Parse(dateAsString);
+
+                string scoresAsString = reader["scores"].ToString();
+                int scores = Int32.Parse(scoresAsString);
+
+                string answerAsString = reader["wrongAnswers"].ToString();
+                int answer = Int32.Parse(answerAsString);
+
+                string gradeAsString = reader["grade"].ToString();
+                int grade = Int32.Parse(gradeAsString);
+
+                myTests.Add(new TestResult(date, scores , answer , grade));
+            }
+            con.Close();
+
+            return myTests;
+        }
     }
 }

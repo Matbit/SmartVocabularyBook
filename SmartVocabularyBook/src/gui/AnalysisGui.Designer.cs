@@ -49,6 +49,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnalysisGui";
             this.Text = "Analysis";
+            this.Load += new System.EventHandler(this.AnalysisGui_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAllTests)).EndInit();
             this.ResumeLayout(false);
 

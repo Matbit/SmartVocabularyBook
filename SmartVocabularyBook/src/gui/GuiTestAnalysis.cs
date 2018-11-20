@@ -126,17 +126,17 @@ namespace SmartVocabularyBook.src.gui
                 trStatic.setGrade(3);
                 return "3-";
             }
-            else if(procent > 54)
+            else if(procent > 55)
             {
                 trStatic.setGrade(4);
                 return "4+";
             }
-            else if(procent > 49)
+            else if(procent > 50)
             {
                 trStatic.setGrade(4);
                 return "4";
             }
-            else if(procent > 46)
+            else if(procent > 47)
             {
                 trStatic.setGrade(4);
                 return "4-";

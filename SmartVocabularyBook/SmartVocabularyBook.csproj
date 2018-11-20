@@ -71,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\controller\DBController.cs" />
+    <Compile Include="src\gui\AnalysisGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\gui\AnalysisGui.Designer.cs">
+      <DependentUpon>AnalysisGui.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\gui\GuiTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="src\service\TestService.cs" />
     <Compile Include="src\service\TestSettingsService.cs" />
     <Compile Include="src\service\VocabularyService.cs" />
+    <EmbeddedResource Include="src\gui\AnalysisGui.resx">
+      <DependentUpon>AnalysisGui.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </EmbeddedResource>

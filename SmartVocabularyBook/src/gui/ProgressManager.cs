@@ -504,6 +504,7 @@ namespace SmartVocabularyBook.vcbook.gui
             browser.Stop();
             browser.Visible = false;
             llClose.Visible = false;
+            lLSearchWordInWeb.Visible = false;
         }
 
         private void trbCountVocabulary_Scroll(object sender, EventArgs e)
@@ -660,7 +661,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void tbxMainLang_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (tbxMainLang.TextLength > 2)
+            if (tbxMainLang.TextLength >= 2)
             {
                 lLSearchWordInWeb.Visible = true;
             }

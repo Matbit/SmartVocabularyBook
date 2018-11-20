@@ -71,7 +71,7 @@
             // 
             this.lGrade.AutoSize = true;
             this.lGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lGrade.Location = new System.Drawing.Point(441, 366);
+            this.lGrade.Location = new System.Drawing.Point(613, 313);
             this.lGrade.Name = "lGrade";
             this.lGrade.Size = new System.Drawing.Size(85, 29);
             this.lGrade.TabIndex = 5;

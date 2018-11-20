@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace SmartVocabularyBook.src.repository
         }
 
         //get all tests
-        public List<TestResult> findAllTests()
+        public List<TestResultView> findAllTests()
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
@@ -49,14 +50,21 @@ namespace SmartVocabularyBook.src.repository
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
-            List<TestResult> myTests = new List<TestResult>();
+            List<TestResultView> myTests = new List<TestResultView>();
+            
 
             while (reader.Read())
             {
+                
 
-                string dateAsString = reader["testDate"].ToString();
-                int date = Int32.Parse(dateAsString);
+                string dateAsString1 = reader["testDate"].ToString();
+                int date = Int32.Parse(dateAsString1);
 
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                DateTime testdate = DateTime.ParseExact(dateAsString1, "yyyyMMdd", provider);
+                String newDate = testdate.Day + "." + testdate.Month + "." + testdate.Year;
+
+                
                 string scoresAsString = reader["scores"].ToString();
                 int scores = Int32.Parse(scoresAsString);
 
@@ -65,8 +73,10 @@ namespace SmartVocabularyBook.src.repository
 
                 string gradeAsString = reader["grade"].ToString();
                 int grade = Int32.Parse(gradeAsString);
+                TestResultView trv = new TestResultView(date, scores, answer, grade);
+                trv.dateAsString = newDate;
 
-                myTests.Add(new TestResult(date, scores , answer , grade));
+                myTests.Add(trv);
             }
             con.Close();
 

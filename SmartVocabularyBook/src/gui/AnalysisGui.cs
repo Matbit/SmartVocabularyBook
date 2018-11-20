@@ -17,7 +17,7 @@ namespace SmartVocabularyBook.src.gui
     {
         Main frmMain;
         private static TestService testService = new TestService();
-        private static List<TestResult> resultList = new List<TestResult>();
+        private static List<TestResultView> resultList = new List<TestResultView>();
         private static List<int> helpingList = new List<int>();
         private static List<String> dateFormatList = new List<String>();
 
@@ -27,12 +27,13 @@ namespace SmartVocabularyBook.src.gui
             frmMain = main;
             loadTests();
             setDataGrid();
-            formatDateView();
+            //formatDateView();
         }
 
         private void formatDateView()
         {
-            foreach(var c in resultList)
+            dataGridAllTests.Columns[1].CellTemplate.ValueType = typeof(String);
+            foreach (var c in resultList)
             {
                 helpingList.Add(c.getTestDate());
             }
@@ -40,17 +41,16 @@ namespace SmartVocabularyBook.src.gui
             {
 
                 String dateString2 = helpingList[i].ToString();
-                //DateTime date2 = this.ParseDate(dateString2, "ddMMyyyy");
-                CultureInfo provider = CultureInfo.InvariantCulture;
-                DateTime testdate = DateTime.ParseExact(dateString2, "yyyyMMdd",provider);
+               
                 //MessageBox.Show(testdate.ToString());
-                dateFormatList.Add(testdate.ToString());
+               
+
+               // dateFormatList.Add(newDate);
                 
             }
 
             for(int i = 0; i < dateFormatList.Count; i++)
             {
-                dataGridAllTests.Columns[1].ValueType.ToString();
                 dataGridAllTests.Rows[i].Cells[1].Value = dateFormatList[i];
             }
             
@@ -74,9 +74,9 @@ namespace SmartVocabularyBook.src.gui
         {
             dataGridAllTests.DataSource = resultList;
 
-            dataGridAllTests.Columns[0].Visible = false;
-            dataGridAllTests.Columns[5].Visible = false;
-            dataGridAllTests.Columns[6].Visible = false;
+           //dataGridAllTests.Columns[0].Visible = false;
+           //dataGridAllTests.Columns[5].Visible = false;
+           //dataGridAllTests.Columns[6].Visible = false;
             
             //specific columns settings
             dataGridAllTests.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;

@@ -640,7 +640,8 @@ namespace SmartVocabularyBook.vcbook.gui
         }
 
         private void lLSearchWordInWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+        {   
+            
             string stringUrl = "https://www.dict.cc?s=" + tbxMainLang.Text;
             String url = stringUrl;
 

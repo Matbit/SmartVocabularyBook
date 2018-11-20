@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace SmartVocabularyBook.src.gui
         Main frmMain;
         private static TestService testService = new TestService();
         private static List<TestResult> resultList = new List<TestResult>();
+        private static List<int> helpingList = new List<int>();
+        private static List<String> dateFormatList = new List<String>();
 
         public AnalysisGui(Main main)
         {
@@ -24,6 +27,33 @@ namespace SmartVocabularyBook.src.gui
             frmMain = main;
             loadTests();
             setDataGrid();
+            formatDateView();
+        }
+
+        private void formatDateView()
+        {
+            foreach(var c in resultList)
+            {
+                helpingList.Add(c.getTestDate());
+            }
+            for(int i = 0; i < helpingList.Count; i++)
+            {
+
+                String dateString2 = helpingList[i].ToString();
+                //DateTime date2 = this.ParseDate(dateString2, "ddMMyyyy");
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                DateTime testdate = DateTime.ParseExact(dateString2, "yyyyMMdd",provider);
+                //MessageBox.Show(testdate.ToString());
+                dateFormatList.Add(testdate.ToString());
+                
+            }
+
+            for(int i = 0; i < dateFormatList.Count; i++)
+            {
+                dataGridAllTests.Columns[1].ValueType.ToString();
+                dataGridAllTests.Rows[i].Cells[1].Value = dateFormatList[i];
+            }
+            
         }
 
         private void loadTests()
@@ -38,10 +68,16 @@ namespace SmartVocabularyBook.src.gui
             }
         }
 
+
+       
         private void setDataGrid()
         {
             dataGridAllTests.DataSource = resultList;
 
+            dataGridAllTests.Columns[0].Visible = false;
+            dataGridAllTests.Columns[5].Visible = false;
+            dataGridAllTests.Columns[6].Visible = false;
+            
             //specific columns settings
             dataGridAllTests.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridAllTests.Columns[1].ReadOnly = true;
@@ -56,10 +92,7 @@ namespace SmartVocabularyBook.src.gui
             dataGridAllTests.Columns[4].ReadOnly = true;
             dataGridAllTests.Columns[4].HeaderText = "Note";
             dataGridAllTests.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            dataGridAllTests.Columns[0].Visible = false;
-            dataGridAllTests.Columns[5].Visible = false;
-            dataGridAllTests.Columns[6].Visible = false;
+                       
 
             //datagrid style
             dataGridAllTests.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);

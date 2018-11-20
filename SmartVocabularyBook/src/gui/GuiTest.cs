@@ -206,5 +206,10 @@ namespace SmartVocabularyBook.vcbook.gui
                 else score.Add(0);                
             }  
         }
+
+        private void dataGridTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

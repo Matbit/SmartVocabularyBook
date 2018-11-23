@@ -44,6 +44,7 @@ namespace SmartVocabularyBook.vcbook.gui
             //testSettingsService.updateTestSettings(ts, 1);
             loadTestSettings();
             lLSearchWordInWeb.Visible = false;
+            changeReadOnlyTbxEditVocabulary(true);
 
         }
 
@@ -87,6 +88,12 @@ namespace SmartVocabularyBook.vcbook.gui
             }
         }
 
+        private void changeReadOnlyTbxEditVocabulary(bool isReadOnly)
+        {
+            tbxDataMainLang.ReadOnly = isReadOnly;
+            tbxDataSecondLang.ReadOnly = isReadOnly;
+            tbxDataMemo.ReadOnly = isReadOnly;
+        }
 
         public void addVocToListView()
         {
@@ -270,7 +277,10 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            //abort if nothing is selected
+            if (lbxDBResult.SelectedIndex == -1)
+                return;
+
             try
             {
                 int index = lbxDBResult.SelectedIndex;
@@ -281,6 +291,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 tbxDataMainLang.Text = result.getWordLang1();
                     tbxDataSecondLang.Text = result.getWordLang2();
                     tbxDataMemo.Text = result.getMemo();
+                changeReadOnlyTbxEditVocabulary(false);
             }
             catch (Exception exception)
             {
@@ -397,6 +408,7 @@ namespace SmartVocabularyBook.vcbook.gui
                     addArchivedVocToListView();
                     addVocToListView();
                     clearAllTextboxes();
+                    changeReadOnlyTbxEditVocabulary(true);
                     MessageBox.Show("Vokabel wurde erfolgreich geändert");
                 }
 
@@ -410,7 +422,17 @@ namespace SmartVocabularyBook.vcbook.gui
         //delete vocabulary from database
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            String word = lbxDBResult.SelectedItem.ToString();
+            String word = "";
+            try
+            {
+                word = lbxDBResult.SelectedItem.ToString();
+            }
+            catch
+            {
+                //do nothing
+                //return;
+            }
+            
 
             try
             {
@@ -437,13 +459,25 @@ namespace SmartVocabularyBook.vcbook.gui
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
-            }            
+            }
+            changeReadOnlyTbxEditVocabulary(true);            
         }
 
         //archived vocabulary
         private void btnArchived_Click(object sender, EventArgs e)
         {
-            String word = lbxDBResult.SelectedItem.ToString();
+            String word = "";
+
+            try
+            {
+                word = lbxDBResult.SelectedItem.ToString();
+            }
+            catch
+            {
+                // do nothing
+            }
+
+            
 
             try
             {
@@ -472,6 +506,7 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 MessageBox.Show(exception.Message);
             }
+            changeReadOnlyTbxEditVocabulary(true);
         }
 
         private void llOpenBrowser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

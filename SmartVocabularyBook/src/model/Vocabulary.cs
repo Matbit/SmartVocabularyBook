@@ -35,6 +35,9 @@ namespace SmartVocabularyBook.vcbook.model
             this.dateOfCreation = Int32.Parse(dateAsString);
         }
 
+        public Vocabulary(String word) : this(word, null) { }
+        
+
         //getter and setter
         public long getId()
         {

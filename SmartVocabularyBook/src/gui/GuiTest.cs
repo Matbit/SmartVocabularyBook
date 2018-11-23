@@ -122,10 +122,10 @@ namespace SmartVocabularyBook.vcbook.gui
 
             if (givenLang == 1)
             {
-                foreach (var vc in listSolution)
+                foreach (Vocabulary vc in listSolution)
                 {
                     tm = new TestVocabularyModel(vc.getWordLang1(), " ");
-                    vocabulary.setWordLang1(vc.getWordLang2());
+                    vocabulary = new Vocabulary(vc.getWordLang2());
                     testList.Add(tm);
                     solutionWordList.Add(vocabulary);
                 }
@@ -135,7 +135,7 @@ namespace SmartVocabularyBook.vcbook.gui
                 foreach (var vc in listSolution)
                 {
                     tm = new TestVocabularyModel(vc.getWordLang2(), " ");
-                    vocabulary.setWordLang1(vc.getWordLang1());
+                    vocabulary = new Vocabulary(vc.getWordLang1());
                     testList.Add(tm);
                     solutionWordList.Add(vocabulary);
                 }
@@ -151,14 +151,14 @@ namespace SmartVocabularyBook.vcbook.gui
                     if (random > 49)
                     {
                         tm = new TestVocabularyModel(listSolution[i].getWordLang1(), " ");
-                        vocabulary.setWordLang1(listSolution[i].getWordLang2());
+                        vocabulary = new Vocabulary(listSolution[i].getWordLang2());
                         testList.Add(tm);
                         solutionWordList.Add(vocabulary);
                     }
                     else
                     {
                         tm = new TestVocabularyModel(listSolution[i].getWordLang2(), " ");
-                        vocabulary.setWordLang1(listSolution[i].getWordLang1());
+                        vocabulary = new Vocabulary(listSolution[i].getWordLang1());                        
                         testList.Add(tm);
                         solutionWordList.Add(vocabulary);
                     }

@@ -60,6 +60,7 @@
             this.rbtnSecondLang = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lLSearchWordInWeb = new System.Windows.Forms.LinkLabel();
             this.llClose = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.browser = new System.Windows.Forms.WebBrowser();
@@ -95,7 +96,6 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.lLSearchWordInWeb = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -449,6 +449,18 @@
             this.tabPage3.Text = "Neue Vokabeln hinzufügen";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // lLSearchWordInWeb
+            // 
+            this.lLSearchWordInWeb.AutoSize = true;
+            this.lLSearchWordInWeb.Location = new System.Drawing.Point(111, 22);
+            this.lLSearchWordInWeb.Name = "lLSearchWordInWeb";
+            this.lLSearchWordInWeb.Size = new System.Drawing.Size(140, 13);
+            this.lLSearchWordInWeb.TabIndex = 8;
+            this.lLSearchWordInWeb.TabStop = true;
+            this.lLSearchWordInWeb.Text = "Übersetzung im Web zeigen";
+            this.lLSearchWordInWeb.Visible = false;
+            this.lLSearchWordInWeb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLSearchWordInWeb_LinkClicked);
+            // 
             // llClose
             // 
             this.llClose.AutoSize = true;
@@ -526,6 +538,7 @@
             this.tbxMainLang.Name = "tbxMainLang";
             this.tbxMainLang.Size = new System.Drawing.Size(157, 20);
             this.tbxMainLang.TabIndex = 1;
+            this.tbxMainLang.TextChanged += new System.EventHandler(this.tbxMainLang_TextChanged);
             this.tbxMainLang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxMainLang_KeyPress);
             // 
             // label7
@@ -817,17 +830,6 @@
             this.label4.Size = new System.Drawing.Size(125, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
-            // 
-            // lLSearchWordInWeb
-            // 
-            this.lLSearchWordInWeb.AutoSize = true;
-            this.lLSearchWordInWeb.Location = new System.Drawing.Point(111, 22);
-            this.lLSearchWordInWeb.Name = "lLSearchWordInWeb";
-            this.lLSearchWordInWeb.Size = new System.Drawing.Size(140, 13);
-            this.lLSearchWordInWeb.TabIndex = 8;
-            this.lLSearchWordInWeb.TabStop = true;
-            this.lLSearchWordInWeb.Text = "Übersetzung im Web zeigen";
-            this.lLSearchWordInWeb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLSearchWordInWeb_LinkClicked);
             // 
             // ProgressManager
             // 

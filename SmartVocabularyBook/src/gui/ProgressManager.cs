@@ -675,7 +675,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private void lLSearchWordInWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {   
             
-            string stringUrl = "https://www.dict.cc?s=" + tbxMainLang.Text;
+            string stringUrl = "https://www.dict.cc/?s=" + tbxMainLang.Text;
             String url = stringUrl;
 
             try
@@ -695,9 +695,14 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             if (tbxMainLang.TextLength >= 2)
             {
-                lLSearchWordInWeb.Visible = true;
+                //lLSearchWordInWeb.Visible = true;
             }
             else lLSearchWordInWeb.Visible = false;
+        }
+
+        private void tbxMainLang_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

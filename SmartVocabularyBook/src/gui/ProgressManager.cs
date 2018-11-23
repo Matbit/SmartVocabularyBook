@@ -694,7 +694,8 @@ namespace SmartVocabularyBook.vcbook.gui
         private void tbxMainLang_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (tbxMainLang.TextLength >= 2)
-            {
+            {   
+                //deactivated, because of problems with "ä,ö,ü"
                 //lLSearchWordInWeb.Visible = true;
             }
             else lLSearchWordInWeb.Visible = false;

@@ -19,7 +19,9 @@ namespace SmartVocabularyBook.vcbook.gui
         Main frmMain;
         //contains the solution of the test
         private static List<Vocabulary> listSolution = new List<Vocabulary>();
-        
+        //contains the correct word, which was looked for
+        private static List<Vocabulary> solutionWordList = new List<Vocabulary>();
+                    
         //contains all vocabularies which should be answered by the user
         private static List<TestVocabularyModel> testList = new List<TestVocabularyModel>();
 
@@ -79,6 +81,7 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             testList.Clear();
             listSolution.Clear();
+            solutionWordList.Clear();
             TestSetup ts = testSettingsService.getTestSettingsById(1);          
 
             int searchMode = ts.getSearchMode();
@@ -115,13 +118,16 @@ namespace SmartVocabularyBook.vcbook.gui
             int givenLang = ts.getGivenLang();
             int count = ts.getCount();
             TestVocabularyModel tm = new TestVocabularyModel();
+            Vocabulary vocabulary = new Vocabulary();
 
             if (givenLang == 1)
             {
                 foreach (var vc in listSolution)
                 {
                     tm = new TestVocabularyModel(vc.getWordLang1(), " ");
+                    vocabulary.setWordLang1(vc.getWordLang2());
                     testList.Add(tm);
+                    solutionWordList.Add(vocabulary);
                 }
             }
             else if (givenLang == 2)
@@ -129,7 +135,9 @@ namespace SmartVocabularyBook.vcbook.gui
                 foreach (var vc in listSolution)
                 {
                     tm = new TestVocabularyModel(vc.getWordLang2(), " ");
+                    vocabulary.setWordLang1(vc.getWordLang1());
                     testList.Add(tm);
+                    solutionWordList.Add(vocabulary);
                 }
             }
             else if (givenLang == 3)
@@ -143,12 +151,16 @@ namespace SmartVocabularyBook.vcbook.gui
                     if (random > 49)
                     {
                         tm = new TestVocabularyModel(listSolution[i].getWordLang1(), " ");
+                        vocabulary.setWordLang1(listSolution[i].getWordLang2());
                         testList.Add(tm);
+                        solutionWordList.Add(vocabulary);
                     }
                     else
                     {
                         tm = new TestVocabularyModel(listSolution[i].getWordLang2(), " ");
+                        vocabulary.setWordLang1(listSolution[i].getWordLang1());
                         testList.Add(tm);
+                        solutionWordList.Add(vocabulary);
                     }
                 }
             }
@@ -180,6 +192,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void setTestLists()
         {
+            TestSetup ts = testSettingsService.getTestSettingsById(1);
 
            for(int i = 0; i<dataGridTest.Rows.Count; i++)
             {
@@ -187,8 +200,9 @@ namespace SmartVocabularyBook.vcbook.gui
             }
 
            for(int i = 0; i < testList.Count; i++)
-            {
-                resultList.Add(new TestVocabularyModel(testList[i].getWord1(), listSolution[i].getWordLang2(), userInput[i].getWord1()));
+            {   
+
+                resultList.Add(new TestVocabularyModel(testList[i].getWord1(), solutionWordList[i].getWordLang1(), userInput[i].getWord1()));
             }
 
             userInput.Clear();           

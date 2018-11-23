@@ -673,8 +673,20 @@ namespace SmartVocabularyBook.vcbook.gui
         }
 
         private void lLSearchWordInWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {   
-            
+        {
+
+
+            String text = tbxMainLang.Text;
+
+            if (text.Contains("ü"))
+            {
+                text = text.Replace('ü', 'u');
+            }
+            if (text.Contains("ö"))
+            {
+                
+            }
+
             string stringUrl = "https://www.dict.cc/?s=" + tbxMainLang.Text;
             String url = stringUrl;
 

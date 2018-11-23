@@ -180,17 +180,26 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
+
+           
+
             DialogResult result = MessageBox.Show("Möchtest Du den Test wirklich beenden?", "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if(result == DialogResult.Yes)
-            {
-                setTestLists();
+            {   
+
+                //if there aren't any vocabularies
+                if (!setTestLists())
+                {
+                    frmMain.openPanelProgressManager();
+                    return;
+                }
                 calcPoints();
                 frmMain.openPanelTestAnalysis(resultList);
             }
         }
 
-        private void setTestLists()
+        private bool setTestLists()
         {
             TestSetup ts = testSettingsService.getTestSettingsById(1);
 
@@ -198,14 +207,23 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 userInput.Add(new TestVocabularyModel(dataGridTest[1, i].Value.ToString() , " "));
             }
+            
+           //break if no vocabularies are found
+            if (userInput.Count < 1)
+            {
+                MessageBox.Show("Es sind keine Vokabeln gefunden worden.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                userInput.Clear();
+                return false;
+            }
 
-           for(int i = 0; i < testList.Count; i++)
+                for (int i = 0; i < testList.Count; i++)
             {   
 
                 resultList.Add(new TestVocabularyModel(testList[i].getWord1(), solutionWordList[i].getWordLang1(), userInput[i].getWord1()));
             }
 
-            userInput.Clear();           
+            userInput.Clear();
+            return true;           
         }
 
         private void calcPoints()

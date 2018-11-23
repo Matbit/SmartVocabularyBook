@@ -119,5 +119,21 @@ namespace SmartVocabularyBook.src.repository
 
             return ts;
         }
+
+        //insert setup into db
+        public bool insertSetUpIntoDB(TestSetup ts)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+
+            string sql ="INSERT INTO testSettings(searchMode, count, givenLang, saved) VALUES ('"+ts.getSearchMode()+"', '"+ ts.getCount()+"', '"+ ts.getGivenLang()+
+                "', '"+ ts.getSave() + "');";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+        }
+
     }
 }

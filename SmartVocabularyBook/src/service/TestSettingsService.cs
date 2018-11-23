@@ -18,7 +18,7 @@ namespace SmartVocabularyBook.src.service
 
             if (repository.createTableTestSettings())
             {
-                
+                insertSetUpIntoDB(ts);
                 return true;
             }
             else return false;
@@ -46,6 +46,11 @@ namespace SmartVocabularyBook.src.service
         public int getisSavedById(int id)
         {
             return repository.getisSavedById(id);
+        }
+
+        public bool insertSetUpIntoDB(TestSetup ts)
+        {
+            return repository.insertSetUpIntoDB(ts);
         }
     }
 }

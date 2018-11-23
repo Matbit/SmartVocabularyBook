@@ -270,21 +270,9 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            try
-            {
-                String word = lbxDBResult.SelectedItem.ToString();
-            }
-            catch 
-            {
-                //do nothing
-            }
-            
             
             try
             {
-                // bool mainLanguage = rbtnMainLang.Checked;
-                //staticVocabulary = service.findVocabularyByWordList(word);
                 int index = lbxDBResult.SelectedIndex;
                 Vocabulary result = new Vocabulary();
                 result = staticVocabularyList[index];

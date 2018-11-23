@@ -205,6 +205,7 @@ namespace SmartVocabularyBook.vcbook.gui
             tbxDataMemo.Clear();
             tbxDataMainLang.Clear();
             tbxDataSecondLang.Clear();
+            tbxSearch.Clear();
             lLSearchWordInWeb.Visible = false;
         }        
 
@@ -227,7 +228,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             lbxDBResult.Items.Clear();
-            clearAllTextboxes();
+            //clearAllTextboxes();
             staticVocabularyList.Clear();
 
             
@@ -270,7 +271,15 @@ namespace SmartVocabularyBook.vcbook.gui
         private void lbxDBResult_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            String word = lbxDBResult.SelectedItem.ToString();
+            try
+            {
+                String word = lbxDBResult.SelectedItem.ToString();
+            }
+            catch 
+            {
+                //do nothing
+            }
+            
             
             try
             {

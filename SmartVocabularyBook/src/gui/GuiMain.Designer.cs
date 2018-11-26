@@ -31,6 +31,7 @@
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnLearningProgress = new System.Windows.Forms.Button();
             this.btnOpenAllTestsView = new System.Windows.Forms.Button();
+            this.btnOpenPanelOptions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnd
@@ -63,11 +64,22 @@
             this.btnOpenAllTestsView.UseVisualStyleBackColor = true;
             this.btnOpenAllTestsView.Click += new System.EventHandler(this.btnOpenAllTestsView_Click);
             // 
+            // btnOpenPanelOptions
+            // 
+            this.btnOpenPanelOptions.Location = new System.Drawing.Point(708, 60);
+            this.btnOpenPanelOptions.Name = "btnOpenPanelOptions";
+            this.btnOpenPanelOptions.Size = new System.Drawing.Size(138, 76);
+            this.btnOpenPanelOptions.TabIndex = 3;
+            this.btnOpenPanelOptions.Text = "Optionen";
+            this.btnOpenPanelOptions.UseVisualStyleBackColor = true;
+            this.btnOpenPanelOptions.Click += new System.EventHandler(this.btnOpenPanelOptions_Click);
+            // 
             // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnOpenPanelOptions);
             this.Controls.Add(this.btnOpenAllTestsView);
             this.Controls.Add(this.btnLearningProgress);
             this.Controls.Add(this.btnEnd);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Button btnLearningProgress;
         private System.Windows.Forms.Button btnOpenAllTestsView;
+        private System.Windows.Forms.Button btnOpenPanelOptions;
     }
 }

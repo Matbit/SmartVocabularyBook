@@ -83,6 +83,17 @@ namespace SmartVocabularyBook
             setMenuButton(true);
         }
 
+        public void openPanelOptions()
+        {
+            this.panelMain.Controls.Clear();
+            Options gui = new Options(this);
+            gui.TopLevel = false;
+            gui.AutoScroll = true;
+            this.panelMain.Controls.Add(gui);
+            gui.Show();
+            setMenuButton(true);
+        }
+
         //set menu button
         private void setMenuButton(bool isVisible)
         {
@@ -137,6 +148,11 @@ namespace SmartVocabularyBook
         private void endApplication()
         {
             Application.Exit();
+        }
+
+        private void optionenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelOptions();
         }
     }
 }

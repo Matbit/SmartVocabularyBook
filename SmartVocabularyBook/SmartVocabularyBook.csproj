@@ -89,6 +89,12 @@
     <Compile Include="src\gui\GuiTestAnalysis.Designer.cs">
       <DependentUpon>GuiTestAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\gui\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\gui\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\model\TestResult.cs" />
     <Compile Include="src\model\TestResultView.cs" />
     <Compile Include="src\model\TestSetup.cs" />
@@ -145,6 +151,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="src\gui\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\gui\ProgressManager.resx">
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </EmbeddedResource>

@@ -49,5 +49,10 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             frmMain.openPanelAllTestsView();
         }
+
+        private void btnOpenPanelOptions_Click(object sender, EventArgs e)
+        {
+            frmMain.openPanelOptions();
+        }
     }
 }

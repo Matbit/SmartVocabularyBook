@@ -89,6 +89,12 @@
     <Compile Include="src\gui\GuiTestAnalysis.Designer.cs">
       <DependentUpon>GuiTestAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\gui\GuiHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\gui\GuiHelp.Designer.cs">
+      <DependentUpon>GuiHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\gui\Options.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\gui\GuiTestAnalysis.resx">
       <DependentUpon>GuiTestAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\gui\GuiHelp.resx">
+      <DependentUpon>GuiHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\gui\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

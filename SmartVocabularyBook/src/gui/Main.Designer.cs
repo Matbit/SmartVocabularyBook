@@ -37,6 +37,8 @@
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnOpenMain = new System.Windows.Forms.Button();
+            this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +87,9 @@
             // 
             // hilfeToolStripMenuItem
             // 
+            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hilfeToolStripMenuItem1,
+            this.aboutToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
             this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
@@ -105,6 +110,19 @@
             this.btnOpenMain.Text = "Hauptmenü";
             this.btnOpenMain.UseVisualStyleBackColor = true;
             this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
+            // 
+            // hilfeToolStripMenuItem1
+            // 
+            this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
+            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.hilfeToolStripMenuItem1.Text = "Hilfe";
+            this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // Main
             // 
@@ -136,6 +154,8 @@
         private System.Windows.Forms.Button btnOpenMain;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hauptmenüToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

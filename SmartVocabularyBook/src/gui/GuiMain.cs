@@ -54,5 +54,10 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             frmMain.openPanelOptions();
         }
+
+        private void btnOpenHelp_Click(object sender, EventArgs e)
+        {
+            frmMain.openPanelHelp();
+        }
     }
 }

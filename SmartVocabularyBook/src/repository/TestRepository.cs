@@ -51,12 +51,12 @@ namespace SmartVocabularyBook.src.repository
             SQLiteDataReader reader = cmd.ExecuteReader();
 
             List<TestResultView> myTests = new List<TestResultView>();
-            
+            TestResultView trv;
+
 
             while (reader.Read())
             {
                 
-
                 string dateAsString1 = reader["testDate"].ToString();
                 int date = Int32.Parse(dateAsString1);
 
@@ -73,9 +73,13 @@ namespace SmartVocabularyBook.src.repository
 
                 string gradeAsString = reader["grade"].ToString();
                 int grade = Int32.Parse(gradeAsString);
-                TestResultView trv = new TestResultView(date, scores, answer, grade);
+
+                trv = new TestResultView();
                 trv.dateAsString = newDate;
 
+                trv.setScores(scores);
+                trv.setGrade(grade);
+                trv.setWrongAnswers(answer);
                 myTests.Add(trv);
             }
             con.Close();

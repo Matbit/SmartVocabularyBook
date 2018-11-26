@@ -96,6 +96,7 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnDeleteVocabulary = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -124,6 +125,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.tabPage1.Controls.Add(this.btnDeleteVocabulary);
             this.tabPage1.Controls.Add(this.lNameView);
             this.tabPage1.Controls.Add(this.btnSetVocabularyArchived);
             this.tabPage1.Controls.Add(this.btnSetVocabularyActive);
@@ -831,6 +833,16 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
             // 
+            // btnDeleteVocabulary
+            // 
+            this.btnDeleteVocabulary.Location = new System.Drawing.Point(597, 429);
+            this.btnDeleteVocabulary.Name = "btnDeleteVocabulary";
+            this.btnDeleteVocabulary.Size = new System.Drawing.Size(181, 38);
+            this.btnDeleteVocabulary.TabIndex = 10;
+            this.btnDeleteVocabulary.Text = "Löschen";
+            this.btnDeleteVocabulary.UseVisualStyleBackColor = true;
+            this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
+            // 
             // ProgressManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -934,5 +946,6 @@
         private System.Windows.Forms.Label lNameView;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.LinkLabel lLSearchWordInWeb;
+        private System.Windows.Forms.Button btnDeleteVocabulary;
     }
 }

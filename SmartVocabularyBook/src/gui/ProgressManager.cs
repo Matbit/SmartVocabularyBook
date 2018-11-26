@@ -39,6 +39,7 @@ namespace SmartVocabularyBook.vcbook.gui
             frmMain = aMain;
             addVocToListView();
             setBtnActive(false);
+            setBtnDelete(false);
             setBtnArchived(true);
             lNameView.Text = "Meine Vokabeln";
             //testSettingsService.updateTestSettings(ts, 1);
@@ -140,6 +141,11 @@ namespace SmartVocabularyBook.vcbook.gui
             btnSetVocabularyActive.Visible = isActive;
         }
 
+        private void setBtnDelete(bool isActive)
+        {
+            btnDeleteVocabulary.Visible = isActive;
+        }
+
         private void setBtnArchived(bool isArchived)
         {
             btnSetVocabularyArchived.Visible = isArchived;
@@ -150,6 +156,7 @@ namespace SmartVocabularyBook.vcbook.gui
             lNameView.Text = "Meine Vokabeln";
             addVocToListView();
             setBtnActive(false);
+            setBtnDelete(false);
             setBtnArchived(true);
         }
 
@@ -158,6 +165,7 @@ namespace SmartVocabularyBook.vcbook.gui
             lNameView.Text = "Archivierte Vokabeln";
             addArchivedVocToListView();
             setBtnActive(true);
+            setBtnDelete(true);
             setBtnArchived(false);            
         }
 
@@ -717,5 +725,39 @@ namespace SmartVocabularyBook.vcbook.gui
         {
 
         }
+
+        private void btnDeleteVocabulary_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                if (listViewAllVocab.SelectedItems.Count > 0)
+                {
+                    int index = listViewAllVocab.FocusedItem.Index;
+                    Vocabulary vc = new Vocabulary();
+                    vc = listVocabularyArchivedView[index];
+                    DialogResult dr = MessageBox.Show("Möchten Sie diesen Vokabelsatz wirklich löschen?\n" + vc.getWordLang1() + " - " +
+                        vc.getWordLang2(), "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (service.deleteVocabularyById(vc))
+                        {
+                            addVocToListView();
+                            addArchivedVocToListView();
+                            clearAllTextboxes();
+                            MessageBox.Show("Vokabelsatz \"" + vc.getWordLang1() + "\" wurde erfolgreich gelöscht.");
+                        }
+                    }
+                }
+                else MessageBox.Show("Es wurde keine Vokabel ausgewählt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }  
     }
 }

@@ -33,6 +33,7 @@
             this.btnOpenAllTestsView = new System.Windows.Forms.Button();
             this.btnOpenPanelOptions = new System.Windows.Forms.Button();
             this.btnOpenHelp = new System.Windows.Forms.Button();
+            this.btnOpenCreateUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnd
@@ -85,11 +86,21 @@
             this.btnOpenHelp.UseVisualStyleBackColor = true;
             this.btnOpenHelp.Click += new System.EventHandler(this.btnOpenHelp_Click);
             // 
+            // btnOpenCreateUser
+            // 
+            this.btnOpenCreateUser.Location = new System.Drawing.Point(53, 224);
+            this.btnOpenCreateUser.Name = "btnOpenCreateUser";
+            this.btnOpenCreateUser.Size = new System.Drawing.Size(138, 76);
+            this.btnOpenCreateUser.TabIndex = 5;
+            this.btnOpenCreateUser.Text = "Nutzer erstellen/ bearbeiten";
+            this.btnOpenCreateUser.UseVisualStyleBackColor = true;
+            // 
             // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnOpenCreateUser);
             this.Controls.Add(this.btnOpenHelp);
             this.Controls.Add(this.btnOpenPanelOptions);
             this.Controls.Add(this.btnOpenAllTestsView);
@@ -110,5 +121,6 @@
         private System.Windows.Forms.Button btnOpenAllTestsView;
         private System.Windows.Forms.Button btnOpenPanelOptions;
         private System.Windows.Forms.Button btnOpenHelp;
+        private System.Windows.Forms.Button btnOpenCreateUser;
     }
 }

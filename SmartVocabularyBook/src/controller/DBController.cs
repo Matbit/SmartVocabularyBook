@@ -31,14 +31,32 @@ namespace SmartVocabularyBook.vcbook.controller
             if (!doesDBExists())
                 SQLiteConnection.CreateFile(dbFile);
 
-            //create all tables
-            serviceVocabulary.createTableVocabulary();
-            serviceTest.createTableTest();
-            serviceTestSettings.createTableTestSettings();
-            serviceUser.createTableUser();
+            try
+            {
+                //create all tables
+                serviceVocabulary.createTableVocabulary();
+                serviceTest.createTableTest();
+                serviceTestSettings.createTableTestSettings();
+                serviceUser.createTableUser();
 
-            //initial entries
-            initialTestSetup();                        
+                //initial entries
+                initialTestSetup();
+                initialUser();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }                        
+        }
+
+        //initial user
+        private void initialUser()
+        {
+            if (serviceUser.findAll().Count < 1)
+            {
+                serviceUser.initialUser();
+            }
         }
 
         //initial testsetup
@@ -49,10 +67,6 @@ namespace SmartVocabularyBook.vcbook.controller
                 serviceTestSettings.initialTestSetup();
             }
         }
-
-
-
-
 
         //returns a boolean whether a file exists
         private bool doesDBExists()

@@ -94,6 +94,7 @@
             this.btnOpenCreateUser.TabIndex = 5;
             this.btnOpenCreateUser.Text = "Nutzer erstellen/ bearbeiten";
             this.btnOpenCreateUser.UseVisualStyleBackColor = true;
+            this.btnOpenCreateUser.Click += new System.EventHandler(this.btnOpenCreateUser_Click);
             // 
             // GuiMain
             // 

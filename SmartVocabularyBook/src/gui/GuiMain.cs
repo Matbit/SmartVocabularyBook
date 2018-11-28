@@ -59,5 +59,10 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             frmMain.openPanelHelp();
         }
+
+        private void btnOpenCreateUser_Click(object sender, EventArgs e)
+        {
+            frmMain.openPanelUserModification();
+        }
     }
 }

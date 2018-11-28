@@ -101,6 +101,12 @@
     <Compile Include="src\gui\Options.Designer.cs">
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\gui\UserModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\gui\UserModification.Designer.cs">
+      <DependentUpon>UserModification.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\model\TestResult.cs" />
     <Compile Include="src\model\TestResultView.cs" />
     <Compile Include="src\model\TestSetup.cs" />
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\gui\ProgressManager.resx">
       <DependentUpon>ProgressManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\gui\UserModification.resx">
+      <DependentUpon>UserModification.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

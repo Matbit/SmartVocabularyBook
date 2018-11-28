@@ -105,8 +105,10 @@
     <Compile Include="src\model\TestResultView.cs" />
     <Compile Include="src\model\TestSetup.cs" />
     <Compile Include="src\model\TestVocabularyModel.cs" />
+    <Compile Include="src\model\User.cs" />
     <Compile Include="src\repository\TestRepository.cs" />
     <Compile Include="src\repository\TestSettingsRepository.cs" />
+    <Compile Include="src\repository\UserRepository.cs" />
     <Compile Include="src\repository\VocabularyRepository.cs" />
     <Compile Include="src\gui\GuiMain.cs">
       <SubType>Form</SubType>
@@ -131,6 +133,7 @@
     <Compile Include="src\model\Vocabulary.cs" />
     <Compile Include="src\service\TestService.cs" />
     <Compile Include="src\service\TestSettingsService.cs" />
+    <Compile Include="src\service\UserService.cs" />
     <Compile Include="src\service\VocabularyService.cs" />
     <EmbeddedResource Include="src\gui\AnalysisGui.resx">
       <DependentUpon>AnalysisGui.cs</DependentUpon>

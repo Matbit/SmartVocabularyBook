@@ -32,9 +32,10 @@ namespace SmartVocabularyBook.vcbook.controller
             serviceTest.createTableTest();
             TestSettingsService serviceTestSettings = new TestSettingsService();
             serviceTestSettings.createTableTestSettings();
+            UserService serviceUser = new UserService();
+            serviceUser.createTableUser();
             
-            createTableUser();
-                        
+                                    
         }
 
         //returns a boolean whether a file exists
@@ -42,21 +43,5 @@ namespace SmartVocabularyBook.vcbook.controller
         {
            return File.Exists(dbFile);
         }
-
-        
-        //creates an user table. Just called by constructor
-        private void createTableUser()
-        {
-            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
-            con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, nickname TEXT NOT NULL, mainLanguage TEXT NOT NULL, lastTest TEXT, lastLogin TEXT);";
-            SQLiteCommand cmd = new SQLiteCommand(sql, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-             
-
-        
-
     }
 }

@@ -19,29 +19,46 @@ namespace SmartVocabularyBook.vcbook.controller
         //name of sqlite file
         private const String dbFile = "svb.db";
 
+        //static member
+        static VocabularyService serviceVocabulary = new VocabularyService();
+        static UserService serviceUser = new UserService();
+        static TestSettingsService serviceTestSettings = new TestSettingsService();
+        static TestService serviceTest = new TestService();
 
+        //method is called by the constructor of "main" class
         public void initDB()
         {
             if (!doesDBExists())
                 SQLiteConnection.CreateFile(dbFile);
 
             //create all tables
-            VocabularyService serviceVocabulary = new VocabularyService();
             serviceVocabulary.createTableVocabulary();
-            TestService serviceTest = new TestService();
             serviceTest.createTableTest();
-            TestSettingsService serviceTestSettings = new TestSettingsService();
             serviceTestSettings.createTableTestSettings();
-            UserService serviceUser = new UserService();
             serviceUser.createTableUser();
-            
-                                    
+
+            //initial entries
+            initialTestSetup();                        
         }
+
+        //initial testsetup
+        private void initialTestSetup()
+        {
+            if(serviceTestSettings.findAll().Count < 1)
+            {
+                serviceTestSettings.initialTestSetup();
+            }
+        }
+
+
+
+
 
         //returns a boolean whether a file exists
         private bool doesDBExists()
         {
            return File.Exists(dbFile);
         }
+
     }
 }

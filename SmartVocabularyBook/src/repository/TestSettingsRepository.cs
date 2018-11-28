@@ -135,5 +135,42 @@ namespace SmartVocabularyBook.src.repository
             return true;
         }
 
+        public List<TestSetup> findAll()
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+
+            string sql = "SELECT * FROM testSettings;";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            List<TestSetup> listSetup = new List<TestSetup>();
+
+            while (reader.Read())
+            {
+                string idAsString = reader["id"].ToString();
+                long idAsLong = 0L;
+                long.TryParse(idAsString, out idAsLong);
+
+                string savedAsString = reader["saved"].ToString();
+                bool saved = false;
+                bool.TryParse(savedAsString, out saved);
+
+                string searchAsString = reader["searchMode"].ToString();
+                int search = Int32.Parse(searchAsString);
+
+                string countAsString = reader["count"].ToString();
+                int count = Int32.Parse(countAsString);
+
+                string givenLangAsString = reader["givenLang"].ToString();
+                int givenLang = Int32.Parse(givenLangAsString);
+
+                listSetup.Add(new TestSetup(idAsLong, search, count, givenLang, saved));
+            }
+            con.Close();
+            return listSetup;
+
+        }
+
     }
 }

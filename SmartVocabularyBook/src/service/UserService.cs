@@ -15,7 +15,7 @@ namespace SmartVocabularyBook.src.service
 
         public bool createTableUser()
         {
-            return repository.createTableUser();
+            return repository.createTableUser();     
         }
 
         public bool insertIntoUser(User user)
@@ -26,6 +26,15 @@ namespace SmartVocabularyBook.src.service
         public bool updateUserById(User user)
         {
             return repository.updateUserById(user);
+        }
+
+        public bool initialUser()
+        {
+            User user = new model.User();
+            user.nickname = "testdummy";
+            user.mainLanguage = "Deutsch";
+
+           return insertIntoUser(user);            
         }
     }
 }

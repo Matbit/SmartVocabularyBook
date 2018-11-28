@@ -14,14 +14,13 @@ namespace SmartVocabularyBook.src.service
 
         public bool createTableTestSettings()
         {
-            TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
+            return repository.createTableTestSettings();
+        }
 
-            if (repository.createTableTestSettings())
-            {
-                insertSetUpIntoDB(ts);
-                return true;
-            }
-            else return false;
+        public bool initialTestSetup()
+        {
+            TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
+            return insertSetUpIntoDB(ts);
         }
         
         public bool updateTestSettings(TestSetup ts, int isSaved)
@@ -51,6 +50,11 @@ namespace SmartVocabularyBook.src.service
         public bool insertSetUpIntoDB(TestSetup ts)
         {
             return repository.insertSetUpIntoDB(ts);
+        }
+
+        public List<TestSetup> findAll()
+        {
+            return repository.findAll();
         }
     }
 }

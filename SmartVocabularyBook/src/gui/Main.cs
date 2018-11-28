@@ -36,6 +36,7 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(main);
             main.Show();
             setMenuButton(false);
+            setTestAnalysisButton(false);
 
         }
 
@@ -48,6 +49,7 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(frm);
             frm.Show();
             setMenuButton(true);
+            setTestAnalysisButton(true);
         }
 
         public void openPanelTest()
@@ -59,6 +61,7 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(test);
             test.Show();
             setMenuButton(false);
+            setTestAnalysisButton(false);
         }
 
         public void openPanelTestAnalysis(List<TestVocabularyModel> tvm)
@@ -69,7 +72,8 @@ namespace SmartVocabularyBook
             gta.AutoScroll = false;
             this.panelMain.Controls.Add(gta);
             gta.Show();
-            setMenuButton(false);
+            setMenuButton(true);
+            setTestAnalysisButton(true);
         }
 
         public void openPanelAllTestsView()
@@ -81,6 +85,7 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(gui);
             gui.Show();
             setMenuButton(true);
+            setTestAnalysisButton(false);
         }
 
         public void openPanelOptions()
@@ -92,6 +97,7 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(gui);
             gui.Show();
             setMenuButton(true);
+            setTestAnalysisButton(false);
         }
 
         public void openPanelHelp()
@@ -103,12 +109,19 @@ namespace SmartVocabularyBook
             this.panelMain.Controls.Add(gui);
             gui.Show();
             setMenuButton(true);
+            setTestAnalysisButton(false);
         }
 
         //set menu button
         private void setMenuButton(bool isVisible)
         {
             btnOpenMain.Visible = isVisible;
+        }
+
+        //set test button
+        private void setTestAnalysisButton(bool isVisible)
+        {
+            btnOpenTestAnalysis.Visible = isVisible;
         }
 
 
@@ -169,6 +182,11 @@ namespace SmartVocabularyBook
         private void hilfeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             openPanelHelp();
+        }
+
+        private void btnOpenTestAnalysis_Click(object sender, EventArgs e)
+        {
+            openPanelAllTestsView();
         }
     }
 }

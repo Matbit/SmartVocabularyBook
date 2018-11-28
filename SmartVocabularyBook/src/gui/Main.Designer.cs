@@ -35,10 +35,11 @@
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.btnOpenMain = new System.Windows.Forms.Button();
             this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.btnOpenMain = new System.Windows.Forms.Button();
+            this.btnOpenTestAnalysis = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +95,19 @@
             this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
+            // hilfeToolStripMenuItem1
+            // 
+            this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
+            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.hilfeToolStripMenuItem1.Text = "Hilfe";
+            this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // panelMain
             // 
             this.panelMain.Location = new System.Drawing.Point(0, 37);
@@ -111,24 +125,22 @@
             this.btnOpenMain.UseVisualStyleBackColor = true;
             this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
             // 
-            // hilfeToolStripMenuItem1
+            // btnOpenTestAnalysis
             // 
-            this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
-            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.hilfeToolStripMenuItem1.Text = "Hilfe";
-            this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.btnOpenTestAnalysis.Location = new System.Drawing.Point(421, 555);
+            this.btnOpenTestAnalysis.Name = "btnOpenTestAnalysis";
+            this.btnOpenTestAnalysis.Size = new System.Drawing.Size(103, 46);
+            this.btnOpenTestAnalysis.TabIndex = 7;
+            this.btnOpenTestAnalysis.Text = "Testanalyse";
+            this.btnOpenTestAnalysis.UseVisualStyleBackColor = true;
+            this.btnOpenTestAnalysis.Click += new System.EventHandler(this.btnOpenTestAnalysis_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 625);
+            this.Controls.Add(this.btnOpenTestAnalysis);
             this.Controls.Add(this.btnOpenMain);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip1);
@@ -156,6 +168,7 @@
         private System.Windows.Forms.ToolStripMenuItem hauptmenüToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button btnOpenTestAnalysis;
     }
 }
 

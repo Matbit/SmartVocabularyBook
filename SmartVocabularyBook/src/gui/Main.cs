@@ -1,5 +1,6 @@
 ﻿using SmartVocabularyBook.src.gui;
 using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.service;
 using SmartVocabularyBook.vcbook.controller;
 using SmartVocabularyBook.vcbook.gui;
 using System;
@@ -16,6 +17,7 @@ namespace SmartVocabularyBook
 {
     public partial class Main : Form
     {
+        static UserService serviceUser = new UserService();
         
         public Main()
         {
@@ -23,7 +25,19 @@ namespace SmartVocabularyBook
             openPanelMain();
             
             DBController db = new DBController();
-            db.initDB();            
+            db.initDB();
+
+            setWelcomeText(1);            
+        }
+
+        //welcome user
+        public void setWelcomeText(int id)
+        {
+
+            User user = new User();
+            user.id = id;
+            user = serviceUser.findUserById(user);
+            this.Text = "Vokabeltrainer  für " + user.nickname +" - Dein smartes Vokabelheft";
         }
 
         //methods to open special forms in a panel
@@ -142,20 +156,16 @@ namespace SmartVocabularyBook
         {
             openPanelMain();
         }
-
         
         private void btnLearningProcess_Click(object sender, EventArgs e)
         {
             
         }
-
         
         private void btnEnd_Click(object sender, EventArgs e)
         {
             
         }
-
-       
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {

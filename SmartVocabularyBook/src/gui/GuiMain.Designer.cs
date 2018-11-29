@@ -34,11 +34,12 @@
             this.btnOpenPanelOptions = new System.Windows.Forms.Button();
             this.btnOpenHelp = new System.Windows.Forms.Button();
             this.btnOpenCreateUser = new System.Windows.Forms.Button();
+            this.btnAddNewUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnd
             // 
-            this.btnEnd.Location = new System.Drawing.Point(53, 374);
+            this.btnEnd.Location = new System.Drawing.Point(53, 388);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(138, 76);
             this.btnEnd.TabIndex = 0;
@@ -92,15 +93,25 @@
             this.btnOpenCreateUser.Name = "btnOpenCreateUser";
             this.btnOpenCreateUser.Size = new System.Drawing.Size(138, 76);
             this.btnOpenCreateUser.TabIndex = 5;
-            this.btnOpenCreateUser.Text = "Nutzer erstellen/ bearbeiten";
+            this.btnOpenCreateUser.Text = "Nutzer  bearbeiten";
             this.btnOpenCreateUser.UseVisualStyleBackColor = true;
             this.btnOpenCreateUser.Click += new System.EventHandler(this.btnOpenCreateUser_Click);
+            // 
+            // btnAddNewUser
+            // 
+            this.btnAddNewUser.Location = new System.Drawing.Point(53, 306);
+            this.btnAddNewUser.Name = "btnAddNewUser";
+            this.btnAddNewUser.Size = new System.Drawing.Size(138, 76);
+            this.btnAddNewUser.TabIndex = 6;
+            this.btnAddNewUser.Text = "Neuer Nutzer";
+            this.btnAddNewUser.UseVisualStyleBackColor = true;
             // 
             // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.btnOpenCreateUser);
             this.Controls.Add(this.btnOpenHelp);
             this.Controls.Add(this.btnOpenPanelOptions);
@@ -123,5 +134,6 @@
         private System.Windows.Forms.Button btnOpenPanelOptions;
         private System.Windows.Forms.Button btnOpenHelp;
         private System.Windows.Forms.Button btnOpenCreateUser;
+        private System.Windows.Forms.Button btnAddNewUser;
     }
 }

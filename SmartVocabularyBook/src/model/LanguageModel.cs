@@ -19,5 +19,11 @@ namespace SmartVocabularyBook.src.model
         {
             this.languageName = languageName;
         }
+
+        public LanguageModel(int id, string languageName)
+        {
+            this.id = id;
+            this.languageName = languageName;
+        }
     }
 }

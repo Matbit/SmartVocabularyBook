@@ -24,6 +24,7 @@ namespace SmartVocabularyBook.vcbook.controller
         static UserService serviceUser = new UserService();
         static TestSettingsService serviceTestSettings = new TestSettingsService();
         static TestService serviceTest = new TestService();
+        static LanguageService serviceLanguage = new LanguageService();
 
         //method is called by the constructor of "main" class
         public void initDB()
@@ -38,10 +39,12 @@ namespace SmartVocabularyBook.vcbook.controller
                 serviceTest.createTableTest();
                 serviceTestSettings.createTableTestSettings();
                 serviceUser.createTableUser();
+                serviceLanguage.createTableLanguage();
 
                 //initial entries
                 initialTestSetup();
                 initialUser();
+                initialLanguage();
 
             }
             catch (Exception ex)
@@ -65,6 +68,15 @@ namespace SmartVocabularyBook.vcbook.controller
             if(serviceTestSettings.findAll().Count < 1)
             {
                 serviceTestSettings.initialTestSetup();
+            }
+        }
+
+        //initial language
+        private void initialLanguage()
+        {
+            if(serviceLanguage.findAll().Count < 1)
+            {
+                serviceLanguage.initialLanguage();
             }
         }
 

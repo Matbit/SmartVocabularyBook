@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +15,31 @@ namespace SmartVocabularyBook.src.gui
     public partial class UserModification : Form
     {
         Main frmMain;
+        static LanguageService servicelanguage = new LanguageService();
+        private static List<LanguageModel> listLanguageModel = new List<LanguageModel>();
+
         public UserModification(Main main)
         {
             InitializeComponent();
             frmMain = main;
+            findAllLanguages();
         }
+
+        //load languages in listbox
+        private void findAllLanguages()
+        {
+            listLanguageModel.Clear();
+            listLanguageModel = servicelanguage.findAll();
+            
+                    
+
+            for(int i = 0; i < listLanguageModel.Count;i++)
+            {
+                lbxSelectLanguage.Items.Add(listLanguageModel[i].languageName);
+            }
+        }
+
+        
 
         private void gr_Load(object sender, EventArgs e)
         {

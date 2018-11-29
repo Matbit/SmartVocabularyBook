@@ -140,6 +140,7 @@
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </Compile>
     <Compile Include="src\model\Vocabulary.cs" />
+    <Compile Include="src\service\LanguageService.cs" />
     <Compile Include="src\service\TestService.cs" />
     <Compile Include="src\service\TestSettingsService.cs" />
     <Compile Include="src\service\UserService.cs" />

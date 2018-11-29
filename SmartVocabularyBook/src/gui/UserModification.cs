@@ -28,5 +28,10 @@ namespace SmartVocabularyBook.src.gui
         {
             frmMain.openPanelMain();
         }
+
+        private void tbxAnyLanguage_TextChanged(object sender, EventArgs e)
+        {
+            lbxSelectLanguage.ClearSelected();
+        }
     }
 }

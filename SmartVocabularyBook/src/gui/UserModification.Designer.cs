@@ -87,6 +87,7 @@
             this.tbxAnyLanguage.Name = "tbxAnyLanguage";
             this.tbxAnyLanguage.Size = new System.Drawing.Size(227, 20);
             this.tbxAnyLanguage.TabIndex = 3;
+            this.tbxAnyLanguage.TextChanged += new System.EventHandler(this.tbxAnyLanguage_TextChanged);
             // 
             // btnConfirmMainLanguage
             // 

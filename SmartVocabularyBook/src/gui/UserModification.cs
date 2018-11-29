@@ -23,6 +23,8 @@ namespace SmartVocabularyBook.src.gui
             InitializeComponent();
             frmMain = main;
             findAllLanguages();
+
+            //mtbxNewPassword.TextLength
         }
 
         //load languages in listbox

@@ -22,7 +22,7 @@ namespace SmartVocabularyBook.vcbook.service
             }
             else return false;
         }
-
+        
 
 
         public List<Vocabulary> findAll() {
@@ -40,11 +40,11 @@ namespace SmartVocabularyBook.vcbook.service
             return new List<Vocabulary>();
         }
 
-        public bool insertVocabulary(Vocabulary vc, String date, int archived)
+        public bool insertVocabulary(Vocabulary vc, String date, int archived, int userId)
         {
             if(vc != null && date != null)
             {
-               return repository.insertVocabulary(vc, date, archived);
+               return repository.insertVocabulary(vc, date, archived, userId);
                
             }
             return false;

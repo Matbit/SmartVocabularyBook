@@ -15,6 +15,8 @@ namespace SmartVocabularyBook.vcbook.model
         private int dateOfCreation;
         private int lastCall;
         private bool archived;
+        private int userId;
+        
 
         public Vocabulary() : this(null, null) { }
 
@@ -111,5 +113,13 @@ namespace SmartVocabularyBook.vcbook.model
         {
             this.archived = archived;
         }
+        public int getUserId()
+        {
+            return userId;
+        }
+        public void setUserId(int userId)
+        {
+            this.userId = userId;
+        }        
     }
 }

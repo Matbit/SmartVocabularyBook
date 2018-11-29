@@ -19,7 +19,7 @@ namespace SmartVocabularyBook.vcbook.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS vocabulary(id INTEGER PRIMARY KEY AUTOINCREMENT, wordLang1 TEXT NOT NULL, wordLang2 TEXT NOT NULL, memo TEXT, dateOfCreation TEXT NOT NULL, lastCall TEXT, archived INTEGER NOT NULL)";
+            string sql = "CREATE TABLE IF NOT EXISTS vocabulary(id INTEGER PRIMARY KEY AUTOINCREMENT, wordLang1 TEXT NOT NULL, wordLang2 TEXT NOT NULL, memo TEXT, dateOfCreation TEXT NOT NULL, lastCall TEXT, archived INTEGER NOT NULL, userId INTEGER NOT NULL)";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -327,12 +327,12 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //method to write new data (vocabulary) in db
-        public bool insertVocabulary(Vocabulary vc, String date, int archived)
+        public bool insertVocabulary(Vocabulary vc, String date, int archived, int userId)
         {
                 SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
                 con.Open();
-                string sql = "INSERT INTO vocabulary(wordLang1, wordLang2, memo, dateOfCreation, archived) VALUES ('" + vc.getWordLang1() + "', '" + vc.getWordLang2() +
-                            "', '" + vc.getMemo() + "', '" + date + "', '" + archived + "');";
+                string sql = "INSERT INTO vocabulary(wordLang1, wordLang2, memo, dateOfCreation, archived, userId) VALUES ('" + vc.getWordLang1() + "', '" + vc.getWordLang2() +
+                            "', '" + vc.getMemo() + "', '" + date + "', '" + archived + "', '"+ userId+"');";
                 SQLiteCommand cmd = new SQLiteCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -345,7 +345,7 @@ namespace SmartVocabularyBook.vcbook.repository
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
                 con.Open();
                 string sql = "UPDATE vocabulary SET wordLang1 = '" + vc.getWordLang1() + "' , wordLang2 = '" + vc.getWordLang2() + "' , memo = '" + vc.getMemo() +
-                         "' WHERE id = '" + vc.getId().ToString() + "';";
+                         "' WHERE id = '" + vc.getId().ToString() + "' AND userId = '"+vc.getUserId().ToString()+"';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
                 cmd.ExecuteNonQuery();
@@ -358,7 +358,7 @@ namespace SmartVocabularyBook.vcbook.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "DELETE FROM vocabulary WHERE id = '" + vc.getId().ToString() + "';";
+            string sql = "DELETE FROM vocabulary WHERE id = '" + vc.getId().ToString() + "' AND userId = '" + vc.getUserId().ToString() + "';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
@@ -383,7 +383,7 @@ namespace SmartVocabularyBook.vcbook.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "UPDATE vocabulary SET lastCall = '" + vc.getLastCall() + "' WHERE id = '" + vc.getId().ToString() + "';";
+            string sql = "UPDATE vocabulary SET lastCall = '" + vc.getLastCall() + "' WHERE id = '" + vc.getId().ToString() + "'AND userId = '" + vc.getUserId().ToString() + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();

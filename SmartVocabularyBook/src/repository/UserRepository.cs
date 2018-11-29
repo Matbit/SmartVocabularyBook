@@ -69,9 +69,24 @@ namespace SmartVocabularyBook.src.repository
             return listUser;
         }
 
+        //find user by id
+        public User findUserById(User user)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM user WHERE id = '" + user.id + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
 
-        
+            User first = new User();
 
-
+            while (reader.Read())
+            {
+                User second = new User(reader["nickname"].ToString(), reader["mainLanguage"].ToString());
+                first = second;
+            }
+            con.Close();
+            return first;
+        }
     }
 }

@@ -20,10 +20,10 @@ namespace SmartVocabularyBook.vcbook.gui
     {
         private Main frmMain;
         //controller and services
-        private DBController dbController = new DBController();
+        //private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
-        //private static TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
+        
 
 
         private static Vocabulary staticVocabulary = new Vocabulary();
@@ -352,7 +352,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
             try
             {
-                service.insertVocabulary(vc, date, archived);
+                //service.insertVocabulary(vc, date, archived);
                 MessageBox.Show("Neue Vokabel wurde erfolgreich hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

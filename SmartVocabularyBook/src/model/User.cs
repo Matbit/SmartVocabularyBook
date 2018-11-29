@@ -13,6 +13,7 @@ namespace SmartVocabularyBook.src.model
         public string mainLanguage { get; set; }
         public int lastTest { get; set; }
         public int lastLogin { get; set; }
+        public int foreignLanguageId { get; set; }
 
         public User()
         {

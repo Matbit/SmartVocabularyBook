@@ -19,8 +19,8 @@ namespace SmartVocabularyBook.src.service
         }
         public bool initialUser()
         {
-            User user = new model.User();
-            user.nickname = "testdummy";
+            User user = new User();
+            user.nickname = "NoName";
             user.mainLanguage = "Deutsch";
 
             return insertIntoUser(user);
@@ -39,6 +39,10 @@ namespace SmartVocabularyBook.src.service
         public List<User> findAll()
         {
             return repository.findAll();
+        }
+        public User findUserById(User user)
+        {
+            return repository.findUserById(user);
         }
 
        

@@ -24,7 +24,6 @@ namespace SmartVocabularyBook.vcbook.service
         }
         
 
-
         public List<Vocabulary> findAll() {
             return repository.findAll();
         }

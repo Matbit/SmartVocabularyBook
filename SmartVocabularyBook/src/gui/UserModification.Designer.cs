@@ -165,6 +165,7 @@
             this.btnSaveUserData.TabIndex = 16;
             this.btnSaveUserData.Text = "Speichern und Zurück";
             this.btnSaveUserData.UseVisualStyleBackColor = true;
+            this.btnSaveUserData.Click += new System.EventHandler(this.btnSaveUserData_Click);
             // 
             // btnAbort
             // 

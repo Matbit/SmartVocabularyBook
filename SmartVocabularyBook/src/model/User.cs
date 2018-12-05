@@ -30,5 +30,12 @@ namespace SmartVocabularyBook.src.model
             this.nickname = nickname;
             this.mainLanguage = mainLanguage;
         }
+
+        public User(string nickname, string mainLanguage, int id)
+        {
+            this.nickname = nickname;
+            this.mainLanguage = mainLanguage;
+            this.id = id;
+        }
     }
 }

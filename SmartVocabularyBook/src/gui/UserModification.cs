@@ -47,7 +47,6 @@ namespace SmartVocabularyBook.src.gui
         private void findUserData()
         {   
 
-            
             try
             {
                 User user = serviceUser.findUserById(new User(1));
@@ -100,6 +99,23 @@ namespace SmartVocabularyBook.src.gui
             //clear all tbx
             tbxAnyLanguage.Clear();
             tbxNickname.Clear();
+        }
+
+        private void btnSaveUserData_Click(object sender, EventArgs e)
+        {
+            User user = new model.User(lCurrentNickname.Text, lCurrentLanguage.Text, 1);
+
+            try
+            {
+                serviceUser.updateUserById(user);
+                frmMain.openPanelMain();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
     }
 }

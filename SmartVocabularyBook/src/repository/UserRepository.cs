@@ -42,8 +42,8 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "UPDATE user SET nickname = '" + user.nickname + "' mainLanguage = '" + user.mainLanguage + "' lastTest = '" + user.lastTest
-                        + "' lastLogin = '" + user.lastLogin + "' WHERE id = '" + user.id + "';";
+            string sql = "UPDATE user SET nickname = '" + user.nickname + "', mainLanguage = '" + user.mainLanguage + "', lastTest = '" + user.lastTest
+                        + "', lastLogin = '" + user.lastLogin + "' WHERE id = '" + user.id + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();

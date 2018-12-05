@@ -20,6 +20,11 @@ namespace SmartVocabularyBook.src.model
 
         }
 
+        public User(int id)
+        {
+            this.id = id;
+        }
+
         public User(string nickname, string mainLanguage)
         {
             this.nickname = nickname;

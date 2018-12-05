@@ -16,6 +16,7 @@ namespace SmartVocabularyBook.src.gui
     {
         Main frmMain;
         static LanguageService servicelanguage = new LanguageService();
+        static UserService serviceUser = new UserService();
         private static List<LanguageModel> listLanguageModel = new List<LanguageModel>();
 
         public UserModification(Main main)
@@ -23,6 +24,7 @@ namespace SmartVocabularyBook.src.gui
             InitializeComponent();
             frmMain = main;
             findAllLanguages();
+            findUserData();
 
             //mtbxNewPassword.TextLength
         }
@@ -41,6 +43,23 @@ namespace SmartVocabularyBook.src.gui
             }
         }
 
+        //load user data
+        private void findUserData()
+        {   
+
+            
+            try
+            {
+                User user = serviceUser.findUserById(new User(1));
+                lCurrentNickname.Text = user.nickname;
+                lCurrentLanguage.Text = user.mainLanguage;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         
 
         private void gr_Load(object sender, EventArgs e)
@@ -56,6 +75,31 @@ namespace SmartVocabularyBook.src.gui
         private void tbxAnyLanguage_TextChanged(object sender, EventArgs e)
         {
             lbxSelectLanguage.ClearSelected();
+        }
+
+        private void btnConfirmMainLanguage_Click(object sender, EventArgs e)
+        {
+            string choosenLanguage = "";
+            string choosenNickname = "";
+
+            if(tbxAnyLanguage.TextLength < 2 && lbxSelectLanguage.SelectedIndex != -1)
+            {
+                choosenLanguage = lbxSelectLanguage.SelectedItem.ToString();
+                lCurrentLanguage.Text = choosenLanguage;
+            }
+            else if(lbxSelectLanguage.SelectedIndex < 0)
+            {
+                lCurrentLanguage.Text = tbxAnyLanguage.Text;                                
+            }
+
+            if(tbxNickname.TextLength > 0)
+            {
+                lCurrentNickname.Text = tbxNickname.Text;
+            }
+            
+            //clear all tbx
+            tbxAnyLanguage.Clear();
+            tbxNickname.Clear();
         }
     }
 }

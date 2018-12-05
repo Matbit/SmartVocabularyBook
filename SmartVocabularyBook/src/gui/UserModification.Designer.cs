@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxAnyLanguage = new System.Windows.Forms.TextBox();
             this.btnConfirmMainLanguage = new System.Windows.Forms.Button();
-            this.lConfirmedMainLanguage = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxNickname = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,7 +40,6 @@
             this.lCurrentNickname = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnSaveUserData = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -87,35 +85,27 @@
             // 
             this.btnConfirmMainLanguage.Location = new System.Drawing.Point(47, 285);
             this.btnConfirmMainLanguage.Name = "btnConfirmMainLanguage";
-            this.btnConfirmMainLanguage.Size = new System.Drawing.Size(227, 44);
+            this.btnConfirmMainLanguage.Size = new System.Drawing.Size(428, 44);
             this.btnConfirmMainLanguage.TabIndex = 4;
-            this.btnConfirmMainLanguage.Text = "Muttersprache bestätigen";
+            this.btnConfirmMainLanguage.Text = "Eingaben bestätigen";
             this.btnConfirmMainLanguage.UseVisualStyleBackColor = true;
-            // 
-            // lConfirmedMainLanguage
-            // 
-            this.lConfirmedMainLanguage.AutoSize = true;
-            this.lConfirmedMainLanguage.Location = new System.Drawing.Point(44, 367);
-            this.lConfirmedMainLanguage.Name = "lConfirmedMainLanguage";
-            this.lConfirmedMainLanguage.Size = new System.Drawing.Size(105, 13);
-            this.lConfirmedMainLanguage.TabIndex = 5;
-            this.lConfirmedMainLanguage.Text = "Confirmed Language";
+            this.btnConfirmMainLanguage.Click += new System.EventHandler(this.btnConfirmMainLanguage_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(674, 216);
+            this.label3.Location = new System.Drawing.Point(307, 226);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 13);
+            this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Erstelle dir einen Nickname";
+            this.label3.Text = "Ändere deinen Nickname";
             // 
             // tbxNickname
             // 
-            this.tbxNickname.Location = new System.Drawing.Point(677, 242);
+            this.tbxNickname.Location = new System.Drawing.Point(307, 242);
             this.tbxNickname.MaxLength = 50;
             this.tbxNickname.Name = "tbxNickname";
-            this.tbxNickname.Size = new System.Drawing.Size(147, 20);
+            this.tbxNickname.Size = new System.Drawing.Size(168, 20);
             this.tbxNickname.TabIndex = 7;
             // 
             // groupBox1
@@ -124,9 +114,9 @@
             this.groupBox1.Controls.Add(this.lCurrentNickname);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(298, 77);
+            this.groupBox1.Location = new System.Drawing.Point(468, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(457, 100);
+            this.groupBox1.Size = new System.Drawing.Size(420, 100);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aktuelle Daten auf einen Blick";
@@ -167,15 +157,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Nickname:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 344);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Ausgesuchte Sprache";
-            // 
             // btnSaveUserData
             // 
             this.btnSaveUserData.Location = new System.Drawing.Point(707, 413);
@@ -213,11 +194,9 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnSaveUserData);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbxNickname);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lConfirmedMainLanguage);
             this.Controls.Add(this.btnConfirmMainLanguage);
             this.Controls.Add(this.tbxAnyLanguage);
             this.Controls.Add(this.label2);
@@ -241,13 +220,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxAnyLanguage;
         private System.Windows.Forms.Button btnConfirmMainLanguage;
-        private System.Windows.Forms.Label lConfirmedMainLanguage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxNickname;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lCurrentLanguage;
         private System.Windows.Forms.Label lCurrentNickname;
         private System.Windows.Forms.Button btnSaveUserData;

@@ -81,12 +81,12 @@ namespace SmartVocabularyBook.src.gui
             string choosenLanguage = "";
             string choosenNickname = "";
 
-            if(tbxAnyLanguage.TextLength < 2 && lbxSelectLanguage.SelectedIndex != -1)
+            if(tbxAnyLanguage.TextLength < 1 && lbxSelectLanguage.SelectedIndex != -1)
             {
                 choosenLanguage = lbxSelectLanguage.SelectedItem.ToString();
                 lCurrentLanguage.Text = choosenLanguage;
             }
-            else if(lbxSelectLanguage.SelectedIndex < 0)
+            else if(lbxSelectLanguage.SelectedIndex < 0 && tbxAnyLanguage.TextLength > 0)
             {
                 lCurrentLanguage.Text = tbxAnyLanguage.Text;                                
             }

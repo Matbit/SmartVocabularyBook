@@ -46,6 +46,7 @@ namespace SmartVocabularyBook.vcbook.gui
             loadTestSettings();
             lLSearchWordInWeb.Visible = false;
             changeReadOnlyTbxEditVocabulary(true);
+            staticVocabulary.setUserId(1);
 
         }
 
@@ -344,6 +345,9 @@ namespace SmartVocabularyBook.vcbook.gui
 
             Vocabulary vc = new Vocabulary(word1, word2, memo);
 
+            //set userId
+            vc.setUserId(1);
+
             String date = vc.getDateOfCreation().ToString();
             int archived;
             if (vc.isArchived())
@@ -352,7 +356,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
             try
             {
-                //service.insertVocabulary(vc, date, archived);
+                service.insertVocabulary(vc, date, archived, vc.getUserId());
                 MessageBox.Show("Neue Vokabel wurde erfolgreich hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

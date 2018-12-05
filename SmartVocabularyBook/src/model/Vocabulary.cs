@@ -33,7 +33,12 @@ namespace SmartVocabularyBook.vcbook.model
             this.archived = archived;
 
             DateTime today = DateTime.Today;
-            string dateAsString = today.Year + ""+today.Month+"" + today.Day + "";
+            string dayAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            string dateAsString = today.Year + ""+today.Month+"" + dayAsString + "";
             this.dateOfCreation = Int32.Parse(dateAsString);
         }
 

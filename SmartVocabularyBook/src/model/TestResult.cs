@@ -19,7 +19,13 @@ namespace SmartVocabularyBook.src.model
         public TestResult()
         {
             DateTime today = DateTime.Now;
-            string dateAsString = today.Year + "" + today.Month + "" + today.Day;
+
+            string dayAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            string dateAsString = today.Year + "" + today.Month + "" + dayAsString;
             this.testDate = Int32.Parse(dateAsString);
         }
 
@@ -28,9 +34,13 @@ namespace SmartVocabularyBook.src.model
             this.id = id;
 
             DateTime today = DateTime.Now;
-            string dateAsString = today.Year + "" + today.Month + "" + today.Day;
+            string dayAsString = "";
+            if(today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            string dateAsString = today.Year + "" + today.Month + "" + dayAsString;
             this.testDate = Int32.Parse(dateAsString);
-
             this.scores = scores;
             this.wrongAnswers = wrongAnswers;
             this.grade = grade;
@@ -41,7 +51,13 @@ namespace SmartVocabularyBook.src.model
             this.id = id;
 
             DateTime today = DateTime.Now;
-            string dateAsString = today.Year + "" + today.Month + "" + today.Day;
+            string dayAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+
+            string dateAsString = today.Year + "" + today.Month + "" + dayAsString;
             this.testDate = Int32.Parse(dateAsString);
 
             this.scores = scores;

@@ -59,7 +59,6 @@ namespace SmartVocabularyBook.src.repository
                 
                 string dateAsString1 = reader["testDate"].ToString();
                 int date = Int32.Parse(dateAsString1);
-
                 CultureInfo provider = CultureInfo.InvariantCulture;
                 DateTime testdate = DateTime.ParseExact(dateAsString1, "yyyyMMdd", provider);
                 String newDate = testdate.Day + "." + testdate.Month + "." + testdate.Year;

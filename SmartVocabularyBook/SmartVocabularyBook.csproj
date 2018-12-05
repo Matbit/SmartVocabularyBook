@@ -77,6 +77,12 @@
     <Compile Include="src\gui\AnalysisGui.Designer.cs">
       <DependentUpon>AnalysisGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\gui\GuiLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\gui\GuiLogin.Designer.cs">
+      <DependentUpon>GuiLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\gui\GuiTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="src\service\VocabularyService.cs" />
     <EmbeddedResource Include="src\gui\AnalysisGui.resx">
       <DependentUpon>AnalysisGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\gui\GuiLogin.resx">
+      <DependentUpon>GuiLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\gui\GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>

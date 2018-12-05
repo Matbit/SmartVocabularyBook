@@ -22,7 +22,8 @@ namespace SmartVocabularyBook
         public Main()
         {
             InitializeComponent();
-            openPanelMain();
+            //openPanelMain();
+            openPanelLogin();
             
             DBController db = new DBController();
             db.initDB();
@@ -130,6 +131,18 @@ namespace SmartVocabularyBook
         {
             this.panelMain.Controls.Clear();
             UserModification gui = new UserModification(this);
+            gui.TopLevel = false;
+            gui.AutoScroll = true;
+            this.panelMain.Controls.Add(gui);
+            gui.Show();
+            setMenuButton(false);
+            setTestAnalysisButton(false);
+        }
+
+        public void openPanelLogin()
+        {
+            this.panelMain.Controls.Clear();
+            GuiLogin gui = new GuiLogin(this);
             gui.TopLevel = false;
             gui.AutoScroll = true;
             this.panelMain.Controls.Add(gui);

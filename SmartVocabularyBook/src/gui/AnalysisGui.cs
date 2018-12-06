@@ -116,5 +116,10 @@ namespace SmartVocabularyBook.src.gui
         {
 
         }
+
+        private void btnOpenVocabularyView_Click(object sender, EventArgs e)
+        {
+            frmMain.openPanelProgressManager();
+        }
     }
 }

@@ -68,14 +68,14 @@
             // hauptmenüToolStripMenuItem
             // 
             this.hauptmenüToolStripMenuItem.Name = "hauptmenüToolStripMenuItem";
-            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.hauptmenüToolStripMenuItem.Text = "Hauptmenü";
+            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hauptmenüToolStripMenuItem.Text = "Abmelden";
             this.hauptmenüToolStripMenuItem.Click += new System.EventHandler(this.hauptmenüToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 

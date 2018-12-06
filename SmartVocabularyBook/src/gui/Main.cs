@@ -19,13 +19,14 @@ namespace SmartVocabularyBook
     {
         static UserService serviceUser = new UserService();
         static InformationService serviceInformation = new InformationService();
-        static List<Information> information = serviceInformation.getInformation();
+        static List<Information> information; 
         
         public Main()
         {
             DBController db = new DBController();
             db.initDB();
             InitializeComponent();
+            information = serviceInformation.getInformation();
             //openPanelMain();
             openPanelLogin();   
            
@@ -204,7 +205,7 @@ namespace SmartVocabularyBook
 
         private void hauptmenüToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openPanelMain();
+            openPanelLogin();
         }
 
         private void endApplication()

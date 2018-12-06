@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridAllTests = new System.Windows.Forms.DataGridView();
+            this.btnOpenVocabularyView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAllTests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +41,22 @@
             this.dataGridAllTests.Size = new System.Drawing.Size(900, 294);
             this.dataGridAllTests.TabIndex = 0;
             // 
+            // btnOpenVocabularyView
+            // 
+            this.btnOpenVocabularyView.Location = new System.Drawing.Point(361, 402);
+            this.btnOpenVocabularyView.Name = "btnOpenVocabularyView";
+            this.btnOpenVocabularyView.Size = new System.Drawing.Size(157, 45);
+            this.btnOpenVocabularyView.TabIndex = 1;
+            this.btnOpenVocabularyView.Text = "zu meinen Vokabeln";
+            this.btnOpenVocabularyView.UseVisualStyleBackColor = true;
+            this.btnOpenVocabularyView.Click += new System.EventHandler(this.btnOpenVocabularyView_Click);
+            // 
             // AnalysisGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnOpenVocabularyView);
             this.Controls.Add(this.dataGridAllTests);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AnalysisGui";
@@ -58,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridAllTests;
+        private System.Windows.Forms.Button btnOpenVocabularyView;
     }
 }

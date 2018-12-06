@@ -18,6 +18,8 @@ namespace SmartVocabularyBook
     public partial class Main : Form
     {
         static UserService serviceUser = new UserService();
+        static InformationService serviceInformation = new InformationService();
+        static List<Information> information = serviceInformation.getInformation();
         
         public Main()
         {
@@ -28,7 +30,7 @@ namespace SmartVocabularyBook
             DBController db = new DBController();
             db.initDB();
 
-            setWelcomeText(1);            
+            setWelcomeText(information[0].userId);            
         }
 
         //welcome user

@@ -23,8 +23,6 @@ namespace SmartVocabularyBook.src.service
             return insertInformation(info);
         }
 
-
-
         public bool insertInformation(Information info)
         {
             return repository.insertInformation(info);

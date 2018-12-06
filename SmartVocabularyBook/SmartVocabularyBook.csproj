@@ -113,6 +113,7 @@
     <Compile Include="src\gui\UserModification.Designer.cs">
       <DependentUpon>UserModification.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\model\Information.cs" />
     <Compile Include="src\model\Language.cs" />
     <Compile Include="src\model\LanguageModel.cs" />
     <Compile Include="src\model\TestResult.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="src\model\TestSetup.cs" />
     <Compile Include="src\model\TestVocabularyModel.cs" />
     <Compile Include="src\model\User.cs" />
+    <Compile Include="src\repository\InformationRepository.cs" />
     <Compile Include="src\repository\LanguageRepository.cs" />
     <Compile Include="src\repository\TestRepository.cs" />
     <Compile Include="src\repository\TestSettingsRepository.cs" />
@@ -146,6 +148,7 @@
       <DependentUpon>ProgressManager.cs</DependentUpon>
     </Compile>
     <Compile Include="src\model\Vocabulary.cs" />
+    <Compile Include="src\service\InformationService.cs" />
     <Compile Include="src\service\LanguageService.cs" />
     <Compile Include="src\service\TestService.cs" />
     <Compile Include="src\service\TestSettingsService.cs" />

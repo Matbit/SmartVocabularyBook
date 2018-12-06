@@ -34,6 +34,8 @@ namespace SmartVocabularyBook.src.gui
             {
                 lbxUser.Items.Add(listUser[i].nickname);
             }
+
+            lbxUser.SelectedIndex = 0;
         }
 
         private void GuiLogin_Load(object sender, EventArgs e)
@@ -44,6 +46,17 @@ namespace SmartVocabularyBook.src.gui
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if(lbxUser.SelectedItems.Count < 1)
+            {
+                MessageBox.Show("Wähle bitte einen Nutzer aus.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
         }
     }
 }

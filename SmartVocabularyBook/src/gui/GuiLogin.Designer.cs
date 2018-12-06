@@ -61,15 +61,16 @@
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Weiter";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 13);
+            this.label2.Size = new System.Drawing.Size(240, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Wähle deinen User aus und klicke auf Weiter";
+            this.label2.Text = "Wähle deinen Account aus und klicke auf Weiter";
             // 
             // btnExit
             // 

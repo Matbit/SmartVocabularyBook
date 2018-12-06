@@ -83,13 +83,16 @@ namespace SmartVocabularyBook.src.gui
 
             if(lbxUser.SelectedItems.Count > 0)
             {
-                int index = lbxUser.SelectedIndex;
-                int userId = index + 1;
+                //int index = lbxUser.SelectedIndex;
+                User currentUser = new User();
+                currentUser.nickname = lbxUser.SelectedItem.ToString();
 
-                serviceInformation.updateInformation(new Information(userId));
+                currentUser = serviceUser.findUserByNick(currentUser.nickname);                              
+
+                serviceInformation.updateInformation(new Information(currentUser.id));
 
                 //MessageBox.Show(userId.ToString());
-
+                frmMain.setWelcomeText(currentUser.id);
                 frmMain.openPanelMain();
             }
 

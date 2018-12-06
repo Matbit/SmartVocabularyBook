@@ -23,12 +23,12 @@ namespace SmartVocabularyBook
         
         public Main()
         {
-            InitializeComponent();
-            //openPanelMain();
-            openPanelLogin();
-            
             DBController db = new DBController();
             db.initDB();
+            InitializeComponent();
+            //openPanelMain();
+            openPanelLogin();   
+           
 
             setWelcomeText(information[0].userId);            
         }

@@ -24,6 +24,7 @@ namespace SmartVocabularyBook.src.model
         {
             this.id = id;
         }
+        
 
         public User(string nickname, string mainLanguage)
         {

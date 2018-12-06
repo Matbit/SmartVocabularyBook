@@ -45,6 +45,12 @@ namespace SmartVocabularyBook.src.service
             return repository.findUserById(user);
         }
 
-       
+        public User findUserByNick(string user)
+        {
+            return repository.findUserByNick(user);
+        }
+
+
+
     }
 }

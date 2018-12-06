@@ -82,11 +82,37 @@ namespace SmartVocabularyBook.src.repository
 
             while (reader.Read())
             {
-                User second = new User(reader["nickname"].ToString(), reader["mainLanguage"].ToString());
+                User second = new User();
+                second.nickname = reader["nickname"].ToString();
+                second.mainLanguage = reader["mainLanguage"].ToString();
                 first = second;
             }
             con.Close();
             return first;
+        }
+
+        public User findUserByNick(string user)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM user WHERE nickname = '" + user + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            User first = new User();
+            while (reader.Read())
+            {
+                User second = new User();
+                string idAsString = reader["id"].ToString();
+                int id = Int32.Parse(idAsString);
+                second.id = id;
+                second.nickname = reader["nickname"].ToString();
+                second.mainLanguage = reader["mainLanguage"].ToString();
+                first = second;
+            }
+            con.Close();
+            return first;
+
         }
     }
 }

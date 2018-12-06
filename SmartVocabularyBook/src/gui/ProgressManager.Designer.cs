@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnDeleteVocabulary = new System.Windows.Forms.Button();
             this.lNameView = new System.Windows.Forms.Label();
             this.btnSetVocabularyArchived = new System.Windows.Forms.Button();
             this.btnSetVocabularyActive = new System.Windows.Forms.Button();
@@ -96,7 +97,6 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnDeleteVocabulary = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -116,9 +116,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.ShowToolTips = true;
             this.tabControl1.Size = new System.Drawing.Size(898, 499);
             this.tabControl1.TabIndex = 1;
             // 
@@ -133,13 +135,25 @@
             this.tabPage1.Controls.Add(this.btnShowArchivedVocabularies);
             this.tabPage1.Controls.Add(this.btnShowActiveVocabularies);
             this.tabPage1.Controls.Add(this.listViewAllVocab);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(890, 473);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Übersicht";
+            this.tabPage1.ToolTipText = "Hier kannst du dir alle deine Vokabeln ansehen";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnDeleteVocabulary
+            // 
+            this.btnDeleteVocabulary.Location = new System.Drawing.Point(597, 429);
+            this.btnDeleteVocabulary.Name = "btnDeleteVocabulary";
+            this.btnDeleteVocabulary.Size = new System.Drawing.Size(181, 38);
+            this.btnDeleteVocabulary.TabIndex = 10;
+            this.btnDeleteVocabulary.Text = "Löschen";
+            this.btnDeleteVocabulary.UseVisualStyleBackColor = true;
+            this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
             // 
             // lNameView
             // 
@@ -244,6 +258,7 @@
             this.tabPage2.Size = new System.Drawing.Size(890, 473);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vokabeln bearbeiten";
+            this.tabPage2.ToolTipText = "Hier kannst du deine Vokabeln bearbeiten und Notizen hinzufügen";
             // 
             // grbxChangeVocabulary
             // 
@@ -449,6 +464,7 @@
             this.tabPage3.Size = new System.Drawing.Size(890, 473);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Neue Vokabeln hinzufügen";
+            this.tabPage3.ToolTipText = "Hier können neue Vokabeln hinzugefügt werden";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // lLSearchWordInWeb
@@ -585,6 +601,7 @@
             this.tabPage4.Size = new System.Drawing.Size(890, 473);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Test/ Übung";
+            this.tabPage4.ToolTipText = "Hier gelangst du zu den Übungen und Tests";
             // 
             // chbxSaveSettings
             // 
@@ -832,16 +849,6 @@
             this.label4.Size = new System.Drawing.Size(125, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
-            // 
-            // btnDeleteVocabulary
-            // 
-            this.btnDeleteVocabulary.Location = new System.Drawing.Point(597, 429);
-            this.btnDeleteVocabulary.Name = "btnDeleteVocabulary";
-            this.btnDeleteVocabulary.Size = new System.Drawing.Size(181, 38);
-            this.btnDeleteVocabulary.TabIndex = 10;
-            this.btnDeleteVocabulary.Text = "Löschen";
-            this.btnDeleteVocabulary.UseVisualStyleBackColor = true;
-            this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
             // 
             // ProgressManager
             // 

@@ -47,7 +47,14 @@ namespace SmartVocabularyBook.vcbook.gui
             lLSearchWordInWeb.Visible = false;
             changeReadOnlyTbxEditVocabulary(true);
             staticVocabulary.setUserId(1);
+            //setHeader();
 
+        }
+
+        private void setHeader()
+        {
+
+            
         }
 
         private void loadTestSettings()

@@ -17,6 +17,7 @@ namespace SmartVocabularyBook.src.gui
         Main frmMain;
         static LanguageService servicelanguage = new LanguageService();
         static UserService serviceUser = new UserService();
+        static InformationService serviceInformation = new InformationService();
         private static List<LanguageModel> listLanguageModel = new List<LanguageModel>();
 
         public UserModification(Main main)
@@ -45,11 +46,12 @@ namespace SmartVocabularyBook.src.gui
 
         //load user data
         private void findUserData()
-        {   
+        {
+            List<Information> myList = serviceInformation.getInformation();
 
             try
             {
-                User user = serviceUser.findUserById(new User(1));
+                User user = serviceUser.findUserById(new User(myList[0].userId));
                 lCurrentNickname.Text = user.nickname;
                 lCurrentLanguage.Text = user.mainLanguage;
             }
@@ -58,8 +60,6 @@ namespace SmartVocabularyBook.src.gui
                 MessageBox.Show(ex.Message);
             }
         }
-
-        
 
         private void gr_Load(object sender, EventArgs e)
         {
@@ -103,11 +103,14 @@ namespace SmartVocabularyBook.src.gui
 
         private void btnSaveUserData_Click(object sender, EventArgs e)
         {
-            User user = new model.User(lCurrentNickname.Text, lCurrentLanguage.Text, 1);
+            List<Information> myList = serviceInformation.getInformation();            
+
+            User user = new User(lCurrentNickname.Text, lCurrentLanguage.Text, myList[0].userId);
 
             try
             {
                 serviceUser.updateUserById(user);
+                frmMain.setWelcomeText(user.id);
                 frmMain.openPanelMain();
             }
             catch (Exception ex)

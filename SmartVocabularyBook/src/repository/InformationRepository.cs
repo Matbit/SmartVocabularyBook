@@ -69,7 +69,6 @@ namespace SmartVocabularyBook.src.repository
             }
             con.Close();
             return info;
-
-        }
+        }  
     }
 }

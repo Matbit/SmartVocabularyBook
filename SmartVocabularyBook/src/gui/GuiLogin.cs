@@ -93,6 +93,7 @@ namespace SmartVocabularyBook.src.gui
 
                 //MessageBox.Show(userId.ToString());
                 frmMain.setWelcomeText(currentUser.id);
+                frmMain.setMenuStrip(true);
                 frmMain.openPanelMain();
             }
 

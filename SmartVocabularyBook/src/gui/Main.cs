@@ -27,6 +27,7 @@ namespace SmartVocabularyBook
             db.initDB();
             InitializeComponent();
             information = serviceInformation.getInformation();
+            setMenuStrip(false);
             //openPanelMain();
             openPanelLogin();   
            
@@ -44,6 +45,11 @@ namespace SmartVocabularyBook
             this.Text = "Vokabeltrainer  für " + user.nickname +" - Dein smartes Vokabelheft";
         }
 
+        public void setMenuStrip(bool isVisible)
+        {
+            menuStrip1.Visible = isVisible;
+        }
+
         //methods to open special forms in a panel
         public void openPanelMain()
         {
@@ -55,6 +61,7 @@ namespace SmartVocabularyBook
             main.Show();
             setMenuButton(false);
             setTestAnalysisButton(false);
+            
 
         }
 
@@ -152,6 +159,7 @@ namespace SmartVocabularyBook
             gui.Show();
             setMenuButton(false);
             setTestAnalysisButton(false);
+            setMenuStrip(false);
         }
 
 

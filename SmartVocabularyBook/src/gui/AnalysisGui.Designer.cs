@@ -43,7 +43,7 @@
             // 
             // btnOpenVocabularyView
             // 
-            this.btnOpenVocabularyView.Location = new System.Drawing.Point(361, 402);
+            this.btnOpenVocabularyView.Location = new System.Drawing.Point(373, 422);
             this.btnOpenVocabularyView.Name = "btnOpenVocabularyView";
             this.btnOpenVocabularyView.Size = new System.Drawing.Size(157, 45);
             this.btnOpenVocabularyView.TabIndex = 1;

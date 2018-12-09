@@ -1,4 +1,6 @@
-﻿using SmartVocabularyBook.vcbook.controller;
+﻿using SmartVocabularyBook.src.model;
+using SmartVocabularyBook.src.service;
+using SmartVocabularyBook.vcbook.controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +16,44 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class GuiMain : Form
     {
         private Main frmMain;
-        
+
+        //services
+        private static InformationService serviceInformation = new InformationService();
+        private static UserService serviceUser = new UserService();
 
         public GuiMain(Main main)
         {
             InitializeComponent();
             frmMain = main;
+            setUserStats();
+        }
+
+        private void setUserStats()
+        {
+            try
+            {
+                User user = serviceUser.findUserById(getUserId());
+                lNickname.Text = user.nickname;
+                if(user.points < 2)
+                {
+                    lPoints.Text = user.points + " Punkt";
+                }
+                else
+                {
+                    lPoints.Text = user.points + " Punkte";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
         }
 
         private void GuiMain_Load(object sender, EventArgs e)

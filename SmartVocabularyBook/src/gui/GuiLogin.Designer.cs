@@ -35,28 +35,31 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.gbxAddUser = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbxNickname = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbxLanguages = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnAddUserToDB = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbxLanguages = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbxNickname = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbxAddUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(31, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 24);
+            this.label1.Size = new System.Drawing.Size(150, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Anmeldung";
             // 
             // lbxUser
             // 
+            this.lbxUser.BackColor = System.Drawing.Color.Snow;
+            this.lbxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxUser.FormattingEnabled = true;
+            this.lbxUser.ItemHeight = 16;
             this.lbxUser.Location = new System.Drawing.Point(35, 134);
             this.lbxUser.Name = "lbxUser";
             this.lbxUser.Size = new System.Drawing.Size(186, 212);
@@ -64,42 +67,51 @@
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStart.Location = new System.Drawing.Point(684, 380);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(186, 58);
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Weiter";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 13);
+            this.label2.Size = new System.Drawing.Size(293, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Wähle deinen Account aus und klicke auf Weiter";
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnExit.Location = new System.Drawing.Point(35, 380);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(186, 58);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Beenden";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnAddUser.Location = new System.Drawing.Point(246, 134);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(58, 51);
             this.btnAddUser.TabIndex = 5;
             this.btnAddUser.Text = "+";
-            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // gbxAddUser
@@ -117,39 +129,18 @@
             this.gbxAddUser.TabStop = false;
             this.gbxAddUser.Text = "Neuen Account anlegen";
             // 
-            // label3
+            // btnAddUserToDB
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nickname*:";
-            // 
-            // tbxNickname
-            // 
-            this.tbxNickname.Location = new System.Drawing.Point(111, 31);
-            this.tbxNickname.MaxLength = 50;
-            this.tbxNickname.Name = "tbxNickname";
-            this.tbxNickname.Size = new System.Drawing.Size(355, 20);
-            this.tbxNickname.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Muttersprache*:";
-            // 
-            // lbxLanguages
-            // 
-            this.lbxLanguages.FormattingEnabled = true;
-            this.lbxLanguages.Location = new System.Drawing.Point(111, 62);
-            this.lbxLanguages.Name = "lbxLanguages";
-            this.lbxLanguages.Size = new System.Drawing.Size(355, 134);
-            this.lbxLanguages.TabIndex = 3;
+            this.btnAddUserToDB.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnAddUserToDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUserToDB.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnAddUserToDB.Location = new System.Drawing.Point(111, 235);
+            this.btnAddUserToDB.Name = "btnAddUserToDB";
+            this.btnAddUserToDB.Size = new System.Drawing.Size(355, 53);
+            this.btnAddUserToDB.TabIndex = 8;
+            this.btnAddUserToDB.Text = "Neuen Account erstellen!";
+            this.btnAddUserToDB.UseVisualStyleBackColor = false;
+            this.btnAddUserToDB.Click += new System.EventHandler(this.btnAddUserToDB_Click);
             // 
             // label5
             // 
@@ -161,20 +152,52 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Einstellungen können später noch geändert werden.";
             // 
-            // btnAddUserToDB
+            // lbxLanguages
             // 
-            this.btnAddUserToDB.Location = new System.Drawing.Point(111, 235);
-            this.btnAddUserToDB.Name = "btnAddUserToDB";
-            this.btnAddUserToDB.Size = new System.Drawing.Size(355, 53);
-            this.btnAddUserToDB.TabIndex = 8;
-            this.btnAddUserToDB.Text = "Neuen Account erstellen!";
-            this.btnAddUserToDB.UseVisualStyleBackColor = true;
-            this.btnAddUserToDB.Click += new System.EventHandler(this.btnAddUserToDB_Click);
+            this.lbxLanguages.BackColor = System.Drawing.Color.Snow;
+            this.lbxLanguages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxLanguages.FormattingEnabled = true;
+            this.lbxLanguages.ItemHeight = 16;
+            this.lbxLanguages.Location = new System.Drawing.Point(111, 62);
+            this.lbxLanguages.Name = "lbxLanguages";
+            this.lbxLanguages.Size = new System.Drawing.Size(355, 132);
+            this.lbxLanguages.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Muttersprache*:";
+            // 
+            // tbxNickname
+            // 
+            this.tbxNickname.BackColor = System.Drawing.Color.Snow;
+            this.tbxNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNickname.Location = new System.Drawing.Point(111, 31);
+            this.tbxNickname.MaxLength = 50;
+            this.tbxNickname.Name = "tbxNickname";
+            this.tbxNickname.Size = new System.Drawing.Size(355, 22);
+            this.tbxNickname.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nickname*:";
             // 
             // GuiLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
             this.Controls.Add(this.gbxAddUser);
             this.Controls.Add(this.btnAddUser);

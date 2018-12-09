@@ -59,7 +59,6 @@
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.rbtnMainLang = new System.Windows.Forms.RadioButton();
             this.rbtnSecondLang = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.lLSearchWordInWeb = new System.Windows.Forms.LinkLabel();
             this.llClose = new System.Windows.Forms.LinkLabel();
@@ -97,6 +96,7 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -126,7 +126,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.tabPage1.BackColor = System.Drawing.Color.Azure;
             this.tabPage1.Controls.Add(this.btnDeleteVocabulary);
             this.tabPage1.Controls.Add(this.lNameView);
             this.tabPage1.Controls.Add(this.btnSetVocabularyArchived);
@@ -147,32 +147,38 @@
             // 
             // btnDeleteVocabulary
             // 
+            this.btnDeleteVocabulary.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnDeleteVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnDeleteVocabulary.Location = new System.Drawing.Point(597, 429);
             this.btnDeleteVocabulary.Name = "btnDeleteVocabulary";
             this.btnDeleteVocabulary.Size = new System.Drawing.Size(181, 38);
             this.btnDeleteVocabulary.TabIndex = 10;
             this.btnDeleteVocabulary.Text = "Löschen";
-            this.btnDeleteVocabulary.UseVisualStyleBackColor = true;
+            this.btnDeleteVocabulary.UseVisualStyleBackColor = false;
             this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
             // 
             // lNameView
             // 
             this.lNameView.AutoSize = true;
-            this.lNameView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameView.Location = new System.Drawing.Point(7, 11);
             this.lNameView.Name = "lNameView";
-            this.lNameView.Size = new System.Drawing.Size(88, 20);
+            this.lNameView.Size = new System.Drawing.Size(107, 24);
             this.lNameView.TabIndex = 9;
             this.lNameView.Text = "lNameView";
             // 
             // btnSetVocabularyArchived
             // 
+            this.btnSetVocabularyArchived.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnSetVocabularyArchived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetVocabularyArchived.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnSetVocabularyArchived.Location = new System.Drawing.Point(7, 427);
             this.btnSetVocabularyArchived.Name = "btnSetVocabularyArchived";
             this.btnSetVocabularyArchived.Size = new System.Drawing.Size(185, 38);
             this.btnSetVocabularyArchived.TabIndex = 8;
             this.btnSetVocabularyArchived.Text = "Archivieren";
-            this.btnSetVocabularyArchived.UseVisualStyleBackColor = true;
+            this.btnSetVocabularyArchived.UseVisualStyleBackColor = false;
             this.btnSetVocabularyArchived.Click += new System.EventHandler(this.btnSetVocabularyArchived_Click);
             // 
             // btnSetVocabularyActive
@@ -188,31 +194,37 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(806, 6);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 20);
+            this.label15.Size = new System.Drawing.Size(72, 24);
             this.label15.TabIndex = 6;
             this.label15.Text = "Ansicht";
             // 
             // btnShowArchivedVocabularies
             // 
+            this.btnShowArchivedVocabularies.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnShowArchivedVocabularies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowArchivedVocabularies.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnShowArchivedVocabularies.Location = new System.Drawing.Point(785, 100);
             this.btnShowArchivedVocabularies.Name = "btnShowArchivedVocabularies";
             this.btnShowArchivedVocabularies.Size = new System.Drawing.Size(98, 56);
             this.btnShowArchivedVocabularies.TabIndex = 5;
             this.btnShowArchivedVocabularies.Text = "Archivierte Vokabeln";
-            this.btnShowArchivedVocabularies.UseVisualStyleBackColor = true;
+            this.btnShowArchivedVocabularies.UseVisualStyleBackColor = false;
             this.btnShowArchivedVocabularies.Click += new System.EventHandler(this.btnShowArchivedVocabularies_Click);
             // 
             // btnShowActiveVocabularies
             // 
+            this.btnShowActiveVocabularies.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnShowActiveVocabularies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowActiveVocabularies.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnShowActiveVocabularies.Location = new System.Drawing.Point(785, 38);
             this.btnShowActiveVocabularies.Name = "btnShowActiveVocabularies";
             this.btnShowActiveVocabularies.Size = new System.Drawing.Size(98, 56);
             this.btnShowActiveVocabularies.TabIndex = 4;
             this.btnShowActiveVocabularies.Text = "Aktive Vokabeln";
-            this.btnShowActiveVocabularies.UseVisualStyleBackColor = true;
+            this.btnShowActiveVocabularies.UseVisualStyleBackColor = false;
             this.btnShowActiveVocabularies.Click += new System.EventHandler(this.btnShowActiveVocabularies_Click);
             // 
             // listViewAllVocab
@@ -248,10 +260,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Khaki;
+            this.tabPage2.BackColor = System.Drawing.Color.Azure;
             this.tabPage2.Controls.Add(this.grbxChangeVocabulary);
             this.tabPage2.Controls.Add(this.grbxSerachVocabulry);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -267,8 +278,11 @@
             this.grbxChangeVocabulary.Controls.Add(this.label1);
             this.grbxChangeVocabulary.Controls.Add(this.btnSaveWord);
             this.grbxChangeVocabulary.Controls.Add(this.tbxDataMainLang);
+            this.grbxChangeVocabulary.Controls.Add(this.textBox2);
             this.grbxChangeVocabulary.Controls.Add(this.label8);
             this.grbxChangeVocabulary.Controls.Add(this.tbxDataSecondLang);
+            this.grbxChangeVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbxChangeVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
             this.grbxChangeVocabulary.Location = new System.Drawing.Point(471, 58);
             this.grbxChangeVocabulary.Name = "grbxChangeVocabulary";
             this.grbxChangeVocabulary.Size = new System.Drawing.Size(384, 254);
@@ -281,16 +295,17 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 99);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.Size = new System.Drawing.Size(38, 16);
             this.label10.TabIndex = 14;
             this.label10.Text = "Notiz";
             // 
             // tbxDataMemo
             // 
+            this.tbxDataMemo.BackColor = System.Drawing.Color.Snow;
             this.tbxDataMemo.Location = new System.Drawing.Point(9, 124);
             this.tbxDataMemo.MaxLength = 120;
             this.tbxDataMemo.Name = "tbxDataMemo";
-            this.tbxDataMemo.Size = new System.Drawing.Size(349, 20);
+            this.tbxDataMemo.Size = new System.Drawing.Size(349, 22);
             this.tbxDataMemo.TabIndex = 13;
             // 
             // label1
@@ -298,26 +313,30 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Hauptsprache";
             // 
             // btnSaveWord
             // 
+            this.btnSaveWord.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnSaveWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveWord.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnSaveWord.Location = new System.Drawing.Point(216, 197);
             this.btnSaveWord.Name = "btnSaveWord";
             this.btnSaveWord.Size = new System.Drawing.Size(162, 51);
             this.btnSaveWord.TabIndex = 12;
             this.btnSaveWord.Text = "Änderungen Speichern";
-            this.btnSaveWord.UseVisualStyleBackColor = true;
+            this.btnSaveWord.UseVisualStyleBackColor = false;
             this.btnSaveWord.Click += new System.EventHandler(this.btnSaveWord_Click);
             // 
             // tbxDataMainLang
             // 
+            this.tbxDataMainLang.BackColor = System.Drawing.Color.Snow;
             this.tbxDataMainLang.Location = new System.Drawing.Point(9, 67);
             this.tbxDataMainLang.MaxLength = 50;
             this.tbxDataMainLang.Name = "tbxDataMainLang";
-            this.tbxDataMainLang.Size = new System.Drawing.Size(162, 20);
+            this.tbxDataMainLang.Size = new System.Drawing.Size(162, 22);
             this.tbxDataMainLang.TabIndex = 11;
             // 
             // label8
@@ -325,16 +344,17 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(193, 39);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.Size = new System.Drawing.Size(84, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Übersetzung";
             // 
             // tbxDataSecondLang
             // 
+            this.tbxDataSecondLang.BackColor = System.Drawing.Color.Snow;
             this.tbxDataSecondLang.Location = new System.Drawing.Point(196, 67);
             this.tbxDataSecondLang.MaxLength = 50;
             this.tbxDataSecondLang.Name = "tbxDataSecondLang";
-            this.tbxDataSecondLang.Size = new System.Drawing.Size(162, 20);
+            this.tbxDataSecondLang.Size = new System.Drawing.Size(162, 22);
             this.tbxDataSecondLang.TabIndex = 10;
             // 
             // grbxSerachVocabulry
@@ -347,6 +367,8 @@
             this.grbxSerachVocabulry.Controls.Add(this.tbxSearch);
             this.grbxSerachVocabulry.Controls.Add(this.rbtnMainLang);
             this.grbxSerachVocabulry.Controls.Add(this.rbtnSecondLang);
+            this.grbxSerachVocabulry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbxSerachVocabulry.ForeColor = System.Drawing.Color.ForestGreen;
             this.grbxSerachVocabulry.Location = new System.Drawing.Point(19, 29);
             this.grbxSerachVocabulry.Name = "grbxSerachVocabulry";
             this.grbxSerachVocabulry.Size = new System.Drawing.Size(337, 407);
@@ -359,47 +381,58 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 91);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.Size = new System.Drawing.Size(49, 16);
             this.label9.TabIndex = 14;
             this.label9.Text = "Suche:";
             // 
             // btnArchived
             // 
-            this.btnArchived.Location = new System.Drawing.Point(199, 349);
+            this.btnArchived.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnArchived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArchived.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnArchived.Location = new System.Drawing.Point(188, 336);
             this.btnArchived.Name = "btnArchived";
-            this.btnArchived.Size = new System.Drawing.Size(112, 38);
+            this.btnArchived.Size = new System.Drawing.Size(123, 51);
             this.btnArchived.TabIndex = 7;
             this.btnArchived.Text = "Eintrag archivieren";
-            this.btnArchived.UseVisualStyleBackColor = true;
+            this.btnArchived.UseVisualStyleBackColor = false;
             this.btnArchived.Click += new System.EventHandler(this.btnArchived_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(6, 349);
+            this.btnDelete.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnDelete.Location = new System.Drawing.Point(18, 336);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(112, 38);
+            this.btnDelete.Size = new System.Drawing.Size(123, 51);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Eintrag Löschen";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearchWord
             // 
-            this.btnSearchWord.Location = new System.Drawing.Point(199, 105);
+            this.btnSearchWord.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnSearchWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchWord.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnSearchWord.Location = new System.Drawing.Point(188, 91);
             this.btnSearchWord.Name = "btnSearchWord";
-            this.btnSearchWord.Size = new System.Drawing.Size(106, 23);
+            this.btnSearchWord.Size = new System.Drawing.Size(106, 39);
             this.btnSearchWord.TabIndex = 5;
             this.btnSearchWord.Text = "Suchen!";
-            this.btnSearchWord.UseVisualStyleBackColor = true;
+            this.btnSearchWord.UseVisualStyleBackColor = false;
             this.btnSearchWord.Visible = false;
             this.btnSearchWord.Click += new System.EventHandler(this.btnSearchWord_Click);
             // 
             // lbxDBResult
             // 
+            this.lbxDBResult.BackColor = System.Drawing.Color.Snow;
             this.lbxDBResult.FormattingEnabled = true;
+            this.lbxDBResult.ItemHeight = 16;
             this.lbxDBResult.Location = new System.Drawing.Point(6, 153);
             this.lbxDBResult.Name = "lbxDBResult";
-            this.lbxDBResult.Size = new System.Drawing.Size(305, 173);
+            this.lbxDBResult.Size = new System.Drawing.Size(305, 164);
             this.lbxDBResult.TabIndex = 4;
             this.lbxDBResult.SelectedIndexChanged += new System.EventHandler(this.lbxDBResult_SelectedIndexChanged);
             // 
@@ -408,7 +441,7 @@
             this.tbxSearch.Location = new System.Drawing.Point(6, 107);
             this.tbxSearch.MaxLength = 50;
             this.tbxSearch.Name = "tbxSearch";
-            this.tbxSearch.Size = new System.Drawing.Size(162, 20);
+            this.tbxSearch.Size = new System.Drawing.Size(162, 22);
             this.tbxSearch.TabIndex = 3;
             this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
             // 
@@ -416,9 +449,10 @@
             // 
             this.rbtnMainLang.AutoSize = true;
             this.rbtnMainLang.Checked = true;
+            this.rbtnMainLang.ForeColor = System.Drawing.Color.ForestGreen;
             this.rbtnMainLang.Location = new System.Drawing.Point(6, 29);
             this.rbtnMainLang.Name = "rbtnMainLang";
-            this.rbtnMainLang.Size = new System.Drawing.Size(92, 17);
+            this.rbtnMainLang.Size = new System.Drawing.Size(111, 20);
             this.rbtnMainLang.TabIndex = 1;
             this.rbtnMainLang.TabStop = true;
             this.rbtnMainLang.Text = "Hauptsprache";
@@ -427,23 +461,14 @@
             // rbtnSecondLang
             // 
             this.rbtnSecondLang.AutoSize = true;
+            this.rbtnSecondLang.ForeColor = System.Drawing.Color.ForestGreen;
             this.rbtnSecondLang.Location = new System.Drawing.Point(6, 52);
             this.rbtnSecondLang.Name = "rbtnSecondLang";
-            this.rbtnSecondLang.Size = new System.Drawing.Size(85, 17);
+            this.rbtnSecondLang.Size = new System.Drawing.Size(102, 20);
             this.rbtnSecondLang.TabIndex = 2;
             this.rbtnSecondLang.TabStop = true;
             this.rbtnSecondLang.Text = "Übersetzung";
             this.rbtnSecondLang.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(467, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(372, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "HIER WERDEN VOKABELN BEARBEITET";
             // 
             // tabPage3
             // 
@@ -850,6 +875,16 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Snow;
+            this.textBox2.Location = new System.Drawing.Point(-443, 79);
+            this.textBox2.MaxLength = 50;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(162, 22);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            // 
             // ProgressManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,7 +899,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.grbxChangeVocabulary.ResumeLayout(false);
             this.grbxChangeVocabulary.PerformLayout();
             this.grbxSerachVocabulry.ResumeLayout(false);
@@ -890,7 +924,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnClearEntries;
         private System.Windows.Forms.Button btnAddVocabulary;
@@ -954,5 +987,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.LinkLabel lLSearchWordInWeb;
         private System.Windows.Forms.Button btnDeleteVocabulary;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

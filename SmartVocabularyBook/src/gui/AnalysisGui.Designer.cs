@@ -43,18 +43,22 @@
             // 
             // btnOpenVocabularyView
             // 
-            this.btnOpenVocabularyView.Location = new System.Drawing.Point(373, 422);
+            this.btnOpenVocabularyView.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnOpenVocabularyView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenVocabularyView.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnOpenVocabularyView.Location = new System.Drawing.Point(373, 390);
             this.btnOpenVocabularyView.Name = "btnOpenVocabularyView";
-            this.btnOpenVocabularyView.Size = new System.Drawing.Size(157, 45);
+            this.btnOpenVocabularyView.Size = new System.Drawing.Size(227, 77);
             this.btnOpenVocabularyView.TabIndex = 1;
             this.btnOpenVocabularyView.Text = "zu meinen Vokabeln";
-            this.btnOpenVocabularyView.UseVisualStyleBackColor = true;
+            this.btnOpenVocabularyView.UseVisualStyleBackColor = false;
             this.btnOpenVocabularyView.Click += new System.EventHandler(this.btnOpenVocabularyView_Click);
             // 
             // AnalysisGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
             this.Controls.Add(this.btnOpenVocabularyView);
             this.Controls.Add(this.dataGridAllTests);

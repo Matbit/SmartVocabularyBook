@@ -68,14 +68,14 @@
             // hauptmenüToolStripMenuItem
             // 
             this.hauptmenüToolStripMenuItem.Name = "hauptmenüToolStripMenuItem";
-            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hauptmenüToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.hauptmenüToolStripMenuItem.Text = "Abmelden";
             this.hauptmenüToolStripMenuItem.Click += new System.EventHandler(this.hauptmenüToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -139,11 +139,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(908, 625);
             this.Controls.Add(this.btnOpenTestAnalysis);
             this.Controls.Add(this.btnOpenMain);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";

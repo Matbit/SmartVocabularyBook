@@ -29,7 +29,8 @@ namespace SmartVocabularyBook
             information = serviceInformation.getInformation();
             setMenuStrip(false);
             //openPanelMain();
-            openPanelLogin();   
+            openPanelLogin();
+            setColor();  
            
 
             setWelcomeText(information[0].userId);            
@@ -43,6 +44,13 @@ namespace SmartVocabularyBook
             user.id = id;
             user = serviceUser.findUserById(user);
             this.Text = "Vokabeltrainer  für " + user.nickname +" - Dein smartes Vokabelheft";
+        }
+
+        //set colour
+        private void setColor()
+        {
+            menuStrip1.BackColor = Color.DarkSlateBlue;
+            menuStrip1.ForeColor = Color.WhiteSmoke;
         }
 
         public void setMenuStrip(bool isVisible)

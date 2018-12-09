@@ -43,16 +43,16 @@ namespace SmartVocabularyBook.src.service
 
         public bool initialLanguage()
         {
-            insertIntoLanguage(Language.DEUTSCH.ToString());
-            insertIntoLanguage(Language.DÄNISCH.ToString());
-            insertIntoLanguage(Language.ENGLISCH.ToString());
-            insertIntoLanguage(Language.SPANISCH.ToString());
-            insertIntoLanguage(Language.FRANZÖSISCH.ToString());
-            insertIntoLanguage(Language.ITALIENISCH.ToString());
-            insertIntoLanguage(Language.SCHWEDISCH.ToString());
-            insertIntoLanguage(Language.TÜRKISCH.ToString());
-            insertIntoLanguage(Language.POLNISCH.ToString());
-            insertIntoLanguage(Language.PORTUGIESISCH.ToString());
+            insertIntoLanguage(Language.Deutsch.ToString());
+            insertIntoLanguage(Language.Dänisch.ToString());
+            insertIntoLanguage(Language.Englisch.ToString());
+            insertIntoLanguage(Language.Spanisch.ToString());
+            insertIntoLanguage(Language.Französisch.ToString());
+            insertIntoLanguage(Language.Italienisch.ToString());
+            insertIntoLanguage(Language.Schwedisch.ToString());
+            insertIntoLanguage(Language.Türkisch.ToString());
+            insertIntoLanguage(Language.Polnisch.ToString());
+            insertIntoLanguage(Language.Portugiesisch.ToString());
 
             return true;
         }

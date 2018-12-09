@@ -42,8 +42,14 @@ namespace SmartVocabularyBook
 
             User user = new User();
             user.id = id;
-            user = serviceUser.findUserById(user);
+            user = serviceUser.findUserById(getUserId());
             this.Text = "Vokabeltrainer  für " + user.nickname +" - Dein smartes Vokabelheft";
+        }
+
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
         }
 
         //set colour

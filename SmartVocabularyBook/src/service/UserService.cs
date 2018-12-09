@@ -42,9 +42,9 @@ namespace SmartVocabularyBook.src.service
         {
             return repository.findAll();
         }
-        public User findUserById(User user)
+        public User findUserById(int id)
         {
-            return repository.findUserById(user);
+            return repository.findUserById(id);
         }
 
         public User findUserByNick(string user)

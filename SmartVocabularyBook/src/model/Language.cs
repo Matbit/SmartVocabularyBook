@@ -8,6 +8,6 @@ namespace SmartVocabularyBook.src.model
 {
     public enum Language
     {
-        DEUTSCH, ENGLISCH, SPANISCH, FRANZÖSISCH, DÄNISCH, SCHWEDISCH, RUSSISCH, PORTUGIESISCH, FINNISCH, ITALIENISCH, POLNISCH, TÜRKISCH
+        Deutsch, Englisch, Spanisch, Französisch, Dänisch, Schwedisch, Russisch, Portugiesisch, Finnisch, Italienisch, Polnisch, Türkisch
     }
 }

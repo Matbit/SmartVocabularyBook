@@ -24,6 +24,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private static VocabularyService service = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
         private static InformationService serviceInformation = new InformationService();
+        private static UserService serviceUser = new UserService();
         
 
 
@@ -50,14 +51,19 @@ namespace SmartVocabularyBook.vcbook.gui
             lLSearchWordInWeb.Visible = false;
             changeReadOnlyTbxEditVocabulary(true);
             staticVocabulary.setUserId(1);
-            //setHeader();
+            setLanguages();
 
         }
 
-        private void setHeader()
+        private void setLanguages()
         {
+            User myUser = serviceUser.findUserById(getUserId());
+            listViewAllVocab.Columns[0].Text = myUser.mainLanguage;
+            rbtnMainLang.Text = myUser.mainLanguage;
+            lMainLanguageEdit.Text = myUser.mainLanguage;
+            lAddVocabularyMainLanguage.Text = myUser.mainLanguage;
+            rbtnTestMainLang.Text = myUser.mainLanguage;
 
-            
         }
 
         private int getUserId()
@@ -764,10 +770,8 @@ namespace SmartVocabularyBook.vcbook.gui
         {
 
         }
-
         private void btnDeleteVocabulary_Click(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -797,6 +801,18 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 MessageBox.Show(exception.Message);
             }
-        }  
+        }
+
+        private void btnEditVocabulary_Click(object sender, EventArgs e)
+        {
+            if (listViewAllVocab.SelectedItems.Count > 0)
+            {
+                int index = listViewAllVocab.FocusedItem.Index;
+
+                tabControl1.SelectedTab = tabPage2;
+                tbxSearch.Text = listVocabularyActiveView[index].getWordLang1();           
+                
+            }
+        }
     }
 }

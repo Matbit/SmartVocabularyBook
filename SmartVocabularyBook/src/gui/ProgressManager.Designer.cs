@@ -45,7 +45,7 @@
             this.grbxChangeVocabulary = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbxDataMemo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lMainLanguageEdit = new System.Windows.Forms.Label();
             this.btnSaveWord = new System.Windows.Forms.Button();
             this.tbxDataMainLang = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -72,7 +72,7 @@
             this.tbxMainLang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lAddVocabularyMainLanguage = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.chbxSaveSettings = new System.Windows.Forms.CheckBox();
             this.btnStartTest = new System.Windows.Forms.Button();
@@ -96,6 +96,7 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnEditVocabulary = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -126,6 +127,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Azure;
+            this.tabPage1.Controls.Add(this.btnEditVocabulary);
             this.tabPage1.Controls.Add(this.btnDeleteVocabulary);
             this.tabPage1.Controls.Add(this.lNameView);
             this.tabPage1.Controls.Add(this.btnSetVocabularyArchived);
@@ -277,7 +279,7 @@
             // 
             this.grbxChangeVocabulary.Controls.Add(this.label10);
             this.grbxChangeVocabulary.Controls.Add(this.tbxDataMemo);
-            this.grbxChangeVocabulary.Controls.Add(this.label1);
+            this.grbxChangeVocabulary.Controls.Add(this.lMainLanguageEdit);
             this.grbxChangeVocabulary.Controls.Add(this.btnSaveWord);
             this.grbxChangeVocabulary.Controls.Add(this.tbxDataMainLang);
             this.grbxChangeVocabulary.Controls.Add(this.textBox2);
@@ -310,14 +312,14 @@
             this.tbxDataMemo.Size = new System.Drawing.Size(349, 22);
             this.tbxDataMemo.TabIndex = 13;
             // 
-            // label1
+            // lMainLanguageEdit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Hauptsprache";
+            this.lMainLanguageEdit.AutoSize = true;
+            this.lMainLanguageEdit.Location = new System.Drawing.Point(6, 39);
+            this.lMainLanguageEdit.Name = "lMainLanguageEdit";
+            this.lMainLanguageEdit.Size = new System.Drawing.Size(93, 16);
+            this.lMainLanguageEdit.TabIndex = 8;
+            this.lMainLanguageEdit.Text = "Hauptsprache";
             // 
             // btnSaveWord
             // 
@@ -497,7 +499,7 @@
             this.tabPage3.Controls.Add(this.tbxMainLang);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.lAddVocabularyMainLanguage);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(890, 473);
@@ -628,16 +630,16 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Übersetzung*";
             // 
-            // label5
+            // lAddVocabularyMainLanguage
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label5.Location = new System.Drawing.Point(7, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Hauptsprache*";
+            this.lAddVocabularyMainLanguage.AutoSize = true;
+            this.lAddVocabularyMainLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAddVocabularyMainLanguage.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lAddVocabularyMainLanguage.Location = new System.Drawing.Point(7, 41);
+            this.lAddVocabularyMainLanguage.Name = "lAddVocabularyMainLanguage";
+            this.lAddVocabularyMainLanguage.Size = new System.Drawing.Size(98, 16);
+            this.lAddVocabularyMainLanguage.TabIndex = 1;
+            this.lAddVocabularyMainLanguage.Text = "Hauptsprache*";
             // 
             // tabPage4
             // 
@@ -898,6 +900,19 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
             // 
+            // btnEditVocabulary
+            // 
+            this.btnEditVocabulary.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnEditVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnEditVocabulary.Location = new System.Drawing.Point(302, 427);
+            this.btnEditVocabulary.Name = "btnEditVocabulary";
+            this.btnEditVocabulary.Size = new System.Drawing.Size(181, 38);
+            this.btnEditVocabulary.TabIndex = 11;
+            this.btnEditVocabulary.Text = "Bearbeiten";
+            this.btnEditVocabulary.UseVisualStyleBackColor = false;
+            this.btnEditVocabulary.Click += new System.EventHandler(this.btnEditVocabulary_Click);
+            // 
             // ProgressManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -945,7 +960,7 @@
         private System.Windows.Forms.TextBox tbxMainLang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lAddVocabularyMainLanguage;
         private System.Windows.Forms.ListView listViewAllVocab;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -959,7 +974,7 @@
         private System.Windows.Forms.Button btnSearchWord;
         private System.Windows.Forms.ListBox lbxDBResult;
         private System.Windows.Forms.GroupBox grbxChangeVocabulary;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lMainLanguageEdit;
         private System.Windows.Forms.Button btnSaveWord;
         private System.Windows.Forms.TextBox tbxDataMainLang;
         private System.Windows.Forms.Label label8;
@@ -1000,5 +1015,6 @@
         private System.Windows.Forms.LinkLabel lLSearchWordInWeb;
         private System.Windows.Forms.Button btnDeleteVocabulary;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnEditVocabulary;
     }
 }

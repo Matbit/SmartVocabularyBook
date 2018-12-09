@@ -70,11 +70,11 @@ namespace SmartVocabularyBook.src.repository
         }
 
         //find user by id
-        public User findUserById(User user)
+        public User findUserById(int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM user WHERE id = '" + user.id + "';";
+            string sql = "SELECT * FROM user WHERE id = '" + id + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 

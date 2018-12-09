@@ -50,7 +50,7 @@ namespace SmartVocabularyBook.src.gui
 
             try
             {
-                User user = serviceUser.findUserById(new User(myList[0].userId));
+                User user = serviceUser.findUserById(getUserId());
                 lCurrentNickname.Text = user.nickname;
                 lCurrentLanguage.Text = user.mainLanguage;
             }

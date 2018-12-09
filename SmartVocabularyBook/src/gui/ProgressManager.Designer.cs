@@ -48,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveWord = new System.Windows.Forms.Button();
             this.tbxDataMainLang = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbxDataSecondLang = new System.Windows.Forms.TextBox();
             this.grbxSerachVocabulry = new System.Windows.Forms.GroupBox();
@@ -83,7 +84,6 @@
             this.rbtnTestMainLang = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.tbxSetValueOfAskedVocabulary = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -96,7 +96,6 @@
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -339,6 +338,16 @@
             this.tbxDataMainLang.Size = new System.Drawing.Size(162, 22);
             this.tbxDataMainLang.TabIndex = 11;
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Snow;
+            this.textBox2.Location = new System.Drawing.Point(-443, 79);
+            this.textBox2.MaxLength = 50;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(162, 22);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -438,6 +447,7 @@
             // 
             // tbxSearch
             // 
+            this.tbxSearch.BackColor = System.Drawing.Color.Snow;
             this.tbxSearch.Location = new System.Drawing.Point(6, 107);
             this.tbxSearch.MaxLength = 50;
             this.tbxSearch.Name = "tbxSearch";
@@ -472,6 +482,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.Azure;
             this.tabPage3.Controls.Add(this.lLSearchWordInWeb);
             this.tabPage3.Controls.Add(this.llClose);
             this.tabPage3.Controls.Add(this.linkLabel1);
@@ -490,12 +501,11 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Neue Vokabeln hinzufügen";
             this.tabPage3.ToolTipText = "Hier können neue Vokabeln hinzugefügt werden";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // lLSearchWordInWeb
             // 
             this.lLSearchWordInWeb.AutoSize = true;
-            this.lLSearchWordInWeb.Location = new System.Drawing.Point(111, 22);
+            this.lLSearchWordInWeb.Location = new System.Drawing.Point(126, 24);
             this.lLSearchWordInWeb.Name = "lLSearchWordInWeb";
             this.lLSearchWordInWeb.Size = new System.Drawing.Size(140, 13);
             this.lLSearchWordInWeb.TabIndex = 8;
@@ -507,7 +517,7 @@
             // llClose
             // 
             this.llClose.AutoSize = true;
-            this.llClose.Location = new System.Drawing.Point(183, 452);
+            this.llClose.Location = new System.Drawing.Point(198, 452);
             this.llClose.Name = "llClose";
             this.llClose.Size = new System.Drawing.Size(68, 13);
             this.llClose.TabIndex = 7;
@@ -519,7 +529,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(161, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(179, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(87, 13);
             this.linkLabel1.TabIndex = 6;
@@ -530,37 +540,44 @@
             // browser
             // 
             this.browser.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.browser.Location = new System.Drawing.Point(257, 12);
+            this.browser.Location = new System.Drawing.Point(285, 12);
             this.browser.MinimumSize = new System.Drawing.Size(20, 20);
             this.browser.Name = "browser";
             this.browser.ScriptErrorsSuppressed = true;
-            this.browser.Size = new System.Drawing.Size(630, 453);
+            this.browser.Size = new System.Drawing.Size(602, 453);
             this.browser.TabIndex = 0;
             this.browser.WebBrowserShortcutsEnabled = false;
             // 
             // btnClearEntries
             // 
-            this.btnClearEntries.Location = new System.Drawing.Point(57, 141);
+            this.btnClearEntries.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnClearEntries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearEntries.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnClearEntries.Location = new System.Drawing.Point(10, 141);
             this.btnClearEntries.Name = "btnClearEntries";
-            this.btnClearEntries.Size = new System.Drawing.Size(81, 38);
+            this.btnClearEntries.Size = new System.Drawing.Size(104, 51);
             this.btnClearEntries.TabIndex = 5;
             this.btnClearEntries.Text = "Eingabe verwerfen";
-            this.btnClearEntries.UseVisualStyleBackColor = true;
+            this.btnClearEntries.UseVisualStyleBackColor = false;
             this.btnClearEntries.Click += new System.EventHandler(this.btnClearEntries_Click);
             // 
             // btnAddVocabulary
             // 
-            this.btnAddVocabulary.Location = new System.Drawing.Point(167, 141);
+            this.btnAddVocabulary.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnAddVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnAddVocabulary.Location = new System.Drawing.Point(162, 141);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
-            this.btnAddVocabulary.Size = new System.Drawing.Size(81, 38);
+            this.btnAddVocabulary.Size = new System.Drawing.Size(104, 51);
             this.btnAddVocabulary.TabIndex = 4;
             this.btnAddVocabulary.Text = "Vokabeln hinzufügen";
-            this.btnAddVocabulary.UseVisualStyleBackColor = true;
+            this.btnAddVocabulary.UseVisualStyleBackColor = false;
             this.btnAddVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
             // 
             // tbxNote
             // 
-            this.tbxNote.Location = new System.Drawing.Point(91, 104);
+            this.tbxNote.BackColor = System.Drawing.Color.Snow;
+            this.tbxNote.Location = new System.Drawing.Point(109, 103);
             this.tbxNote.MaxLength = 100;
             this.tbxNote.Name = "tbxNote";
             this.tbxNote.Size = new System.Drawing.Size(157, 20);
@@ -568,7 +585,8 @@
             // 
             // tbxSecondLang
             // 
-            this.tbxSecondLang.Location = new System.Drawing.Point(91, 70);
+            this.tbxSecondLang.BackColor = System.Drawing.Color.Snow;
+            this.tbxSecondLang.Location = new System.Drawing.Point(109, 72);
             this.tbxSecondLang.MaxLength = 50;
             this.tbxSecondLang.Name = "tbxSecondLang";
             this.tbxSecondLang.Size = new System.Drawing.Size(157, 20);
@@ -576,7 +594,8 @@
             // 
             // tbxMainLang
             // 
-            this.tbxMainLang.Location = new System.Drawing.Point(91, 38);
+            this.tbxMainLang.BackColor = System.Drawing.Color.Snow;
+            this.tbxMainLang.Location = new System.Drawing.Point(109, 40);
             this.tbxMainLang.MaxLength = 50;
             this.tbxMainLang.Name = "tbxMainLang";
             this.tbxMainLang.Size = new System.Drawing.Size(157, 20);
@@ -587,33 +606,39 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.ForestGreen;
             this.label7.Location = new System.Drawing.Point(54, 104);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Notiz";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.ForestGreen;
             this.label6.Location = new System.Drawing.Point(14, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.Size = new System.Drawing.Size(89, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Übersetzung*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.ForestGreen;
             this.label5.Location = new System.Drawing.Point(7, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(98, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Hauptsprache*";
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.BackColor = System.Drawing.Color.Azure;
             this.tabPage4.Controls.Add(this.chbxSaveSettings);
             this.tabPage4.Controls.Add(this.btnStartTest);
             this.tabPage4.Controls.Add(this.btnStartTraining);
@@ -642,22 +667,28 @@
             // 
             // btnStartTest
             // 
+            this.btnStartTest.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnStartTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartTest.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStartTest.Location = new System.Drawing.Point(745, 393);
             this.btnStartTest.Name = "btnStartTest";
             this.btnStartTest.Size = new System.Drawing.Size(94, 31);
             this.btnStartTest.TabIndex = 14;
             this.btnStartTest.Text = "Test starten";
-            this.btnStartTest.UseVisualStyleBackColor = true;
+            this.btnStartTest.UseVisualStyleBackColor = false;
             this.btnStartTest.Click += new System.EventHandler(this.btnStartTest_Click);
             // 
             // btnStartTraining
             // 
+            this.btnStartTraining.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnStartTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartTraining.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnStartTraining.Location = new System.Drawing.Point(612, 393);
             this.btnStartTraining.Name = "btnStartTraining";
             this.btnStartTraining.Size = new System.Drawing.Size(94, 31);
             this.btnStartTraining.TabIndex = 13;
             this.btnStartTraining.Text = "Übung starten";
-            this.btnStartTraining.UseVisualStyleBackColor = true;
+            this.btnStartTraining.UseVisualStyleBackColor = false;
             this.btnStartTraining.Click += new System.EventHandler(this.btnStartTraining_Click);
             // 
             // groupBox3
@@ -728,7 +759,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.tbxSetValueOfAskedVocabulary);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
@@ -740,16 +770,6 @@
             this.groupBox2.Size = new System.Drawing.Size(266, 158);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 39);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 12);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "(mindestens 5)";
             // 
             // tbxSetValueOfAskedVocabulary
             // 
@@ -791,7 +811,7 @@
             // 
             // trbCountVocabulary
             // 
-            this.trbCountVocabulary.Location = new System.Drawing.Point(9, 107);
+            this.trbCountVocabulary.Location = new System.Drawing.Point(9, 106);
             this.trbCountVocabulary.Maximum = 100;
             this.trbCountVocabulary.Minimum = 1;
             this.trbCountVocabulary.Name = "trbCountVocabulary";
@@ -874,16 +894,6 @@
             this.label4.Size = new System.Drawing.Size(125, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Snow;
-            this.textBox2.Location = new System.Drawing.Point(-443, 79);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
             // 
             // ProgressManager
             // 
@@ -984,7 +994,6 @@
         private System.Windows.Forms.Button btnSetVocabularyActive;
         private System.Windows.Forms.Button btnSetVocabularyArchived;
         private System.Windows.Forms.Label lNameView;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.LinkLabel lLSearchWordInWeb;
         private System.Windows.Forms.Button btnDeleteVocabulary;
         private System.Windows.Forms.TextBox textBox2;

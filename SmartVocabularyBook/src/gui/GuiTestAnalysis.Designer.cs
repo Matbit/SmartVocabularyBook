@@ -49,12 +49,15 @@
             // 
             // btnGoOn
             // 
+            this.btnGoOn.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnGoOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoOn.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnGoOn.Location = new System.Drawing.Point(777, 442);
             this.btnGoOn.Name = "btnGoOn";
             this.btnGoOn.Size = new System.Drawing.Size(111, 46);
             this.btnGoOn.TabIndex = 3;
             this.btnGoOn.Text = "Weiter";
-            this.btnGoOn.UseVisualStyleBackColor = true;
+            this.btnGoOn.UseVisualStyleBackColor = false;
             this.btnGoOn.Click += new System.EventHandler(this.btnGoOn_Click);
             // 
             // lTestResult

@@ -40,6 +40,7 @@ namespace SmartVocabularyBook.src.gui
             for(int i = 0; i < listLanguageModel.Count;i++)
             {
                 lbxSelectLanguage.Items.Add(listLanguageModel[i].languageName);
+                lbxSelectForeignLanguage.Items.Add(listLanguageModel[i].languageName);
             }
         }
 
@@ -53,6 +54,7 @@ namespace SmartVocabularyBook.src.gui
                 User user = serviceUser.findUserById(getUserId());
                 lCurrentNickname.Text = user.nickname;
                 lCurrentLanguage.Text = user.mainLanguage;
+                lCurrentForeignLanguage.Text = user.foreignLanguage;
             }
             catch (Exception ex)
             {
@@ -85,7 +87,9 @@ namespace SmartVocabularyBook.src.gui
         {
             string choosenLanguage = "";
             string choosenNickname = "";
+            string choosenForeignLanguage = "";
 
+            //main language
             if(tbxAnyLanguage.TextLength < 1 && lbxSelectLanguage.SelectedIndex != -1)
             {
                 choosenLanguage = lbxSelectLanguage.SelectedItem.ToString();
@@ -96,7 +100,18 @@ namespace SmartVocabularyBook.src.gui
                 lCurrentLanguage.Text = tbxAnyLanguage.Text;                                
             }
 
-            if(tbxNickname.TextLength > 0)
+            //foreign language
+            if (tbxAnyForeignLanguage.TextLength < 1 && lbxSelectForeignLanguage.SelectedIndex != -1)
+            {
+                choosenForeignLanguage = lbxSelectForeignLanguage.SelectedItem.ToString();
+                lCurrentForeignLanguage.Text = choosenForeignLanguage;
+            }
+            else if (lbxSelectForeignLanguage.SelectedIndex < 0 && tbxAnyForeignLanguage.TextLength > 0)
+            {
+                lCurrentForeignLanguage.Text = tbxAnyForeignLanguage.Text;
+            }
+
+            if (tbxNickname.TextLength > 0)
             {
                 lCurrentNickname.Text = tbxNickname.Text;
             }
@@ -104,13 +119,14 @@ namespace SmartVocabularyBook.src.gui
             //clear all tbx
             tbxAnyLanguage.Clear();
             tbxNickname.Clear();
+            tbxAnyForeignLanguage.Clear();
         }
 
         private void btnSaveUserData_Click(object sender, EventArgs e)
         {
             List<Information> myList = serviceInformation.getInformation();            
 
-            User user = new User(lCurrentNickname.Text, lCurrentLanguage.Text, myList[0].userId);
+            User user = new User(lCurrentNickname.Text, lCurrentLanguage.Text, myList[0].userId, lCurrentForeignLanguage.Text);
 
             try
             {

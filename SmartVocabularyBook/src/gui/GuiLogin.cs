@@ -22,7 +22,8 @@ namespace SmartVocabularyBook.src.gui
         private List<User> listUser = new List<User>();
         static UserService serviceUser = new UserService();
         private static List<LanguageModel> listLanguageModel = new List<LanguageModel>();
-        
+        private static List<LanguageModel> listLanguageModelForeign = new List<LanguageModel>();
+
 
         public GuiLogin(Main main)
         {
@@ -42,11 +43,15 @@ namespace SmartVocabularyBook.src.gui
         private void findAllLanguages()
         {
             listLanguageModel.Clear();
+            listLanguageModelForeign.Clear();
+
             listLanguageModel = servicelanguage.findAll();
+            listLanguageModelForeign = listLanguageModel;
 
             for (int i = 0; i < listLanguageModel.Count; i++)
             {
                 lbxLanguages.Items.Add(listLanguageModel[i].languageName);
+                lbxForeignLanguage.Items.Add(listLanguageModelForeign[i].languageName);
             }
         }
 
@@ -122,7 +127,13 @@ namespace SmartVocabularyBook.src.gui
 
             if(lbxLanguages.SelectedIndex < 0)
             {
-                MessageBox.Show("Bitte klicke auf deine Muttersprache", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bitte klicke auf deine Muttersprache.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(lbxForeignLanguage.SelectedIndex < 0)
+            {
+                MessageBox.Show("Bitte wähle eine Fremdsprache aus.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -130,6 +141,7 @@ namespace SmartVocabularyBook.src.gui
             User newUser = new User();
             newUser.nickname = tbxNickname.Text;            
             newUser.mainLanguage = lbxLanguages.SelectedItem.ToString();
+            newUser.foreignLanguage = lbxForeignLanguage.SelectedItem.ToString();
             if (serviceUser.insertIntoUser(newUser))
             {
                 lbxUser.Items.Clear();
@@ -138,9 +150,15 @@ namespace SmartVocabularyBook.src.gui
                 setGroupBox(false);
                 tbxNickname.Clear();
                 lbxLanguages.ClearSelected();
+                lbxForeignLanguage.ClearSelected();
             }
 
             
+        }
+
+        private void lbxLanguages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

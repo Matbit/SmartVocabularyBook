@@ -18,7 +18,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, nickname TEXT NOT NULL, mainLanguage TEXT NOT NULL, lastTest TEXT, lastLogin TEXT);";
+            string sql = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, nickname TEXT NOT NULL, mainLanguage TEXT NOT NULL, lastTest TEXT, lastLogin TEXT, foreignLanguage TEXT);";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -30,7 +30,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "INSERT INTO user(nickname, mainLanguage) VALUES ('" + user.nickname + "', '" + user.mainLanguage + "');";
+            string sql = "INSERT INTO user(nickname, mainLanguage, foreignLanguage) VALUES ('" + user.nickname + "', '" + user.mainLanguage + "', '"+user.foreignLanguage+"');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -43,7 +43,7 @@ namespace SmartVocabularyBook.src.repository
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
             string sql = "UPDATE user SET nickname = '" + user.nickname + "', mainLanguage = '" + user.mainLanguage + "', lastTest = '" + user.lastTest
-                        + "', lastLogin = '" + user.lastLogin + "' WHERE id = '" + user.id + "';";
+                        + "', lastLogin = '" + user.lastLogin + "', foreignLanguage = '"+ user.foreignLanguage+"' WHERE id = '" + user.id + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -63,7 +63,7 @@ namespace SmartVocabularyBook.src.repository
 
             while (reader.Read())
             {
-                listUser.Add(new model.User(reader["nickname"].ToString(), reader["mainLanguage"].ToString()));
+                listUser.Add(new model.User(reader["nickname"].ToString(), reader["mainLanguage"].ToString(), reader["foreignLanguage"].ToString()));
             }
             con.Close();
             return listUser;
@@ -85,6 +85,7 @@ namespace SmartVocabularyBook.src.repository
                 User second = new User();
                 second.nickname = reader["nickname"].ToString();
                 second.mainLanguage = reader["mainLanguage"].ToString();
+                second.foreignLanguage = reader["foreignLanguage"].ToString();
                 first = second;
             }
             con.Close();
@@ -108,6 +109,7 @@ namespace SmartVocabularyBook.src.repository
                 second.id = id;
                 second.nickname = reader["nickname"].ToString();
                 second.mainLanguage = reader["mainLanguage"].ToString();
+                second.foreignLanguage = reader["foreignLanguage"].ToString();
                 first = second;
             }
             con.Close();

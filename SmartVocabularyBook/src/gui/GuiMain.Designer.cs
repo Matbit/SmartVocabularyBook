@@ -40,8 +40,8 @@
             // 
             this.btnEnd.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnd.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnEnd.Location = new System.Drawing.Point(708, 290);
+            this.btnEnd.ForeColor = System.Drawing.Color.Tomato;
+            this.btnEnd.Location = new System.Drawing.Point(708, 371);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(138, 76);
             this.btnEnd.TabIndex = 0;

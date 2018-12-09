@@ -58,11 +58,18 @@ namespace SmartVocabularyBook.vcbook.gui
         private void setLanguages()
         {
             User myUser = serviceUser.findUserById(getUserId());
+            //set main language
             listViewAllVocab.Columns[0].Text = myUser.mainLanguage;
             rbtnMainLang.Text = myUser.mainLanguage;
             lMainLanguageEdit.Text = myUser.mainLanguage;
-            lAddVocabularyMainLanguage.Text = myUser.mainLanguage;
+            lAddVocabularyMainLanguage.Text = myUser.mainLanguage+"*";
             rbtnTestMainLang.Text = myUser.mainLanguage;
+            //set foreign language
+            listViewAllVocab.Columns[1].Text = myUser.foreignLanguage;
+            rbtnSecondLang.Text = myUser.foreignLanguage;
+            lEditSecondLanguage.Text = myUser.foreignLanguage;
+            lAddVocabularySecondLanguage.Text = myUser.foreignLanguage+"*";
+            rbtnTestSecondLang.Text = myUser.foreignLanguage;
 
         }
 

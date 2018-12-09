@@ -55,7 +55,7 @@ namespace SmartVocabularyBook
         //set colour
         private void setColor()
         {
-            menuStrip1.BackColor = Color.SteelBlue;
+            menuStrip1.BackColor = Color.Navy;
             menuStrip1.ForeColor = Color.WhiteSmoke;
         }
 

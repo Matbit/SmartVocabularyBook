@@ -44,6 +44,12 @@
             this.btnAbort = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.lbxSelectForeignLanguage = new System.Windows.Forms.ListBox();
+            this.tbxAnyForeignLanguage = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lCurrentForeignLanguage = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,17 +57,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 77);
+            this.label1.Location = new System.Drawing.Point(26, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 16);
+            this.label1.Size = new System.Drawing.Size(197, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hier kannst du deine Muttersprache auswählen";
+            this.label1.Text = "Wähle deine Muttersprache aus";
             // 
             // lbxSelectLanguage
             // 
             this.lbxSelectLanguage.BackColor = System.Drawing.Color.Snow;
             this.lbxSelectLanguage.FormattingEnabled = true;
-            this.lbxSelectLanguage.Location = new System.Drawing.Point(47, 109);
+            this.lbxSelectLanguage.Location = new System.Drawing.Point(29, 82);
             this.lbxSelectLanguage.Name = "lbxSelectLanguage";
             this.lbxSelectLanguage.Size = new System.Drawing.Size(227, 95);
             this.lbxSelectLanguage.TabIndex = 1;
@@ -70,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 226);
+            this.label2.Location = new System.Drawing.Point(26, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 16);
             this.label2.TabIndex = 2;
@@ -79,7 +85,7 @@
             // tbxAnyLanguage
             // 
             this.tbxAnyLanguage.BackColor = System.Drawing.Color.Snow;
-            this.tbxAnyLanguage.Location = new System.Drawing.Point(47, 242);
+            this.tbxAnyLanguage.Location = new System.Drawing.Point(29, 208);
             this.tbxAnyLanguage.MaxLength = 50;
             this.tbxAnyLanguage.Name = "tbxAnyLanguage";
             this.tbxAnyLanguage.Size = new System.Drawing.Size(227, 20);
@@ -88,12 +94,12 @@
             // 
             // btnConfirmMainLanguage
             // 
-            this.btnConfirmMainLanguage.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnConfirmMainLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmMainLanguage.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnConfirmMainLanguage.Location = new System.Drawing.Point(47, 285);
+            this.btnConfirmMainLanguage.BackColor = System.Drawing.Color.Orange;
+            this.btnConfirmMainLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmMainLanguage.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnConfirmMainLanguage.Location = new System.Drawing.Point(371, 245);
             this.btnConfirmMainLanguage.Name = "btnConfirmMainLanguage";
-            this.btnConfirmMainLanguage.Size = new System.Drawing.Size(428, 44);
+            this.btnConfirmMainLanguage.Size = new System.Drawing.Size(227, 84);
             this.btnConfirmMainLanguage.TabIndex = 4;
             this.btnConfirmMainLanguage.Text = "Eingaben bestätigen";
             this.btnConfirmMainLanguage.UseVisualStyleBackColor = false;
@@ -103,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(307, 226);
+            this.label3.Location = new System.Drawing.Point(26, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 16);
             this.label3.TabIndex = 6;
@@ -112,7 +118,7 @@
             // tbxNickname
             // 
             this.tbxNickname.BackColor = System.Drawing.Color.Snow;
-            this.tbxNickname.Location = new System.Drawing.Point(307, 242);
+            this.tbxNickname.Location = new System.Drawing.Point(29, 287);
             this.tbxNickname.MaxLength = 50;
             this.tbxNickname.Name = "tbxNickname";
             this.tbxNickname.Size = new System.Drawing.Size(168, 20);
@@ -120,14 +126,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.GreenYellow;
+            this.groupBox1.Controls.Add(this.lCurrentForeignLanguage);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.lCurrentLanguage);
             this.groupBox1.Controls.Add(this.lCurrentNickname);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(468, 77);
+            this.groupBox1.Location = new System.Drawing.Point(613, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 100);
+            this.groupBox1.Size = new System.Drawing.Size(275, 125);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aktuelle Daten auf einen Blick";
@@ -177,7 +186,7 @@
             this.btnSaveUserData.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnSaveUserData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveUserData.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSaveUserData.Location = new System.Drawing.Point(707, 413);
+            this.btnSaveUserData.Location = new System.Drawing.Point(751, 413);
             this.btnSaveUserData.Name = "btnSaveUserData";
             this.btnSaveUserData.Size = new System.Drawing.Size(137, 62);
             this.btnSaveUserData.TabIndex = 16;
@@ -190,7 +199,7 @@
             this.btnAbort.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnAbort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbort.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnAbort.Location = new System.Drawing.Point(47, 413);
+            this.btnAbort.Location = new System.Drawing.Point(29, 413);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(137, 62);
             this.btnAbort.TabIndex = 17;
@@ -202,7 +211,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(43, 9);
+            this.label10.Location = new System.Drawing.Point(25, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(183, 24);
             this.label10.TabIndex = 18;
@@ -221,12 +230,70 @@
             this.btnDeleteAccount.UseVisualStyleBackColor = false;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
+            // lbxSelectForeignLanguage
+            // 
+            this.lbxSelectForeignLanguage.FormattingEnabled = true;
+            this.lbxSelectForeignLanguage.Location = new System.Drawing.Point(371, 82);
+            this.lbxSelectForeignLanguage.Name = "lbxSelectForeignLanguage";
+            this.lbxSelectForeignLanguage.Size = new System.Drawing.Size(227, 95);
+            this.lbxSelectForeignLanguage.TabIndex = 20;
+            // 
+            // tbxAnyForeignLanguage
+            // 
+            this.tbxAnyForeignLanguage.BackColor = System.Drawing.Color.Snow;
+            this.tbxAnyForeignLanguage.Location = new System.Drawing.Point(371, 208);
+            this.tbxAnyForeignLanguage.Name = "tbxAnyForeignLanguage";
+            this.tbxAnyForeignLanguage.Size = new System.Drawing.Size(227, 20);
+            this.tbxAnyForeignLanguage.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(368, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Wähle eine Fremdsprache aus";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(368, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(194, 16);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "oder eine beliebige verwenden";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Fremdsprache:";
+            // 
+            // lCurrentForeignLanguage
+            // 
+            this.lCurrentForeignLanguage.AutoSize = true;
+            this.lCurrentForeignLanguage.Location = new System.Drawing.Point(111, 84);
+            this.lCurrentForeignLanguage.Name = "lCurrentForeignLanguage";
+            this.lCurrentForeignLanguage.Size = new System.Drawing.Size(12, 16);
+            this.lCurrentForeignLanguage.TabIndex = 19;
+            this.lCurrentForeignLanguage.Text = "-";
+            // 
             // UserModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbxAnyForeignLanguage);
+            this.Controls.Add(this.lbxSelectForeignLanguage);
             this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAbort);
@@ -268,5 +335,11 @@
         private System.Windows.Forms.Button btnAbort;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.ListBox lbxSelectForeignLanguage;
+        private System.Windows.Forms.TextBox tbxAnyForeignLanguage;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lCurrentForeignLanguage;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -13,7 +13,7 @@ namespace SmartVocabularyBook.src.model
         public string mainLanguage { get; set; }
         public int lastTest { get; set; }
         public int lastLogin { get; set; }
-        public int foreignLanguageId { get; set; }
+        public string foreignLanguage { get; set; }
 
         public User()
         {
@@ -26,10 +26,11 @@ namespace SmartVocabularyBook.src.model
         }
         
 
-        public User(string nickname, string mainLanguage)
+        public User(string nickname, string mainLanguage, string foreignLanguage)
         {
             this.nickname = nickname;
             this.mainLanguage = mainLanguage;
+            this.foreignLanguage = foreignLanguage;
         }
 
         public User(string nickname, string mainLanguage, int id)
@@ -37,6 +38,14 @@ namespace SmartVocabularyBook.src.model
             this.nickname = nickname;
             this.mainLanguage = mainLanguage;
             this.id = id;
+        }
+
+        public User(string nickname, string mainLanguage, int id, string foreignLanguage)
+        {
+            this.nickname = nickname;
+            this.mainLanguage = mainLanguage;
+            this.id = id;
+            this.foreignLanguage = foreignLanguage;
         }
     }
 }

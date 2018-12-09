@@ -14,6 +14,7 @@ namespace SmartVocabularyBook.src.model
         public int lastTest { get; set; }
         public int lastLogin { get; set; }
         public string foreignLanguage { get; set; }
+        public int points { get; set; }
 
         public User()
         {

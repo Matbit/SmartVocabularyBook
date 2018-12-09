@@ -24,6 +24,9 @@ namespace SmartVocabularyBook.src.service
             User user = new User();
             user.nickname = "NoName";
             user.mainLanguage = "Deutsch";
+            user.foreignLanguage = "Englisch";
+            user.lastLogin = getDateTotayAsInt();
+            user.points = 1;
 
             return insertIntoUser(user);
         }
@@ -36,6 +39,10 @@ namespace SmartVocabularyBook.src.service
         public bool updateUserById(User user)
         {
             return repository.updateUserById(user);
+        }
+        public bool updateUserPointsById(int id, int points)
+        {
+            return repository.updateUserPointsById(id, points);
         }
 
         public List<User> findAll()
@@ -58,6 +65,24 @@ namespace SmartVocabularyBook.src.service
             vocabularyRepository.deleteAllVocabulariesByUserId(id);
             repository.deleteUserById(id);
             return true;
+        }
+        private int getDateTotayAsInt()
+        {
+            int todayAsInteger = 0;
+            DateTime today = DateTime.Today;
+            string dayAsString = "";
+            string monthAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            if (today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString + "";
+            todayAsInteger = Int32.Parse(dateAsString);
+            return todayAsInteger;
         }
 
 

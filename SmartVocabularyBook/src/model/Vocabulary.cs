@@ -34,11 +34,24 @@ namespace SmartVocabularyBook.vcbook.model
 
             DateTime today = DateTime.Today;
             string dayAsString = "";
+            string monthAsString = "";
             if (today.Day < 10)
             {
                 dayAsString = "0" + today.Day;
             }
-            string dateAsString = today.Year + ""+today.Month+"" + dayAsString + "";
+            else
+            {
+                dayAsString = today.Day + "";
+            }
+            if (today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month + "";
+            }
+            string dateAsString = today.Year + ""+monthAsString+"" + dayAsString + "";
             this.dateOfCreation = Int32.Parse(dateAsString);
         }
 

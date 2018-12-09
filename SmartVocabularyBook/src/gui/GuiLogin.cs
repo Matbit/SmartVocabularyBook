@@ -29,9 +29,17 @@ namespace SmartVocabularyBook.src.gui
         {
             InitializeComponent();
             frmMain = main;
-            setlbxUser();
-            setGroupBox(false);
-            findAllLanguages();
+            try
+            {
+                setlbxUser();
+                setGroupBox(false);
+                findAllLanguages();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void setGroupBox(bool isActive)
@@ -80,19 +88,21 @@ namespace SmartVocabularyBook.src.gui
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if(lbxUser.SelectedItems.Count < 1)
+            if (lbxUser.SelectedItems.Count < 1)
             {
                 MessageBox.Show("Wähle bitte einen Nutzer aus.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if(lbxUser.SelectedItems.Count > 0)
+            if (lbxUser.SelectedItems.Count > 0)
             {
                 //int index = lbxUser.SelectedIndex;
                 User currentUser = new User();
                 currentUser.nickname = lbxUser.SelectedItem.ToString();
 
-                currentUser = serviceUser.findUserByNick(currentUser.nickname);                              
+                currentUser = serviceUser.findUserByNick(currentUser.nickname);
+
+                calculateUserPoints(currentUser);
 
                 serviceInformation.updateInformation(new Information(currentUser.id));
 
@@ -101,9 +111,47 @@ namespace SmartVocabularyBook.src.gui
                 frmMain.setMenuStrip(true);
                 frmMain.openPanelMain();
             }
+        }
+
+            private void calculateUserPoints(User user)
+        {
+            int oldPoints = user.points;
+            int lastLogin = user.lastLogin;
+            int todayAsInteger = 0;
+            DateTime today = DateTime.Today;
+            string dayAsString = "";
+            string monthAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            else
+            {
+                dayAsString = today.Day+"";
+            }
+            if(today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month + "";
+            }
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString + "";
+            todayAsInteger = Int32.Parse(dateAsString);
+
+            if(lastLogin != todayAsInteger)
+            {
+                serviceUser.updateUserPointsById(user.id, (oldPoints + 1));
+                user.lastLogin = todayAsInteger;
+                serviceUser.updateUserById(user);
+            }
 
 
         }
+
+
+        
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {

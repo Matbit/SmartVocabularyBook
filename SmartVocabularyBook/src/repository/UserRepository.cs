@@ -18,7 +18,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, nickname TEXT NOT NULL, mainLanguage TEXT NOT NULL, lastTest TEXT, lastLogin TEXT, foreignLanguage TEXT);";
+            string sql = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY AUTOINCREMENT, nickname TEXT NOT NULL, mainLanguage TEXT NOT NULL, lastTest TEXT, lastLogin TEXT, foreignLanguage TEXT, points INTEGER);";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -30,7 +30,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "INSERT INTO user(nickname, mainLanguage, foreignLanguage) VALUES ('" + user.nickname + "', '" + user.mainLanguage + "', '"+user.foreignLanguage+"');";
+            string sql = "INSERT INTO user(nickname, mainLanguage, foreignLanguage, points, lastLogin) VALUES ('" + user.nickname + "', '" + user.mainLanguage + "', '"+user.foreignLanguage+"', '"+user.points+"', '"+user.lastLogin+"');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -49,6 +49,18 @@ namespace SmartVocabularyBook.src.repository
             con.Close();
             return true;
         }
+
+        public bool updateUserPointsById(int id, int points)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "UPDATE user SET points = '" + points + "' WHERE id = '" + id + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+        }
+
 
         //find all user
         public List<User> findAll()
@@ -86,6 +98,10 @@ namespace SmartVocabularyBook.src.repository
                 second.nickname = reader["nickname"].ToString();
                 second.mainLanguage = reader["mainLanguage"].ToString();
                 second.foreignLanguage = reader["foreignLanguage"].ToString();
+
+                string lastLoginAsString = reader["lastLogin"].ToString();
+                int lastLogin = Int32.Parse(lastLoginAsString);
+                second.lastLogin = lastLogin;
                 first = second;
             }
             con.Close();
@@ -106,10 +122,15 @@ namespace SmartVocabularyBook.src.repository
                 User second = new User();
                 string idAsString = reader["id"].ToString();
                 int id = Int32.Parse(idAsString);
+
+                string lastLoginAsString = reader["lastLogin"].ToString();
+                int lastLogin = Int32.Parse(lastLoginAsString);
+
                 second.id = id;
                 second.nickname = reader["nickname"].ToString();
                 second.mainLanguage = reader["mainLanguage"].ToString();
                 second.foreignLanguage = reader["foreignLanguage"].ToString();
+                second.lastLogin = lastLogin;
                 first = second;
             }
             con.Close();

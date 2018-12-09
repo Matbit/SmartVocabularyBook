@@ -222,7 +222,7 @@
             this.btnDeleteAccount.BackColor = System.Drawing.Color.Tomato;
             this.btnDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAccount.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDeleteAccount.Location = new System.Drawing.Point(700, 23);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(700, 9);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(188, 48);
             this.btnDeleteAccount.TabIndex = 19;

@@ -45,6 +45,7 @@ namespace SmartVocabularyBook.vcbook.gui
             setBtnActive(false);
             setBtnDelete(false);
             setBtnArchived(true);
+            setBtnEdit(true);
             lNameView.Text = "Meine Vokabeln";
             //testSettingsService.updateTestSettings(ts, 1);
             loadTestSettings();
@@ -180,6 +181,10 @@ namespace SmartVocabularyBook.vcbook.gui
         {
             btnSetVocabularyArchived.Visible = isArchived;
         }
+        private void setBtnEdit(bool isActive)
+        {
+            btnEditVocabulary.Visible = isActive;
+        }
 
         private void btnShowActiveVocabularies_Click(object sender, EventArgs e)
         {
@@ -188,6 +193,7 @@ namespace SmartVocabularyBook.vcbook.gui
             setBtnActive(false);
             setBtnDelete(false);
             setBtnArchived(true);
+            setBtnEdit(true);
         }
 
         private void btnShowArchivedVocabularies_Click(object sender, EventArgs e)
@@ -196,7 +202,8 @@ namespace SmartVocabularyBook.vcbook.gui
             addArchivedVocToListView();
             setBtnActive(true);
             setBtnDelete(true);
-            setBtnArchived(false);            
+            setBtnArchived(false);
+            setBtnEdit(false);            
         }
 
         private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

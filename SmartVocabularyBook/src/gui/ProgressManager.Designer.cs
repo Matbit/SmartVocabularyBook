@@ -905,7 +905,7 @@
             this.btnEditVocabulary.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnEditVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnEditVocabulary.Location = new System.Drawing.Point(302, 427);
+            this.btnEditVocabulary.Location = new System.Drawing.Point(455, 427);
             this.btnEditVocabulary.Name = "btnEditVocabulary";
             this.btnEditVocabulary.Size = new System.Drawing.Size(181, 38);
             this.btnEditVocabulary.TabIndex = 11;

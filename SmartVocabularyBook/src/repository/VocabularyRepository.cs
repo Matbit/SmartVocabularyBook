@@ -354,11 +354,13 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //delete vocabulary by id
+        //it's possible that no userId is needed. if not then use code of the next line
+        //AND userId = '" + vc.getUserId().ToString() + "'
         public bool deleteVocabularyById(Vocabulary vc)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "DELETE FROM vocabulary WHERE id = '" + vc.getId().ToString() + "' AND userId = '" + vc.getUserId().ToString() + "';";
+            string sql = "DELETE FROM vocabulary WHERE id = '" + vc.getId().ToString() + "';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();

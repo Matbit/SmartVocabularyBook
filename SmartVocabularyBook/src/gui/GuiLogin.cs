@@ -141,7 +141,8 @@ namespace SmartVocabularyBook.src.gui
             todayAsInteger = Int32.Parse(dateAsString);
 
             if(lastLogin != todayAsInteger)
-            {
+            {   
+
                 serviceUser.updateUserPointsById(user.id, (oldPoints + 1));
                 user.lastLogin = todayAsInteger;
                 serviceUser.updateUserById(user);

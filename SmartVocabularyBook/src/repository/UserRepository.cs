@@ -130,6 +130,10 @@ namespace SmartVocabularyBook.src.repository
                 string lastLoginAsString = reader["lastLogin"].ToString();
                 int lastLogin = Int32.Parse(lastLoginAsString);
 
+                string pointsAsString = reader["points"].ToString();
+                int points = Int32.Parse(pointsAsString);
+
+                second.points = points;
                 second.id = id;
                 second.nickname = reader["nickname"].ToString();
                 second.mainLanguage = reader["mainLanguage"].ToString();

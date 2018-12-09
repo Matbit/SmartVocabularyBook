@@ -42,6 +42,8 @@ namespace SmartVocabularyBook.vcbook.gui
                 {
                     lPoints.Text = user.points + " Punkte";
                 }
+
+                
                 
             }
             catch (Exception ex)

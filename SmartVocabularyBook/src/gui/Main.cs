@@ -85,10 +85,10 @@ namespace SmartVocabularyBook
             setTestAnalysisButton(true);
         }
 
-        public void openPanelTest()
+        public void openPanelTest(bool save)
         {
             this.panelMain.Controls.Clear();
-            GuiTest test = new GuiTest(this);
+            GuiTest test = new GuiTest(this, save);
             test.TopLevel = false;
             test.AutoScroll = true;
             this.panelMain.Controls.Add(test);
@@ -97,10 +97,10 @@ namespace SmartVocabularyBook
             setTestAnalysisButton(false);
         }
 
-        public void openPanelTestAnalysis(List<TestVocabularyModel> tvm)
+        public void openPanelTestAnalysis(List<TestVocabularyModel> tvm, bool save)
         {
             this.panelMain.Controls.Clear();
-            GuiTestAnalysis gta = new GuiTestAnalysis(this, tvm);
+            GuiTestAnalysis gta = new GuiTestAnalysis(this, tvm, save);
             gta.TopLevel = false;
             gta.AutoScroll = false;
             this.panelMain.Controls.Add(gta);

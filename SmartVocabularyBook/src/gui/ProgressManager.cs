@@ -614,17 +614,25 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnStartTraining_Click(object sender, EventArgs e)
         {
+            validateTestSetup();
+            setTestSettings();
             startTraining();
         }
 
         private void startTraining()
         {
-            frmMain.openPanelTest();
+            frmMain.openPanelTest(false);
 
         }
 
         private void btnStartTest_Click(object sender, EventArgs e)
         {
+
+            if (!validateTestSetup())
+            {
+                MessageBox.Show("Sie haben mehr Vokabeln ausgewählt, als zur Verfügung stehen.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             setTestSettings();
             startTest();
 
@@ -636,7 +644,18 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void startTest()
         {
-            frmMain.openPanelTest();
+            frmMain.openPanelTest(true);
+        }
+
+        private bool validateTestSetup()
+        {
+            List<Vocabulary> countVocabulary = service.findAllActivated(getUserId());
+            int count = countVocabulary.Capacity;
+            if (count >= trbCountVocabulary.Value)
+            {
+                return true;
+            }
+            else return false;
         }
 
         private void setTestSettings()

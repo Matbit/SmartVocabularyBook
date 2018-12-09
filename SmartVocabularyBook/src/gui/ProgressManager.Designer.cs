@@ -172,7 +172,7 @@
             this.btnSetVocabularyArchived.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnSetVocabularyArchived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetVocabularyArchived.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSetVocabularyArchived.Location = new System.Drawing.Point(7, 427);
+            this.btnSetVocabularyArchived.Location = new System.Drawing.Point(6, 427);
             this.btnSetVocabularyArchived.Name = "btnSetVocabularyArchived";
             this.btnSetVocabularyArchived.Size = new System.Drawing.Size(185, 38);
             this.btnSetVocabularyArchived.TabIndex = 8;
@@ -182,12 +182,15 @@
             // 
             // btnSetVocabularyActive
             // 
+            this.btnSetVocabularyActive.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnSetVocabularyActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetVocabularyActive.ForeColor = System.Drawing.Color.ForestGreen;
             this.btnSetVocabularyActive.Location = new System.Drawing.Point(7, 427);
             this.btnSetVocabularyActive.Name = "btnSetVocabularyActive";
             this.btnSetVocabularyActive.Size = new System.Drawing.Size(185, 38);
             this.btnSetVocabularyActive.TabIndex = 7;
             this.btnSetVocabularyActive.Text = "Wieder aktivieren";
-            this.btnSetVocabularyActive.UseVisualStyleBackColor = true;
+            this.btnSetVocabularyActive.UseVisualStyleBackColor = false;
             this.btnSetVocabularyActive.Click += new System.EventHandler(this.btnSetVocabularyActive_Click);
             // 
             // label15

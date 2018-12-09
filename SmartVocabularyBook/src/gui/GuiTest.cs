@@ -17,6 +17,7 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class GuiTest : Form
     {
         Main frmMain;
+        private bool save;
         //contains the solution of the test
         private static List<Vocabulary> listSolution = new List<Vocabulary>();
         //contains the correct word, which was looked for
@@ -39,10 +40,11 @@ namespace SmartVocabularyBook.vcbook.gui
         private static TestSettingsService testSettingsService = new TestSettingsService();
         private static InformationService serviceInformation = new InformationService();
 
-        public GuiTest(Main main)
+        public GuiTest(Main main, bool save)
         {
             InitializeComponent();
             frmMain = main;
+            this.save = save;
             createTestList();
             setDataGrid();            
         }
@@ -187,9 +189,6 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-
-           
-
             DialogResult result = MessageBox.Show("Möchtest Du den Test wirklich beenden?", "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if(result == DialogResult.Yes)
@@ -202,7 +201,7 @@ namespace SmartVocabularyBook.vcbook.gui
                     return;
                 }
                 calcPoints();
-                frmMain.openPanelTestAnalysis(resultList);
+                frmMain.openPanelTestAnalysis(resultList, save);
             }
         }
 

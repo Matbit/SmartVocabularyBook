@@ -15,16 +15,18 @@ namespace SmartVocabularyBook.src.gui
     public partial class GuiTestAnalysis : Form
     {
         Main frmMain;
+        private bool save;
         private static TestService testservice = new TestService();
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
         //private static List<TestResult> trList = new List<TestResult>();
         private static TestResult trStatic = new TestResult();
         private static int points = 0;
 
-        public GuiTestAnalysis(Main main, List<TestVocabularyModel> list)
+        public GuiTestAnalysis(Main main, List<TestVocabularyModel> list, bool save)
         {   
             InitializeComponent();
             frmMain = main;
+            this.save = save;
             resultList = list;
             calcPoints();
             setDataGrid();
@@ -64,19 +66,23 @@ namespace SmartVocabularyBook.src.gui
 
         private void saveTestResultInDB()
         {
-            trStatic.setId(-1);
-            trStatic.setScores(points);
-            trStatic.setWrongAnswers(resultList.Count - points);
-            trStatic.setMemo(" ");
+            if (save)
+            {
+                trStatic.setId(-1);
+                trStatic.setScores(points);
+                trStatic.setWrongAnswers(resultList.Count - points);
+                trStatic.setMemo(" ");
 
-            try
-            {
-                testservice.insertTest(trStatic);
+                try
+                {
+                    testservice.insertTest(trStatic);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private double calcGradeInProcent()

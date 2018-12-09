@@ -37,6 +37,7 @@ namespace SmartVocabularyBook.vcbook.gui
         //services
         private static VocabularyService vocabularyService = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
+        private static InformationService serviceInformation = new InformationService();
 
         public GuiTest(Main main)
         {
@@ -69,6 +70,12 @@ namespace SmartVocabularyBook.vcbook.gui
             dataGridTest.Font = new Font("Microsoft Sans Serif", 13);            
         }
 
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Der Test wurde abgebrochen.");
@@ -88,25 +95,25 @@ namespace SmartVocabularyBook.vcbook.gui
 
             if (searchMode == 1)
             {
-                listSolution = vocabularyService.findAllNewestActiveVocabularies(ts.getCount());
+                listSolution = vocabularyService.findAllNewestActiveVocabularies(ts.getCount(), getUserId());
                 updateLastCall(listSolution);
                 setLanguageMode(ts);               
             }
             else if(searchMode == 2)
             {
-                listSolution = vocabularyService.findOldestActiveVocabularies(ts.getCount());
+                listSolution = vocabularyService.findOldestActiveVocabularies(ts.getCount(), getUserId());
                 updateLastCall(listSolution);
                 setLanguageMode(ts);
             }
             else if(searchMode == 3)
             {
-                listSolution = vocabularyService.findRandomActiveVocabularies(ts.getCount());
+                listSolution = vocabularyService.findRandomActiveVocabularies(ts.getCount(), getUserId());
                 updateLastCall(listSolution);
                 setLanguageMode(ts);
             }
             else if(searchMode == 4)
             {
-                listSolution = vocabularyService.findLastCallASCVocabularies(ts.getCount());
+                listSolution = vocabularyService.findLastCallASCVocabularies(ts.getCount(), getUserId());
                 updateLastCall(listSolution);
                 setLanguageMode(ts);
             }

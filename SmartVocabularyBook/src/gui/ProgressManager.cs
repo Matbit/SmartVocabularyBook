@@ -23,6 +23,7 @@ namespace SmartVocabularyBook.vcbook.gui
         //private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
+        private static InformationService serviceInformation = new InformationService();
         
 
 
@@ -31,6 +32,8 @@ namespace SmartVocabularyBook.vcbook.gui
         private static List<Vocabulary> staticVocabularyList = new List<Vocabulary>();
         private static List<Vocabulary> listVocabularyActiveView = new List<Vocabulary>();
         private static List<Vocabulary> listVocabularyArchivedView = new List<Vocabulary>();
+
+        //private static int userId = 
 
 
         public ProgressManager(Main aMain)
@@ -55,6 +58,12 @@ namespace SmartVocabularyBook.vcbook.gui
         {
 
             
+        }
+
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
         }
 
         private void loadTestSettings()
@@ -109,7 +118,7 @@ namespace SmartVocabularyBook.vcbook.gui
             listViewAllVocab.Items.Clear();
             listVocabularyActiveView.Clear();
             List<Vocabulary> resultList = null;
-            resultList = service.findAllActivated();
+            resultList = service.findAllActivated(getUserId());
             listVocabularyActiveView = resultList;            
             
 
@@ -129,7 +138,7 @@ namespace SmartVocabularyBook.vcbook.gui
             listViewAllVocab.Items.Clear();
             listVocabularyArchivedView.Clear();
             List<Vocabulary> resultList;
-            resultList = service.findAllArchived();
+            resultList = service.findAllArchived(getUserId());
             listVocabularyArchivedView = resultList;
 
 
@@ -209,7 +218,7 @@ namespace SmartVocabularyBook.vcbook.gui
                     if (isVocabularyArchived(staticVocabulary))
                     {   
                         //set archived status false if voc exists -> so, user could see voc in list
-                        Vocabulary vc = service.findVocabularyByWord(staticVocabulary.getWordLang1());
+                        Vocabulary vc = service.findVocabularyByWord(staticVocabulary.getWordLang1(), getUserId());
                         service.updateArchivedStatusById(vc, 0);
                         addVocToListView();
                         MessageBox.Show("Vokabel wurde aus dem Archiv zu Ihren aktiven Vokabeln hinzugefügt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -262,9 +271,9 @@ namespace SmartVocabularyBook.vcbook.gui
                         
                         if (rbtnMainLang.Checked)
                         {
-                            staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, true);
+                            staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, true, getUserId());
                         }
-                        else  staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, false);
+                        else  staticVocabularyList = service.findAllBySearchTerm(tbxSearch.Text, false, getUserId());
 
                         foreach (Vocabulary vocabulary in staticVocabularyList)
                         {
@@ -353,7 +362,7 @@ namespace SmartVocabularyBook.vcbook.gui
             Vocabulary vc = new Vocabulary(word1, word2, memo);
 
             //set userId
-            vc.setUserId(1);
+            vc.setUserId(getUserId());
 
             String date = vc.getDateOfCreation().ToString();
             int archived;
@@ -376,7 +385,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private bool doesVocabularyExits(Vocabulary newVocabulary)
         {   
             //returns an empty object if there are no result
-            staticVocabularyList = service.findVocabularyByWordList(newVocabulary.getWordLang1());
+            staticVocabularyList = service.findVocabularyByWordList(newVocabulary.getWordLang1(), getUserId());
 
             foreach(var vocabularies in staticVocabularyList)
             {
@@ -394,7 +403,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private bool isVocabularyArchived(Vocabulary newVocabulary)
         {
             staticVocabularyList.Clear();
-            staticVocabularyList = service.findVocabularyByWordList(newVocabulary.getWordLang1());
+            staticVocabularyList = service.findVocabularyByWordList(newVocabulary.getWordLang1(), getUserId());
 
             foreach(var vocabularies in staticVocabularyList)
             {
@@ -455,7 +464,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
             try
             {
-                staticVocabulary = service.findVocabularyByWord(word);
+                staticVocabulary = service.findVocabularyByWord(word, getUserId());
 
                 DialogResult dr = MessageBox.Show("Möchten Sie diesen Vokabelsatz wirklich löschen?\n" + staticVocabulary.getWordLang1() + " - " +
                          staticVocabulary.getWordLang2(), "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
@@ -500,7 +509,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
             try
             {
-                staticVocabulary = service.findVocabularyByWord(word);
+                staticVocabulary = service.findVocabularyByWord(word, getUserId());
 
                 DialogResult dr = MessageBox.Show("Möchten Sie diesen Vokabelsatz wirklich archivieren?\n" + staticVocabulary.getWordLang1() + " - " +
                          staticVocabulary.getWordLang2(), "Frage", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);

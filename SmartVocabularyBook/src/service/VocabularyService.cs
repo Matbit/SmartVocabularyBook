@@ -30,11 +30,11 @@ namespace SmartVocabularyBook.vcbook.service
 
 
         
-        public List<Vocabulary> findAllBySearchTerm(String word, bool isMainLanguage)
+        public List<Vocabulary> findAllBySearchTerm(String word, bool isMainLanguage, int id)
         {
             if (!string.IsNullOrEmpty(word))
             {
-                return repository.findAllBySearchTerm(word, isMainLanguage); 
+                return repository.findAllBySearchTerm(word, isMainLanguage, id); 
             }
             return new List<Vocabulary>();
         }
@@ -49,21 +49,21 @@ namespace SmartVocabularyBook.vcbook.service
             return false;
         }
 
-        public Vocabulary findVocabularyByWord(String word)
+        public Vocabulary findVocabularyByWord(String word, int id)
         {
             if (!string.IsNullOrEmpty(word))
             {
-                return repository.findVocabularyByWord(word);
+                return repository.findVocabularyByWord(word, id);
             }
 
             return new Vocabulary();
         }
 
-        public List<Vocabulary> findVocabularyByWordList(String word)
+        public List<Vocabulary> findVocabularyByWordList(String word, int id)
         {
             if (!string.IsNullOrEmpty(word))
             {
-                return repository.findVocabularyByWordList(word);
+                return repository.findVocabularyByWordList(word, id);
             }
             return new List<Vocabulary>();
         }
@@ -95,29 +95,29 @@ namespace SmartVocabularyBook.vcbook.service
             return false;
         }
 
-        public List<Vocabulary> findAllArchived()
+        public List<Vocabulary> findAllArchived(int id)
         {
-            return repository.findAllArchived();
+            return repository.findAllArchived(id);
         }
 
-        public List<Vocabulary> findAllActivated()
+        public List<Vocabulary> findAllActivated(int id)
         {
-            return repository.findAllActivated();
+            return repository.findAllActivated(id);
         }
 
-        public List<Vocabulary> findAllNewestActiveVocabularies(int limit)
+        public List<Vocabulary> findAllNewestActiveVocabularies(int limit, int id)
         {
-            return repository.findAllNewestActiveVocabularies(limit);
+            return repository.findAllNewestActiveVocabularies(limit, id);
         }
 
-        public List<Vocabulary> findOldestActiveVocabularies(int limit)
+        public List<Vocabulary> findOldestActiveVocabularies(int limit, int id)
         {
-            return repository.findOldestActiveVocabularies(limit);
+            return repository.findOldestActiveVocabularies(limit, id);
         }
 
-        public List<Vocabulary> findRandomActiveVocabularies(int limit)
+        public List<Vocabulary> findRandomActiveVocabularies(int limit, int id)
         {
-            return repository.findRandomActiveVocabularies(limit);
+            return repository.findRandomActiveVocabularies(limit, id);
         }
 
         public bool updateLastCallById(Vocabulary vc)
@@ -129,9 +129,9 @@ namespace SmartVocabularyBook.vcbook.service
             else return false;
         }
         
-        public List<Vocabulary> findLastCallASCVocabularies(int limit)
+        public List<Vocabulary> findLastCallASCVocabularies(int limit, int id)
         {
-            return repository.findLastCallASCVocabularies(limit);
+            return repository.findLastCallASCVocabularies(limit, id);
         }
     }
 }

@@ -49,11 +49,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds all vocabularies which are not archived
-        public List<Vocabulary> findAllArchived()
+        public List<Vocabulary> findAllArchived(int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 1 ORDER BY UPPER(wordLang1) ASC;";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 1 AND userId = '" + id + "' ORDER BY UPPER(wordLang1) ASC;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -77,11 +77,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds all vocabularies which are archived
-        public List<Vocabulary> findAllActivated()
+        public List<Vocabulary> findAllActivated(int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 0 ORDER BY UPPER(wordLang1) ASC;";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0 AND  userId = '" + id + "' ORDER BY UPPER(wordLang1) ASC;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -106,17 +106,17 @@ namespace SmartVocabularyBook.vcbook.repository
 
 
         //finds all vocabularies by parameter
-        public List<Vocabulary> findAllBySearchTerm(String word, bool isMainLanguage)
+        public List<Vocabulary> findAllBySearchTerm(String word, bool isMainLanguage, int id)
         {
             string sql = "";
 
             if (isMainLanguage)
             {
-                sql = "SELECT * FROM vocabulary WHERE (wordLang1 LIKE '" + word + "%') AND archived = 0;";
+                sql = "SELECT * FROM vocabulary WHERE (wordLang1 LIKE '" + word + "%') AND archived = 0 AND userId = '" + id + "';";
             }
             else
             {
-                sql = "SELECT * FROM vocabulary WHERE (wordLang2 LIKE '" + word + "%') AND archived = 0;";
+                sql = "SELECT * FROM vocabulary WHERE (wordLang2 LIKE '" + word + "%') AND archived = 0 AND userId = '" + id + "';";
             }
 
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
@@ -146,11 +146,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //method to find one vocabulary
-        public Vocabulary findVocabularyByWord(String word)
+        public Vocabulary findVocabularyByWord(String word, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE wordLang1 = '" + word + "';";
+            string sql = "SELECT * FROM vocabulary WHERE wordLang1 = '" + word + "' AND userId = '" + id + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             SQLiteDataReader reader = cmd.ExecuteReader();
@@ -180,11 +180,11 @@ namespace SmartVocabularyBook.vcbook.repository
             return vocabulary;
         }
 
-        public List<Vocabulary> findVocabularyByWordList(String word)
+        public List<Vocabulary> findVocabularyByWordList(String word, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE wordLang1 = '" + word + "';";
+            string sql = "SELECT * FROM vocabulary WHERE wordLang1 = '" + word + "' AND userId = '" + id + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
 
             SQLiteDataReader reader = cmd.ExecuteReader();
@@ -215,11 +215,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds all newest active vocabularies 
-        public List<Vocabulary> findAllNewestActiveVocabularies(int limit)
+        public List<Vocabulary> findAllNewestActiveVocabularies(int limit, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY dateOfCreation DESC LIMIT "+limit+";";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0 AND userId = '" + id + "' ORDER BY dateOfCreation DESC LIMIT " + limit+ " ;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -243,11 +243,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds all oldest active vocabularies 
-        public List<Vocabulary> findOldestActiveVocabularies(int limit)
+        public List<Vocabulary> findOldestActiveVocabularies(int limit, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY dateOfCreation ASC LIMIT " + limit + ";";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0 AND userId = '" + id + "' ORDER BY dateOfCreation ASC LIMIT " + limit + " ;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -271,11 +271,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds random active vocabularies 
-        public List<Vocabulary> findRandomActiveVocabularies(int limit)
+        public List<Vocabulary> findRandomActiveVocabularies(int limit, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY RANDOM() LIMIT " + limit + ";";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0 AND userId = '" + id + "' ORDER BY RANDOM() LIMIT " + limit + " ;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -299,11 +299,11 @@ namespace SmartVocabularyBook.vcbook.repository
         }
 
         //finds active vocabularies which were long time not asked for 
-        public List<Vocabulary> findLastCallASCVocabularies(int limit)
+        public List<Vocabulary> findLastCallASCVocabularies(int limit, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM vocabulary WHERE archived = 0  ORDER BY lastCall ASC LIMIT " + limit + ";";
+            string sql = "SELECT * FROM vocabulary WHERE archived = 0 AND userId = '" + id + "' ORDER BY lastCall ASC LIMIT " + limit + " ;";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 

@@ -43,6 +43,7 @@
             this.btnSaveUserData = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -207,12 +208,26 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Nutzereinstellungen ";
             // 
+            // btnDeleteAccount
+            // 
+            this.btnDeleteAccount.BackColor = System.Drawing.Color.Tomato;
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccount.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDeleteAccount.Location = new System.Drawing.Point(700, 23);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(188, 48);
+            this.btnDeleteAccount.TabIndex = 19;
+            this.btnDeleteAccount.Text = "Diesen Account löschen";
+            this.btnDeleteAccount.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
+            // 
             // UserModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnSaveUserData);
@@ -252,5 +267,6 @@
         private System.Windows.Forms.Button btnSaveUserData;
         private System.Windows.Forms.Button btnAbort;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnDeleteAccount;
     }
 }

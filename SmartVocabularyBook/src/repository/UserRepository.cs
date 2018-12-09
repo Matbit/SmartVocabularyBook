@@ -114,5 +114,17 @@ namespace SmartVocabularyBook.src.repository
             return first;
 
         }
+
+        public bool deleteUserById(int id)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "DELETE from user WHERE id = '" + id + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+
+        }
     }
 }

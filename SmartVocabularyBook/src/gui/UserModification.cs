@@ -60,6 +60,12 @@ namespace SmartVocabularyBook.src.gui
             }
         }
 
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
+        }
+
         private void gr_Load(object sender, EventArgs e)
         {
 
@@ -115,9 +121,21 @@ namespace SmartVocabularyBook.src.gui
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }            
+        }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {   
+            DialogResult dr = MessageBox.Show("Es werden alle zu deinem Account zugehörigen Vokabeln unwiderruflich gelöscht.\nBist du dir wirklich sicher?",
+                "Achtung!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+            if(dr == DialogResult.Yes)
+            {
+                serviceUser.deleteUserById(getUserId());
+                frmMain.openPanelLogin();
+                MessageBox.Show("Der Account wurde erfolgreich gelöscht.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
-
-
         }
     }
 }

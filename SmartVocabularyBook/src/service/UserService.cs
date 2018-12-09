@@ -1,5 +1,6 @@
 ﻿using SmartVocabularyBook.src.model;
 using SmartVocabularyBook.src.repository;
+using SmartVocabularyBook.vcbook.service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace SmartVocabularyBook.src.service
     class UserService
     {
         private static UserRepository repository = new UserRepository();
+        private static VocabularyService vocabularyRepository;
 
 
         public bool createTableUser()
@@ -48,6 +50,14 @@ namespace SmartVocabularyBook.src.service
         public User findUserByNick(string user)
         {
             return repository.findUserByNick(user);
+        }
+
+        public bool deleteUserById(int id)
+        {
+            vocabularyRepository = new VocabularyService();
+            vocabularyRepository.deleteAllVocabulariesByUserId(id);
+            repository.deleteUserById(id);
+            return true;
         }
 
 

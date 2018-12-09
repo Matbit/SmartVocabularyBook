@@ -86,6 +86,11 @@ namespace SmartVocabularyBook.vcbook.service
             return false;
         }
 
+        public bool deleteAllVocabulariesByUserId(int id)
+        {
+            return repository.deleteAllVocabulariesByUserId(id);
+        }
+
         public bool updateArchivedStatusById(Vocabulary vc, int archived)
         {
             if(vc != null)

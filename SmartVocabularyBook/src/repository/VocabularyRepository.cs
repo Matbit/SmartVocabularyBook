@@ -366,6 +366,19 @@ namespace SmartVocabularyBook.vcbook.repository
             return true;
         }
 
+        //delete all vocabularies by UserId
+        public bool deleteAllVocabulariesByUserId(int id)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "DELETE FROM vocabulary WHERE userId = '" + id + "';";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            return true;
+        }
+
         //update vocabulary status archived
         public bool updateArchivedStatusById(Vocabulary vc, int archived)
         {

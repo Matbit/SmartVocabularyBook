@@ -142,6 +142,13 @@ namespace SmartVocabularyBook.src.gui
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {   
+            //check if there are more than 1 account. if not, then it's not possible to delete the only account
+            if(serviceUser.findAll().Count < 2)
+            {
+                MessageBox.Show("Es ist nicht möglich diesen Account zu löschen, da es derzeit der Einzige ist.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
             DialogResult dr = MessageBox.Show("Es werden alle zu deinem Account zugehörigen Vokabeln unwiderruflich gelöscht.\nBist du dir wirklich sicher?",
                 "Achtung!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 

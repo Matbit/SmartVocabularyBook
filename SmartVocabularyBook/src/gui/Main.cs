@@ -174,7 +174,7 @@ namespace SmartVocabularyBook
             setMenuButton(false);
             setTestAnalysisButton(false);
             setMenuStrip(false);
-        }
+         }
 
 
         //set menu button

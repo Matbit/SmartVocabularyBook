@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Einstellungen");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Test", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tbxShowHelp = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // treeView1
+            // tbxShowHelp
             // 
-            this.treeView1.BackColor = System.Drawing.Color.Snow;
-            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.treeView1.Location = new System.Drawing.Point(25, 64);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Einstellungen";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Test";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.treeView1.Size = new System.Drawing.Size(192, 351);
-            this.treeView1.TabIndex = 0;
+            this.tbxShowHelp.BackColor = System.Drawing.SystemColors.Info;
+            this.tbxShowHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxShowHelp.Location = new System.Drawing.Point(108, 63);
+            this.tbxShowHelp.Multiline = true;
+            this.tbxShowHelp.Name = "tbxShowHelp";
+            this.tbxShowHelp.ReadOnly = true;
+            this.tbxShowHelp.Size = new System.Drawing.Size(690, 370);
+            this.tbxShowHelp.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Hilfe und Erläuterungen";
             // 
             // GuiHelp
             // 
@@ -56,17 +59,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbxShowHelp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiHelp";
             this.Text = "Help";
             this.Load += new System.EventHandler(this.Help_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TextBox tbxShowHelp;
+        private System.Windows.Forms.Label label1;
     }
 }

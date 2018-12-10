@@ -17,11 +17,34 @@ namespace SmartVocabularyBook.src.gui
         {
             InitializeComponent();
             frmMain = main;
+            loadHelpFile();
         }
 
         private void Help_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadHelpFile()
+        {
+            
+            string line = "";
+            try
+            {
+                System.IO.StreamReader file = new System.IO.StreamReader("Hilfe.txt", Encoding.Default);
+                while ((line = file.ReadLine()) != null)
+                {
+                    tbxShowHelp.AppendText(line + Environment.NewLine);
+                    
+                    
+                }
+                file.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

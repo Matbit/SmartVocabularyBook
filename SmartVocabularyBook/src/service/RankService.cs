@@ -34,26 +34,26 @@ namespace SmartVocabularyBook.src.service
 
         public bool initialRank()
         {
-            insertIntoRank("Ahnungsloser Nullpeiler");
-            insertIntoRank("Vollpfosten");
-            insertIntoRank("Nixversteher");
-            insertIntoRank("Pfeife");
-            insertIntoRank("Entdecker");
-            insertIntoRank("Anfänger");
-            insertIntoRank("Wissbegierig");
-            insertIntoRank("fortgeschrittener Anfänger");
-            insertIntoRank("Bücherwurm");
-            insertIntoRank("Guter Zuhörer");
-            insertIntoRank("Versteher");
-            insertIntoRank("Assistent");
-            insertIntoRank("Veteran");
-            insertIntoRank("Übersetzer");
-            insertIntoRank("Bachelor");
-            insertIntoRank("Dolmetscher");
-            insertIntoRank("Gelehrter");
-            insertIntoRank("King");
-            insertIntoRank("Master");
-            insertIntoRank("Legende");
+            insertIntoRank("Ahnungsloser Nullpeiler");  //1
+            insertIntoRank("Vollpfosten");              //2
+            insertIntoRank("Nixversteher");             //3
+            insertIntoRank("Pfeife");                   //4
+            insertIntoRank("Entdecker");                //5    
+            insertIntoRank("Anfänger");                 //6
+            insertIntoRank("Wissbegierig");             //7
+            insertIntoRank("fortgeschrittener Anfänger");//8
+            insertIntoRank("Bücherwurm");               //9
+            insertIntoRank("Guter Zuhörer");            //10    
+            insertIntoRank("Könner");                   //11
+            insertIntoRank("Assistent");                //12
+            insertIntoRank("Veteran");                  //13
+            insertIntoRank("Übersetzer");               //14    
+            insertIntoRank("Bachelor");                 //15
+            insertIntoRank("Dolmetscher");              //16
+            insertIntoRank("Gelehrter");                //17
+            insertIntoRank("King");                     //18
+            insertIntoRank("Master");                   //19
+            insertIntoRank("Legende");                  //20
 
 
             return true;
@@ -82,29 +82,70 @@ namespace SmartVocabularyBook.src.service
             {
                 return repository.findRankById(4);
             }
-            else if(points < 12)
+            else if(points < 10)
             {
                 return repository.findRankById(5);
             }
-            else if(points < 19)
+            else if(points < 14)
             {
                 return repository.findRankById(6);
             }
-            else if(points < 25)
+            else if(points < 20)
             {
                 return repository.findRankById(7);
             }
-            else if(points < 35)
+            else if(points < 30)
             {
                 return repository.findRankById(8);
             }
-            else if(points < 50)
+            else if(points < 42)
             {
                 return repository.findRankById(9);
             }
-            else if(points > 49)
+            else if(points < 56)
             {
                 return repository.findRankById(10);
+            }
+
+            else if(points < 70)
+            {
+                return repository.findRankById(11);
+            }
+            else if(points < 110)
+            {
+                return repository.findRankById(12);
+            }
+            else if(points < 180)
+            {
+                return repository.findRankById(13);
+            }
+            else if(points < 240)
+            {
+                return repository.findRankById(14);
+            }
+            else if(points < 300)
+            {
+                return repository.findRankById(15);
+            }
+            else if(points < 360)
+            {
+                return repository.findRankById(16);
+            }
+            else if(points < 480)
+            {
+                return repository.findRankById(17);
+            }
+            else if(points < 600)
+            {
+                return repository.findRankById(18);
+            }
+            else if(points < 730)
+            {
+                return repository.findRankById(19);
+            }
+            else if (points > 899)
+            {
+                return repository.findRankById(20);
             }
             return null;
         }

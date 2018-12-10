@@ -34,9 +34,8 @@ namespace SmartVocabularyBook.src.gui
                 System.IO.StreamReader file = new System.IO.StreamReader("Hilfe.txt", Encoding.Default);
                 while ((line = file.ReadLine()) != null)
                 {
-                    tbxShowHelp.AppendText(line + Environment.NewLine);
-                    
-                    
+                    //tbxShowHelp.AppendText(line + Environment.NewLine);
+                    rtbxHelpText.AppendText(line + Environment.NewLine);                    
                 }
                 file.Close();
             }

@@ -28,20 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxShowHelp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rtbxHelpText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
-            // tbxShowHelp
-            // 
-            this.tbxShowHelp.BackColor = System.Drawing.SystemColors.Info;
-            this.tbxShowHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxShowHelp.Location = new System.Drawing.Point(108, 63);
-            this.tbxShowHelp.Multiline = true;
-            this.tbxShowHelp.Name = "tbxShowHelp";
-            this.tbxShowHelp.ReadOnly = true;
-            this.tbxShowHelp.Size = new System.Drawing.Size(690, 370);
-            this.tbxShowHelp.TabIndex = 1;
             // 
             // label1
             // 
@@ -53,14 +42,25 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Hilfe und Erläuterungen";
             // 
+            // rtbxHelpText
+            // 
+            this.rtbxHelpText.BackColor = System.Drawing.Color.NavajoWhite;
+            this.rtbxHelpText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbxHelpText.Location = new System.Drawing.Point(36, 74);
+            this.rtbxHelpText.Name = "rtbxHelpText";
+            this.rtbxHelpText.ReadOnly = true;
+            this.rtbxHelpText.Size = new System.Drawing.Size(829, 414);
+            this.rtbxHelpText.TabIndex = 3;
+            this.rtbxHelpText.Text = "";
+            // 
             // GuiHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.rtbxHelpText);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbxShowHelp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiHelp";
             this.Text = "Help";
@@ -71,7 +71,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tbxShowHelp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox rtbxHelpText;
     }
 }

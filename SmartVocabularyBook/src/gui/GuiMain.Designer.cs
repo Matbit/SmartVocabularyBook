@@ -38,7 +38,7 @@
             this.lNickname = new System.Windows.Forms.Label();
             this.lPoints = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lPlayersStatus = new System.Windows.Forms.Label();
+            this.lUserStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,14 +155,14 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Rang:";
             // 
-            // lPlayersStatus
+            // lUserStatus
             // 
-            this.lPlayersStatus.AutoSize = true;
-            this.lPlayersStatus.Location = new System.Drawing.Point(318, 312);
-            this.lPlayersStatus.Name = "lPlayersStatus";
-            this.lPlayersStatus.Size = new System.Drawing.Size(99, 13);
-            this.lPlayersStatus.TabIndex = 11;
-            this.lPlayersStatus.Text = "\"Brutaler Anfänger\"";
+            this.lUserStatus.AutoSize = true;
+            this.lUserStatus.Location = new System.Drawing.Point(318, 312);
+            this.lUserStatus.Name = "lUserStatus";
+            this.lUserStatus.Size = new System.Drawing.Size(99, 13);
+            this.lUserStatus.TabIndex = 11;
+            this.lUserStatus.Text = "\"Brutaler Anfänger\"";
             // 
             // GuiMain
             // 
@@ -170,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
-            this.Controls.Add(this.lPlayersStatus);
+            this.Controls.Add(this.lUserStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lPoints);
             this.Controls.Add(this.lNickname);
@@ -203,6 +203,6 @@
         private System.Windows.Forms.Label lNickname;
         private System.Windows.Forms.Label lPoints;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lPlayersStatus;
+        private System.Windows.Forms.Label lUserStatus;
     }
 }

@@ -20,6 +20,7 @@ namespace SmartVocabularyBook.vcbook.gui
         //services
         private static InformationService serviceInformation = new InformationService();
         private static UserService serviceUser = new UserService();
+        private static RankService serviceRank = new RankService();
 
         public GuiMain(Main main)
         {
@@ -43,8 +44,10 @@ namespace SmartVocabularyBook.vcbook.gui
                     lPoints.Text = user.points + " Punkte";
                 }
 
-                
-                
+                Rank rank = serviceRank.getRank(user.points);
+                lUserStatus.Text = "\""+rank.rankTitle+"\"";
+
+
             }
             catch (Exception ex)
             {

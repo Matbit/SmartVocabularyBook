@@ -51,5 +51,50 @@ namespace SmartVocabularyBook.src.service
         {
             return repository.findRankById(id);
         }
+
+        public Rank getRank(int points)
+        {
+            if (points < 2)
+            {
+                return repository.findRankById(1);
+            }
+            else if(points < 4)
+            {
+                return repository.findRankById(2);
+            }
+            else if(points < 6)
+            {
+                return repository.findRankById(3);
+            }
+            else if(points < 8)
+            {
+                return repository.findRankById(4);
+            }
+            else if(points < 12)
+            {
+                return repository.findRankById(5);
+            }
+            else if(points < 19)
+            {
+                return repository.findRankById(6);
+            }
+            else if(points < 25)
+            {
+                return repository.findRankById(7);
+            }
+            else if(points < 35)
+            {
+                return repository.findRankById(8);
+            }
+            else if(points < 50)
+            {
+                return repository.findRankById(9);
+            }
+            else if(points > 49)
+            {
+                return repository.findRankById(10);
+            }
+            return null;
+        }
     }
 }

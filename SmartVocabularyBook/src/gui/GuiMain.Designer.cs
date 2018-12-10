@@ -153,7 +153,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Rank:";
+            this.label3.Text = "Rang:";
             // 
             // lPlayersStatus
             // 

@@ -142,17 +142,11 @@ namespace SmartVocabularyBook.src.gui
 
             if(lastLogin != todayAsInteger)
             {   
-
                 serviceUser.updateUserPointsById(user.id, (oldPoints + 1));
                 user.lastLogin = todayAsInteger;
                 serviceUser.updateUserById(user);
             }
-
-
-        }
-
-
-        
+        }        
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {

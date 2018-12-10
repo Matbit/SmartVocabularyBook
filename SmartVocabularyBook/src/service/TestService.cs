@@ -39,5 +39,9 @@ namespace SmartVocabularyBook.src.service
         {
             return repository.findAllTests();
         }
+        public List<TestResultView> findLastTests(int limit)
+        {
+            return repository.findLastTests(limit);
+        }
     }
 }

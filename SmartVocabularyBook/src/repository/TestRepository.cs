@@ -85,5 +85,50 @@ namespace SmartVocabularyBook.src.repository
 
             return myTests;
         }
+
+        //find last tests
+        public List<TestResultView> findLastTests(int limit)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
+            con.Open();
+            string sql = "SELECT * FROM tests ORDER BY testDate DESC LIMIT'" + limit +"' ";
+            SQLiteCommand cmd = new SQLiteCommand(sql, con);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            List<TestResultView> myTests = new List<TestResultView>();
+            TestResultView trv;
+
+
+            while (reader.Read())
+            {
+
+                string dateAsString1 = reader["testDate"].ToString();
+                int date = Int32.Parse(dateAsString1);
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                DateTime testdate = DateTime.ParseExact(dateAsString1, "yyyyMMdd", provider);
+                String newDate = testdate.Day + "." + testdate.Month + "." + testdate.Year;
+
+
+                string scoresAsString = reader["scores"].ToString();
+                int scores = Int32.Parse(scoresAsString);
+
+                string answerAsString = reader["wrongAnswers"].ToString();
+                int answer = Int32.Parse(answerAsString);
+
+                string gradeAsString = reader["grade"].ToString();
+                int grade = Int32.Parse(gradeAsString);
+
+                trv = new TestResultView();
+                trv.dateAsString = newDate;
+
+                trv.setScores(scores);
+                trv.setGrade(grade);
+                trv.setWrongAnswers(answer);
+                myTests.Add(trv);
+            }
+            con.Close();
+
+            return myTests;
+        }
     }
 }

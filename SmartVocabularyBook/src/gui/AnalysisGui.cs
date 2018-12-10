@@ -121,5 +121,178 @@ namespace SmartVocabularyBook.src.gui
         {
             frmMain.openPanelProgressManager();
         }
+
+        private void btnLast10Entries_Click(object sender, EventArgs e)
+        {
+            getLastTestResults(10);
+           
+        }
+
+        private void btnShowAllTests_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridAllTests.DataSource = testService.findAllTests();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLast25Tests_Click(object sender, EventArgs e)
+        {
+            getLastTestResults(20);
+        }
+
+        private void getLastTestResults(int limit)
+        {
+            try
+            {
+                dataGridAllTests.DataSource = testService.findLastTests(limit);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLast30Tests_Click(object sender, EventArgs e)
+        {
+            getLastTestResults(30);
+        }
+
+        private void btnMaxPoints_Click(object sender, EventArgs e)
+        {   
+            //points
+            int maxPoints = 0;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                if(resultList[i].getScores() > maxPoints)
+                {
+                    maxPoints = resultList[i].getScores();
+                }
+            }
+
+            lResultPoints.Text = "Maximale Punkte: "+maxPoints.ToString();
+            lResultPoints.Visible = true;
+
+            //mistakes
+            int mistakes = 0;
+
+            for(int i = 0; i < resultList.Count; i++)
+            {
+                if(resultList[i].getWrongAnswers()> mistakes)
+                {
+                    mistakes = resultList[i].getWrongAnswers();
+                }                   
+            }
+
+            lResultCountMistakes.Text = "Maximale Fehler: " + mistakes.ToString();
+            lResultCountMistakes.Visible = true;
+
+            //grade
+
+            int grade = 7;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                if (resultList[i].getGrade() < grade)
+                {
+                    grade = resultList[i].getGrade();
+                }
+            }
+
+            lResultGrade.Text = "Beste Note: " + grade.ToString();
+            lResultGrade.Visible = true;
+        }
+
+        private void btnMinimumPoints_Click(object sender, EventArgs e)
+        {   
+            //points
+            int minPoints = 110;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                if (resultList[i].getScores() < minPoints)
+                {
+                    minPoints = resultList[i].getScores();
+                }
+            }
+
+            lResultPoints.Text = "Minimale Punkte: " + minPoints.ToString();
+            lResultPoints.Visible = true;
+
+            //mistakes
+            int minMistakes = 110;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                if (resultList[i].getWrongAnswers() < minMistakes)
+                {
+                    minMistakes = resultList[i].getWrongAnswers();
+                }
+            }
+
+            lResultCountMistakes.Text = "Wenigste Fehler: " + minMistakes.ToString();
+            lResultCountMistakes.Visible = true;
+
+            //grade
+            int minGrade = 0;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                if (resultList[i].getGrade() > minGrade)
+                {
+                    minGrade = resultList[i].getGrade();
+                }
+            }
+
+            lResultGrade.Text = "Schlechteste Note: " + minGrade.ToString();
+            lResultGrade.Visible = true;
+
+        }
+
+        private void btnAvgPoints_Click(object sender, EventArgs e)
+        {   
+            //points
+            double avg = 0;
+            double sum = 0;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                sum += resultList[i].getScores();
+            }
+            avg = Math.Round(sum / resultList.Count, 2);
+            
+            lResultPoints.Text = "Durchschnitt: " + avg.ToString();
+            lResultPoints.Visible = true;
+
+            //mistakes
+            double avgMistakes = 0;
+            double sumMistakes = 0;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                sumMistakes += resultList[i].getWrongAnswers();
+            }
+            avgMistakes = Math.Round(sumMistakes / resultList.Count, 2);
+            lResultCountMistakes.Text = "Druchscnitt: " + avgMistakes.ToString();
+            lResultCountMistakes.Visible = true;
+
+            //grade
+            double avgGrade = 0;
+            double sumGrade = 0;
+
+            for (int i = 0; i < resultList.Count; i++)
+            {
+                sumGrade += resultList[i].getGrade();
+            }
+
+            avgGrade = Math.Round(sumGrade / resultList.Count, 2);
+            lResultGrade.Text = "Durchschnitt: " + avgGrade.ToString();
+            lResultGrade.Visible = true;
+        }
     }
 }

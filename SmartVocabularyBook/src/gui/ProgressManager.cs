@@ -74,6 +74,21 @@ namespace SmartVocabularyBook.vcbook.gui
 
         }
 
+        public void openTabAddNewVocabulary()
+        {
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        public void openTabTests()
+        {
+            tabControl1.SelectedTab = tabPage4;
+        }
+
+        public void openTabMainView()
+        {
+            tabControl1.SelectedTab = tabPage1;
+        }
+
         private int getUserId()
         {
             List<Information> info = serviceInformation.getInformation();

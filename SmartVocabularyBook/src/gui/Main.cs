@@ -175,6 +175,43 @@ namespace SmartVocabularyBook
             setTestAnalysisButton(false);
             setMenuStrip(false);
          }
+        public void openPanelProgressManagerNewVocabulary()
+        {
+            this.panelMain.Controls.Clear();
+            ProgressManager frm = new ProgressManager(this);
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            this.panelMain.Controls.Add(frm);
+            frm.openTabAddNewVocabulary();            
+            frm.Show();
+            setMenuButton(true);
+            setTestAnalysisButton(true);
+        }
+        public void openPanelProgressManagerTests()
+        {
+            this.panelMain.Controls.Clear();
+            ProgressManager frm = new ProgressManager(this);
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            this.panelMain.Controls.Add(frm);
+            frm.openTabTests();
+            frm.Show();
+            setMenuButton(true);
+            setTestAnalysisButton(true);
+        }
+
+        public void openPanelProgressManagerMainView()
+        {
+            this.panelMain.Controls.Clear();
+            ProgressManager frm = new ProgressManager(this);
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            this.panelMain.Controls.Add(frm);
+            frm.openTabMainView();
+            frm.Show();
+            setMenuButton(true);
+            setTestAnalysisButton(true);
+        }
 
 
         //set menu button
@@ -248,6 +285,36 @@ namespace SmartVocabularyBook
         private void btnOpenTestAnalysis_Click(object sender, EventArgs e)
         {
             openPanelAllTestsView();
+        }
+
+        private void nutzerBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelUserModification();
+        }
+
+        private void analyseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelAllTestsView();
+        }
+
+        private void neueVokabelnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelProgressManagerNewVocabulary();
+        }
+
+        private void übungTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelProgressManagerTests();
+        }
+
+        private void hauptmenüToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openPanelMain();
+        }
+
+        private void übersichtVokabelnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openPanelProgressManagerMainView();
         }
     }
 }

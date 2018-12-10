@@ -39,6 +39,13 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnOpenMain = new System.Windows.Forms.Button();
             this.btnOpenTestAnalysis = new System.Windows.Forms.Button();
+            this.geheZuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.neueVokabelnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.übungTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.analyseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nutzerBearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hauptmenüToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.übersichtVokabelnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +53,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
+            this.geheZuToolStripMenuItem,
             this.hilfeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -89,14 +97,14 @@
             // hilfeToolStripMenuItem1
             // 
             this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
-            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.hilfeToolStripMenuItem1.Text = "Hilfe";
             this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // panelMain
@@ -131,6 +139,61 @@
             this.btnOpenTestAnalysis.Text = "Testanalyse";
             this.btnOpenTestAnalysis.UseVisualStyleBackColor = false;
             this.btnOpenTestAnalysis.Click += new System.EventHandler(this.btnOpenTestAnalysis_Click);
+            // 
+            // geheZuToolStripMenuItem
+            // 
+            this.geheZuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.neueVokabelnToolStripMenuItem,
+            this.übungTestToolStripMenuItem,
+            this.analyseToolStripMenuItem,
+            this.hauptmenüToolStripMenuItem1,
+            this.übersichtVokabelnToolStripMenuItem,
+            this.nutzerBearbeitenToolStripMenuItem});
+            this.geheZuToolStripMenuItem.Name = "geheZuToolStripMenuItem";
+            this.geheZuToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.geheZuToolStripMenuItem.Text = "Gehe Zu";
+            // 
+            // neueVokabelnToolStripMenuItem
+            // 
+            this.neueVokabelnToolStripMenuItem.Name = "neueVokabelnToolStripMenuItem";
+            this.neueVokabelnToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.neueVokabelnToolStripMenuItem.Text = "Neue Vokabeln";
+            this.neueVokabelnToolStripMenuItem.Click += new System.EventHandler(this.neueVokabelnToolStripMenuItem_Click);
+            // 
+            // übungTestToolStripMenuItem
+            // 
+            this.übungTestToolStripMenuItem.Name = "übungTestToolStripMenuItem";
+            this.übungTestToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.übungTestToolStripMenuItem.Text = "Übung/ Test";
+            this.übungTestToolStripMenuItem.Click += new System.EventHandler(this.übungTestToolStripMenuItem_Click);
+            // 
+            // analyseToolStripMenuItem
+            // 
+            this.analyseToolStripMenuItem.Name = "analyseToolStripMenuItem";
+            this.analyseToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.analyseToolStripMenuItem.Text = "Testanalyse";
+            this.analyseToolStripMenuItem.Click += new System.EventHandler(this.analyseToolStripMenuItem_Click);
+            // 
+            // nutzerBearbeitenToolStripMenuItem
+            // 
+            this.nutzerBearbeitenToolStripMenuItem.Name = "nutzerBearbeitenToolStripMenuItem";
+            this.nutzerBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.nutzerBearbeitenToolStripMenuItem.Text = "Nutzer bearbeiten";
+            this.nutzerBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.nutzerBearbeitenToolStripMenuItem_Click);
+            // 
+            // hauptmenüToolStripMenuItem1
+            // 
+            this.hauptmenüToolStripMenuItem1.Name = "hauptmenüToolStripMenuItem1";
+            this.hauptmenüToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.hauptmenüToolStripMenuItem1.Text = "Hauptmenü";
+            this.hauptmenüToolStripMenuItem1.Click += new System.EventHandler(this.hauptmenüToolStripMenuItem1_Click);
+            // 
+            // übersichtVokabelnToolStripMenuItem
+            // 
+            this.übersichtVokabelnToolStripMenuItem.Name = "übersichtVokabelnToolStripMenuItem";
+            this.übersichtVokabelnToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.übersichtVokabelnToolStripMenuItem.Text = "Übersicht Vokabeln";
+            this.übersichtVokabelnToolStripMenuItem.Click += new System.EventHandler(this.übersichtVokabelnToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -167,6 +230,13 @@
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btnOpenTestAnalysis;
+        private System.Windows.Forms.ToolStripMenuItem geheZuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem neueVokabelnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem übungTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem analyseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nutzerBearbeitenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hauptmenüToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem übersichtVokabelnToolStripMenuItem;
     }
 }
 

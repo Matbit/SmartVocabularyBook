@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lUserStatus = new System.Windows.Forms.Label();
             this.lLevel = new System.Windows.Forms.Label();
+            this.btnCheetPoints = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,14 +126,14 @@
             // 
             this.picbox.Location = new System.Drawing.Point(257, 44);
             this.picbox.Name = "picbox";
-            this.picbox.Size = new System.Drawing.Size(389, 240);
+            this.picbox.Size = new System.Drawing.Size(389, 310);
             this.picbox.TabIndex = 7;
             this.picbox.TabStop = false;
             // 
             // lNickname
             // 
             this.lNickname.AutoSize = true;
-            this.lNickname.Location = new System.Drawing.Point(254, 290);
+            this.lNickname.Location = new System.Drawing.Point(254, 371);
             this.lNickname.Name = "lNickname";
             this.lNickname.Size = new System.Drawing.Size(58, 13);
             this.lNickname.TabIndex = 8;
@@ -141,7 +142,7 @@
             // lPoints
             // 
             this.lPoints.AutoSize = true;
-            this.lPoints.Location = new System.Drawing.Point(394, 290);
+            this.lPoints.Location = new System.Drawing.Point(383, 371);
             this.lPoints.Name = "lPoints";
             this.lPoints.Size = new System.Drawing.Size(50, 13);
             this.lPoints.TabIndex = 9;
@@ -150,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 313);
+            this.label3.Location = new System.Drawing.Point(254, 394);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 10;
@@ -159,7 +160,7 @@
             // lUserStatus
             // 
             this.lUserStatus.AutoSize = true;
-            this.lUserStatus.Location = new System.Drawing.Point(318, 313);
+            this.lUserStatus.Location = new System.Drawing.Point(318, 394);
             this.lUserStatus.Name = "lUserStatus";
             this.lUserStatus.Size = new System.Drawing.Size(99, 13);
             this.lUserStatus.TabIndex = 11;
@@ -168,11 +169,21 @@
             // lLevel
             // 
             this.lLevel.AutoSize = true;
-            this.lLevel.Location = new System.Drawing.Point(318, 290);
+            this.lLevel.Location = new System.Drawing.Point(318, 371);
             this.lLevel.Name = "lLevel";
             this.lLevel.Size = new System.Drawing.Size(48, 13);
             this.lLevel.TabIndex = 12;
             this.lLevel.Text = "Level 13";
+            // 
+            // btnCheetPoints
+            // 
+            this.btnCheetPoints.Location = new System.Drawing.Point(43, 421);
+            this.btnCheetPoints.Name = "btnCheetPoints";
+            this.btnCheetPoints.Size = new System.Drawing.Size(134, 46);
+            this.btnCheetPoints.TabIndex = 13;
+            this.btnCheetPoints.Text = "Punkte erhöhen";
+            this.btnCheetPoints.UseVisualStyleBackColor = true;
+            this.btnCheetPoints.Click += new System.EventHandler(this.btnCheetPoints_Click);
             // 
             // GuiMain
             // 
@@ -180,6 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.btnCheetPoints);
             this.Controls.Add(this.lLevel);
             this.Controls.Add(this.lUserStatus);
             this.Controls.Add(this.label3);
@@ -216,5 +228,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lUserStatus;
         private System.Windows.Forms.Label lLevel;
+        private System.Windows.Forms.Button btnCheetPoints;
     }
 }

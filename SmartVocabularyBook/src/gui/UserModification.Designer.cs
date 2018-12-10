@@ -36,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbxNickname = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lCurrentForeignLanguage = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lCurrentLanguage = new System.Windows.Forms.Label();
             this.lCurrentNickname = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.tbxAnyForeignLanguage = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lCurrentForeignLanguage = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,7 +119,7 @@
             // 
             this.tbxNickname.BackColor = System.Drawing.Color.Snow;
             this.tbxNickname.Location = new System.Drawing.Point(29, 287);
-            this.tbxNickname.MaxLength = 50;
+            this.tbxNickname.MaxLength = 15;
             this.tbxNickname.Name = "tbxNickname";
             this.tbxNickname.Size = new System.Drawing.Size(168, 20);
             this.tbxNickname.TabIndex = 7;
@@ -140,6 +140,24 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aktuelle Daten auf einen Blick";
+            // 
+            // lCurrentForeignLanguage
+            // 
+            this.lCurrentForeignLanguage.AutoSize = true;
+            this.lCurrentForeignLanguage.Location = new System.Drawing.Point(111, 84);
+            this.lCurrentForeignLanguage.Name = "lCurrentForeignLanguage";
+            this.lCurrentForeignLanguage.Size = new System.Drawing.Size(12, 16);
+            this.lCurrentForeignLanguage.TabIndex = 19;
+            this.lCurrentForeignLanguage.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Fremdsprache:";
             // 
             // lCurrentLanguage
             // 
@@ -265,24 +283,6 @@
             this.label7.Size = new System.Drawing.Size(194, 16);
             this.label7.TabIndex = 23;
             this.label7.Text = "oder eine beliebige verwenden";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 16);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Fremdsprache:";
-            // 
-            // lCurrentForeignLanguage
-            // 
-            this.lCurrentForeignLanguage.AutoSize = true;
-            this.lCurrentForeignLanguage.Location = new System.Drawing.Point(111, 84);
-            this.lCurrentForeignLanguage.Name = "lCurrentForeignLanguage";
-            this.lCurrentForeignLanguage.Size = new System.Drawing.Size(12, 16);
-            this.lCurrentForeignLanguage.TabIndex = 19;
-            this.lCurrentForeignLanguage.Text = "-";
             // 
             // UserModification
             // 

@@ -94,56 +94,56 @@ namespace SmartVocabularyBook.src.service
             {
                 return repository.findRankById(7);
             }
-            else if(points < 30)
+            else if(points < 25)
             {
                 return repository.findRankById(8);
             }
-            else if(points < 42)
+            else if(points < 30)
             {
                 return repository.findRankById(9);
             }
-            else if(points < 56)
+            else if(points < 36)
             {
                 return repository.findRankById(10);
             }
 
-            else if(points < 70)
+            else if(points < 44)
             {
                 return repository.findRankById(11);
             }
-            else if(points < 110)
+            else if(points < 51)
             {
                 return repository.findRankById(12);
             }
-            else if(points < 180)
+            else if(points < 60)
             {
                 return repository.findRankById(13);
             }
-            else if(points < 240)
+            else if(points < 70)
             {
                 return repository.findRankById(14);
             }
-            else if(points < 300)
+            else if(points < 85)
             {
                 return repository.findRankById(15);
             }
-            else if(points < 360)
+            else if(points < 100)
             {
                 return repository.findRankById(16);
             }
-            else if(points < 480)
+            else if(points < 120)
             {
                 return repository.findRankById(17);
             }
-            else if(points < 600)
+            else if(points < 145)
             {
                 return repository.findRankById(18);
             }
-            else if(points < 730)
+            else if(points < 170)
             {
                 return repository.findRankById(19);
             }
-            else if (points > 899)
+            else if (points > 169)
             {
                 return repository.findRankById(20);
             }

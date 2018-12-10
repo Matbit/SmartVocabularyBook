@@ -20,7 +20,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "CREATE TABLE IF NOT EXISTS tests(id INTEGER PRIMARY KEY AUTOINCREMENT, testDate TEXT NOT NULL, scores INTEGER, wrongAnswers INTEGER," +
+            string sql = "CREATE TABLE IF NOT EXISTS tests(id INTEGER PRIMARY KEY AUTOINCREMENT, testDate TEXT NOT NULL, scores INTEGER, wrongAnswers INTEGER, userId INTEGER" +
                 "grade INTEGER, memo TEXT);";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
@@ -33,7 +33,7 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "INSERT INTO tests(testDate, scores, wrongAnswers, grade, memo) VALUES ('" + tr.getTestDate() +
+            string sql = "INSERT INTO tests(testDate, scores, wrongAnswers, grade, memo, userId) VALUES ('" + tr.getTestDate() +
                         "', '" + tr.getScores() + "', '" + tr.getWrongAnswers() + "', '" + tr.getGrade() + "', '" + tr.getMemo() + "');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();

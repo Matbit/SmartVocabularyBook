@@ -37,13 +37,25 @@ namespace SmartVocabularyBook.src.service
             insertIntoRank("Ahnungsloser Nullpeiler");
             insertIntoRank("Vollpfosten");
             insertIntoRank("Nixversteher");
+            insertIntoRank("Pfeife");
+            insertIntoRank("Entdecker");
             insertIntoRank("Anfänger");
+            insertIntoRank("Wissbegierig");
             insertIntoRank("fortgeschrittener Anfänger");
+            insertIntoRank("Bücherwurm");
             insertIntoRank("Guter Zuhörer");
             insertIntoRank("Versteher");
             insertIntoRank("Assistent");
+            insertIntoRank("Veteran");
             insertIntoRank("Übersetzer");
+            insertIntoRank("Bachelor");
             insertIntoRank("Dolmetscher");
+            insertIntoRank("Gelehrter");
+            insertIntoRank("King");
+            insertIntoRank("Master");
+            insertIntoRank("Legende");
+
+
             return true;
         }
 

@@ -14,7 +14,7 @@ namespace SmartVocabularyBook.src.model
         public int wrongAnswers { get; set;}
         public int grade { get; set;}
         public String memo { get; set;}
-        public long userId { get; set;}
+        public int userId { get; set;}
 
         public TestResult()
         {
@@ -25,11 +25,27 @@ namespace SmartVocabularyBook.src.model
             {
                 dayAsString = "0" + today.Day;
             }
-            string dateAsString = today.Year + "" + today.Month + "" + dayAsString;
+            else
+            {
+                dayAsString = today.Day.ToString();
+            }
+
+            string monthAsString = "";
+
+            if(today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month.ToString();
+            }
+
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString;
             this.testDate = Int32.Parse(dateAsString);
         }
 
-        public TestResult(long id, int testDate, int scores, int wrongAnswers, int grade)
+        public TestResult(long id, int testDate, int scores, int wrongAnswers, int grade, int userId)
         {
             this.id = id;
 
@@ -39,14 +55,30 @@ namespace SmartVocabularyBook.src.model
             {
                 dayAsString = "0" + today.Day;
             }
-            string dateAsString = today.Year + "" + today.Month + "" + dayAsString;
+            else
+            {
+                dayAsString = today.Day.ToString();
+            }
+
+            string monthAsString = "";
+
+            if (today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month.ToString();
+            }
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString;
             this.testDate = Int32.Parse(dateAsString);
             this.scores = scores;
             this.wrongAnswers = wrongAnswers;
             this.grade = grade;
+            this.userId = userId;
         }
 
-        public TestResult(int testDate, int scores, int wrongAnswers, int grade)
+        public TestResult(int testDate, int scores, int wrongAnswers, int grade, int userId)
         {
             this.id = id;
 
@@ -56,13 +88,29 @@ namespace SmartVocabularyBook.src.model
             {
                 dayAsString = "0" + today.Day;
             }
+            else
+            {
+                dayAsString = today.Day.ToString();
+            }
 
-            string dateAsString = today.Year + "" + today.Month + "" + dayAsString;
+            string monthAsString = "";
+
+            if (today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month.ToString();
+            }
+
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString;
             this.testDate = Int32.Parse(dateAsString);
 
             this.scores = scores;
             this.wrongAnswers = wrongAnswers;
             this.grade = grade;
+            this.userId = userId;
         }
 
         public long getId()

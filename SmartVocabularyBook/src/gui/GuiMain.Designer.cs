@@ -39,6 +39,7 @@
             this.lPoints = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lUserStatus = new System.Windows.Forms.Label();
+            this.lLevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +141,7 @@
             // lPoints
             // 
             this.lPoints.AutoSize = true;
-            this.lPoints.Location = new System.Drawing.Point(318, 290);
+            this.lPoints.Location = new System.Drawing.Point(394, 290);
             this.lPoints.Name = "lPoints";
             this.lPoints.Size = new System.Drawing.Size(50, 13);
             this.lPoints.TabIndex = 9;
@@ -149,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 312);
+            this.label3.Location = new System.Drawing.Point(254, 313);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 10;
@@ -158,11 +159,20 @@
             // lUserStatus
             // 
             this.lUserStatus.AutoSize = true;
-            this.lUserStatus.Location = new System.Drawing.Point(318, 312);
+            this.lUserStatus.Location = new System.Drawing.Point(318, 313);
             this.lUserStatus.Name = "lUserStatus";
             this.lUserStatus.Size = new System.Drawing.Size(99, 13);
             this.lUserStatus.TabIndex = 11;
             this.lUserStatus.Text = "\"Brutaler Anfänger\"";
+            // 
+            // lLevel
+            // 
+            this.lLevel.AutoSize = true;
+            this.lLevel.Location = new System.Drawing.Point(318, 290);
+            this.lLevel.Name = "lLevel";
+            this.lLevel.Size = new System.Drawing.Size(48, 13);
+            this.lLevel.TabIndex = 12;
+            this.lLevel.Text = "Level 13";
             // 
             // GuiMain
             // 
@@ -170,6 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.lLevel);
             this.Controls.Add(this.lUserStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lPoints);
@@ -204,5 +215,6 @@
         private System.Windows.Forms.Label lPoints;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lUserStatus;
+        private System.Windows.Forms.Label lLevel;
     }
 }

@@ -17,6 +17,7 @@ namespace SmartVocabularyBook.src.gui
     {
         Main frmMain;
         private static TestService testService = new TestService();
+        private static InformationService serviceInformation = new InformationService();
         private static List<TestResultView> resultList = new List<TestResultView>();
         private static List<int> helpingList = new List<int>();
         private static List<String> dateFormatList = new List<String>();
@@ -28,6 +29,12 @@ namespace SmartVocabularyBook.src.gui
             loadTests();
             setDataGrid();
             //formatDateView();
+        }
+
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
         }
 
         private void formatDateView()
@@ -60,7 +67,7 @@ namespace SmartVocabularyBook.src.gui
         {
             try
             {
-                resultList = testService.findAllTests();
+                resultList = testService.findAllTests(getUserId());
             }
             catch (Exception ex)
             {
@@ -132,7 +139,7 @@ namespace SmartVocabularyBook.src.gui
         {
             try
             {
-                dataGridAllTests.DataSource = testService.findAllTests();
+                dataGridAllTests.DataSource = testService.findAllTests(getUserId());
             }
             catch (Exception ex)
             {
@@ -149,7 +156,7 @@ namespace SmartVocabularyBook.src.gui
         {
             try
             {
-                dataGridAllTests.DataSource = testService.findLastTests(limit);
+                dataGridAllTests.DataSource = testService.findLastTests(limit, getUserId());
             }
             catch (Exception ex)
             {

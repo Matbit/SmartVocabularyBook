@@ -46,6 +46,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
                 Rank rank = serviceRank.getRank(user.points);
                 lUserStatus.Text = "\""+rank.rankTitle+"\"";
+                lLevel.Text = "Level " + rank.id;
 
 
             }

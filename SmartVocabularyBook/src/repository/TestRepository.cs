@@ -34,7 +34,7 @@ namespace SmartVocabularyBook.src.repository
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
             string sql = "INSERT INTO tests(testDate, scores, wrongAnswers, grade, memo, userId) VALUES ('" + tr.getTestDate() +
-                        "', '" + tr.getScores() + "', '" + tr.getWrongAnswers() + "', '" + tr.getGrade() + "', '" + tr.getMemo() + "');";
+                        "', '" + tr.getScores() + "', '" + tr.getWrongAnswers() + "', '" + tr.getGrade() + "', '" + tr.getMemo() + "', '"+tr.userId+"');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -42,11 +42,11 @@ namespace SmartVocabularyBook.src.repository
         }
 
         //get all tests
-        public List<TestResultView> findAllTests()
+        public List<TestResultView> findAllTests(int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM tests ORDER BY testDate ASC";
+            string sql = "SELECT * FROM tests WHERE userId = '"+ id + "' ORDER BY testDate ASC";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -71,14 +71,14 @@ namespace SmartVocabularyBook.src.repository
                 int answer = Int32.Parse(answerAsString);
 
                 string gradeAsString = reader["grade"].ToString();
-                int grade = Int32.Parse(gradeAsString);
+                int grade = Int32.Parse(gradeAsString);                
 
                 trv = new TestResultView();
                 trv.dateAsString = newDate;
 
                 trv.setScores(scores);
                 trv.setGrade(grade);
-                trv.setWrongAnswers(answer);
+                trv.setWrongAnswers(answer);                
                 myTests.Add(trv);
             }
             con.Close();
@@ -87,11 +87,11 @@ namespace SmartVocabularyBook.src.repository
         }
 
         //find last tests
-        public List<TestResultView> findLastTests(int limit)
+        public List<TestResultView> findLastTests(int limit, int userId)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "SELECT * FROM tests ORDER BY testDate DESC LIMIT'" + limit +"' ";
+            string sql = "SELECT * FROM tests WHERE userId = '"+ userId +"' ORDER BY testDate DESC LIMIT'" + limit +"' ";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             SQLiteDataReader reader = cmd.ExecuteReader();
 

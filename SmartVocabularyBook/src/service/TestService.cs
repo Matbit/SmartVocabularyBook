@@ -35,13 +35,13 @@ namespace SmartVocabularyBook.src.service
             return ((points * 100)/ length);
         }
 
-        public List<TestResultView> findAllTests()
+        public List<TestResultView> findAllTests(int userId)
         {
-            return repository.findAllTests();
+            return repository.findAllTests(userId);
         }
-        public List<TestResultView> findLastTests(int limit)
+        public List<TestResultView> findLastTests(int limit, int userId)
         {
-            return repository.findLastTests(limit);
+            return repository.findLastTests(limit, userId);
         }
     }
 }

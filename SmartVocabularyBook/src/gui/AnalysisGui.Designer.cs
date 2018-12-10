@@ -137,7 +137,7 @@
             this.btnMaxPoints.Name = "btnMaxPoints";
             this.btnMaxPoints.Size = new System.Drawing.Size(178, 38);
             this.btnMaxPoints.TabIndex = 7;
-            this.btnMaxPoints.Text = "Höchster Wert";
+            this.btnMaxPoints.Text = "Bester Wert";
             this.btnMaxPoints.UseVisualStyleBackColor = false;
             this.btnMaxPoints.Click += new System.EventHandler(this.btnMaxPoints_Click);
             // 
@@ -150,7 +150,7 @@
             this.btnMinimumPoints.Name = "btnMinimumPoints";
             this.btnMinimumPoints.Size = new System.Drawing.Size(178, 38);
             this.btnMinimumPoints.TabIndex = 8;
-            this.btnMinimumPoints.Text = "Niedrigster Wert";
+            this.btnMinimumPoints.Text = "Schlechtester Wert";
             this.btnMinimumPoints.UseVisualStyleBackColor = false;
             this.btnMinimumPoints.Click += new System.EventHandler(this.btnMinimumPoints_Click);
             // 
@@ -172,7 +172,7 @@
             this.lResultCountMistakes.AutoSize = true;
             this.lResultCountMistakes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lResultCountMistakes.ForeColor = System.Drawing.Color.Blue;
-            this.lResultCountMistakes.Location = new System.Drawing.Point(470, 306);
+            this.lResultCountMistakes.Location = new System.Drawing.Point(463, 306);
             this.lResultCountMistakes.Name = "lResultCountMistakes";
             this.lResultCountMistakes.Size = new System.Drawing.Size(20, 24);
             this.lResultCountMistakes.TabIndex = 10;

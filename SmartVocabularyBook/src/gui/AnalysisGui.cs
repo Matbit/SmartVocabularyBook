@@ -179,17 +179,17 @@ namespace SmartVocabularyBook.src.gui
             lResultPoints.Visible = true;
 
             //mistakes
-            int mistakes = 0;
+            int minMistakes = 110;
 
-            for(int i = 0; i < resultList.Count; i++)
+            for (int i = 0; i < resultList.Count; i++)
             {
-                if(resultList[i].getWrongAnswers()> mistakes)
+                if (resultList[i].getWrongAnswers() < minMistakes)
                 {
-                    mistakes = resultList[i].getWrongAnswers();
-                }                   
+                    minMistakes = resultList[i].getWrongAnswers();
+                }
             }
 
-            lResultCountMistakes.Text = "Maximale Fehler: " + mistakes.ToString();
+            lResultCountMistakes.Text = "Wenigste Fehler: " + minMistakes.ToString();
             lResultCountMistakes.Visible = true;
 
             //grade
@@ -224,18 +224,20 @@ namespace SmartVocabularyBook.src.gui
             lResultPoints.Text = "Minimale Punkte: " + minPoints.ToString();
             lResultPoints.Visible = true;
 
+           
+
             //mistakes
-            int minMistakes = 110;
+            int mistakes = 0;
 
             for (int i = 0; i < resultList.Count; i++)
             {
-                if (resultList[i].getWrongAnswers() < minMistakes)
+                if (resultList[i].getWrongAnswers() > mistakes)
                 {
-                    minMistakes = resultList[i].getWrongAnswers();
+                    mistakes = resultList[i].getWrongAnswers();
                 }
             }
 
-            lResultCountMistakes.Text = "Wenigste Fehler: " + minMistakes.ToString();
+            lResultCountMistakes.Text = "Maximale Fehler: " + mistakes.ToString();
             lResultCountMistakes.Visible = true;
 
             //grade

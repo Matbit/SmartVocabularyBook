@@ -64,6 +64,12 @@ namespace SmartVocabularyBook
             menuStrip1.Visible = isVisible;
         }
 
+        //set menu strip "gehe zu"
+        public void setMenuStripGeheZu(bool isActive)
+        {
+            menuStrip1.Items[1].Visible = isActive;
+        }
+
         //methods to open special forms in a panel
         public void openPanelMain()
         {
@@ -111,8 +117,8 @@ namespace SmartVocabularyBook
             gta.AutoScroll = false;
             this.panelMain.Controls.Add(gta);
             gta.Show();
-            setMenuButton(true);
-            setTestAnalysisButton(true);
+            setMenuButton(false);
+            setTestAnalysisButton(false);
         }
 
         public void openPanelAllTestsView()

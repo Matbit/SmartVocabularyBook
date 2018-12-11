@@ -27,6 +27,7 @@ namespace SmartVocabularyBook.src.gui
         {   
             InitializeComponent();
             frmMain = main;
+            frmMain.setMenuStrip(false);
             this.save = save;
             resultList = list;
             calcPoints();
@@ -34,6 +35,7 @@ namespace SmartVocabularyBook.src.gui
             setGrade();
             saveTestResultInDB();
             lTestResult.Text = points + " (von " + resultList.Count + ") Punkten erreicht! "+ (resultList.Count - points)+" Fehler ";
+            
         }
 
         private void setDataGrid()
@@ -211,7 +213,9 @@ namespace SmartVocabularyBook.src.gui
             //clear list when all datas are saved in db
             resultList.Clear();
             points = 0;
+            frmMain.setMenuStrip(true);
             //open new form
+
             frmMain.openPanelProgressManager();
         }
     }

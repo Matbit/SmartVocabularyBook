@@ -102,10 +102,14 @@ namespace SmartVocabularyBook.src.repository
                 string lastLoginAsString = reader["lastLogin"].ToString();
                 int lastLogin = Int32.Parse(lastLoginAsString);
 
+                string lastTestAsString = reader["lastTest"].ToString();
+                int lastTest = Int32.Parse(lastTestAsString);
+
                 string pointsAsString = reader["points"].ToString();
                 int points = Int32.Parse(pointsAsString);
                 second.points = points;
                 second.lastLogin = lastLogin;
+                second.lastTest = lastTest;
                 first = second;
             }
             con.Close();

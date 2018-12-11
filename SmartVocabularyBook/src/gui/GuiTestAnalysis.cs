@@ -17,6 +17,7 @@ namespace SmartVocabularyBook.src.gui
         Main frmMain;
         private bool save;
         private static TestService testservice = new TestService();
+        private static InformationService serviceInformation = new InformationService();
         private static List<TestVocabularyModel> resultList = new List<TestVocabularyModel>();
         //private static List<TestResult> trList = new List<TestResult>();
         private static TestResult trStatic = new TestResult();
@@ -72,6 +73,7 @@ namespace SmartVocabularyBook.src.gui
                 trStatic.setScores(points);
                 trStatic.setWrongAnswers(resultList.Count - points);
                 trStatic.setMemo(" ");
+                trStatic.userId = getUserId();
 
                 try
                 {
@@ -83,6 +85,12 @@ namespace SmartVocabularyBook.src.gui
                 }
             }
             
+        }
+
+        private int getUserId()
+        {
+            List<Information> info = serviceInformation.getInformation();
+            return info[0].userId;
         }
 
         private double calcGradeInProcent()

@@ -39,6 +39,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private static VocabularyService vocabularyService = new VocabularyService();
         private static TestSettingsService testSettingsService = new TestSettingsService();
         private static InformationService serviceInformation = new InformationService();
+        private static UserService serviceUser = new UserService();
 
         public GuiTest(Main main, bool save)
         {
@@ -201,8 +202,87 @@ namespace SmartVocabularyBook.vcbook.gui
                     return;
                 }
                 calcPoints();
+                setUserPointsForLevel();
+                setUserLastTest();
                 frmMain.openPanelTestAnalysis(resultList, save);
             }
+        }
+
+        private void setUserLastTest()
+        {
+            User user = serviceUser.findUserById(getUserId());
+            user.id = getUserId();
+
+            DateTime today = DateTime.Today;
+            string dayAsString = "";
+            string monthAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            else
+            {
+                dayAsString = today.Day + "";
+            }
+            if (today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month + "";
+            }
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString + "";
+            int lastTest = Int32.Parse(dateAsString);
+            user.lastTest = lastTest;
+
+            try
+            {
+                serviceUser.updateUserById(user);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void setUserPointsForLevel()
+        {   
+            //check if lastTest wasn't today
+            User user = serviceUser.findUserById(getUserId());
+            user.id = getUserId();
+            int lastTest = user.lastTest;
+
+            DateTime today = DateTime.Today;
+            string dayAsString = "";
+            string monthAsString = "";
+            if (today.Day < 10)
+            {
+                dayAsString = "0" + today.Day;
+            }
+            else
+            {
+                dayAsString = today.Day + "";
+            }
+            if (today.Month < 10)
+            {
+                monthAsString = "0" + today.Month;
+            }
+            else
+            {
+                monthAsString = today.Month + "";
+            }
+            string dateAsString = today.Year + "" + monthAsString + "" + dayAsString + "";
+            int todayAsInt = Int32.Parse(dateAsString);
+            
+            if(todayAsInt != lastTest)
+            {
+                int points = user.points + 1;
+                serviceUser.updateUserPointsById(user.id, points);
+            }
+
+            
         }
 
         private bool setTestLists()

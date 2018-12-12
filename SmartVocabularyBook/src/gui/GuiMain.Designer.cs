@@ -177,9 +177,9 @@
             // 
             // btnCheetPoints
             // 
-            this.btnCheetPoints.Location = new System.Drawing.Point(43, 421);
+            this.btnCheetPoints.Location = new System.Drawing.Point(321, 453);
             this.btnCheetPoints.Name = "btnCheetPoints";
-            this.btnCheetPoints.Size = new System.Drawing.Size(134, 46);
+            this.btnCheetPoints.Size = new System.Drawing.Size(96, 35);
             this.btnCheetPoints.TabIndex = 13;
             this.btnCheetPoints.Text = "Punkte erhöhen";
             this.btnCheetPoints.UseVisualStyleBackColor = true;

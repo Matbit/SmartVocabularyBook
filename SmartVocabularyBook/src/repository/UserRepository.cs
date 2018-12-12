@@ -30,7 +30,8 @@ namespace SmartVocabularyBook.src.repository
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
-            string sql = "INSERT INTO user(nickname, mainLanguage, foreignLanguage, points, lastLogin) VALUES ('" + user.nickname + "', '" + user.mainLanguage + "', '"+user.foreignLanguage+"', '"+user.points+"', '"+user.lastLogin+"');";
+            string sql = "INSERT INTO user(nickname, mainLanguage, foreignLanguage, points, lastLogin, lastTest) VALUES ('" + user.nickname + "', '" + user.mainLanguage + "', '"+user.foreignLanguage+"', '"+user.points+"', '"+
+                user.lastLogin+"', '"+ user.lastTest+"');";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();

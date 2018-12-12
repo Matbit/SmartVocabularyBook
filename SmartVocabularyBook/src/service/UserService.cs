@@ -26,6 +26,7 @@ namespace SmartVocabularyBook.src.service
             user.mainLanguage = "Deutsch";
             user.foreignLanguage = "Englisch";
             user.lastLogin = getDateTotayAsInt();
+            user.lastTest = getDateTotayAsInt();
             user.points = 1;
 
             return insertIntoUser(user);

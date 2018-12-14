@@ -52,6 +52,7 @@
             this.rtbxHelpText.Size = new System.Drawing.Size(829, 414);
             this.rtbxHelpText.TabIndex = 3;
             this.rtbxHelpText.Text = "";
+            this.rtbxHelpText.TextChanged += new System.EventHandler(this.rtbxHelpText_TextChanged);
             // 
             // GuiHelp
             // 

@@ -129,6 +129,7 @@
             this.picbox.Size = new System.Drawing.Size(389, 310);
             this.picbox.TabIndex = 7;
             this.picbox.TabStop = false;
+            this.picbox.Click += new System.EventHandler(this.picbox_Click);
             // 
             // lNickname
             // 

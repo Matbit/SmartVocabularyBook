@@ -68,83 +68,83 @@ namespace SmartVocabularyBook.vcbook.gui
 
                 if(level == 1)
                 {
-                    picbox.Image = Image.FromFile("pic1.gif");
+                    picbox.Image = Properties.Resources.pic1;
                 }
                 else if(level == 2)
                 {
-                    picbox.Image = Image.FromFile("pic2.png");
+                    picbox.Image = Properties.Resources.pic2;
                 }
                 else if(level == 3)
                 {
-                    picbox.Image = Image.FromFile("pic3.jpg");
+                    picbox.Image = Properties.Resources.pic3;
                 }
                 else if(level == 4)
                 {
-                    picbox.Image = Image.FromFile("pic4.jpg");
+                    picbox.Image = Properties.Resources.pic4;
                 }
                 else if(level == 5)
                 {
-                    picbox.Image = Image.FromFile("pic5.jpg");
+                    picbox.Image = Properties.Resources.pic5;
                 }
                 else if(level == 6)
                 {
-                    picbox.Image = Image.FromFile("pic6.jpg");
+                    picbox.Image = Properties.Resources.pic6;
                 }
                 else if(level == 7)
                 {
-                    picbox.Image = Image.FromFile("pic7.jpg");
+                    picbox.Image = Properties.Resources.pic7;
                 }
                 else if(level == 8)
                 {
-                    picbox.Image = Image.FromFile("pic8.jpg");
+                    picbox.Image = Properties.Resources.pic8;
                 }
                 else if(level == 9)
                 {
-                    picbox.Image = Image.FromFile("pic9.jpg");
+                    picbox.Image = Properties.Resources.pic9;
                 }
                 else if(level == 10)
                 {
-                    picbox.Image = Image.FromFile("pic10.jpg");
+                    picbox.Image = Properties.Resources.pic10;
                 }
                 else if(level == 11)
                 {
-                    picbox.Image = Image.FromFile("pic11.jpg");
+                    picbox.Image = Properties.Resources.pic11;
                 }
                 else if(level == 12)
                 {
-                    picbox.Image = Image.FromFile("pic12.png");
+                    picbox.Image = Properties.Resources.pic12;
                 }
                 else if(level == 13)
                 {
-                    picbox.Image = Image.FromFile("pic13.jpg");
+                    picbox.Image = Properties.Resources.pic13;
                 }
                 else if(level == 14)
                 {
-                    picbox.Image = Image.FromFile("pic14.jpg");
+                    picbox.Image = Properties.Resources.pic14;
                 }
                 else if(level == 15)
                 {
-                    picbox.Image = Image.FromFile("pic15.png");
+                    picbox.Image = Properties.Resources.pic15;
                 }
                 else if(level == 16)
                 {
-                    picbox.Image = Image.FromFile("pic16.jpg");
+                    picbox.Image = Properties.Resources.pic16;
                 }
                 else if(level == 17)
                 {
-                    picbox.Image = Image.FromFile("pic17.jpg");
+                    picbox.Image = Properties.Resources.pic17;
                 }
                 else if(level == 18)
                 {
-                    picbox.Image = Image.FromFile("pic18.gif");
+                    picbox.Image = Properties.Resources.pic18;
                 }
                 else if(level == 19)
                 {
-                    picbox.Image = Image.FromFile("pic19.png");
+                    picbox.Image = Properties.Resources.pic19;
                 }
                 else if(level == 20)
                 {
-                    picbox.Image = Image.FromFile("pic20.jpg");
+                    picbox.Image = Properties.Resources.pic20;
                 }
 
             }
@@ -224,6 +224,11 @@ namespace SmartVocabularyBook.vcbook.gui
 
             setUserStats();
             setPicBox();
+        }
+
+        private void picbox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

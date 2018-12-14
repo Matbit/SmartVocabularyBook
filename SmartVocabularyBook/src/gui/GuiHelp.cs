@@ -31,7 +31,7 @@ namespace SmartVocabularyBook.src.gui
             string line = "";
             try
             {
-                System.IO.StreamReader file = new System.IO.StreamReader("Hilfe.txt", Encoding.Default);
+                System.IO.StreamReader file = new System.IO.StreamReader(Properties.Resources.Hilfe, Encoding.Default);
                 while ((line = file.ReadLine()) != null)
                 {
                     rtbxHelpText.AppendText(line + Environment.NewLine);                    
@@ -43,6 +43,11 @@ namespace SmartVocabularyBook.src.gui
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void rtbxHelpText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

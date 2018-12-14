@@ -170,7 +170,12 @@ namespace SmartVocabularyBook.src.gui
         }
 
         private void btnMaxPoints_Click(object sender, EventArgs e)
-        {   
+        {
+            if (resultList.Count < 1)
+            {
+                return;
+            }
+
             //points
             int maxPoints = 0;
 
@@ -217,6 +222,12 @@ namespace SmartVocabularyBook.src.gui
 
         private void btnMinimumPoints_Click(object sender, EventArgs e)
         {   
+            if(resultList.Count < 1)
+            {
+                return;
+            }
+
+
             //points
             int minPoints = 110;
 
@@ -264,7 +275,14 @@ namespace SmartVocabularyBook.src.gui
         }
 
         private void btnAvgPoints_Click(object sender, EventArgs e)
-        {   
+        {
+
+            if (resultList.Count < 1)
+            {
+                return;
+            }
+
+
             //points
             double avg = 0;
             double sum = 0;
@@ -287,7 +305,7 @@ namespace SmartVocabularyBook.src.gui
                 sumMistakes += resultList[i].getWrongAnswers();
             }
             avgMistakes = Math.Round(sumMistakes / resultList.Count, 2);
-            lResultCountMistakes.Text = "Druchscnitt: " + avgMistakes.ToString();
+            lResultCountMistakes.Text = "Druchschnitt: " + avgMistakes.ToString();
             lResultCountMistakes.Visible = true;
 
             //grade

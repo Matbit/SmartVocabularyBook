@@ -125,6 +125,16 @@ namespace SmartVocabularyBook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap pic111 {
+            get {
+                object obj = ResourceManager.GetObject("pic111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap pic12 {
             get {
                 object obj = ResourceManager.GetObject("pic12", resourceCulture);
@@ -218,6 +228,16 @@ namespace SmartVocabularyBook.Properties {
         public static System.Drawing.Bitmap pic20 {
             get {
                 object obj = ResourceManager.GetObject("pic20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pic21 {
+            get {
+                object obj = ResourceManager.GetObject("pic21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -33,19 +33,18 @@
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hauptmenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.btnOpenMain = new System.Windows.Forms.Button();
-            this.btnOpenTestAnalysis = new System.Windows.Forms.Button();
             this.geheZuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neueVokabelnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.übungTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analyseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nutzerBearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hauptmenüToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.übersichtVokabelnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nutzerBearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hilfeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.btnOpenMain = new System.Windows.Forms.Button();
+            this.btnOpenTestAnalysis = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,61 +84,6 @@
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
-            // hilfeToolStripMenuItem
-            // 
-            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hilfeToolStripMenuItem1,
-            this.aboutToolStripMenuItem});
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.hilfeToolStripMenuItem.Text = "Hilfe";
-            // 
-            // hilfeToolStripMenuItem1
-            // 
-            this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
-            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
-            this.hilfeToolStripMenuItem1.Text = "Hilfe";
-            this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // panelMain
-            // 
-            this.panelMain.Location = new System.Drawing.Point(0, 37);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(900, 500);
-            this.panelMain.TabIndex = 5;
-            // 
-            // btnOpenMain
-            // 
-            this.btnOpenMain.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnOpenMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenMain.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnOpenMain.Location = new System.Drawing.Point(779, 555);
-            this.btnOpenMain.Name = "btnOpenMain";
-            this.btnOpenMain.Size = new System.Drawing.Size(103, 46);
-            this.btnOpenMain.TabIndex = 6;
-            this.btnOpenMain.Text = "Hauptmenü";
-            this.btnOpenMain.UseVisualStyleBackColor = false;
-            this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
-            // 
-            // btnOpenTestAnalysis
-            // 
-            this.btnOpenTestAnalysis.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnOpenTestAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenTestAnalysis.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnOpenTestAnalysis.Location = new System.Drawing.Point(421, 555);
-            this.btnOpenTestAnalysis.Name = "btnOpenTestAnalysis";
-            this.btnOpenTestAnalysis.Size = new System.Drawing.Size(103, 46);
-            this.btnOpenTestAnalysis.TabIndex = 7;
-            this.btnOpenTestAnalysis.Text = "Testanalyse";
-            this.btnOpenTestAnalysis.UseVisualStyleBackColor = false;
-            this.btnOpenTestAnalysis.Click += new System.EventHandler(this.btnOpenTestAnalysis_Click);
-            // 
             // geheZuToolStripMenuItem
             // 
             this.geheZuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -174,13 +118,6 @@
             this.analyseToolStripMenuItem.Text = "Testanalyse";
             this.analyseToolStripMenuItem.Click += new System.EventHandler(this.analyseToolStripMenuItem_Click);
             // 
-            // nutzerBearbeitenToolStripMenuItem
-            // 
-            this.nutzerBearbeitenToolStripMenuItem.Name = "nutzerBearbeitenToolStripMenuItem";
-            this.nutzerBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.nutzerBearbeitenToolStripMenuItem.Text = "Nutzer bearbeiten";
-            this.nutzerBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.nutzerBearbeitenToolStripMenuItem_Click);
-            // 
             // hauptmenüToolStripMenuItem1
             // 
             this.hauptmenüToolStripMenuItem1.Name = "hauptmenüToolStripMenuItem1";
@@ -194,6 +131,61 @@
             this.übersichtVokabelnToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.übersichtVokabelnToolStripMenuItem.Text = "Übersicht Vokabeln";
             this.übersichtVokabelnToolStripMenuItem.Click += new System.EventHandler(this.übersichtVokabelnToolStripMenuItem_Click);
+            // 
+            // nutzerBearbeitenToolStripMenuItem
+            // 
+            this.nutzerBearbeitenToolStripMenuItem.Name = "nutzerBearbeitenToolStripMenuItem";
+            this.nutzerBearbeitenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.nutzerBearbeitenToolStripMenuItem.Text = "Nutzer bearbeiten";
+            this.nutzerBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.nutzerBearbeitenToolStripMenuItem_Click);
+            // 
+            // hilfeToolStripMenuItem
+            // 
+            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hilfeToolStripMenuItem1});
+            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.hilfeToolStripMenuItem.Text = "Hilfe";
+            // 
+            // hilfeToolStripMenuItem1
+            // 
+            this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
+            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.hilfeToolStripMenuItem1.Text = "Hilfe";
+            this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
+            // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(0, 37);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(900, 500);
+            this.panelMain.TabIndex = 5;
+            // 
+            // btnOpenMain
+            // 
+            this.btnOpenMain.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnOpenMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenMain.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnOpenMain.Location = new System.Drawing.Point(779, 555);
+            this.btnOpenMain.Name = "btnOpenMain";
+            this.btnOpenMain.Size = new System.Drawing.Size(103, 46);
+            this.btnOpenMain.TabIndex = 6;
+            this.btnOpenMain.Text = "Hauptmenü";
+            this.btnOpenMain.UseVisualStyleBackColor = false;
+            this.btnOpenMain.Click += new System.EventHandler(this.btnOpenMain_Click);
+            // 
+            // btnOpenTestAnalysis
+            // 
+            this.btnOpenTestAnalysis.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnOpenTestAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenTestAnalysis.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnOpenTestAnalysis.Location = new System.Drawing.Point(421, 555);
+            this.btnOpenTestAnalysis.Name = "btnOpenTestAnalysis";
+            this.btnOpenTestAnalysis.Size = new System.Drawing.Size(103, 46);
+            this.btnOpenTestAnalysis.TabIndex = 7;
+            this.btnOpenTestAnalysis.Text = "Testanalyse";
+            this.btnOpenTestAnalysis.UseVisualStyleBackColor = false;
+            this.btnOpenTestAnalysis.Click += new System.EventHandler(this.btnOpenTestAnalysis_Click);
             // 
             // Main
             // 
@@ -228,7 +220,6 @@
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hauptmenüToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btnOpenTestAnalysis;
         private System.Windows.Forms.ToolStripMenuItem geheZuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem neueVokabelnToolStripMenuItem;

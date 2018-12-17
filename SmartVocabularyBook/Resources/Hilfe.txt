@@ -3,7 +3,15 @@ Vokabeltrainer - Dein smartes Vokabelheft
 Inhalt
 1. Allgemein
 2. Anmeldung
-3.
+3. Hauptmenü
+4. Lernprozess
+4.1 Übersicht
+4.2 Vokabeln berbeiten
+4.3 Neue Vokabeln hinzufügen
+4.4 Übung/ Tests
+5. Testanalyse
+
+1. Allgemein
 
 2. Anmeldung
 Wenn Sie den Vokabeltrainer zum ersten Mal öffnen, dann sehen Sie im linken Teil des Fensters
@@ -21,4 +29,28 @@ Wenn Sie Ihre Einstellungen gewählt haben, klicken Sie am Schluss auf "Neuen Acc
 Nun schließt sich der Rahmen und in der weißen Box in linken Teil des Fensters wird ein neuer User aufgelistet.
 Wählen Sie nun Ihren Benutzernamen und klicken unten rechts auf den Button "Weiter".
 Das Hauptmenü wird geöffnet. 
+
+4.1 Übersicht
+In der Übersicht können Sie Ihre Vokabeln ansehen und verwalten.
+
+Durch das Klicken auf den Button "Aktive Vokabeln" kommen Sie zur Übersicht der Vokabeln die Aktiv sind..
+Sie können die Vokabeln markieren und mit dem Button "Archivieren" inaktiv setzen.
+Achivierte Vokabeln werden nicht für Übungen oder Tests benutzt.
+Der Button "Archivierte Vokabeln" bringt Sie zu der Übersicht der Archivierten Vokabeln.
+Sie können die Vokabeln mit einem Mausklick markieren und mit "Wieder aktivieren" aktiv setzen 
+oder durch den Button "Löschen" entfernen.
+
+
+
+
+5. Testanalyse
+
+Die Testanalyse zeigt Ihnen die Daten Ihrer Tests mit dem Datum, Punkte, Anzahl Fehler und die Note an.
+Sie können mit den Buttons "Letzten 10 Ergebnisse", "Letzten 20 Ergebnisse", "Letzten 30 Ergebnisse" 
+oder "Alle Ergebnisse" die Anzahl Ihrer Testdaten die angezeigt werden soll varieren.
+"Bester Wert" gibt Ihnen aus Ihren Tests das Beste Ergebnis aus.
+"Durchschnittswert" gibt Ihnen aus Ihren Tests das durchschnittliche Ergebnis aus.
+"Schlechtester Wert" gibt Ihnen aus Ihren Tests das Schlechteste Ergebnis aus.
+Mit "zu meinen Vokabeln" können Sie zurück zur Übersicht gelangen.
+Das "Hauptmenü" wird Sie zurück ins Hauptmenü führen.
 

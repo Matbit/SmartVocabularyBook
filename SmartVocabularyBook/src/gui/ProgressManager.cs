@@ -685,7 +685,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private bool validateTestSetup()
         {
             List<Vocabulary> countVocabulary = service.findAllActivated(getUserId());
-            int count = countVocabulary.Capacity;
+            int count = countVocabulary.Count;
             if (count >= trbCountVocabulary.Value)
             {
                 return true;

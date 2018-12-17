@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmartVocabularyBook.src.gui
@@ -17,7 +12,7 @@ namespace SmartVocabularyBook.src.gui
         {
             InitializeComponent();
             frmMain = main;
-            loadHelpFile();
+            //loadHelpFile();
         }
 
         private void Help_Load(object sender, EventArgs e)
@@ -27,16 +22,17 @@ namespace SmartVocabularyBook.src.gui
 
         private void loadHelpFile()
         {
-            
-            string line = "";
+
+            string path = Properties.Resources.Hilfe;
+            path = path.Replace(@"/", @"\");
+
             try
             {
-                System.IO.StreamReader file = new System.IO.StreamReader(Properties.Resources.Hilfe, Encoding.Default);
-                while ((line = file.ReadLine()) != null)
-                {
-                    rtbxHelpText.AppendText(line + Environment.NewLine);                    
-                }
-                file.Close();
+                
+                
+               // rtbxHelpText.Text = File.ReadAllText("\resources\\Hilfe.txt", Encoding.Default);
+
+
             }
             catch(Exception ex)
             {

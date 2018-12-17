@@ -79,11 +79,11 @@ namespace SmartVocabularyBook.Properties {
         ///3.
         ///
         ///2. Anmeldung
-        ///Wenn Sie den Vokabeltrainer zum ersten Mal öffnen, dann sehen Sie im linken Teil des Fensters
-        ///eine weiße Box und mit blau markiert &quot;NoName&quot;. Das ist der Account mit dem Sie starten. 
-        ///Sie können Ihre bevorzugten Einstellungen später im Hauptmenü unter dem Punkt &quot;Nutzer bearbeiten&quot; ändern.
+        ///Wenn Sie den Vokabeltrainer zum ersten Mal �ffnen, dann sehen Sie im linken Teil des Fensters
+        ///eine wei�e Box und mit blau markiert &quot;NoName&quot;. Das ist der Account mit dem Sie starten. 
+        ///Sie k�nnen Ihre bevorzugten Einstellungen sp�ter im Hauptmen� unter dem Punkt &quot;Nutzer bearbeiten&quot; �ndern.
         ///
-        ///Sofern Sie von Anfang an einen neuen eigenen Account nutzen möchten klicken Sie auf den Button mit dem &quot;+&quot; drauf.
+        ///Sofern Sie von Anfang an einen neuen eigenen Account nutzen m�chten klicken Sie auf den Button mit dem &quot;+&quot; drauf.
         ///Es [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Hilfe {

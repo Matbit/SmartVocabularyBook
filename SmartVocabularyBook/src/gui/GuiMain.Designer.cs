@@ -95,6 +95,8 @@
             this.btnOpenHelp.Text = "Hilfe";
             this.btnOpenHelp.UseVisualStyleBackColor = false;
             this.btnOpenHelp.Click += new System.EventHandler(this.btnOpenHelp_Click);
+            this.btnOpenHelp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnOpenHelp_KeyPress);
+            this.btnOpenHelp.MouseHover += new System.EventHandler(this.btnOpenHelp_MouseHover);
             // 
             // btnOpenCreateUser
             // 
@@ -208,7 +210,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiMain";
             this.Text = "#";
-            this.Load += new System.EventHandler(this.GuiMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

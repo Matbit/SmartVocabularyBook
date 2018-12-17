@@ -160,11 +160,6 @@ namespace SmartVocabularyBook.vcbook.gui
             return info[0].userId;
         }
 
-        private void GuiMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLearningProgress_Click(object sender, EventArgs e)
         {
             openGuiProgressManager();
@@ -227,6 +222,16 @@ namespace SmartVocabularyBook.vcbook.gui
         }
 
         private void picbox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenHelp_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnOpenHelp_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

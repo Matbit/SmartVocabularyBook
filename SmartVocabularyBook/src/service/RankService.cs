@@ -66,84 +66,84 @@ namespace SmartVocabularyBook.src.service
 
         public Rank getRank(int points)
         {
-            if (points < 2)
+            if (points < 4)
             {
                 return repository.findRankById(1);
             }
-            else if(points < 4)
+            else if(points < 6)
             {
                 return repository.findRankById(2);
             }
-            else if(points < 6)
+            else if(points < 8)
             {
                 return repository.findRankById(3);
             }
-            else if(points < 8)
+            else if(points < 10)
             {
                 return repository.findRankById(4);
             }
-            else if(points < 10)
+            else if(points < 14)
             {
                 return repository.findRankById(5);
             }
-            else if(points < 14)
+            else if(points < 20)
             {
                 return repository.findRankById(6);
             }
-            else if(points < 20)
+            else if(points < 25)
             {
                 return repository.findRankById(7);
             }
-            else if(points < 25)
+            else if(points < 30)
             {
                 return repository.findRankById(8);
             }
-            else if(points < 30)
+            else if(points < 36)
             {
                 return repository.findRankById(9);
             }
-            else if(points < 36)
+            else if(points < 44)
             {
                 return repository.findRankById(10);
             }
 
-            else if(points < 44)
+            else if(points < 51)
             {
                 return repository.findRankById(11);
             }
-            else if(points < 51)
+            else if(points < 60)
             {
                 return repository.findRankById(12);
             }
-            else if(points < 60)
+            else if(points < 70)
             {
                 return repository.findRankById(13);
             }
-            else if(points < 70)
+            else if(points < 85)
             {
                 return repository.findRankById(14);
             }
-            else if(points < 85)
+            else if(points < 100)
             {
                 return repository.findRankById(15);
             }
-            else if(points < 100)
+            else if(points < 120)
             {
                 return repository.findRankById(16);
             }
-            else if(points < 120)
+            else if(points < 145)
             {
                 return repository.findRankById(17);
             }
-            else if(points < 145)
+            else if(points < 170)
             {
                 return repository.findRankById(18);
             }
-            else if(points < 170)
+            else if(points < 200)
             {
                 return repository.findRankById(19);
             }
-            else if (points > 169)
+            else if (points > 199)
             {
                 return repository.findRankById(20);
             }

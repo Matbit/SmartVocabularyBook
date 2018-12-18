@@ -11,6 +11,7 @@ namespace SmartVocabularyBook.src.gui
         {
             InitializeComponent();
             frmMain = main;
+            lResultCount.Visible = false;
             //loadHelpFile();
         }
 
@@ -47,14 +48,38 @@ namespace SmartVocabularyBook.src.gui
 
         private void btnSearchWord_Click(object sender, EventArgs e)
         {
-            
+
+            if (string.IsNullOrEmpty(tbxSearch.Text))
+            {
+                lResultCount.Text = "0 Treffer";
+                lResultCount.Visible = true;
+                return;
+            }
+            if(tbxSearch.TextLength < 3)
+            {
+                lResultCount.Text = " Suche erst ab 3 Buchstaben.";
+                lResultCount.Visible = true;
+                return;
+            }
+
+            rtbxHelpText.SelectAll();
+            rtbxHelpText.SelectionBackColor = Color.LightGreen;
+
             int index = 0;
+            int count = 0;
             while (index < rtbxHelpText.Text.LastIndexOf(tbxSearch.Text))
             {
                 rtbxHelpText.Find(tbxSearch.Text, index, rtbxHelpText.TextLength, RichTextBoxFinds.None);
                 rtbxHelpText.SelectionBackColor = Color.Yellow;
                 index = rtbxHelpText.Text.IndexOf(tbxSearch.Text, index) + 1;
+                count++;
             }
+
+
+            lResultCount.Text =  count+ " Treffer";
+            lResultCount.Visible = true;
         }
+
+        
     }
 }

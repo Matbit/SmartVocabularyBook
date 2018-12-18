@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.btnSearchWord = new System.Windows.Forms.Button();
+            this.lResultCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -70,6 +71,7 @@
             // tbxSearch
             // 
             this.tbxSearch.Location = new System.Drawing.Point(402, 49);
+            this.tbxSearch.MaxLength = 15;
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(140, 20);
             this.tbxSearch.TabIndex = 5;
@@ -87,12 +89,22 @@
             this.btnSearchWord.UseVisualStyleBackColor = false;
             this.btnSearchWord.Click += new System.EventHandler(this.btnSearchWord_Click);
             // 
+            // lResultCount
+            // 
+            this.lResultCount.AutoSize = true;
+            this.lResultCount.Location = new System.Drawing.Point(656, 52);
+            this.lResultCount.Name = "lResultCount";
+            this.lResultCount.Size = new System.Drawing.Size(47, 13);
+            this.lResultCount.TabIndex = 7;
+            this.lResultCount.Text = "0 Treffer";
+            // 
             // GuiHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
+            this.Controls.Add(this.lResultCount);
             this.Controls.Add(this.btnSearchWord);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.label2);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.Button btnSearchWord;
+        private System.Windows.Forms.Label lResultCount;
     }
 }

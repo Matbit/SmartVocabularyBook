@@ -183,6 +183,36 @@ Der Button "Archivierte Vokabeln" bringt Sie zu der Übersicht der Archivierten 
 Sie können die Vokabeln mit einem Mausklick markieren und mit "Wieder aktivieren" aktiv setzen 
 oder durch den Button "Löschen" entfernen.
 
+4.2 Vokabel bearbeiten
+Bereits eingetragene Vokabeln lassen sich hier archivieren, bearbeiten und löschen. Ebenfalls kann hier zusätzlich 
+eine Notiz für eine Vokabel erstellt werden. 
+
+Um auf Ihre Vokabeln zuzugreifen, klicken Sie mit der linken Maustaste auf "Vokabeln bearbeiten" unter 
+"Lernprozess Verwalten" im Hauptmenü. 
+(Alternativ: "Gehe Zu" -&gt; "Neue Vokabeln" / "Übersicht Vokabeln" -&gt; "Vokabeln bearbeiten")
+
+Auf der linken Seite dieses Fensters können Sie Ihre Vokabel suchen, dafür wählen Sie die Sprache aus in der Sie 
+die Vokabel suchen. Anschließend tippen Sie die gesuchte Vokabel in das Suchfeld ein. 
+Wählen Sie mit der linken Maustaste die gesuchte Vokabel aus, dadurch können Sie die Vokabel bearbeiten,
+archivieren, um diese damit vom weiteren Vorgehen zu verbergen oder endgültig löschen.
+
+Bestätigen Sie Ihre Änderungen bitte mit "Änderungen Speichern" auf der rechten Seite mit der linken Maustaste.
+
+4.3 Vokabel Hinzufügen
+Vokabel lassen sich unter "Neue Vokabeln hinzufügen" in Ihre Vokabelliste einfügen. 
+Dahin gelangen Sie, in dem Sie im Hauptmenü auf "Lernprozess Verwalten" klicken und im nächsten Fenster 
+"Neue Vokabeln hinzufügen" auswählen. 
+(Alternativ: "Gehe Zu" -&gt; "Neue Vokabeln")
+
+Hier können die Vokabeln in der Haupt- und Fremdsprache eigenhändig eingetragen und gespeichert werden, zusätzlich 
+kann man sich hier eine Notiz dazu notieren. Wenn Sie zufrieden mit der Eingabe sind wählen Sie "Vokabeln hinzufügen" 
+aus. Falls Sie sich jedoch umentschieden oder einen Fehler gemacht haben kann die Eingabe mit 
+"Eingabe verwerfen" gelöscht werden.
+
+Falls Ihnen keine Übersetzung in einer Ihrer beiden Sprachen einfüllt können Sie "im Web suchen..." auswählen und 
+werden bei einer bestehender Internetverbindung direkt auf "dict.cc" weitergeleitet. Dort können Sie sich Ihre 
+passenden Übersetzungen zu Ihren Vokabeln aussuchen und anschließend wie gewohnt eigenhändig eintippen und hinzufügen. 
+
 4.4 Übungen/ Tests
 Bevor Sie eine Übung oder einen Test starten können Sie Ihre bevorzugten Einstellungen einstellen und ggf.
 für das nächste Mal speichern.
@@ -257,6 +287,7 @@ im Überblick.
 Wenn Sie die Bearbeitung abgeschlossen haben, klicken Sie auf "Speichern und Zurück" um ins Hauptmenü zu gelangen.
 Über "Abbrechen" gelangen Sie ebenfalls ins Hauptmenü, es werden jedoch keine Änderungen gespeichert.
 
-Wird ein Account gelöscht, so werden alle dazugehörigen Vokabeln unwiderruflich gelöscht.</value>
+Wird ein Account gelöscht, so werden alle dazugehörigen Vokabeln unwiderruflich gelöscht.
+</value>
   </data>
 </root>

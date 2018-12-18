@@ -305,7 +305,7 @@ namespace SmartVocabularyBook.src.gui
                 sumMistakes += resultList[i].getWrongAnswers();
             }
             avgMistakes = Math.Round(sumMistakes / resultList.Count, 2);
-            lResultCountMistakes.Text = "Druchschnitt: " + avgMistakes.ToString();
+            lResultCountMistakes.Text = "Durchschnitt: " + avgMistakes.ToString();
             lResultCountMistakes.Visible = true;
 
             //grade

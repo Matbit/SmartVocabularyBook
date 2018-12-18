@@ -121,21 +121,19 @@
     <value>Vokabeltrainer - Dein smartes Vokabelheft
 
 Inhalt
-1. Allgemein
-2. Anmeldung
-3. Hauptmenü
-4. Lernprozess
-4.1 Übersicht
-4.2 Vokabeln bearbeiten
-4.3 Neue Vokabeln hinzufügen
-4.4 Übung/ Tests
-4.5 Durchführung des Tests und Ergebnis
-5. Testanalyse
-6. Nutzer bearbeiten
+1. Anmeldung
+2. Hauptmenü
+3. Lernprozess
+3.1 Übersicht
+3.2 Vokabeln bearbeiten
+3.3 Neue Vokabeln hinzufügen
+3.4 Übung/ Tests
+3.5 Durchführung des Tests und Ergebnis
+4. Testanalyse
+5. Nutzer bearbeiten
 
-1. Allgemein
 
-2. Anmeldung
+1. Anmeldung
 Wenn Sie den Vokabeltrainer zum ersten Mal öffnen, dann sehen Sie im linken Teil des Fensters
 eine weiße Box und mit blau markiert "NoName". Das ist der Account mit dem Sie starten. 
 Sie können Ihre bevorzugten Einstellungen später im Hauptmenü unter dem Punkt "Nutzer bearbeiten" ändern.
@@ -152,7 +150,7 @@ Nun schließt sich der Rahmen und in der weißen Box in linken Teil des Fensters
 Wählen Sie nun Ihren Benutzernamen und klicken unten rechts auf den Button "Weiter".
 Das Hauptmenü wird geöffnet. 
 
-3. Hauptmenü
+2. Hauptmenü
 Vom Hauptmenü aus können Sie auf das gesamte Programm zugreifen. 
 
 Mit einem Klick auf den jeweiligen Button können Sie folgende Funktionen erreichen: 
@@ -173,7 +171,7 @@ freigeschaltet.
 In der Menüleiste gibt es 3 Auswahlmöglichkeiten mit unterschiedlichen Unterpunkten. Sie können auf diesem Weg 
 ebenfalls bestimmte Funktionen schneller aufrufen. 
 
-4.1 Übersicht
+3.1 Übersicht
 In der Übersicht können Sie Ihre Vokabeln ansehen und verwalten.
 
 Durch das Klicken auf den Button "Aktive Vokabeln" kommen Sie zur Übersicht der Vokabeln die Aktiv sind..
@@ -183,7 +181,7 @@ Der Button "Archivierte Vokabeln" bringt Sie zu der Übersicht der Archivierten 
 Sie können die Vokabeln mit einem Mausklick markieren und mit "Wieder aktivieren" aktiv setzen 
 oder durch den Button "Löschen" entfernen.
 
-4.2 Vokabel bearbeiten
+3.2 Vokabel bearbeiten
 Bereits eingetragene Vokabeln lassen sich hier archivieren, bearbeiten und löschen. Ebenfalls kann hier zusätzlich 
 eine Notiz für eine Vokabel erstellt werden. 
 
@@ -198,7 +196,7 @@ archivieren, um diese damit vom weiteren Vorgehen zu verbergen oder endgültig l
 
 Bestätigen Sie Ihre Änderungen bitte mit "Änderungen Speichern" auf der rechten Seite mit der linken Maustaste.
 
-4.3 Vokabel Hinzufügen
+3.3 Vokabel Hinzufügen
 Vokabel lassen sich unter "Neue Vokabeln hinzufügen" in Ihre Vokabelliste einfügen. 
 Dahin gelangen Sie, in dem Sie im Hauptmenü auf "Lernprozess Verwalten" klicken und im nächsten Fenster 
 "Neue Vokabeln hinzufügen" auswählen. 
@@ -213,7 +211,7 @@ Falls Ihnen keine Übersetzung in einer Ihrer beiden Sprachen einfüllt können 
 werden bei einer bestehender Internetverbindung direkt auf "dict.cc" weitergeleitet. Dort können Sie sich Ihre 
 passenden Übersetzungen zu Ihren Vokabeln aussuchen und anschließend wie gewohnt eigenhändig eintippen und hinzufügen. 
 
-4.4 Übungen/ Tests
+3.4 Übungen/ Tests
 Bevor Sie eine Übung oder einen Test starten können Sie Ihre bevorzugten Einstellungen einstellen und ggf.
 für das nächste Mal speichern.
 In der linken Box wählen Sie aus, welche Vokabeln abgefragt werden sollen. 
@@ -233,9 +231,9 @@ unter "Gemischt" sich auch einen Mix aus Muttersprache und Fremdsprache anzeigen
 
 Zum Schluss wählen Sie zwischen "Übung" oder "Test". Der Unterschied besteht darin, das Testergebnisse gespeichert werden
 (und nicht gelöscht werden können). Wenn Sie eine Übung machen, wird das Ergbnis Ihnen angezeigt, jedoch nicht in Ihrer
-Testhistorie angezeigt (siehe unter 5.)
+Testhistorie angezeigt (siehe unter 4.)
 
-4.5 Durchführung des Tests und Ergebnis
+3.5 Durchführung des Tests und Ergebnis
 Nachdem Sie die Übung/ Test gestartet haben, öffnet sich ein neues Fenster. Dort sehen Sie in der linken Spalte
 ein vorgegebenes Wort sowie eine freie Spalte mit der Überschrift Lösung.
 Ihre Lösung schreiben Sie direkt in die Zeile neben dem vorgegebenen Wort.
@@ -258,7 +256,7 @@ Wenn Sie sich Ihren Test ausreichend angeschaut haben, klicken Sie unten rechts 
 zur Übersicht im Lernprozess zurück. Von dort aus können Sie unten auf den Button "Testanalyse" klicken um ggf.
 alle Testergebnisse zu vergleichen.
 
-5. Testanalyse
+4. Testanalyse
 Die Testanalyse zeigt Ihnen die Daten Ihrer Tests mit dem Datum, Punkte, Anzahl Fehler und die Note an.
 Sie können mit den Buttons "Letzten 10 Ergebnisse", "Letzten 20 Ergebnisse", "Letzten 30 Ergebnisse" 
 oder "Alle Ergebnisse" die Anzahl Ihrer Testdaten die angezeigt werden soll varieren.
@@ -268,7 +266,7 @@ oder "Alle Ergebnisse" die Anzahl Ihrer Testdaten die angezeigt werden soll vari
 Mit "zu meinen Vokabeln" können Sie zurück zur Übersicht gelangen.
 Das "Hauptmenü" wird Sie zurück ins Hauptmenü führen.
 
-6. Nutzer bearbeiten
+5. Nutzer bearbeiten
 Vom Hauptmenü aus können Sie auf den Button "Nutzer bearbeiten" klicken.
 
 Dort können Sie Ihre Daten ändern. 
@@ -287,7 +285,6 @@ im Überblick.
 Wenn Sie die Bearbeitung abgeschlossen haben, klicken Sie auf "Speichern und Zurück" um ins Hauptmenü zu gelangen.
 Über "Abbrechen" gelangen Sie ebenfalls ins Hauptmenü, es werden jedoch keine Änderungen gespeichert.
 
-Wird ein Account gelöscht, so werden alle dazugehörigen Vokabeln unwiderruflich gelöscht.
-</value>
+Wird ein Account gelöscht, so werden alle dazugehörigen Vokabeln unwiderruflich gelöscht.</value>
   </data>
 </root>

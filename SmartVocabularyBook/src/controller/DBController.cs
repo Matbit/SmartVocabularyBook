@@ -32,8 +32,16 @@ namespace SmartVocabularyBook.vcbook.controller
         //method is called by the constructor of "main" class
         public void initDB()
         {
-            if (!doesDBExists())
-                SQLiteConnection.CreateFile(dbFile);
+
+            try
+            {
+                if (!doesDBExists())
+                    SQLiteConnection.CreateFile(dbFile);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
 
             try
             {

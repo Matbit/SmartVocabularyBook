@@ -5,6 +5,7 @@ using SmartVocabularyBook.vcbook.controller;
 using SmartVocabularyBook.vcbook.gui;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;

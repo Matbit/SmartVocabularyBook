@@ -235,5 +235,10 @@ namespace SmartVocabularyBook.vcbook.gui
         {
 
         }
+
+        private void GuiMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace SmartVocabularyBook.src.repository
 {
     class RankRepository
     {
-        private const String dbFile = "svb.db";
+        private const String dbFile = "svb.sqlite";
 
         //create Rank
         public bool createTableRank()

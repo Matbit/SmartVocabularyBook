@@ -10,8 +10,7 @@ namespace SmartVocabularyBook.src.repository
 {
     public class LanguageRepository
     {
-        private const String dbFile = "svb.db";
-
+        private const String dbFile = "svb.sqlite";
         //create Language 
         public bool createTableLanguage()
         {

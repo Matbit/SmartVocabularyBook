@@ -10,7 +10,7 @@ namespace SmartVocabularyBook.src.repository
 {
     class UserRepository
     {
-        private const String dbFile = "svb.db";
+        private const String dbFile = "svb.sqlite";
 
 
         //creates an user table

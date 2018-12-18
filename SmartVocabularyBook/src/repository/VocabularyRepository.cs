@@ -11,7 +11,7 @@ namespace SmartVocabularyBook.vcbook.repository
     class VocabularyRepository
     {
 
-        private const String dbFile = "svb.db";
+        private const String dbFile = "svb.sqlite";
 
 
         //creates a vocabulary table

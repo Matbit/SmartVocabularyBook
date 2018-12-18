@@ -11,8 +11,8 @@ namespace SmartVocabularyBook.src.repository
     class TestSettingsRepository
     {
         //name of sqlite file
-        private const String dbFile = "svb.db";
-        
+        private const String dbFile = "svb.sqlite";
+
         //creates table test
         public bool createTableTestSettings()
         {

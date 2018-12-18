@@ -12,7 +12,7 @@ namespace SmartVocabularyBook.src.repository
     class TestRepository
     {
         //name of sqlite file
-        private const String dbFile = "svb.db";
+        private const String dbFile = "svb.sqlite";
 
 
         //creates table test

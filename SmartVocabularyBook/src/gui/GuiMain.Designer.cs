@@ -210,6 +210,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuiMain";
             this.Text = "#";
+            this.Load += new System.EventHandler(this.GuiMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

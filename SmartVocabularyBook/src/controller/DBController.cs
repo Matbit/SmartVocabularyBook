@@ -17,7 +17,8 @@ namespace SmartVocabularyBook.vcbook.controller
    class DBController
     {
         //name of sqlite file
-        private const String dbFile = "svb.db";
+        private const String dbFile = "svb.sqlite";
+        
 
         //static member
         static VocabularyService serviceVocabulary = new VocabularyService();

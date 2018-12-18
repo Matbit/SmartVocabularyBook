@@ -126,10 +126,12 @@ Inhalt
 3. Hauptmenü
 4. Lernprozess
 4.1 Übersicht
-4.2 Vokabeln berbeiten
+4.2 Vokabeln bearbeiten
 4.3 Neue Vokabeln hinzufügen
 4.4 Übung/ Tests
+4.5 Durchführung des Tests und Ergebnis
 5. Testanalyse
+6. Nutzer bearbeiten
 
 1. Allgemein
 
@@ -150,6 +152,27 @@ Nun schließt sich der Rahmen und in der weißen Box in linken Teil des Fensters
 Wählen Sie nun Ihren Benutzernamen und klicken unten rechts auf den Button "Weiter".
 Das Hauptmenü wird geöffnet. 
 
+3. Hauptmenü
+Vom Hauptmenü aus können Sie auf das gesamte Programm zugreifen. 
+
+Mit einem Klick auf den jeweiligen Button können Sie folgende Funktionen erreichen: 
+
+	- Lernprozess verwalten
+	- Tests analysieren 
+	- Nutzer bearbeiten
+	- Abmelden
+	- Hilfe
+	- Programm beenden
+
+Level
+Im Hauptmenü wird der Level und der erreichte Rang mit der aktuellen Punktzahl für Ihren Account angezeigt.
+Jeden Tag kann man 2 neue Punkte erreichen. Dies ist mit der Aktivität verknüpft. Insgesamt gibt es 20 Level und
+für jedes neue Level, welches erreicht wird, können Sie im Rang aufsteigen. Zur Belohnung werden neue Bilder
+freigeschaltet.
+
+In der Menüleiste gibt es 3 Auswahlmöglichkeiten mit unterschiedlichen Unterpunkten. Sie können auf diesem Weg 
+ebenfalls bestimmte Funktionen schneller aufrufen. 
+
 4.1 Übersicht
 In der Übersicht können Sie Ihre Vokabeln ansehen und verwalten.
 
@@ -160,11 +183,52 @@ Der Button "Archivierte Vokabeln" bringt Sie zu der Übersicht der Archivierten 
 Sie können die Vokabeln mit einem Mausklick markieren und mit "Wieder aktivieren" aktiv setzen 
 oder durch den Button "Löschen" entfernen.
 
+4.4 Übungen/ Tests
+Bevor Sie eine Übung oder einen Test starten können Sie Ihre bevorzugten Einstellungen einstellen und ggf.
+für das nächste Mal speichern.
+In der linken Box wählen Sie aus, welche Vokabeln abgefragt werden sollen. 
+- Neueste Vokabeln (Vokabeln, die Sie zuletzt hinzugefügt haben)
+- älteste Vokabeln (Vokabeln, die Sie zuerst hinzugefügt haben)
+- zufällige Vokabeln (diese Vokabeln sind völlig zufällig gewählt)
+- Vokabeln, welche lange nicht abgefragt wurden
 
+Hinweis, archivierte Vokabeln können nicht abgefragt werden.
 
+In der Mitte können Sie über einen Schieberegler einstellen, wie viele Vokabeln Sie üben möchten.
+Sie können hier zwischen 1 - 100 wählen. Es empfiehlt sich mindestens 5 zu nehmen um einen Lerneffekt zu generieren.
+
+In der Box oben rechts, können Sie nun auswählen welche Sprache vorgegeben werden soll. Sie können sich Ihre 
+Muttersprache vorgeben lassen oder auch die, die Sie im Begriff sind zu lernen. Als dritte Möglichkeit, können Sie
+unter "Gemischt" sich auch einen Mix aus Muttersprache und Fremdsprache anzeigen lassen.
+
+Zum Schluss wählen Sie zwischen "Übung" oder "Test". Der Unterschied besteht darin, das Testergebnisse gespeichert werden
+(und nicht gelöscht werden können). Wenn Sie eine Übung machen, wird das Ergbnis Ihnen angezeigt, jedoch nicht in Ihrer
+Testhistorie angezeigt (siehe unter 5.)
+
+4.5 Durchführung des Tests und Ergebnis
+Nachdem Sie die Übung/ Test gestartet haben, öffnet sich ein neues Fenster. Dort sehen Sie in der linken Spalte
+ein vorgegebenes Wort sowie eine freie Spalte mit der Überschrift Lösung.
+Ihre Lösung schreiben Sie direkt in die Zeile neben dem vorgegebenen Wort.
+
+Sie können den Test jederzeit abbrechen. Es wird kein Ergebnis gespeichert.
+
+Wenn Sie den Test beenden haben, klicken Sie auf "Auswerten". Bestätigen Sie die Frage mit "Ja" und ein neues Fenster öffnet
+sich.
+
+In der Auswertung Ihres Tests wird Ihnen einzeln für jedes Wort die gesuchte Lösung und Ihre eigene Angabe angezeigt.
+Wenn Ihre Lösung richtig ist, erhalten Sie einen Punkt. Ist Ihre Angabe falsch gewesen, bekommen sie keinen Punkt.
+
+Unter der Tabelle wird Ihnen angezeigt wie viele Punkte Sie insgesamt erhalten haben und wie viele Punkte maximal
+möglich gewesen sind. Außerdem wird Ihnen angezeigt wie viele Fehler Sie gemacht haben. 
+
+Rechts unter der Tabelle steht eine fett markierte Zahl. Das ist Ihre Note nach dem Schulnotensystem von 1 (sehr gut)
+bis 6 (ungenügend).
+
+Wenn Sie sich Ihren Test ausreichend angeschaut haben, klicken Sie unten rechts auf "Weiter". Sie gelangen dann
+zur Übersicht im Lernprozess zurück. Von dort aus können Sie unten auf den Button "Testanalyse" klicken um ggf.
+alle Testergebnisse zu vergleichen.
 
 5. Testanalyse
-
 Die Testanalyse zeigt Ihnen die Daten Ihrer Tests mit dem Datum, Punkte, Anzahl Fehler und die Note an.
 Sie können mit den Buttons "Letzten 10 Ergebnisse", "Letzten 20 Ergebnisse", "Letzten 30 Ergebnisse" 
 oder "Alle Ergebnisse" die Anzahl Ihrer Testdaten die angezeigt werden soll varieren.
@@ -173,6 +237,26 @@ oder "Alle Ergebnisse" die Anzahl Ihrer Testdaten die angezeigt werden soll vari
 "Schlechtester Wert" gibt Ihnen aus Ihren Tests das Schlechteste Ergebnis aus.
 Mit "zu meinen Vokabeln" können Sie zurück zur Übersicht gelangen.
 Das "Hauptmenü" wird Sie zurück ins Hauptmenü führen.
-</value>
+
+6. Nutzer bearbeiten
+Vom Hauptmenü aus können Sie auf den Button "Nutzer bearbeiten" klicken.
+
+Dort können Sie Ihre Daten ändern. 
+
+	
+	Folgende Möglichkeiten bestehen: 
+
+	- die Mutter/Fremdsprache in eine beliebige verändern.
+	- Nicknamen verändern
+	- Account löschen(unwiderruflich!!)
+
+Wichtig ist, dass du bei jeder Änderung des Accounts, auf den Button "Eingaben bestätigen" geklickt wird. 
+Erst danach werden die Änderungen übernommen. Im grünen Kasten oben rechts, befinden sich alle aktuellen Daten
+im Überblick.
+
+Wenn Sie die Bearbeitung abgeschlossen haben, klicken Sie auf "Speichern und Zurück" um ins Hauptmenü zu gelangen.
+Über "Abbrechen" gelangen Sie ebenfalls ins Hauptmenü, es werden jedoch keine Änderungen gespeichert.
+
+Wird ein Account gelöscht, so werden alle dazugehörigen Vokabeln unwiderruflich gelöscht.</value>
   </data>
 </root>

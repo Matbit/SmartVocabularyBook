@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SmartVocabularyBook.src.gui
@@ -42,6 +43,18 @@ namespace SmartVocabularyBook.src.gui
         private void rtbxHelpText_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearchWord_Click(object sender, EventArgs e)
+        {
+            
+            int index = 0;
+            while (index < rtbxHelpText.Text.LastIndexOf(tbxSearch.Text))
+            {
+                rtbxHelpText.Find(tbxSearch.Text, index, rtbxHelpText.TextLength, RichTextBoxFinds.None);
+                rtbxHelpText.SelectionBackColor = Color.Yellow;
+                index = rtbxHelpText.Text.IndexOf(tbxSearch.Text, index) + 1;
+            }
         }
     }
 }

@@ -82,7 +82,7 @@ namespace SmartVocabularyBook.vcbook.gui
         private void btnCancel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Der Test wurde abgebrochen.");
-            frmMain.openPanelProgressManager();
+            frmMain.openPanelProgressManagerTests();
         }
 
 
@@ -92,7 +92,15 @@ namespace SmartVocabularyBook.vcbook.gui
             testList.Clear();
             listSolution.Clear();
             solutionWordList.Clear();
-            TestSetup ts = testSettingsService.getTestSettingsById(1);          
+
+            
+            TestSetup ts = testSettingsService.getTestSettingsById(1);
+
+            if(!ts.getSave())
+            {
+                ts = testSettingsService.getTestSettingsById(2);
+            }
+               
 
             int searchMode = ts.getSearchMode();
 

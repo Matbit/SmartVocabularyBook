@@ -150,7 +150,7 @@
             // hilfeToolStripMenuItem1
             // 
             this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
-            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.hilfeToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
             this.hilfeToolStripMenuItem1.Text = "Hilfe";
             this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
             // 

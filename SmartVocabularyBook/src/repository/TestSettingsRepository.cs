@@ -26,12 +26,12 @@ namespace SmartVocabularyBook.src.repository
         }
 
         //insert new test setup
-        public bool updateTestSettings(TestSetup ts, int isSaved)
+        public bool updateTestSettings(TestSetup ts, int isSaved, int id)
         {
             SQLiteConnection con = new SQLiteConnection("Data Source = " + dbFile + ";");
             con.Open();
             string sql = "UPDATE testSettings SET searchMode = '"+ts.getSearchMode()+"', count = '"+ts.getCount()+"', givenLang = '"+
-                        ts.getGivenLang()+"', saved = '"+isSaved+"' WHERE id = 1;";
+                        ts.getGivenLang()+"', saved = '"+isSaved+"' WHERE id = '"+ id+"';";
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();

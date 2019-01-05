@@ -40,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lUserStatus = new System.Windows.Forms.Label();
             this.lLevel = new System.Windows.Forms.Label();
-            this.btnCheetPoints = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,23 +177,12 @@
             this.lLevel.TabIndex = 12;
             this.lLevel.Text = "Level 13";
             // 
-            // btnCheetPoints
-            // 
-            this.btnCheetPoints.Location = new System.Drawing.Point(321, 453);
-            this.btnCheetPoints.Name = "btnCheetPoints";
-            this.btnCheetPoints.Size = new System.Drawing.Size(96, 35);
-            this.btnCheetPoints.TabIndex = 13;
-            this.btnCheetPoints.Text = "Punkte erhöhen";
-            this.btnCheetPoints.UseVisualStyleBackColor = true;
-            this.btnCheetPoints.Click += new System.EventHandler(this.btnCheetPoints_Click);
-            // 
             // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(900, 500);
-            this.Controls.Add(this.btnCheetPoints);
             this.Controls.Add(this.lLevel);
             this.Controls.Add(this.lUserStatus);
             this.Controls.Add(this.label3);
@@ -231,6 +219,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lUserStatus;
         private System.Windows.Forms.Label lLevel;
-        private System.Windows.Forms.Button btnCheetPoints;
     }
 }

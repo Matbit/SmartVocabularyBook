@@ -80,7 +80,7 @@ namespace SmartVocabularyBook.vcbook.controller
         //initial testsetup
         private void initialTestSetup()
         {
-            if(serviceTestSettings.findAll().Count < 1)
+            if(serviceTestSettings.findAll().Count < 2)
             {
                 serviceTestSettings.initialTestSetup();
             }

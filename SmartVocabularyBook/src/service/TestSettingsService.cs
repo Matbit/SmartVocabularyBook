@@ -20,12 +20,15 @@ namespace SmartVocabularyBook.src.service
         public bool initialTestSetup()
         {
             TestSetup ts = new TestSetup(-1L, 1, 10, 1, true);
-            return insertSetUpIntoDB(ts);
+            insertSetUpIntoDB(ts);
+
+            TestSetup ts2 = new TestSetup(-1L, 1, 1, 1, false);
+            return true;
         }
         
-        public bool updateTestSettings(TestSetup ts, int isSaved)
+        public bool updateTestSettings(TestSetup ts, int isSaved, int id)
         {
-            if (repository.updateTestSettings(ts, isSaved))
+            if (repository.updateTestSettings(ts, isSaved, id))
             {
                 return true;
             }

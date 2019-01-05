@@ -11,6 +11,7 @@ namespace SmartVocabularyBook.vcbook.gui
     public partial class ProgressManager : Form
     {
         private Main frmMain;
+        private static int countVocabularies = 1;
         //controller and services
         //private DBController dbController = new DBController();
         private static VocabularyService service = new VocabularyService();
@@ -64,6 +65,12 @@ namespace SmartVocabularyBook.vcbook.gui
             lAddVocabularySecondLanguage.Text = myUser.foreignLanguage+"*";
             rbtnTestSecondLang.Text = myUser.foreignLanguage;
 
+        }
+
+        //get count value setting
+        public static int getCountValue()
+        {
+            return countVocabularies;
         }
 
         public void openTabAddNewVocabulary()
@@ -654,7 +661,7 @@ namespace SmartVocabularyBook.vcbook.gui
 
         private void btnStartTest_Click(object sender, EventArgs e)
         {
-
+            
             if (!validateTestSetup())
             {
                 MessageBox.Show("Sie haben mehr Vokabeln ausgewählt, als zur Verfügung stehen.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -665,8 +672,10 @@ namespace SmartVocabularyBook.vcbook.gui
 
             TestSetup test = new TestSetup();
             test = testSettingsService.getTestSettingsById(1);
-            //just for tests
-            //MessageBox.Show(test.getId() + " " + test.getSearchMode() + " " + test.getCount() + " " + test.getGivenLang() + " " + test.getSave());
+
+            
+
+            
         }
 
         private void startTest()
@@ -730,11 +739,13 @@ namespace SmartVocabularyBook.vcbook.gui
 
             if (chbxSaveSettings.Checked)
             {
-                testSettingsService.updateTestSettings(tsNew, isSaved);
+                testSettingsService.updateTestSettings(tsNew, isSaved, 1);
             }
             else
             {
                 testSettingsService.updateSaveOption(0);
+
+                testSettingsService.updateTestSettings(tsNew, isSaved, 2);
             }
 
 

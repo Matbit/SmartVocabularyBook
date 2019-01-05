@@ -206,9 +206,10 @@ namespace SmartVocabularyBook.vcbook.gui
         private void btnCheetPoints_Click(object sender, EventArgs e)
         {
 
-            cheetPointsMethod();
+            
         }
 
+        //currently unused function to increase points (was build for testing)
         private void cheetPointsMethod()
         {
             User user = serviceUser.findUserById(getUserId());

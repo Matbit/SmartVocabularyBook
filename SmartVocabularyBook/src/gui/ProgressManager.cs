@@ -44,7 +44,7 @@ namespace SmartVocabularyBook.vcbook.gui
             loadTestSettings();
             lLSearchWordInWeb.Visible = false;
             changeReadOnlyTbxEditVocabulary(true);
-            staticVocabulary.setUserId(1);
+            staticVocabulary.setUserId(getUserId());
             setLanguages();
 
         }

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnEditVocabulary = new System.Windows.Forms.Button();
             this.btnDeleteVocabulary = new System.Windows.Forms.Button();
             this.lNameView = new System.Windows.Forms.Label();
             this.btnSetVocabularyArchived = new System.Windows.Forms.Button();
@@ -91,12 +92,10 @@
             this.trbCountVocabulary = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnLongTermNotAskedVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnRandomVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnOldestVocabulary = new System.Windows.Forms.RadioButton();
             this.rbtnNewestVocabulary = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEditVocabulary = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -145,6 +144,19 @@
             this.tabPage1.Text = "Übersicht";
             this.tabPage1.ToolTipText = "Hier kannst du dir alle deine Vokabeln ansehen";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnEditVocabulary
+            // 
+            this.btnEditVocabulary.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnEditVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnEditVocabulary.Location = new System.Drawing.Point(597, 427);
+            this.btnEditVocabulary.Name = "btnEditVocabulary";
+            this.btnEditVocabulary.Size = new System.Drawing.Size(181, 38);
+            this.btnEditVocabulary.TabIndex = 11;
+            this.btnEditVocabulary.Text = "Bearbeiten";
+            this.btnEditVocabulary.UseVisualStyleBackColor = false;
+            this.btnEditVocabulary.Click += new System.EventHandler(this.btnEditVocabulary_Click);
             // 
             // btnDeleteVocabulary
             // 
@@ -286,7 +298,7 @@
             this.grbxChangeVocabulary.Controls.Add(this.lEditSecondLanguage);
             this.grbxChangeVocabulary.Controls.Add(this.tbxDataSecondLang);
             this.grbxChangeVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbxChangeVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
+            this.grbxChangeVocabulary.ForeColor = System.Drawing.SystemColors.ControlText;
             this.grbxChangeVocabulary.Location = new System.Drawing.Point(471, 58);
             this.grbxChangeVocabulary.Name = "grbxChangeVocabulary";
             this.grbxChangeVocabulary.Size = new System.Drawing.Size(384, 254);
@@ -297,6 +309,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label10.Location = new System.Drawing.Point(6, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 16);
@@ -315,6 +328,7 @@
             // lMainLanguageEdit
             // 
             this.lMainLanguageEdit.AutoSize = true;
+            this.lMainLanguageEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lMainLanguageEdit.Location = new System.Drawing.Point(6, 39);
             this.lMainLanguageEdit.Name = "lMainLanguageEdit";
             this.lMainLanguageEdit.Size = new System.Drawing.Size(93, 16);
@@ -356,6 +370,7 @@
             // lEditSecondLanguage
             // 
             this.lEditSecondLanguage.AutoSize = true;
+            this.lEditSecondLanguage.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lEditSecondLanguage.Location = new System.Drawing.Point(193, 39);
             this.lEditSecondLanguage.Name = "lEditSecondLanguage";
             this.lEditSecondLanguage.Size = new System.Drawing.Size(84, 16);
@@ -382,7 +397,7 @@
             this.grbxSerachVocabulry.Controls.Add(this.rbtnMainLang);
             this.grbxSerachVocabulry.Controls.Add(this.rbtnSecondLang);
             this.grbxSerachVocabulry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbxSerachVocabulry.ForeColor = System.Drawing.Color.ForestGreen;
+            this.grbxSerachVocabulry.ForeColor = System.Drawing.SystemColors.ControlText;
             this.grbxSerachVocabulry.Location = new System.Drawing.Point(19, 29);
             this.grbxSerachVocabulry.Name = "grbxSerachVocabulry";
             this.grbxSerachVocabulry.Size = new System.Drawing.Size(337, 407);
@@ -393,6 +408,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label9.Location = new System.Drawing.Point(6, 91);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 16);
@@ -464,7 +480,7 @@
             // 
             this.rbtnMainLang.AutoSize = true;
             this.rbtnMainLang.Checked = true;
-            this.rbtnMainLang.ForeColor = System.Drawing.Color.ForestGreen;
+            this.rbtnMainLang.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rbtnMainLang.Location = new System.Drawing.Point(6, 29);
             this.rbtnMainLang.Name = "rbtnMainLang";
             this.rbtnMainLang.Size = new System.Drawing.Size(111, 20);
@@ -476,7 +492,7 @@
             // rbtnSecondLang
             // 
             this.rbtnSecondLang.AutoSize = true;
-            this.rbtnSecondLang.ForeColor = System.Drawing.Color.ForestGreen;
+            this.rbtnSecondLang.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rbtnSecondLang.Location = new System.Drawing.Point(6, 52);
             this.rbtnSecondLang.Name = "rbtnSecondLang";
             this.rbtnSecondLang.Size = new System.Drawing.Size(102, 20);
@@ -612,7 +628,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(7, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 16);
@@ -623,7 +639,7 @@
             // 
             this.lAddVocabularySecondLanguage.AutoSize = true;
             this.lAddVocabularySecondLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAddVocabularySecondLanguage.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lAddVocabularySecondLanguage.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lAddVocabularySecondLanguage.Location = new System.Drawing.Point(7, 76);
             this.lAddVocabularySecondLanguage.Name = "lAddVocabularySecondLanguage";
             this.lAddVocabularySecondLanguage.Size = new System.Drawing.Size(89, 16);
@@ -634,7 +650,7 @@
             // 
             this.lAddVocabularyMainLanguage.AutoSize = true;
             this.lAddVocabularyMainLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAddVocabularyMainLanguage.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lAddVocabularyMainLanguage.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lAddVocabularyMainLanguage.Location = new System.Drawing.Point(7, 41);
             this.lAddVocabularyMainLanguage.Name = "lAddVocabularyMainLanguage";
             this.lAddVocabularyMainLanguage.Size = new System.Drawing.Size(98, 16);
@@ -838,25 +854,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbtnLongTermNotAskedVocabulary);
             this.groupBox1.Controls.Add(this.rbtnRandomVocabulary);
             this.groupBox1.Controls.Add(this.rbtnOldestVocabulary);
             this.groupBox1.Controls.Add(this.rbtnNewestVocabulary);
             this.groupBox1.Location = new System.Drawing.Point(7, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 111);
+            this.groupBox1.Size = new System.Drawing.Size(274, 89);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            // 
-            // rbtnLongTermNotAskedVocabulary
-            // 
-            this.rbtnLongTermNotAskedVocabulary.AutoSize = true;
-            this.rbtnLongTermNotAskedVocabulary.Location = new System.Drawing.Point(3, 85);
-            this.rbtnLongTermNotAskedVocabulary.Name = "rbtnLongTermNotAskedVocabulary";
-            this.rbtnLongTermNotAskedVocabulary.Size = new System.Drawing.Size(262, 17);
-            this.rbtnLongTermNotAskedVocabulary.TabIndex = 4;
-            this.rbtnLongTermNotAskedVocabulary.Text = "Vokabeln welche lange nicht mehr gefragt wurden";
-            this.rbtnLongTermNotAskedVocabulary.UseVisualStyleBackColor = true;
             // 
             // rbtnRandomVocabulary
             // 
@@ -899,19 +904,6 @@
             this.label4.Size = new System.Drawing.Size(125, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Einstellungen";
-            // 
-            // btnEditVocabulary
-            // 
-            this.btnEditVocabulary.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnEditVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditVocabulary.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnEditVocabulary.Location = new System.Drawing.Point(597, 427);
-            this.btnEditVocabulary.Name = "btnEditVocabulary";
-            this.btnEditVocabulary.Size = new System.Drawing.Size(181, 38);
-            this.btnEditVocabulary.TabIndex = 11;
-            this.btnEditVocabulary.Text = "Bearbeiten";
-            this.btnEditVocabulary.UseVisualStyleBackColor = false;
-            this.btnEditVocabulary.Click += new System.EventHandler(this.btnEditVocabulary_Click);
             // 
             // ProgressManager
             // 
@@ -988,7 +980,6 @@
         private System.Windows.Forms.Button btnShowArchivedVocabularies;
         private System.Windows.Forms.Button btnShowActiveVocabularies;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbtnLongTermNotAskedVocabulary;
         private System.Windows.Forms.RadioButton rbtnRandomVocabulary;
         private System.Windows.Forms.RadioButton rbtnOldestVocabulary;
         private System.Windows.Forms.RadioButton rbtnNewestVocabulary;

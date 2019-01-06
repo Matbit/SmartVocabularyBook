@@ -114,7 +114,7 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 rbtnRandomVocabulary.Checked = true;
             }
-            else rbtnLongTermNotAskedVocabulary.Checked = true;
+            //else rbtnLongTermNotAskedVocabulary.Checked = true;
 
             trbCountVocabulary.Value = count;
 
@@ -712,10 +712,10 @@ namespace SmartVocabularyBook.vcbook.gui
             {
                 searchMode = 3;
             }
-            else if (rbtnLongTermNotAskedVocabulary.Checked)
-            {
-                searchMode = 4;
-            }
+            //else if (rbtnLongTermNotAskedVocabulary.Checked)
+            //{
+            //    searchMode = 4;
+            //}
 
             if (rbtnTestMainLang.Checked)
             {

@@ -293,7 +293,7 @@ namespace SmartVocabularyBook.src.gui
             }
             avg = Math.Round(sum / resultList.Count, 2);
             
-            lResultPoints.Text = "Durchschnitt: " + avg.ToString();
+            lResultPoints.Text = "Punktedurchschnitt: " + avg.ToString();
             lResultPoints.Visible = true;
 
             //mistakes
@@ -305,7 +305,7 @@ namespace SmartVocabularyBook.src.gui
                 sumMistakes += resultList[i].getWrongAnswers();
             }
             avgMistakes = Math.Round(sumMistakes / resultList.Count, 2);
-            lResultCountMistakes.Text = "Durchschnitt: " + avgMistakes.ToString();
+            lResultCountMistakes.Text = "Fehlerdurchschnitt: " + avgMistakes.ToString();
             lResultCountMistakes.Visible = true;
 
             //grade
@@ -318,7 +318,7 @@ namespace SmartVocabularyBook.src.gui
             }
 
             avgGrade = Math.Round(sumGrade / resultList.Count, 2);
-            lResultGrade.Text = "Durchschnitt: " + avgGrade.ToString();
+            lResultGrade.Text = "Notendurchschnitt: " + avgGrade.ToString();
             lResultGrade.Visible = true;
         }
     }

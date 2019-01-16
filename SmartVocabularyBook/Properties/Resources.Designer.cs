@@ -74,246 +74,26 @@ namespace SmartVocabularyBook.Properties {
         ///   Looks up a localized string similar to Vokabeltrainer - Dein smartes Vokabelheft
         ///
         ///Inhalt
-        ///1. Allgemein
-        ///2. Anmeldung
-        ///3. Hauptmen�
-        ///4. Lernprozess
-        ///4.1 �bersicht
-        ///4.2 Vokabeln berbeiten
-        ///4.3 Neue Vokabeln hinzuf�gen
-        ///4.4 �bung/ Tests
-        ///5. Testanalyse
+        ///1. Anmeldung
+        ///2. Hauptmen�
+        ///3. Lernprozess
+        ///3.1 �bersicht
+        ///3.2 Vokabeln bearbeiten
+        ///3.3 Neue Vokabeln hinzuf�gen
+        ///3.4 �bung/ Tests
+        ///3.5 Durchf�hrung des Tests und Ergebnis
+        ///4. Testanalyse
+        ///5. Nutzer bearbeiten
         ///
-        ///1. Allgemein
         ///
-        ///2. Anmeldung
+        ///1. Anmeldung
         ///Wenn Sie den Vokabeltrainer zum ersten Mal �ffnen, dann sehen Sie im linken Teil des Fensters
         ///eine wei�e Box und mit blau markiert &quot;NoName&quot;. Das ist der Account mit dem Sie starten. 
-        ///Sie k�nnen Ihre bevorzugten Einstellungen sp�ter im Hauptmen� unter dem Punkt &quot;Nu [rest of string was truncated]&quot;;.
+        ///Sie k�nnen Ihre bevorzugten Einstellungen sp� [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Hilfe {
             get {
                 return ResourceManager.GetString("Hilfe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic1 {
-            get {
-                object obj = ResourceManager.GetObject("pic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic10 {
-            get {
-                object obj = ResourceManager.GetObject("pic10", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic11 {
-            get {
-                object obj = ResourceManager.GetObject("pic11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic111 {
-            get {
-                object obj = ResourceManager.GetObject("pic111", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic12 {
-            get {
-                object obj = ResourceManager.GetObject("pic12", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic13 {
-            get {
-                object obj = ResourceManager.GetObject("pic13", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic14 {
-            get {
-                object obj = ResourceManager.GetObject("pic14", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic15 {
-            get {
-                object obj = ResourceManager.GetObject("pic15", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic16 {
-            get {
-                object obj = ResourceManager.GetObject("pic16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic17 {
-            get {
-                object obj = ResourceManager.GetObject("pic17", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic18 {
-            get {
-                object obj = ResourceManager.GetObject("pic18", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic19 {
-            get {
-                object obj = ResourceManager.GetObject("pic19", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic2 {
-            get {
-                object obj = ResourceManager.GetObject("pic2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic20 {
-            get {
-                object obj = ResourceManager.GetObject("pic20", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic21 {
-            get {
-                object obj = ResourceManager.GetObject("pic21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic3 {
-            get {
-                object obj = ResourceManager.GetObject("pic3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic4 {
-            get {
-                object obj = ResourceManager.GetObject("pic4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic5 {
-            get {
-                object obj = ResourceManager.GetObject("pic5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic6 {
-            get {
-                object obj = ResourceManager.GetObject("pic6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic7 {
-            get {
-                object obj = ResourceManager.GetObject("pic7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic8 {
-            get {
-                object obj = ResourceManager.GetObject("pic8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pic9 {
-            get {
-                object obj = ResourceManager.GetObject("pic9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

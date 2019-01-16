@@ -68,83 +68,83 @@ namespace SmartVocabularyBook.vcbook.gui
 
                 if(level == 1)
                 {
-                    picbox.Image = Properties.Resources.pic1;
+                    //picbox.Image = Properties.Resources.pic1;
                 }
                 else if(level == 2)
                 {
-                    picbox.Image = Properties.Resources.pic2;
+                    //picbox.Image = Properties.Resources.pic2;
                 }
                 else if(level == 3)
                 {
-                    picbox.Image = Properties.Resources.pic3;
+                    //picbox.Image = Properties.Resources.pic3;
                 }
                 else if(level == 4)
                 {
-                    picbox.Image = Properties.Resources.pic4;
+                    //picbox.Image = Properties.Resources.pic4;
                 }
                 else if(level == 5)
                 {
-                    picbox.Image = Properties.Resources.pic5;
+                    //picbox.Image = Properties.Resources.pic5;
                 }
                 else if(level == 6)
                 {
-                    picbox.Image = Properties.Resources.pic6;
+                    //picbox.Image = Properties.Resources.pic6;
                 }
                 else if(level == 7)
                 {
-                    picbox.Image = Properties.Resources.pic7;
+                    //picbox.Image = Properties.Resources.pic7;
                 }
                 else if(level == 8)
                 {
-                    picbox.Image = Properties.Resources.pic8;
+                    //picbox.Image = Properties.Resources.pic8;
                 }
                 else if(level == 9)
                 {
-                    picbox.Image = Properties.Resources.pic9;
+                    //picbox.Image = Properties.Resources.pic9;
                 }
                 else if(level == 10)
                 {
-                    picbox.Image = Properties.Resources.pic10;
+                    //picbox.Image = Properties.Resources.pic10;
                 }
                 else if(level == 11)
                 {
-                    picbox.Image = Properties.Resources.pic11;
+                    //picbox.Image = Properties.Resources.pic11;
                 }
                 else if(level == 12)
                 {
-                    picbox.Image = Properties.Resources.pic12;
+                    //picbox.Image = Properties.Resources.pic12;
                 }
                 else if(level == 13)
                 {
-                    picbox.Image = Properties.Resources.pic13;
+                    //picbox.Image = Properties.Resources.pic13;
                 }
                 else if(level == 14)
                 {
-                    picbox.Image = Properties.Resources.pic14;
+                    //picbox.Image = Properties.Resources.pic14;
                 }
                 else if(level == 15)
                 {
-                    picbox.Image = Properties.Resources.pic15;
+                    //picbox.Image = Properties.Resources.pic15;
                 }
                 else if(level == 16)
                 {
-                    picbox.Image = Properties.Resources.pic16;
+                    //picbox.Image = Properties.Resources.pic16;
                 }
                 else if(level == 17)
                 {
-                    picbox.Image = Properties.Resources.pic17;
+                    //picbox.Image = Properties.Resources.pic17;
                 }
                 else if(level == 18)
                 {
-                    picbox.Image = Properties.Resources.pic18;
+                    //picbox.Image = Properties.Resources.pic18;
                 }
                 else if(level == 19)
                 {
-                    picbox.Image = Properties.Resources.pic19;
+                    //picbox.Image = Properties.Resources.pic19;
                 }
                 else if(level == 20)
                 {
-                    picbox.Image = Properties.Resources.pic20;
+                    //picbox.Image = Properties.Resources.pic20;
                 }
 
             }

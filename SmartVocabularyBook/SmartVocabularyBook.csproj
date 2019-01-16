@@ -29,7 +29,7 @@
     <TargetCulture>de-IT</TargetCulture>
     <PublisherName>Vokabeltrainer 2019</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -334,66 +334,6 @@
     <None Include="bin\Debug\Hilfe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pic1.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic7.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic8.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic9.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic10.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic13.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic14.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic15.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic16.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic17.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic18.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic19.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pic20.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Hilfe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -424,12 +364,12 @@
   <ItemGroup>
     <PublishFile Include="System.Data.SQLite">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
